@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Valerio Santoni – CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --red:   #EC0000;
+      --gold:  #C9A84C;
+      --night: #0A1628;
+      --gray:  #374151;
+      --muted: #6B7280;
+      --light: #F5F7FA;
+      --border:#E2E8F0;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:15px}
+    body{
+      font-family:'Inter',sans-serif;
+      background:#fff;color:var(--gray);
+      line-height:1.65;max-width:860px;
+      margin:0 auto;padding:48px 40px;
+    }
+
+    /* === TOP ACTIONS === */
+    .top-actions{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-bottom:36px;
+      padding-bottom:16px;
+      border-bottom:1px solid var(--border);
+    }
+    .back-link{
+      font-size:.8rem;font-weight:600;color:var(--muted);
+      text-decoration:none;display:flex;align-items:center;gap:6px;
+      transition:color .2s;
+    }
+    .back-link:hover{color:var(--night)}
+    .print-btn{
+      background:var(--red);color:#fff;border:none;
+      padding:9px 20px;border-radius:8px;font-size:.8rem;font-weight:600;
+      font-family:'Inter',sans-serif;cursor:pointer;
+      transition:background .2s,transform .2s;
+    }
+    .print-btn:hover{background:#c40000;transform:translateY(-1px)}
+
+    /* === HEADER === */
+    .cv-header{
+      display:grid;grid-template-columns:1fr auto;
+      gap:24px;align-items:start;
+      margin-bottom:32px;
+    }
+    .cv-name{
+      font-size:2.2rem;font-weight:900;
+      color:var(--night);letter-spacing:-.03em;line-height:1.1;
+      margin-bottom:6px;
+    }
+    .cv-title{font-size:1rem;font-weight:600;color:var(--red);margin-bottom:12px}
+    .cv-contacts{display:flex;flex-wrap:wrap;gap:8px 18px}
+    .cv-contact{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:5px}
+    .cv-contact a{color:var(--night);font-weight:600;text-decoration:none}
+    .cv-contact a:hover{color:var(--red)}
+    .cv-photo{
+      width:88px;height:88px;border-radius:50%;overflow:hidden;
+      border:3px solid var(--gold);flex-shrink:0;
+    }
+    .cv-photo img{width:100%;height:100%;object-fit:cover}
+    .cv-photo-placeholder{
+      width:100%;height:100%;background:linear-gradient(135deg,var(--red),var(--gold));
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.6rem;font-weight:900;color:#fff;
+    }
+
+    /* === SUMMARY === */
+    .summary{
+      background:var(--light);border-left:3px solid var(--red);
+      border-radius:0 8px 8px 0;padding:14px 18px;
+      font-size:.88rem;color:var(--gray);line-height:1.75;
+      margin-bottom:32px;
+    }
+
+    /* === SECTIONS === */
+    .cv-section{margin-bottom:28px}
+    .cv-section-title{
+      font-size:.68rem;font-weight:700;letter-spacing:.18em;
+      text-transform:uppercase;color:var(--red);
+      padding-bottom:7px;border-bottom:1.5px solid var(--border);
+      margin-bottom:16px;
+    }
+
+    /* === EXPERIENCE === */
+    .exp-item{margin-bottom:18px;display:grid;grid-template-columns:1fr auto;gap:8px}
+    .exp-item:last-child{margin-bottom:0}
+    .exp-role{font-size:.95rem;font-weight:700;color:var(--night)}
+    .exp-date{font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;text-align:right;margin-top:2px}
+    .exp-company{font-size:.82rem;font-weight:600;color:var(--red);margin-bottom:2px}
+    .exp-loc{font-size:.75rem;color:var(--muted);margin-bottom:8px}
+    .exp-bullets{padding-left:0;list-style:none;display:flex;flex-direction:column;gap:4px}
+    .exp-bullets li{
+      font-size:.82rem;color:var(--gray);
+      display:flex;gap:8px;align-items:flex-start;line-height:1.55;
+    }
+    .exp-bullets li::before{content:'›';color:var(--red);flex-shrink:0;font-weight:700;margin-top:1px}
+    .exp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+    .exp-tag{
+      font-size:.68rem;font-weight:600;padding:2px 9px;border-radius:100px;
+      background:rgba(236,0,0,.07);color:var(--gray);border:1px solid rgba(236,0,0,.15);
+    }
+
+    /* === EDUCATION === */
+    .edu-item{
+      display:grid;grid-template-columns:1fr auto;
+      gap:6px 16px;margin-bottom:14px;
+      padding-bottom:14px;border-bottom:1px solid var(--border);
+    }
+    .edu-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .edu-school{font-size:.9rem;font-weight:700;color:var(--night)}
+    .edu-dates{font-size:.75rem;color:var(--muted);text-align:right;font-weight:500}
+    .edu-degree{font-size:.82rem;color:var(--gray);margin-bottom:3px}
+    .edu-grade{
+      display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:700;
+      color:var(--night);background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);
+      padding:1px 9px;border-radius:100px;
+    }
+    .edu-note{font-size:.75rem;color:var(--muted);font-style:italic;margin-top:3px}
+
+    /* === SKILLS === */
+    .skills-two-col{display:grid;grid-template-columns:1fr 1fr;gap:6px 28px}
+    .skill-line{
+      display:flex;align-items:center;gap:10px;
+      font-size:.8rem;color:var(--gray);padding:3px 0;
+    }
+    .skill-name-cv{flex:1}
+    .skill-bar-cv{
+      width:80px;height:4px;background:var(--border);border-radius:100px;flex-shrink:0;
+    }
+    .skill-bar-cv-fill{height:100%;background:linear-gradient(90deg,var(--red),var(--gold));border-radius:100px}
+
+    /* === LANGUAGES === */
+    .lang-row{display:flex;flex-wrap:wrap;gap:8px}
+    .lang-item{
+      display:flex;align-items:center;gap:7px;
+      background:var(--light);border:1px solid var(--border);
+      border-radius:8px;padding:7px 12px;font-size:.8rem;
+    }
+    .lang-flag-cv{font-size:1rem}
+    .lang-name-cv{font-weight:700;color:var(--night)}
+    .lang-lvl-cv{color:var(--muted);font-size:.72rem}
+
+    /* === CERTS === */
+    .cert-two-col{display:grid;grid-template-columns:1fr 1fr;gap:5px 24px}
+    .cert-line{
+      font-size:.78rem;color:var(--gray);
+      display:flex;align-items:baseline;gap:6px;padding:3px 0;
+      border-bottom:1px solid var(--border);
+    }
+    .cert-line:nth-last-child(-n+2){border-bottom:none}
+    .cert-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px}
+    .cert-name-cv{font-weight:600;color:var(--night)}
+    .cert-org-cv{color:var(--muted);flex:1}
+    .cert-yr{color:var(--gold);font-weight:600;font-size:.72rem;flex-shrink:0}
+
+    /* === FOOTER === */
+    .cv-footer{
+      margin-top:36px;padding-top:16px;border-top:1px solid var(--border);
+      font-size:.72rem;color:var(--muted);text-align:center;
+    }
+    .cv-footer a{color:var(--red);font-weight:600}
+
+    /* === PRINT === */
+    @media print {
+      .top-actions{display:none}
+      body{padding:24px 28px;font-size:13px}
+      .cv-name{font-size:1.8rem}
+    }
+    @media(max-width:600px){
+      body{padding:24px 20px}
+      .cv-header{grid-template-columns:1fr}
+      .cv-photo{display:none}
+      .skills-two-col,.cert-two-col{grid-template-columns:1fr}
+      .exp-item{grid-template-columns:1fr}
+      .exp-date{text-align:left}
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-actions">
+  <a href="index.html" class="back-link">← Back to full site</a>
+  <button class="print-btn" onclick="window.print()">🖨 Print / Save as PDF</button>
+</div>
+
+<!-- HEADER -->
+<div class="cv-header">
+  <div>
+    <h1 class="cv-name">Valerio Santoni</h1>
+    <div class="cv-title">Business Intelligence Specialist @UBS · Zurich, Switzerland</div>
+    <div class="cv-contacts">
+      <span class="cv-contact">📍 Zurich, Switzerland</span>
+      <span class="cv-contact">💼 <a href="https://www.linkedin.com/in/valeriosantoni" target="_blank">linkedin.com/in/valeriosantoni</a></span>
+      <span class="cv-contact">📅 <a href="https://calendly.com/valeriosantoni7/30min" target="_blank">Book a 30-min call</a></span>
+    </div>
+  </div>
+  <div class="cv-photo">
+    <img src="assets/images/profile.jpg" alt="Valerio Santoni"
+         onerror="this.style.display='none';this.parentElement.innerHTML='<div class=cv-photo-placeholder>VS</div>'"/>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<p class="summary">Double-degree Master's graduate in Business Intelligence (Clermont School of Business, 4.0/4.0) and Digital Management (Università di Pavia, 108/110). Business Intelligence Specialist at UBS Zurich — managing the client data management dashboard, supporting Client Intelligence, and overseeing marketing events reporting during the Credit Suisse integration (Power BI, SQL). Former Data Analyst at Philip Morris International (Lausanne). Nova Talent. Experienced across IT, FR, DE, CH — fluent in Italian, English; working knowledge of French and German.</p>
+
+<!-- EXPERIENCE -->
+<div class="cv-section">
+  <div class="cv-section-title">Professional Experience</div>
+
+  <div class="exp-item">
+    <div>
+      <div class="exp-role">Business Intelligence Specialist</div>
+      <div class="exp-company">UBS · Personal &amp; Corporate Banking – Marketing &amp; Digital Sales</div>
+      <div class="exp-loc">Zurich, Switzerland · On-site</div>
+      <ul class="exp-bullets">
+        <li>Managing and developing the client data management dashboard for Marketing &amp; Digital Sales (Power BI, SQL)</li>
+        <li>Supporting the Client Intelligence project — delivering data-driven insights to improve client engagement and segmentation</li>
+        <li>Monitoring marketing events end-to-end — from campaign setup to performance reporting and stakeholder delivery</li>
+        <li>Supporting data governance and quality validation across client data platforms during the Credit Suisse integration</li>
+      </ul>
+      <div class="exp-tags"><span class="exp-tag">Client Data Management</span><span class="exp-tag">Client Intelligence</span><span class="exp-tag">Power BI</span><span class="exp-tag">SQL</span><span class="exp-tag">Data Governance</span></div>
+    </div>
+    <div class="exp-date">Mar 2026 – Present<br><strong style="color:var(--red);font-size:.7rem">CURRENT</strong></div>
+  </div>
+
+  <div class="exp-item">
+    <div>
+      <div class="exp-role">Data &amp; Reporting Engineer Intern</div>
+      <div class="exp-company">UBS · Technology Function</div>
+      <div class="exp-loc">Zurich, Switzerland · On-site</div>
+      <ul class="exp-bullets">
+        <li>Built and maintained a traffic monitoring system to track marketing performance and digital sales KPIs (Power BI, SQL)</li>
+        <li>Worked with service management databases on Azure Databricks; built Power BI dashboards and dataflows from multiple sources</li>
+        <li>Gathered requirements, developed test cases, deployed reporting solutions; used GitLab for version control</li>
+        <li>Delivered presentations at the Tech Architect Forum; performed data quality checks and Excel analytics</li>
+      </ul>
+      <div class="exp-tags"><span class="exp-tag">Traffic Monitoring</span><span class="exp-tag">Azure Databricks</span><span class="exp-tag">Power BI</span><span class="exp-tag">ServiceNow</span><span class="exp-tag">GitLab</span></div>
+    </div>
+    <div class="exp-date">Sep 2025 – Feb 2026</div>
+  </div>
+
+  <div class="exp-item">
+    <div>
+      <div class="exp-role">Data Analyst Intern</div>
+      <div class="exp-company">Philip Morris International · Brand Retail Deployment</div>
+      <div class="exp-loc">Lausanne, Switzerland · On-site</div>
+      <ul class="exp-bullets">
+        <li>Aligned BREPT database with ISquare using Python; identified discrepancies in 1,500+ records and automated location data reconciliation</li>
+        <li>Designed Power BI dashboards to report Q1/Q2 KPIs and visualize global retail ecosystem performance</li>
+        <li>Suggested structural improvements for ISquare 2.0; coordinated with PMs on point-of-sale governance</li>
+      </ul>
+      <div class="exp-tags"><span class="exp-tag">Python</span><span class="exp-tag">Power BI</span><span class="exp-tag">Data Analysis</span><span class="exp-tag">Project Management</span></div>
+    </div>
+    <div class="exp-date">Feb 2025 – Aug 2025</div>
+  </div>
+
+  <div class="exp-item">
+    <div>
+      <div class="exp-role">Center for Global Strategic Engagement Intern</div>
+      <div class="exp-company">Università di Pavia · GLOBEC – EC2U Alliance Unit</div>
+      <div class="exp-loc">Pavia, Italy · On-site</div>
+      <ul class="exp-bullets">
+        <li>Organized international academic events; welcomed researchers from University of Turku and University of Poitiers</li>
+        <li>Project reporting and documentation</li>
+      </ul>
+    </div>
+    <div class="exp-date">Mar 2024 – Jun 2024</div>
+  </div>
+
+  <div class="exp-item">
+    <div>
+      <div class="exp-role">Disciplinary Tutor &amp; Project Tutor</div>
+      <div class="exp-company">Università Politecnica delle Marche</div>
+      <div class="exp-loc">Ancona, Italy · Hybrid</div>
+      <ul class="exp-bullets">
+        <li>Disciplinary Tutor of Private Law (50 hours) — Aug 2022 to Jan 2023</li>
+        <li>Project Tutor: facilitated Design Thinking sprints using Miro Board; led brainstorming sessions with student innovation teams — Feb 2022 to Jul 2022</li>
+      </ul>
+    </div>
+    <div class="exp-date">Feb 2022 – Jan 2023</div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="cv-section">
+  <div class="cv-section-title">Education</div>
+
+  <div class="edu-item">
+    <div>
+      <div class="edu-school">Clermont School of Business — Clermont-Ferrand, France</div>
+      <div class="edu-degree">Master in Management, specialization in <strong>Business Intelligence</strong></div>
+      <span class="edu-grade">4.0 / 4.0</span>
+      <div class="edu-note">Double-Degree Programme Grande École – 3rd Year</div>
+    </div>
+    <div class="edu-dates">Sep 2024 – Dec 2025</div>
+  </div>
+
+  <div class="edu-item">
+    <div>
+      <div class="edu-school">Università di Pavia — Pavia, Italy</div>
+      <div class="edu-degree">MSc International Business &amp; Entrepreneurship | specialization in <strong>Digital Management</strong></div>
+      <span class="edu-grade">108 / 110</span>
+      <div class="edu-note">Thesis: "The Role of Data-Driven Insights in Digital Retail Transformation – The Case of PMI"</div>
+    </div>
+    <div class="edu-dates">Sep 2023 – Oct 2025</div>
+  </div>
+
+  <div class="edu-item">
+    <div>
+      <div class="edu-school">Julius-Maximilians-Universität Würzburg — Germany</div>
+      <div class="edu-degree">Erasmus+, Business Administration · Sales &amp; CRM, Strategic Innovation, Digital Entrepreneurship</div>
+    </div>
+    <div class="edu-dates">Mar – Aug 2023</div>
+  </div>
+
+  <div class="edu-item">
+    <div>
+      <div class="edu-school">SWUFE — Chengdu, China</div>
+      <div class="edu-degree">Global Academy Summer Camp · Dialogue on East &amp; West Business Management</div>
+    </div>
+    <div class="edu-dates">Jul 2024</div>
+  </div>
+
+  <div class="edu-item">
+    <div>
+      <div class="edu-school">Università Politecnica delle Marche — Ancona, Italy</div>
+      <div class="edu-degree">BSc Business Administration</div>
+      <span class="edu-grade">101 / 110</span>
+      <div class="edu-note">Thesis: "The Impact of AI on Marketing Strategies"</div>
+    </div>
+    <div class="edu-dates">Sep 2020 – Oct 2023</div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="cv-section">
+  <div class="cv-section-title">Skills &amp; Tools</div>
+  <div class="skills-two-col">
+    <div>
+      <div class="skill-line"><span class="skill-name-cv">Microsoft Power BI</span><div class="skill-bar-cv"><div class="skill-bar-cv-fill" style="width:95%"></div></div></div>
+      <div class="skill-line"><span class="skill-name-cv">Business Intelligence</span><div class="skill-bar-cv"><div class="skill-bar-cv-fill" style="width:95%"></div></div></div>
+      <div class="skill-line"><span class="skill-name-cv">Microsoft Excel</span><div class="skill-bar-cv"><div class="skill-bar-cv-fill" style="width:90%"></div></div></div>
+      <div class="skill-line"><span class="skill-name-cv">ETL Processes</span><div class="skill-bar-cv"><div class="skill-bar-cv-fill" style="width:90%"></div></div></div>
+      <div class="skill-line"><span class="skill-name-cv">Project Management</span><div class="skill-bar-cv"><div class="skill-bar-cv-fill" style="width:90%"></div></div></div>
+    </div>
+    <div>
+      <div class="skill-line"><span class="skill-name-cv">Azure Databricks</span><div class="skill-bar-cv"><div class="skill-bar-cv-fill" style="width:75%"></div></div></div>
+      <div class="skill-line"><span class="skill-name-cv">SQL</span><div class="skill-bar-cv"><div class="skill-bar-cv-fill" style="width:75%"></div></div></div>
+      <div class="skill-line"><span class="skill-name-cv">Python</span><div class="skill-bar-cv"><div class="skill-bar-cv-fill" style="width:70%"></div></div></div>
+      <div class="skill-line"><span class="skill-name-cv">MicroStrategy</span><div class="skill-bar-cv"><div class="skill-bar-cv-fill" style="width:65%"></div></div></div>
+      <div class="skill-line"><span class="skill-name-cv">GitLab / ServiceNow</span><div class="skill-bar-cv"><div class="skill-bar-cv-fill" style="width:65%"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- LANGUAGES -->
+<div class="cv-section">
+  <div class="cv-section-title">Languages</div>
+  <div class="lang-row">
+    <div class="lang-item"><span class="lang-flag-cv">🇮🇹</span><span class="lang-name-cv">Italian</span><span class="lang-lvl-cv">Native</span></div>
+    <div class="lang-item"><span class="lang-flag-cv">🇬🇧</span><span class="lang-name-cv">English</span><span class="lang-lvl-cv">Full professional</span></div>
+    <div class="lang-item"><span class="lang-flag-cv">🇫🇷</span><span class="lang-name-cv">French</span><span class="lang-lvl-cv">Limited working</span></div>
+    <div class="lang-item"><span class="lang-flag-cv">🇩🇪</span><span class="lang-name-cv">German</span><span class="lang-lvl-cv">Elementary (A2)</span></div>
+  </div>
+</div>
+
+<!-- CERTIFICATIONS -->
+<div class="cv-section">
+  <div class="cv-section-title">Certifications &amp; Awards</div>
+  <div class="cert-two-col">
+    <div class="cert-line"><span class="cert-dot"></span><span class="cert-name-cv">Nova Member</span><span class="cert-org-cv">Nova</span><span class="cert-yr">2025</span></div>
+    <div class="cert-line"><span class="cert-dot"></span><span class="cert-name-cv">Introductory Certificate in PM</span><span class="cert-org-cv">IPMA</span><span class="cert-yr">2024</span></div>
+    <div class="cert-line"><span class="cert-dot"></span><span class="cert-name-cv">Power BI Fundamentals</span><span class="cert-org-cv">DataCamp</span><span class="cert-yr">2024</span></div>
+    <div class="cert-line"><span class="cert-dot"></span><span class="cert-name-cv">Excel Fundamentals</span><span class="cert-org-cv">DataCamp</span><span class="cert-yr">2024</span></div>
+    <div class="cert-line"><span class="cert-dot"></span><span class="cert-name-cv">GreenMade Award</span><span class="cert-org-cv">Hive Incubator &amp; Enactus</span><span class="cert-yr">2022</span></div>
+    <div class="cert-line"><span class="cert-dot"></span><span class="cert-name-cv">First Certificate in English B2</span><span class="cert-org-cv">Cambridge English</span><span class="cert-yr">2019</span></div>
+  </div>
+</div>
+
+<div class="cv-footer">
+  Full profile &amp; project gallery at <a href="index.html">valeriosantoni.com</a> ·
+  Book a call at <a href="https://calendly.com/valeriosantoni7/30min" target="_blank">calendly.com/valeriosantoni7</a>
+</div>
+
+</body>
+</html>
