@@ -355,8 +355,20 @@ ul{list-style:none}
 }
 .card-name{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:4px}
 [data-theme="dark"] .card-name{color:#fff}
-.card-role{font-size:.75rem;color:var(--gold-d);font-weight:500;margin-bottom:20px}
+.card-role{font-size:.75rem;color:var(--gold-d);font-weight:500;margin-bottom:10px}
 [data-theme="dark"] .card-role{color:#E8C97A}
+.nova-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(14,176,164,.08);border:1px solid rgba(14,176,164,.25);
+  border-radius:100px;padding:4px 12px 4px 8px;
+  text-decoration:none;margin-bottom:14px;
+  transition:background var(--tr),border-color var(--tr),transform var(--tr);
+}
+.nova-badge:hover{background:rgba(14,176,164,.15);border-color:rgba(14,176,164,.4);transform:translateY(-1px)}
+.nova-logo{flex-shrink:0}
+.nova-text{font-size:.65rem;font-weight:700;color:#0EB0A4;letter-spacing:.02em}
+[data-theme="dark"] .nova-badge{background:rgba(14,176,164,.12);border-color:rgba(14,176,164,.3)}
+[data-theme="dark"] .nova-text{color:#2DD4BF}
 .card-stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}
 .pstat{
   background:var(--surface);border-radius:11px;padding:13px 8px;
