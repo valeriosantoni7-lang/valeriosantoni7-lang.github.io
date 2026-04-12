@@ -456,6 +456,38 @@ document.querySelectorAll('.co-logo img, .edu-logo img').forEach(img => {
 });
 
 /* =============================================
+   RECOMMENDATION CAROUSEL
+   ============================================= */
+let recIdx = 0;
+const recCards = document.querySelectorAll('#rec-track .rec-card');
+const recDots  = document.querySelectorAll('#rec-dots .rec-dot');
+
+function recGo(i) {
+  recCards[recIdx].classList.remove('active');
+  recDots[recIdx].classList.remove('active');
+  recIdx = (i + recCards.length) % recCards.length;
+  recCards[recIdx].classList.add('active');
+  recDots[recIdx].classList.add('active');
+}
+function recCarousel(dir) { recGo(recIdx + dir); }
+
+/* Auto-advance every 8s */
+let recTimer = setInterval(() => recCarousel(1), 8000);
+document.querySelector('.rec-carousel')?.addEventListener('mouseenter', () => clearInterval(recTimer));
+document.querySelector('.rec-carousel')?.addEventListener('mouseleave', () => { recTimer = setInterval(() => recCarousel(1), 8000); });
+
+/* =============================================
+   CERTIFICATE / REFERENCE MODAL
+   ============================================= */
+function openCert(src) {
+  const overlay = document.createElement('div');
+  overlay.className = 'cert-modal-overlay';
+  overlay.innerHTML = '<div class="cert-modal"><button class="cert-modal-close" onclick="this.parentElement.parentElement.remove()">&times;</button><img src="' + src + '" alt="Certificate"/></div>';
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
+}
+
+/* =============================================
    INIT
    ============================================= */
 applyTheme(currentTheme);

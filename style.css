@@ -775,15 +775,40 @@ ul{list-style:none}
 /* =============================================
    RECOMMENDATION
    ============================================= */
-.rec-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
-}
+.rec-carousel{position:relative}
+.rec-track{position:relative;overflow:hidden;min-height:280px}
 .rec-card{
   background:var(--surface);border:1px solid var(--border);
   border-radius:var(--r-lg);padding:42px;
-  position:relative;overflow:hidden;
-  transition:background var(--tr),border-color var(--tr);
+  position:absolute;top:0;left:0;right:0;
+  opacity:0;transform:translateX(40px);
+  pointer-events:none;
+  transition:opacity .45s ease,transform .45s ease,background var(--tr),border-color var(--tr);
+  overflow:hidden;
 }
+.rec-card.active{
+  opacity:1;transform:translateX(0);
+  pointer-events:auto;position:relative;
+}
+.rec-nav{
+  display:flex;align-items:center;justify-content:center;
+  gap:16px;margin-top:24px;
+}
+.rec-arrow{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--surface);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;color:var(--text);
+  transition:background var(--tr),border-color var(--tr),transform .2s;
+}
+.rec-arrow:hover{background:var(--surface-h);transform:scale(1.08)}
+.rec-dots{display:flex;gap:8px;align-items:center}
+.rec-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:var(--border);border:none;cursor:pointer;
+  transition:background .3s,transform .3s;
+}
+.rec-dot.active{background:var(--red);transform:scale(1.2)}
 .rec-card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
   background:linear-gradient(90deg,transparent,rgba(201,168,76,.4),transparent);
@@ -963,7 +988,6 @@ ul{list-style:none}
   .edu-card.s7,.edu-card.s5,.edu-card.s4,.edu-card.s6,.edu-card.s8{grid-column:span 12}
   .bento-side{flex-direction:column}
   .hl-grid{grid-template-columns:1fr}
-  .rec-grid{grid-template-columns:1fr}
   .rec-card{padding:32px 24px}
 }
 
@@ -974,3 +998,37 @@ ul{list-style:none}
   .floating-cta{padding:10px 16px;font-size:.76rem;left:16px;bottom:18px}
   .floating-cta-icon{font-size:1rem}
 }
+
+/* Certificate Modal */
+.cert-modal-overlay{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.75);backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;
+  animation:certFadeIn .25s ease;
+}
+@keyframes certFadeIn{from{opacity:0}to{opacity:1}}
+.cert-modal{
+  position:relative;max-width:90vw;max-height:90vh;
+  border-radius:12px;overflow:hidden;
+  box-shadow:0 24px 80px rgba(0,0,0,.4);
+}
+.cert-modal img{display:block;max-width:90vw;max-height:85vh;object-fit:contain;border-radius:12px}
+.cert-modal-close{
+  position:absolute;top:10px;right:14px;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(0,0,0,.6);color:#fff;border:none;
+  font-size:1.4rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.cert-modal-close:hover{background:rgba(0,0,0,.85)}
+
+/* Cert card view button */
+.cert-view{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:.65rem;font-weight:600;color:var(--red);
+  cursor:pointer;margin-top:4px;
+  transition:opacity .2s;
+}
+.cert-view:hover{opacity:.7}
+.cert-view svg{flex-shrink:0}
