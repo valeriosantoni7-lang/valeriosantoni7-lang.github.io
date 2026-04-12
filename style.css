@@ -1011,9 +1011,17 @@ ul{list-style:none}
   position:relative;max-width:90vw;max-height:90vh;
   border-radius:12px;overflow:hidden;
   box-shadow:0 24px 80px rgba(0,0,0,.4);
-  background:#fff;padding:12px;
+  background:#fff;padding:16px;
 }
-.cert-modal img{display:block;max-width:min(90vw,100%);max-height:85vh;object-fit:contain;border-radius:8px;image-rendering:auto}
+.cert-modal img{
+  display:block;
+  width:auto;height:auto;
+  max-width:min(90vw - 32px, 100%);
+  max-height:calc(85vh - 32px);
+  border-radius:8px;
+  image-rendering:-webkit-optimize-contrast;
+  image-rendering:crisp-edges;
+}
 .cert-modal-close{
   position:absolute;top:10px;right:14px;
   width:36px;height:36px;border-radius:50%;

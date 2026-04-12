@@ -482,8 +482,26 @@ document.querySelector('.rec-carousel')?.addEventListener('mouseleave', () => { 
 function openCert(src) {
   const overlay = document.createElement('div');
   overlay.className = 'cert-modal-overlay';
-  overlay.innerHTML = '<div class="cert-modal"><button class="cert-modal-close" onclick="this.parentElement.parentElement.remove()">&times;</button><img src="' + src + '" alt="Certificate"/></div>';
-  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
+  const modal = document.createElement('div');
+  modal.className = 'cert-modal';
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'cert-modal-close';
+  closeBtn.innerHTML = '&times;';
+  closeBtn.onclick = function(){ overlay.remove(); };
+  const img = document.createElement('img');
+  img.alt = 'Certificate';
+  img.onload = function(){
+    /* Never upscale beyond native resolution */
+    var maxW = Math.min(this.naturalWidth, window.innerWidth * 0.9 - 32);
+    var maxH = Math.min(this.naturalHeight, window.innerHeight * 0.85 - 32);
+    this.style.maxWidth = maxW + 'px';
+    this.style.maxHeight = maxH + 'px';
+  };
+  img.src = src;
+  modal.appendChild(closeBtn);
+  modal.appendChild(img);
+  overlay.appendChild(modal);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) overlay.remove(); });
   document.body.appendChild(overlay);
 }
 
