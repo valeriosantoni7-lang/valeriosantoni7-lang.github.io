@@ -62,7 +62,7 @@ const T = {
     "hl.1.desc":"Delivered policy recommendations on AI and employee rights at the European Students Assembly (ESA24) inside the EU Parliament plenary hall, Strasbourg.",
     "hl.2.cat":"International Event","hl.2.title":"European Students Assembly · Strasbourg",
     "hl.2.desc":"Took part in the ESA24 assembly at the EU Parliament plenary hall in Strasbourg — working alongside students from across Europe on AI policy frameworks.",
-    "hl.3.cat":"International","hl.3.title":"SWUFE Global Academy · Chengdu, China",
+    "hl.3.cat":"International","hl.3.title":"SWUFE Global Academy · Chengdu",
     "hl.3.desc":"Participated in the Southwestern University of Finance and Economics summer program — cross-cultural dialogue on East &amp; West business management with 100+ international students.",
     "hl.4.cat":"BI Project","hl.4.title":"MicroStrategy · Kings League Dashboard — Sprint MVP",
     "hl.4.desc":"Served as Scrum Master on a MicroStrategy BI project at Clermont School of Business, building a performance analytics dashboard for the Kings League. Named Sprint MVP.",
@@ -192,7 +192,7 @@ const T = {
     "hl.1.desc":"Raccomandazioni di policy su AI e diritti dei lavoratori all'Assemblea Europea degli Studenti (ESA24) nell'aula plenaria del Parlamento Europeo, Strasburgo.",
     "hl.2.cat":"Evento Internazionale","hl.2.title":"Assemblea Europea degli Studenti · Strasburgo",
     "hl.2.desc":"Partecipazione all'assemblea ESA24 nell'aula plenaria del Parlamento Europeo a Strasburgo — lavoro su framework di policy sull'AI con studenti di tutta Europa.",
-    "hl.3.cat":"Internazionale","hl.3.title":"SWUFE Global Academy · Chengdu, Cina",
+    "hl.3.cat":"Internazionale","hl.3.title":"SWUFE Global Academy · Chengdu",
     "hl.3.desc":"Summer program alla Southwestern University of Finance and Economics — dialogo cross-culturale sulle teorie del management Est &amp; Ovest con 100+ studenti internazionali.",
     "hl.4.cat":"Progetto BI","hl.4.title":"MicroStrategy · Dashboard Kings League — Sprint MVP",
     "hl.4.desc":"Ruolo di Scrum Master in un progetto BI con MicroStrategy alla Clermont School of Business, costruendo una dashboard di analytics delle performance per la Kings League. Nominato Sprint MVP.",
@@ -505,22 +505,27 @@ document.querySelector('.rec-carousel')?.addEventListener('mouseleave', () => { 
    CERTIFICATE / REFERENCE MODAL
    ============================================= */
 function openCert(src) {
-  const overlay = document.createElement('div');
+  var overlay = document.createElement('div');
   overlay.className = 'cert-modal-overlay';
-  const modal = document.createElement('div');
+  var modal = document.createElement('div');
   modal.className = 'cert-modal';
-  const closeBtn = document.createElement('button');
+  var closeBtn = document.createElement('button');
   closeBtn.className = 'cert-modal-close';
   closeBtn.innerHTML = '&times;';
   closeBtn.onclick = function(){ overlay.remove(); };
-  const img = document.createElement('img');
+  var img = document.createElement('img');
   img.alt = 'Certificate';
   img.onload = function(){
-    /* Never upscale beyond native resolution */
-    var maxW = Math.min(this.naturalWidth, window.innerWidth * 0.9 - 32);
-    var maxH = Math.min(this.naturalHeight, window.innerHeight * 0.85 - 32);
-    this.style.maxWidth = maxW + 'px';
-    this.style.maxHeight = maxH + 'px';
+    /* On Retina (2x) displays, show at half natural size for pixel-perfect rendering.
+       On 1x displays, show at natural size. Never upscale. */
+    var dpr = window.devicePixelRatio || 1;
+    var natW = this.naturalWidth / dpr;
+    var natH = this.naturalHeight / dpr;
+    var vpW = window.innerWidth * 0.9 - 32;
+    var vpH = window.innerHeight * 0.85 - 32;
+    this.style.width = Math.min(natW, vpW) + 'px';
+    this.style.height = 'auto';
+    this.style.maxHeight = Math.min(natH, vpH) + 'px';
   };
   img.src = src;
   modal.appendChild(closeBtn);
