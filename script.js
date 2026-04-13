@@ -516,16 +516,11 @@ function openCert(src) {
   var img = document.createElement('img');
   img.alt = 'Certificate';
   img.onload = function(){
-    /* On Retina (2x) displays, show at half natural size for pixel-perfect rendering.
-       On 1x displays, show at natural size. Never upscale. */
-    var dpr = window.devicePixelRatio || 1;
-    var natW = this.naturalWidth / dpr;
-    var natH = this.naturalHeight / dpr;
+    /* Display at natural size, never upscale. Only shrink if larger than viewport. */
     var vpW = window.innerWidth * 0.9 - 32;
     var vpH = window.innerHeight * 0.85 - 32;
-    this.style.width = Math.min(natW, vpW) + 'px';
-    this.style.height = 'auto';
-    this.style.maxHeight = Math.min(natH, vpH) + 'px';
+    this.style.maxWidth = Math.min(this.naturalWidth, vpW) + 'px';
+    this.style.maxHeight = Math.min(this.naturalHeight, vpH) + 'px';
   };
   img.src = src;
   modal.appendChild(closeBtn);
