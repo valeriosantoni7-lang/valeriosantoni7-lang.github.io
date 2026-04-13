@@ -57,22 +57,21 @@
    RESET & BASE
    ============================================= */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+@media(min-width:769px){html{scroll-behavior:smooth}}
 body{
   font-family:var(--font);
   background:var(--bg);
   color:var(--text);
   line-height:1.7;
   overflow-x:hidden;
-  transition:background var(--tr),color var(--tr);
-  -webkit-overflow-scrolling:touch;
   touch-action:manipulation;
 }
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 .container{max-width:1160px;margin:0 auto;padding:0 28px}
-.section{padding:108px 0}
+.section{padding:108px 0;content-visibility:auto;contain-intrinsic-size:auto 800px}
 .section-alt{background:var(--bg2)}
 
 /* Grain overlay (dark only – disabled on mobile for performance) */
@@ -998,7 +997,14 @@ ul{list-style:none}
   .rec-card{padding:32px 24px}
 
   /* === SAFARI MOBILE PERFORMANCE === */
-  /* Disable all backdrop-filter on mobile – major Safari performance hit */
+  /* 1. Kill animated orbs with filter:blur(130px) — #1 Safari perf killer */
+  .hero-orbs{display:none}
+  /* 2. Simplify hero grid mask */
+  .hero-grid{mask-image:none;-webkit-mask-image:none;opacity:.4}
+  /* 3. Stop infinite animations */
+  .hero-pill::before{animation:none}
+  .hero-scroll{display:none}
+  /* 4. Disable all backdrop-filter */
   .navbar.scrolled{
     -webkit-backdrop-filter:none;backdrop-filter:none;
     background:#F8FAFC;
@@ -1007,9 +1013,10 @@ ul{list-style:none}
   .hero-card{-webkit-backdrop-filter:none;backdrop-filter:none}
   .hl-cat{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(6,13,26,.88)}
   .cert-modal-overlay{-webkit-backdrop-filter:none;backdrop-filter:none}
-
-  /* Reduce transition complexity */
+  /* 5. Reduce transition complexity */
   .fade-in{transition:opacity .4s ease}
+  /* 6. Simplify box-shadows */
+  .btn-primary,.btn-gold,.nav-logo{box-shadow:none}
 }
 
 @media(max-width:480px){
