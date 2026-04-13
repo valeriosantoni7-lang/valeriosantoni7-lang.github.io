@@ -318,15 +318,22 @@ const navbar    = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('nav-links');
 
+let scrollTicking = false;
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 30);
-  document.getElementById('back-top').classList.toggle('on', window.scrollY > 400);
-  const floatingCta = document.getElementById('floating-cta');
-  if (floatingCta) {
-    const docH = document.documentElement.scrollHeight;
-    const winH = window.innerHeight;
-    const nearBottom = window.scrollY + winH > docH - 120;
-    floatingCta.classList.toggle('visible', window.scrollY > 600 && !nearBottom);
+  if (!scrollTicking) {
+    requestAnimationFrame(() => {
+      navbar.classList.toggle('scrolled', window.scrollY > 30);
+      document.getElementById('back-top').classList.toggle('on', window.scrollY > 400);
+      const floatingCta = document.getElementById('floating-cta');
+      if (floatingCta) {
+        const docH = document.documentElement.scrollHeight;
+        const winH = window.innerHeight;
+        const nearBottom = window.scrollY + winH > docH - 120;
+        floatingCta.classList.toggle('visible', window.scrollY > 600 && !nearBottom);
+      }
+      scrollTicking = false;
+    });
+    scrollTicking = true;
   }
 }, { passive: true });
 
@@ -358,6 +365,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
    HERO TYPING EFFECT
    ============================================= */
 const typingEl = document.getElementById('hero-title');
+const typingText = document.createElement('span');
+const typingCursor = document.createElement('span');
+typingCursor.className = 'cursor';
+typingEl.textContent = '';
+typingEl.appendChild(typingText);
+typingEl.appendChild(typingCursor);
+
 const phrases = {
   en: ['Business Intelligence Specialist @UBS','Data-Driven Decision Maker','Nova Talent · MiM Pavia & Clermont SB'],
   it: ['Business Intelligence Specialist @UBS','Analista Dati · Decisioni basate sui dati','Nova Talent · Laurea Magistrale Doppio Titolo']
@@ -367,11 +381,10 @@ let phraseIdx = 0, charIdx = 0, deleting = false;
 function type() {
   const list    = phrases[currentLang] || phrases.en;
   const current = list[phraseIdx % list.length];
-  const cursor  = '<span class="cursor"></span>';
 
   if (!deleting) {
     charIdx++;
-    typingEl.innerHTML = current.slice(0, charIdx) + cursor;
+    typingText.textContent = current.slice(0, charIdx);
     if (charIdx === current.length) {
       deleting = true;
       setTimeout(type, 2400);
@@ -379,7 +392,7 @@ function type() {
     }
   } else {
     charIdx--;
-    typingEl.innerHTML = current.slice(0, charIdx) + cursor;
+    typingText.textContent = current.slice(0, charIdx);
     if (charIdx === 0) {
       deleting = false;
       phraseIdx++;
