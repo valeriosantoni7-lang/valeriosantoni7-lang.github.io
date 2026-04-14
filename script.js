@@ -505,6 +505,7 @@ document.querySelector('.rec-carousel')?.addEventListener('mouseleave', () => { 
    CERTIFICATE / REFERENCE MODAL
    ============================================= */
 function openCert(src) {
+  var sources = Array.isArray(src) ? src : [src];
   var overlay = document.createElement('div');
   overlay.className = 'cert-modal-overlay';
   var modal = document.createElement('div');
@@ -513,18 +514,19 @@ function openCert(src) {
   closeBtn.className = 'cert-modal-close';
   closeBtn.innerHTML = '&times;';
   closeBtn.onclick = function(){ overlay.remove(); };
-  var img = document.createElement('img');
-  img.alt = 'Certificate';
-  img.onload = function(){
-    /* Display at natural size, never upscale. Only shrink if larger than viewport. */
-    var vpW = window.innerWidth * 0.9 - 32;
-    var vpH = window.innerHeight * 0.85 - 32;
-    this.style.maxWidth = Math.min(this.naturalWidth, vpW) + 'px';
-    this.style.maxHeight = Math.min(this.naturalHeight, vpH) + 'px';
-  };
-  img.src = src;
   modal.appendChild(closeBtn);
-  modal.appendChild(img);
+  sources.forEach(function(s){
+    var img = document.createElement('img');
+    img.alt = 'Certificate';
+    img.onload = function(){
+      var vpW = window.innerWidth * 0.9 - 32;
+      var vpH = window.innerHeight * 0.85 - 32;
+      this.style.maxWidth = Math.min(this.naturalWidth, vpW) + 'px';
+      this.style.maxHeight = Math.min(this.naturalHeight, vpH) + 'px';
+    };
+    img.src = s;
+    modal.appendChild(img);
+  });
   overlay.appendChild(modal);
   overlay.addEventListener('click', function(e){ if(e.target === overlay) overlay.remove(); });
   document.body.appendChild(overlay);
