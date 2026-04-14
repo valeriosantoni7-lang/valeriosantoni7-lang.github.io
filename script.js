@@ -299,7 +299,8 @@ function setLang(lang) { applyLang(lang); }
 /* =============================================
    THEME TOGGLE
    ============================================= */
-let currentTheme = localStorage.getItem('theme') || 'light';
+let currentTheme = localStorage.getItem('theme') ||
+  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
 function applyTheme(theme) {
   currentTheme = theme;
@@ -358,6 +359,13 @@ hamburger.addEventListener('click', () => {
 });
 navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => closeMenu());
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (navLinks.classList.contains('open')) closeMenu();
+    var overlay = document.querySelector('.cert-modal-overlay');
+    if (overlay) overlay.remove();
+  }
 });
 
 /* =============================================
@@ -498,8 +506,13 @@ function recCarousel(dir) { recGo(recIdx + dir); }
 
 /* Auto-advance every 8s */
 let recTimer = setInterval(() => recCarousel(1), 8000);
-document.querySelector('.rec-carousel')?.addEventListener('mouseenter', () => clearInterval(recTimer));
-document.querySelector('.rec-carousel')?.addEventListener('mouseleave', () => { recTimer = setInterval(() => recCarousel(1), 8000); });
+const recEl = document.querySelector('.rec-carousel');
+function recPause() { clearInterval(recTimer); }
+function recResume() { recTimer = setInterval(() => recCarousel(1), 8000); }
+recEl?.addEventListener('mouseenter', recPause);
+recEl?.addEventListener('mouseleave', recResume);
+recEl?.addEventListener('focusin', recPause);
+recEl?.addEventListener('focusout', recResume);
 
 /* =============================================
    CERTIFICATE / REFERENCE MODAL
