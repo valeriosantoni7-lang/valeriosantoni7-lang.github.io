@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://valeriosantoni7-lang.github.io/sitemap.xml
