@@ -122,7 +122,7 @@ const T = {
     "rec.pmi.meta":"Director Global Employee Relations &amp; Senior Manager P&amp;C · Philip Morris Products S.A. · August 2025",
     "contact.label":"Contact","contact.title":"Let's <em>connect</em>",
     "contact.desc":"Open to new opportunities, collaborations and conversations.",
-    "contact.book.label":"Free 30-min call","contact.book.val":"Book a Session →",
+    "contact.book.label":"Coaching 1:1 · 1h","contact.book.val":"Book a Session →",
     "contact.location":"Location",
     "form.name":"Name","form.name.ph":"Your name",
     "form.email":"Email","form.email.ph":"your@email.com",
@@ -252,7 +252,7 @@ const T = {
     "rec.pmi.meta":"Director Global Employee Relations &amp; Senior Manager P&amp;C · Philip Morris Products S.A. · Agosto 2025",
     "contact.label":"Contatti","contact.title":"Connettiamoci",
     "contact.desc":"Aperto a nuove opportunità, collaborazioni e conversazioni.",
-    "contact.book.label":"Call gratuita da 30 min","contact.book.val":"Prenota una sessione →",
+    "contact.book.label":"Coaching 1:1 · 1h","contact.book.val":"Prenota una sessione →",
     "contact.location":"Posizione",
     "form.name":"Nome","form.name.ph":"Il tuo nome",
     "form.email":"Email","form.email.ph":"tua@email.com",
@@ -468,15 +468,11 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 });
 
 /* =============================================
-   CALENDLY POPUP
+   STANSTORE LINK (legacy hook — kept for safety)
    ============================================= */
 function openCalendly(e) {
-  e.preventDefault();
-  if (typeof Calendly !== 'undefined') {
-    Calendly.initPopupWidget({ url: 'https://calendly.com/valeriosantoni7/30min' });
-  } else {
-    window.open('https://calendly.com/valeriosantoni7/30min', '_blank');
-  }
+  if (e && e.preventDefault) e.preventDefault();
+  window.open('https://stan.store/valerioswiss', '_blank', 'noopener');
 }
 
 /* =============================================
