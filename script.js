@@ -127,7 +127,7 @@ const T = {
     "form.name":"Name","form.name.ph":"Your name",
     "form.email":"Email","form.email.ph":"your@email.com",
     "form.message":"Message","form.msg.ph":"What would you like to discuss?",
-    "form.send":"Send Message →","form.sent":"✓ Message sent! (Demo — no backend connected.)",
+    "form.send":"Send Message →","form.sent":"✓ Message sent! I'll get back to you soon.","form.sending":"Sending…","form.error":"Something went wrong. Retry or email valeriosantoni7@gmail.com",
     "footer.copy":"© 2026 Valerio Santoni · Built with passion in Zurich 🇨🇭",
     "floating.cta":"Book a Call",
     "footer.cv":"CV →"
@@ -257,7 +257,7 @@ const T = {
     "form.name":"Nome","form.name.ph":"Il tuo nome",
     "form.email":"Email","form.email.ph":"tua@email.com",
     "form.message":"Messaggio","form.msg.ph":"Di cosa vorresti parlare?",
-    "form.send":"Invia messaggio →","form.sent":"✓ Messaggio inviato! (Demo — nessun backend collegato.)",
+    "form.send":"Invia messaggio →","form.sent":"✓ Messaggio inviato! Ti rispondo presto.","form.sending":"Invio in corso…","form.error":"Qualcosa è andato storto. Riprova o scrivi a valeriosantoni7@gmail.com",
     "footer.copy":"© 2026 Valerio Santoni · Realizzato con passione a Zurigo 🇨🇭",
     "floating.cta":"Prenota una call",
     "footer.cv":"CV →"
@@ -457,15 +457,48 @@ document.querySelectorAll('.hl-grid .fade-in, .cert-grid .fade-in, .lang-grid .f
 /* =============================================
    CONTACT FORM
    ============================================= */
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const note = document.getElementById('form-note');
-  const msg  = T[currentLang]['form.sent'] || T.en['form.sent'];
-  note.textContent = msg;
-  note.style.color = '#1A6F4A';
-  this.reset();
-  setTimeout(() => { note.textContent = ''; }, 5000);
-});
+(function() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const note = document.getElementById('form-note');
+    const btn  = form.querySelector('button[type="submit"]');
+    const L    = currentLang || 'it';
+
+    note.textContent = T[L]['form.sending'] || T.en['form.sending'];
+    note.style.color = '#6B7280';
+    if (btn) { btn.disabled = true; btn.style.opacity = '0.6'; }
+
+    const payload = {
+      name: form.elements['name'].value,
+      email: form.elements['email'].value,
+      message: form.elements['message'].value,
+      _subject: 'Nuovo messaggio dal sito · valerioswiss',
+      _template: 'table',
+      _captcha: 'false'
+    };
+
+    fetch('https://formsubmit.co/ajax/valeriosantoni7@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(r) { return r.json(); })
+    .then(function() {
+      note.textContent = T[L]['form.sent'] || T.en['form.sent'];
+      note.style.color = '#1A6F4A';
+      form.reset();
+      if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+      setTimeout(function() { note.textContent = ''; }, 7000);
+    })
+    .catch(function() {
+      note.textContent = T[L]['form.error'] || T.en['form.error'];
+      note.style.color = '#C40000';
+      if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+    });
+  });
+})();
 
 /* =============================================
    STANSTORE LINK (legacy hook — kept for safety)
