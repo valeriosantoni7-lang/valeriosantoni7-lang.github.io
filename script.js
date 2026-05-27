@@ -3,10 +3,28 @@
    ============================================= */
 const T = {
   en: {
-    "nav.about":"About","nav.experience":"Experience","nav.highlights":"Highlights",
-    "nav.education":"Education","nav.skills":"Skills","nav.contact":"Contact",
-    "hero.pill":"Available · Zurich, Switzerland","hero.first":"Valerio","hero.last":"Santoni",
-    "hero.cta1":"View My Work","hero.cta2":"CV","hero.cta3":"Book a Call",
+    "nav.services":"Services","nav.about":"About","nav.experience":"Experience","nav.highlights":"Highlights",
+    "nav.education":"Education","nav.skills":"Skills","nav.blog":"Blog","nav.contact":"Contact",
+    "hero.pill":"Coaching Italy → Switzerland · BI @ UBS","hero.first":"Valerio","hero.last":"Santoni",
+    "hero.lede":"I moved to Zurich to work at UBS. I help other Italians do the same, without wasting thousands of francs on mistakes I already made.",
+    "hero.cta1":"See how I help","hero.cta2":"CV","hero.cta3":"Free guide",
+    "cv.pill":"Available · Zurich, Switzerland",
+    "cv.cta1":"View Experience","cv.cta2":"Download PDF","cv.cta3":"Compact CV",
+    "trust.label":"Trusted by · Experience certified at",
+    "services.label":"Services","services.title":"How I can <em>help you</em>",
+    "services.desc":"Three options based on where you are. Start free with the guide, end with 1:1 coaching when you need eyes on your specific case.",
+    "services.s1.tag":"Lead magnet","services.s1.title":"Free Switzerland guide",
+    "services.s1.desc":"14 pages of stuff I wish I knew before moving. Real salaries, sectors that hire Italians, permits, the mistakes that cost real money.",
+    "services.s1.f1":"Salaries by sector","services.s1.f2":"30-day roadmap","services.s1.f3":"3 mistakes to avoid",
+    "services.s1.price":"Free","services.s1.cta":"Download now",
+    "services.s2.badge":"Most popular","services.s2.tag":"Digital product","services.s2.title":"Swiss CV pack",
+    "services.s2.desc":"The Swiss CV template ready to edit, a 16-page playbook, and a chat open with me to tune it before you send it out.",
+    "services.s2.f1":"Swiss CV template (Word)","services.s2.f2":"16-page practical guide","services.s2.f3":"Chat consultation included",
+    "services.s2.cta":"Buy now",
+    "services.s3.tag":"High-touch","services.s3.title":"1:1 Coaching",
+    "services.s3.desc":"One hour together on your real situation. Sector, dossier, salary, local network. After the call you get a written recap of everything we discussed.",
+    "services.s3.f1":"Personalized 1h session","services.s3.f2":"Post-call summary document","services.s3.f3":"Concrete operational roadmap",
+    "services.s3.cta":"Book coaching",
     "hero.stat.countries":"Countries","hero.stat.gpa":"GPA CSB",
     "hero.stat.grade":"Master grade","hero.stat.records":"Records reconciled",
     "hero.scroll":"scroll",
@@ -16,8 +34,8 @@ const T = {
     "about.tag":"Background",
     "about.headline":"From Ancona to Zurich,<br>via Clermont-Ferrand, Würzburg &amp; Chengdu",
     "about.p1":"Double-degree Master's graduate in Management (Business Intelligence) and International Business (Digital Management) from Università di Pavia and Clermont School of Business. Passionate about turning complex data into clear, actionable stories that drive smarter decisions.",
-    "about.p2":"At Philip Morris International in Lausanne, I supported the Brand Retail Deployment team — aligning databases across markets, automating reporting flows, and managing large-scale projects behind the global IQOS retail footprint.",
-    "about.p3":"Now at UBS in Zurich (P&amp;C – Marketing &amp; Digital Sales), I manage the client data management dashboard, support the Client Intelligence project, and oversee marketing events reporting — helping stakeholders access the right facts faster during the Credit Suisse integration.",
+    "about.p2":"At Philip Morris International in Lausanne, I supported the Brand Retail Deployment team, aligning databases across markets, automating reporting flows, and managing large-scale projects behind the global IQOS retail footprint.",
+    "about.p3":"Now at UBS in Zurich (P&amp;C – Marketing &amp; Digital Sales), I manage the client data management dashboard, support the Client Intelligence project, and oversee marketing events reporting, helping stakeholders access the right facts faster during the Credit Suisse integration.",
     "about.exp.label":"Experience","about.exp.unit":"yrs","about.exp.sub":"international industry experience",
     "about.scope.label":"Scope","about.scope.sub":"countries lived &amp; worked in",
     "about.impact.label":"Impact","about.impact.sub":"records reconciled at PMI",
@@ -30,8 +48,8 @@ const T = {
     "ubs.r1.title":"Business Intelligence Specialist","ubs.r1.date":"Mar 2026 – Present",
     "ubs.r1.dept":"Personal &amp; Corporate Banking – Marketing &amp; Digital Sales",
     "ubs.r1.b1":"Managing and developing the client data management dashboard for Marketing &amp; Digital Sales (Power BI, SQL)",
-    "ubs.r1.b2":"Supporting the Client Intelligence project — delivering data-driven insights to improve client engagement and segmentation",
-    "ubs.r1.b3":"Monitoring marketing events end-to-end — from campaign setup to performance reporting and stakeholder delivery",
+    "ubs.r1.b2":"Supporting the Client Intelligence project, delivering data-driven insights to improve client engagement and segmentation",
+    "ubs.r1.b3":"Monitoring marketing events end-to-end, from campaign setup to performance reporting and stakeholder delivery",
     "ubs.r1.b4":"Collaborating with cross-functional teams on scalable, reliable analytics and reporting processes during the Credit Suisse integration",
     "ubs.r1.b5":"Supporting data governance and quality validation across client data platforms in a complex banking environment",
     "ubs.r2.title":"Data &amp; Reporting Engineer Intern","ubs.r2.date":"Sep 2025 – Feb 2026",
@@ -61,26 +79,26 @@ const T = {
     "hl.1.cat":"Policy &amp; Advocacy","hl.1.title":"EU AI Act Panelist · European Parliament",
     "hl.1.desc":"Delivered policy recommendations on AI and employee rights at the European Students Assembly (ESA24) inside the EU Parliament plenary hall, Strasbourg.",
     "hl.2.cat":"International Event","hl.2.title":"European Students Assembly · Strasbourg",
-    "hl.2.desc":"Took part in the ESA24 assembly at the EU Parliament plenary hall in Strasbourg — working alongside students from across Europe on AI policy frameworks.",
+    "hl.2.desc":"Took part in the ESA24 assembly at the EU Parliament plenary hall in Strasbourg, working alongside students from across Europe on AI policy frameworks.",
     "hl.3.cat":"International","hl.3.title":"SWUFE Global Academy · Chengdu",
-    "hl.3.desc":"Participated in the Southwestern University of Finance and Economics summer program — cross-cultural dialogue on East &amp; West business management with 100+ international students.",
-    "hl.4.cat":"BI Project","hl.4.title":"MicroStrategy · Kings League Dashboard — Sprint MVP",
+    "hl.3.desc":"Participated in the Southwestern University of Finance and Economics summer program, cross-cultural dialogue on East &amp; West business management with 100+ international students.",
+    "hl.4.cat":"BI Project","hl.4.title":"MicroStrategy · Kings League Dashboard, Sprint MVP",
     "hl.4.desc":"Served as Scrum Master on a MicroStrategy BI project at Clermont School of Business, building a performance analytics dashboard for the Kings League. Named Sprint MVP.",
     "hl.5.cat":"Project Management","hl.5.title":"University Library System App",
-    "hl.5.desc":"Managed the design and development of a full-featured university library app at Università di Pavia — featuring ChatBot, Plagiarism checker, Book Finder and Translator.",
+    "hl.5.desc":"Managed the design and development of a full-featured university library app at Università di Pavia, featuring ChatBot, Plagiarism checker, Book Finder and Translator.",
     "hl.6.cat":"Academic Project","hl.6.title":"Big Data Analysis · Grammy Awards Project",
     "hl.6.desc":"Academic project at Clermont School of Business analyzing Grammy 'Record of the Year' data using advanced BI techniques to uncover patterns in musical success.",
     "hl.7.cat":"Competition","hl.7.title":"PwC · Be an Audit Solver",
-    "hl.7.desc":"Participated in PwC's 'Be an Audit Solver' challenge — collaborative problem-solving under real audit scenarios within a professional environment.",
+    "hl.7.desc":"Participated in PwC's 'Be an Audit Solver' challenge, collaborative problem-solving under real audit scenarios within a professional environment.",
     "hl.8.cat":"Hackathon","hl.8.title":"PwC Hackathon · Final Pitch",
-    "hl.8.desc":"Final presentation at a PwC hackathon — delivering a data-driven solution to senior professionals in a large-format competitive event.",
+    "hl.8.desc":"Final presentation at a PwC hackathon, delivering a data-driven solution to senior professionals in a large-format competitive event.",
     "hl.9.cat":"Award","hl.9.title":"Contamination Lab · Award Ceremony",
-    "hl.9.desc":"GreenMade project awarded at the Contamination Lab — selected for incubation by The Hive Business Incubator and recognized at the Enactus National Competition (Jun 2022).",
+    "hl.9.desc":"GreenMade project awarded at the Contamination Lab, selected for incubation by The Hive Business Incubator and recognized at the Enactus National Competition (Jun 2022).",
     "story.label":"Narrative","story.title":"My <em>Story</em>","story.aside":"First person",
     "story.aside.sub":"A career built on curiosity, data, and the conviction that good decisions start with good information.",
-    "story.p1":"I grew up with a deep curiosity about how organizations make decisions — and a quiet conviction that the best decisions are grounded in clear, well-structured information. That conviction became a career.",
-    "story.p2":"From Ancona to Zurich, my path took me through an Erasmus+ semester in Würzburg, a summer academy in Chengdu, and a double-degree Master's between Pavia and Clermont School of Business. Along the way I earned recognition at entrepreneurship competitions, tutored teams through Design Thinking sprints, and panelled at the EU Parliament on AI policy — learning that the best decisions are only as good as the information behind them.",
-    "story.p3":"At PMI in Lausanne I saw firsthand how clean, connected data can accelerate a global organisation. Now at UBS in Zurich, embedded in the Credit Suisse integration, I manage the client data management dashboard, support the Client Intelligence project, and keep marketing events on track — the tool changes, the conviction stays the same.",
+    "story.p1":"I grew up with a deep curiosity about how organizations make decisions, and a quiet conviction that the best decisions are grounded in clear, well-structured information. That conviction became a career.",
+    "story.p2":"From Ancona to Zurich, my path took me through an Erasmus+ semester in Würzburg, a summer academy in Chengdu, and a double-degree Master's between Pavia and Clermont School of Business. Along the way I earned recognition at entrepreneurship competitions, tutored teams through Design Thinking sprints, and panelled at the EU Parliament on AI policy, learning that the best decisions are only as good as the information behind them.",
+    "story.p3":"At PMI in Lausanne I saw firsthand how clean, connected data can accelerate a global organisation. Now at UBS in Zurich, embedded in the Credit Suisse integration, I manage the client data management dashboard, support the Client Intelligence project, and keep marketing events on track, the tool changes, the conviction stays the same.",
     "edu.label":"Academic","edu.title":"Education",
     "edu.desc":"A double-degree journey across Italy, France, Germany and China.",
     "edu.csb.degree":"Master in Management, Business Intelligence",
@@ -110,7 +128,7 @@ const T = {
     "honors.2.title":"Reference Letter – CRSII, Università Politecnica delle Marche",
     "honors.2.quote":"\"Valerio Santoni showed enthusiasm, autonomy and capacity in supporting teachers and teams.\"",
     "hl.10.cat":"Hackathon","hl.10.title":"Smart &amp; Hack · Università di Pavia",
-    "hl.10.desc":"Participated in the Smart &amp; Hack hackathon at Università di Pavia — collaborative innovation challenge focused on smart solutions and digital transformation.",
+    "hl.10.desc":"Participated in the Smart &amp; Hack hackathon at Università di Pavia, collaborative innovation challenge focused on smart solutions and digital transformation.",
     "unipv.r1.b4":"Featured in an <a href=\"https://www.unipv.news/notizie/tirocinio-curriculare-un-percorso-di-crescita-personale-e-professionale-alluniversita-di\" target=\"_blank\" style=\"color:var(--red);font-weight:600\">official university article</a> about the internship experience",
     "rec.ubs.text":"We have come to know Valerio Santoni as a motivated and interested intern who is keen to learn. He copes confidently under pressure and is flexible. His method of working is precise, independent and efficient, and he employs his specialist know-how appropriately when carrying out his tasks. We would especially like to highlight that Valerio Santoni has a remarkable ability to quickly grasp new reporting requirements and implement them efficiently, delivering work of a very high quality. He has made valuable contributions to the delivery framework by preparing a variety of reports. Similarly, his language proficiency allows him to communicate effortlessly in English. Valerio Santoni completes his tasks with clear understanding and personal dedication and always performs well. Valerio Santoni is continually balanced, trustworthy, open and amiable. Moreover, his friendly and obliging manner as well as positive attitude is appreciated by clients, superiors and colleagues alike.",
     "rec.ubs.author":"Ivana Germersdorf &amp; Simon Pascal Wendelspiess",
@@ -122,21 +140,40 @@ const T = {
     "rec.pmi.meta":"Director Global Employee Relations &amp; Senior Manager P&amp;C · Philip Morris Products S.A. · August 2025",
     "contact.label":"Contact","contact.title":"Let's <em>connect</em>",
     "contact.desc":"Open to new opportunities, collaborations and conversations.",
-    "contact.book.label":"Coaching 1:1 · 1h","contact.book.val":"Book a Session →",
+    "contact.book.label":"Coaching 1:1 · 69€","contact.book.val":"Book coaching →",
     "contact.location":"Location",
     "form.name":"Name","form.name.ph":"Your name",
     "form.email":"Email","form.email.ph":"your@email.com",
     "form.message":"Message","form.msg.ph":"What would you like to discuss?",
     "form.send":"Send Message →","form.sent":"✓ Message sent! I'll get back to you soon.","form.sending":"Sending…","form.error":"Something went wrong. Retry or email valeriosantoni7@gmail.com",
     "footer.copy":"© 2026 Valerio Santoni · Built with passion in Zurich 🇨🇭",
-    "floating.cta":"Book a Call",
+    "floating.cta":"Free guide",
     "footer.cv":"CV →"
   },
   it: {
     "nav.about":"Chi sono","nav.experience":"Esperienza","nav.highlights":"Highlights",
     "nav.education":"Formazione","nav.skills":"Competenze","nav.contact":"Contatti",
-    "hero.pill":"Disponibile · Zurigo, Svizzera","hero.first":"Valerio","hero.last":"Santoni",
-    "hero.cta1":"Vedi il mio lavoro","hero.cta2":"CV","hero.cta3":"Prenota una call",
+    "nav.services":"Servizi",
+    "hero.pill":"Coaching Italia → Svizzera · BI @ UBS","hero.first":"Valerio","hero.last":"Santoni",
+    "hero.lede":"Mi sono trasferito a Zurigo per lavorare in UBS. Aiuto altri italiani a fare lo stesso, senza buttare via migliaia di franchi in errori che ho già fatto io.",
+    "hero.cta1":"Scopri come ti aiuto","hero.cta2":"CV","hero.cta3":"Guida gratuita",
+    "cv.pill":"Disponibile · Zurigo, Svizzera",
+    "cv.cta1":"Vedi esperienza","cv.cta2":"Scarica PDF","cv.cta3":"CV compatto",
+    "trust.label":"Esperienza certificata da",
+    "services.label":"Servizi","services.title":"Come posso <em>aiutarti</em>",
+    "services.desc":"Tre strade in base a dove sei nel percorso. Si parte gratis con la guida, si arriva al coaching 1:1 quando vuoi una mano sul caso tuo.",
+    "services.s1.tag":"Lead magnet","services.s1.title":"Guida gratuita Svizzera",
+    "services.s1.desc":"14 pagine di cose che avrei voluto sapere prima di partire. Stipendi reali, settori che pescano italiani, permessi, gli errori che costano caro.",
+    "services.s1.f1":"Stipendi per settore","services.s1.f2":"Roadmap dei primi 30 giorni","services.s1.f3":"3 errori da evitare",
+    "services.s1.price":"Gratis","services.s1.cta":"Scarica ora",
+    "services.s2.badge":"Più scelto","services.s2.tag":"Prodotto digitale","services.s2.title":"CV pack svizzero",
+    "services.s2.desc":"Il template del CV svizzero pronto da editare, una guida di 16 pagine e una chat aperta con me per sistemarlo prima che parta.",
+    "services.s2.f1":"Template CV svizzero (Word)","services.s2.f2":"Guida pratica 16 pagine","services.s2.f3":"Consulenza in chat inclusa",
+    "services.s2.cta":"Acquista",
+    "services.s3.tag":"High-touch","services.s3.title":"Coaching 1:1",
+    "services.s3.desc":"Un'ora insieme sul tuo caso reale. Settore, dossier, stipendio, network locale. A fine call ti mando un documento con tutto quello che ci siamo detti.",
+    "services.s3.f1":"Sessione 1h personalizzata","services.s3.f2":"Documento riassuntivo post-call","services.s3.f3":"Roadmap operativa concreta",
+    "services.s3.cta":"Prenota coaching",
     "hero.stat.countries":"Paesi","hero.stat.gpa":"GPA CSB",
     "hero.stat.grade":"Voto laurea magistrale","hero.stat.records":"Record riconciliati",
     "hero.scroll":"scorri",
@@ -146,8 +183,8 @@ const T = {
     "about.tag":"Background",
     "about.headline":"Da Ancona a Zurigo,<br>via Clermont-Ferrand, Würzburg e Chengdu",
     "about.p1":"Laureato magistrale con doppio titolo in Management (Business Intelligence) e International Business (Digital Management) presso l'Università di Pavia e Clermont School of Business. Appassionato di trasformare dati complessi in storie chiare e azionabili che guidano decisioni migliori.",
-    "about.p2":"In Philip Morris International a Losanna, ho supportato il team Brand Retail Deployment — allineando database tra mercati, automatizzando flussi di reporting e gestendo progetti su larga scala legati al retail globale IQOS.",
-    "about.p3":"Ora in UBS a Zurigo (P&amp;C – Marketing &amp; Digital Sales), gestisco la dashboard di client data management, supporto il progetto Client Intelligence e supervisiono il reporting degli eventi marketing — aiutando gli stakeholder ad accedere ai dati giusti durante l'integrazione Credit Suisse.",
+    "about.p2":"In Philip Morris International a Losanna, ho supportato il team Brand Retail Deployment, allineando database tra mercati, automatizzando flussi di reporting e gestendo progetti su larga scala legati al retail globale IQOS.",
+    "about.p3":"Ora in UBS a Zurigo (P&amp;C – Marketing &amp; Digital Sales), gestisco la dashboard di client data management, supporto il progetto Client Intelligence e supervisiono il reporting degli eventi marketing, aiutando gli stakeholder ad accedere ai dati giusti durante l'integrazione Credit Suisse.",
     "about.exp.label":"Esperienza","about.exp.unit":"anni","about.exp.sub":"di esperienza internazionale",
     "about.scope.label":"Raggio","about.scope.sub":"paesi in cui ho vissuto e lavorato",
     "about.impact.label":"Impatto","about.impact.sub":"record riconciliati in PMI",
@@ -160,8 +197,8 @@ const T = {
     "ubs.r1.title":"Business Intelligence Specialist","ubs.r1.date":"Mar 2026 – Presente",
     "ubs.r1.dept":"Personal &amp; Corporate Banking – Marketing &amp; Digital Sales",
     "ubs.r1.b1":"Gestione e sviluppo della dashboard di client data management per Marketing &amp; Digital Sales (Power BI, SQL)",
-    "ubs.r1.b2":"Supporto al progetto Client Intelligence — fornitura di insight data-driven per migliorare engagement e segmentazione dei clienti",
-    "ubs.r1.b3":"Monitoraggio end-to-end degli eventi di marketing — dal setup campagne alla reportistica e consegna agli stakeholder",
+    "ubs.r1.b2":"Supporto al progetto Client Intelligence, fornitura di insight data-driven per migliorare engagement e segmentazione dei clienti",
+    "ubs.r1.b3":"Monitoraggio end-to-end degli eventi di marketing, dal setup campagne alla reportistica e consegna agli stakeholder",
     "ubs.r1.b4":"Collaborazione con team interfunzionali per processi di analytics affidabili e scalabili durante l'integrazione Credit Suisse",
     "ubs.r1.b5":"Supporto alla governance dei dati e validazione della qualità sulle piattaforme dati clienti in un contesto bancario complesso",
     "ubs.r2.title":"Data &amp; Reporting Engineer Intern","ubs.r2.date":"Set 2025 – Feb 2026",
@@ -191,26 +228,26 @@ const T = {
     "hl.1.cat":"Politica &amp; Advocacy","hl.1.title":"Panelist EU AI Act · Parlamento Europeo",
     "hl.1.desc":"Raccomandazioni di policy su AI e diritti dei lavoratori all'Assemblea Europea degli Studenti (ESA24) nell'aula plenaria del Parlamento Europeo, Strasburgo.",
     "hl.2.cat":"Evento Internazionale","hl.2.title":"Assemblea Europea degli Studenti · Strasburgo",
-    "hl.2.desc":"Partecipazione all'assemblea ESA24 nell'aula plenaria del Parlamento Europeo a Strasburgo — lavoro su framework di policy sull'AI con studenti di tutta Europa.",
+    "hl.2.desc":"Partecipazione all'assemblea ESA24 nell'aula plenaria del Parlamento Europeo a Strasburgo, lavoro su framework di policy sull'AI con studenti di tutta Europa.",
     "hl.3.cat":"Internazionale","hl.3.title":"SWUFE Global Academy · Chengdu",
-    "hl.3.desc":"Summer program alla Southwestern University of Finance and Economics — dialogo cross-culturale sulle teorie del management Est &amp; Ovest con 100+ studenti internazionali.",
-    "hl.4.cat":"Progetto BI","hl.4.title":"MicroStrategy · Dashboard Kings League — Sprint MVP",
+    "hl.3.desc":"Summer program alla Southwestern University of Finance and Economics, dialogo cross-culturale sulle teorie del management Est &amp; Ovest con 100+ studenti internazionali.",
+    "hl.4.cat":"Progetto BI","hl.4.title":"MicroStrategy · Dashboard Kings League, Sprint MVP",
     "hl.4.desc":"Ruolo di Scrum Master in un progetto BI con MicroStrategy alla Clermont School of Business, costruendo una dashboard di analytics delle performance per la Kings League. Nominato Sprint MVP.",
     "hl.5.cat":"Project Management","hl.5.title":"App Sistema Biblioteca Universitaria",
-    "hl.5.desc":"Gestione del design e sviluppo di un'app completa per la gestione bibliotecaria universitaria all'Università di Pavia — con ChatBot, controllo plagio, ricerca libri e traduttore.",
+    "hl.5.desc":"Gestione del design e sviluppo di un'app completa per la gestione bibliotecaria universitaria all'Università di Pavia, con ChatBot, controllo plagio, ricerca libri e traduttore.",
     "hl.6.cat":"Progetto Accademico","hl.6.title":"Analisi Big Data · Progetto Grammy",
-    "hl.6.desc":"Progetto accademico alla Clermont School of Business — analisi dei dati storici dei Grammy 'Record dell'Anno' con tecniche avanzate di BI per individuare pattern nel successo musicale.",
+    "hl.6.desc":"Progetto accademico alla Clermont School of Business, analisi dei dati storici dei Grammy 'Record dell'Anno' con tecniche avanzate di BI per individuare pattern nel successo musicale.",
     "hl.7.cat":"Competizione","hl.7.title":"PwC · Be an Audit Solver",
-    "hl.7.desc":"Partecipazione alla challenge PwC 'Be an Audit Solver' — problem solving collaborativo su scenari di audit reali in un contesto professionale.",
+    "hl.7.desc":"Partecipazione alla challenge PwC 'Be an Audit Solver', problem solving collaborativo su scenari di audit reali in un contesto professionale.",
     "hl.8.cat":"Hackathon","hl.8.title":"PwC Hackathon · Pitch Finale",
-    "hl.8.desc":"Presentazione finale a un hackathon PwC — consegna di una soluzione data-driven a professionisti senior in un evento competitivo su larga scala.",
+    "hl.8.desc":"Presentazione finale a un hackathon PwC, consegna di una soluzione data-driven a professionisti senior in un evento competitivo su larga scala.",
     "hl.9.cat":"Premio","hl.9.title":"Contamination Lab · Cerimonia Premi",
-    "hl.9.desc":"Progetto GreenMade premiato al Contamination Lab — selezionato per l'incubazione da The Hive Business Incubator e riconosciuto alla Competizione Nazionale Enactus (Giu 2022).",
+    "hl.9.desc":"Progetto GreenMade premiato al Contamination Lab, selezionato per l'incubazione da The Hive Business Incubator e riconosciuto alla Competizione Nazionale Enactus (Giu 2022).",
     "story.label":"Narrativa","story.title":"La mia <em>storia</em>","story.aside":"In prima persona",
     "story.aside.sub":"Una carriera costruita sulla curiosità, i dati e la convinzione che le buone decisioni partono dalla buona informazione.",
-    "story.p1":"Sono cresciuto con una profonda curiosità su come le organizzazioni prendono decisioni — e la convinzione che le migliori decisioni si fondino su informazioni chiare e strutturate. Quella convinzione è diventata una carriera.",
-    "story.p2":"Da Ancona a Zurigo, il mio percorso mi ha portato attraverso un Erasmus+ a Würzburg, una summer academy a Chengdu e una laurea magistrale in doppio titolo tra Pavia e Clermont School of Business. Nel percorso ho ottenuto riconoscimenti in competizioni imprenditoriali, guidato team in sprint di Design Thinking e partecipato come panelist al Parlamento Europeo sull'AI policy — imparando che le migliori decisioni dipendono dalla qualità delle informazioni su cui si basano.",
-    "story.p3":"In PMI a Losanna ho visto direttamente come dati puliti e connessi possano accelerare un'organizzazione globale. Ora in UBS a Zurigo, nel contesto dell'integrazione Credit Suisse, gestisco la dashboard di client data management, supporto il progetto Client Intelligence e coordino il reporting degli eventi marketing — gli strumenti cambiano, la convinzione resta.",
+    "story.p1":"Sono cresciuto con una profonda curiosità su come le organizzazioni prendono decisioni, e la convinzione che le migliori decisioni si fondino su informazioni chiare e strutturate. Quella convinzione è diventata una carriera.",
+    "story.p2":"Da Ancona a Zurigo, il mio percorso mi ha portato attraverso un Erasmus+ a Würzburg, una summer academy a Chengdu e una laurea magistrale in doppio titolo tra Pavia e Clermont School of Business. Nel percorso ho ottenuto riconoscimenti in competizioni imprenditoriali, guidato team in sprint di Design Thinking e partecipato come panelist al Parlamento Europeo sull'AI policy, imparando che le migliori decisioni dipendono dalla qualità delle informazioni su cui si basano.",
+    "story.p3":"In PMI a Losanna ho visto direttamente come dati puliti e connessi possano accelerare un'organizzazione globale. Ora in UBS a Zurigo, nel contesto dell'integrazione Credit Suisse, gestisco la dashboard di client data management, supporto il progetto Client Intelligence e coordino il reporting degli eventi marketing, gli strumenti cambiano, la convinzione resta.",
     "edu.label":"Formazione","edu.title":"Istruzione",
     "edu.desc":"Un percorso in doppio titolo tra Italia, Francia, Germania e Cina.",
     "edu.csb.degree":"Master in Management, Business Intelligence",
@@ -240,7 +277,7 @@ const T = {
     "honors.2.title":"Lettera di Referenza – CRSII, Università Politecnica delle Marche",
     "honors.2.quote":"\"Valerio Santoni ha dimostrato entusiasmo, autonomia e capacità nel supportare docenti e team.\"",
     "hl.10.cat":"Hackathon","hl.10.title":"Smart &amp; Hack · Università di Pavia",
-    "hl.10.desc":"Partecipazione all'hackathon Smart &amp; Hack all'Università di Pavia — sfida di innovazione collaborativa focalizzata su soluzioni smart e trasformazione digitale.",
+    "hl.10.desc":"Partecipazione all'hackathon Smart &amp; Hack all'Università di Pavia, sfida di innovazione collaborativa focalizzata su soluzioni smart e trasformazione digitale.",
     "unipv.r1.b4":"Protagonista di un <a href=\"https://www.unipv.news/notizie/tirocinio-curriculare-un-percorso-di-crescita-personale-e-professionale-alluniversita-di\" target=\"_blank\" style=\"color:var(--red);font-weight:600\">articolo ufficiale dell'università</a> sull'esperienza di tirocinio",
     "rec.ubs.text":"Abbiamo conosciuto Valerio Santoni come uno stagista motivato e interessato, desideroso di imparare. Affronta con sicurezza le situazioni di pressione ed è flessibile. Il suo metodo di lavoro è preciso, indipendente ed efficiente, e applica le sue competenze specialistiche in modo appropriato nello svolgimento dei compiti. Vorremmo evidenziare in particolare che Valerio Santoni ha una notevole capacità di comprendere rapidamente nuovi requisiti di reporting e implementarli in modo efficiente, producendo lavori di altissima qualità. Ha contribuito in modo significativo al framework di delivery preparando una varietà di report. Analogamente, la sua padronanza linguistica gli consente di comunicare senza sforzo in inglese. Valerio Santoni completa i suoi compiti con chiara comprensione e dedizione personale, ottenendo sempre ottimi risultati. È costantemente equilibrato, affidabile, aperto e cordiale. Il suo atteggiamento amichevole e disponibile, così come il suo approccio positivo, sono apprezzati da clienti, superiori e colleghi.",
     "rec.ubs.author":"Ivana Germersdorf &amp; Simon Pascal Wendelspiess",
@@ -252,14 +289,14 @@ const T = {
     "rec.pmi.meta":"Director Global Employee Relations &amp; Senior Manager P&amp;C · Philip Morris Products S.A. · Agosto 2025",
     "contact.label":"Contatti","contact.title":"Connettiamoci",
     "contact.desc":"Aperto a nuove opportunità, collaborazioni e conversazioni.",
-    "contact.book.label":"Coaching 1:1 · 1h","contact.book.val":"Prenota una sessione →",
+    "contact.book.label":"Coaching 1:1 · 69€","contact.book.val":"Prenota coaching →",
     "contact.location":"Posizione",
     "form.name":"Nome","form.name.ph":"Il tuo nome",
     "form.email":"Email","form.email.ph":"tua@email.com",
     "form.message":"Messaggio","form.msg.ph":"Di cosa vorresti parlare?",
     "form.send":"Invia messaggio →","form.sent":"✓ Messaggio inviato! Ti rispondo presto.","form.sending":"Invio in corso…","form.error":"Qualcosa è andato storto. Riprova o scrivi a valeriosantoni7@gmail.com",
     "footer.copy":"© 2026 Valerio Santoni · Realizzato con passione a Zurigo 🇨🇭",
-    "floating.cta":"Prenota una call",
+    "floating.cta":"Guida gratuita",
     "footer.cv":"CV →"
   }
 };
@@ -267,7 +304,37 @@ const T = {
 /* =============================================
    i18n ENGINE
    ============================================= */
-let currentLang = localStorage.getItem('lang') || 'en';
+/* =============================================
+   AUTO-DETECT LANGUAGE
+   Priority: 1) user's saved choice, 2) browser language,
+   3) timezone (covers IT users with EN browser),
+   4) fallback to 'en'.
+   ============================================= */
+function detectInitialLang() {
+  // 1) Honor user's explicit previous choice
+  const stored = localStorage.getItem('lang');
+  if (stored === 'en' || stored === 'it') return stored;
+
+  // 2) Browser language(s)
+  try {
+    const langs = (navigator.languages && navigator.languages.length
+                    ? navigator.languages
+                    : [navigator.language || navigator.userLanguage || 'en']
+                  ).map(l => String(l).toLowerCase());
+    if (langs.some(l => l.startsWith('it'))) return 'it';
+  } catch (e) {}
+
+  // 3) Timezone fallback, IT users with non-IT browser (e.g. UI in EN, living in IT)
+  try {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    if (/^Europe\/(Rome|Vatican|San_Marino)$/.test(tz)) return 'it';
+  } catch (e) {}
+
+  // 4) Default: English
+  return 'en';
+}
+
+let currentLang = detectInitialLang();
 
 function applyLang(lang) {
   currentLang = lang;
@@ -392,10 +459,17 @@ typingEl.textContent = '';
 typingEl.appendChild(typingText);
 typingEl.appendChild(typingCursor);
 
-const phrases = {
-  en: ['Business Intelligence Specialist @UBS','Data-Driven Decision Maker','Nova Talent · MiM Pavia & Clermont SB'],
-  it: ['Business Intelligence Specialist @UBS','Analista Dati · Decisioni basate sui dati','Nova Talent · Laurea Magistrale Doppio Titolo']
-};
+// Phrases differ between business homepage and CV mode (index-cv / cv.html)
+const isCVMode = /index-cv|\/cv\.html/.test(location.pathname);
+const phrases = isCVMode
+  ? {
+      en: ['Business Intelligence Specialist @ UBS','Power BI · SQL · ETL · Data Governance','Nova Talent · Double-Degree Master','BI @ UBS · Marketing & Digital Sales'],
+      it: ['Business Intelligence Specialist @ UBS','Power BI · SQL · ETL · Data Governance','Nova Talent · Doppia Laurea Magistrale','BI @ UBS · Marketing & Digital Sales']
+    }
+  : {
+      en: ['Career Coach Italy → Switzerland','BI Specialist @ UBS Zurich','I help Italians move to Switzerland','Nova Talent · Double-Degree Master'],
+      it: ['Career Coach Italia → Svizzera','BI Specialist @ UBS Zurigo','Aiuto italiani a trasferirsi in Svizzera','Nova Talent · Doppia Laurea Magistrale']
+    };
 let phraseIdx = 0, charIdx = 0, deleting = false;
 
 function type() {
@@ -479,13 +553,27 @@ document.querySelectorAll('.hl-grid .fade-in, .cert-grid .fade-in, .lang-grid .f
       _captcha: 'false'
     };
 
+    var submittedNatively = false;
+    function nativeSubmitFallback() {
+      if (submittedNatively) return;
+      submittedNatively = true;
+      // Bypass the JS handler by removing it, then submit (HTML action/method take over)
+      form.removeAttribute('id');
+      form.submit();
+    }
+
     fetch('https://formsubmit.co/ajax/valeriosantoni7@gmail.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
     })
-    .then(function(r) { return r.json(); })
-    .then(function() {
+    .then(function(r) { return r.json().catch(function() { return {}; }); })
+    .then(function(data) {
+      // Formsubmit returns {success:"true"} on success, or {success:"false", message:"..."} if not yet activated
+      if (data && data.success === 'false') {
+        nativeSubmitFallback();
+        return;
+      }
       note.textContent = T[L]['form.sent'] || T.en['form.sent'];
       note.style.color = '#1A6F4A';
       form.reset();
@@ -493,15 +581,14 @@ document.querySelectorAll('.hl-grid .fade-in, .cert-grid .fade-in, .lang-grid .f
       setTimeout(function() { note.textContent = ''; }, 7000);
     })
     .catch(function() {
-      note.textContent = T[L]['form.error'] || T.en['form.error'];
-      note.style.color = '#C40000';
-      if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+      // Network / CORS error → fallback to native form submit
+      nativeSubmitFallback();
     });
   });
 })();
 
 /* =============================================
-   STANSTORE LINK (legacy hook — kept for safety)
+   STANSTORE LINK (legacy hook, kept for safety)
    ============================================= */
 function openCalendly(e) {
   if (e && e.preventDefault) e.preventDefault();
@@ -579,3 +666,82 @@ function openCert(src) {
    ============================================= */
 applyTheme(currentTheme);
 applyLang(currentLang);
+
+/* =============================================
+   DESIGN POLISH, Animation Enhancements
+   - Scroll progress bar
+   - Animated number counter for stats
+   - Stagger fade-in trigger for service cards & trust strip
+   - Magnetic effect on CTAs (subtle)
+   Respects prefers-reduced-motion automatically.
+   ============================================= */
+(function() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return; // user wants no animations, exit silently
+  }
+
+  /* 1) Scroll progress bar -------------------------------- */
+  const bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  document.body.appendChild(bar);
+  let scrollTicking = false;
+  function updateScrollBar() {
+    const doc = document.documentElement;
+    const max = (doc.scrollHeight - doc.clientHeight) || 1;
+    const pct = Math.min(100, (window.scrollY / max) * 100);
+    bar.style.width = pct + '%';
+    scrollTicking = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(updateScrollBar);
+      scrollTicking = true;
+    }
+  }, { passive: true });
+
+  /* 2) Animated counter for stats — DISABLED                  */
+  // The hero stats use nested <span> elements to style suffixes
+  // (e.g., "108<span>/110</span>"). Animating textContent flattens
+  // those, breaking the typography. Keeping the static numbers
+  // preserves the original visual hierarchy.
+
+  /* 3) Stagger trigger: add .visible to grid containers --- */
+  function initStagger() {
+    const containers = document.querySelectorAll('.services-grid, .trust-strip, .section-head');
+    if (!containers.length || !('IntersectionObserver' in window)) return;
+    const obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    containers.forEach(function(el) { obs.observe(el); });
+  }
+  initStagger();
+
+  /* 4) Subtle magnetic effect on hero CTAs (desktop only) - */
+  if (window.matchMedia('(hover:hover) and (pointer:fine)').matches && window.innerWidth > 900) {
+    document.querySelectorAll('.hero-btns .btn').forEach(function(btn) {
+      btn.style.transition = 'transform .25s cubic-bezier(.4,0,.2,1)';
+      btn.addEventListener('mousemove', function(e) {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = 'translate(' + (x * 0.12) + 'px, ' + (y * 0.18) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function() {
+        btn.style.transform = '';
+      });
+    });
+  }
+
+  /* 5) Sticky-navbar style toggle on scroll (no hide/show — kept simple) */
+  const navbar = document.getElementById('navbar');
+  if (navbar) {
+    window.addEventListener('scroll', function() {
+      navbar.classList.toggle('scrolled', window.scrollY > 24);
+    }, { passive: true });
+  }
+})();

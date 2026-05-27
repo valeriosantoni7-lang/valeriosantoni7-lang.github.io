@@ -299,6 +299,11 @@ ul{list-style:none}
 }
 .hero-role{font-size:clamp(.95rem,1.8vw,1.1rem);color:var(--text3);margin-bottom:8px;min-height:1.9em}
 [data-theme="dark"] .hero-role{color:rgba(255,255,255,.58)}
+.hero-lede{
+  font-size:clamp(1rem,1.6vw,1.15rem);color:var(--text2);
+  line-height:1.55;margin:8px 0 6px;max-width:540px;font-weight:500;
+}
+[data-theme="dark"] .hero-lede{color:rgba(255,255,255,.78)}
 .hero-role .cursor{
   display:inline-block;width:2px;height:1.05em;
   background:var(--red);margin-left:3px;
@@ -999,7 +1004,7 @@ ul{list-style:none}
   .rec-card{padding:32px 24px}
 
   /* === SAFARI MOBILE PERFORMANCE === */
-  /* 1. Kill animated orbs with filter:blur(130px) — #1 Safari perf killer */
+  /* 1. Kill animated orbs with filter:blur(130px) - #1 Safari perf killer */
   .hero-orbs{display:none}
   /* 2. Simplify hero grid mask */
   .hero-grid{mask-image:none;-webkit-mask-image:none;opacity:.4}
@@ -1069,3 +1074,321 @@ ul{list-style:none}
 }
 .cert-view:hover{opacity:.7}
 .cert-view svg{flex-shrink:0}
+
+/* =============================================
+   TRUST STRIP (social proof - UBS / PMI / Nova)
+   ============================================= */
+.trust-strip{
+  padding:36px 0 28px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:var(--bg2);
+}
+[data-theme="dark"] .trust-strip{
+  background:rgba(255,255,255,.02);
+  border-color:rgba(255,255,255,.08);
+}
+.trust-label{
+  font-size:.7rem;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--text3);
+  text-align:center;margin-bottom:18px;
+}
+.trust-logos{
+  display:flex;justify-content:center;align-items:center;
+  gap:42px;flex-wrap:wrap;
+}
+.trust-logo{
+  font-family:'Inter',sans-serif;
+  font-weight:800;font-size:1.1rem;
+  color:var(--text2);letter-spacing:.04em;
+  opacity:.7;transition:opacity .2s;
+  white-space:nowrap;
+}
+.trust-logo:hover{opacity:1}
+.trust-logo .tl-sub{
+  display:block;font-size:.55rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--text3);
+  font-weight:600;margin-top:2px;
+}
+[data-theme="dark"] .trust-logo{color:rgba(255,255,255,.65)}
+@media(max-width:640px){
+  .trust-strip{padding:28px 0 22px}
+  .trust-logos{gap:24px}
+  .trust-logo{font-size:.95rem}
+}
+
+/* =============================================
+   SERVICES SECTION
+   ============================================= */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;margin-top:32px;
+}
+.service-card{
+  position:relative;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:28px 24px 24px;
+  text-decoration:none;color:inherit;
+  display:flex;flex-direction:column;
+  transition:transform .25s, box-shadow .25s, border-color .25s;
+  overflow:hidden;
+}
+.service-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  border-color:rgba(236,0,0,.3);
+}
+[data-theme="dark"] .service-card{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(255,255,255,.08);
+}
+[data-theme="dark"] .service-card:hover{
+  background:rgba(255,255,255,.07);
+  border-color:rgba(236,0,0,.4);
+}
+.service-card.featured{
+  background:linear-gradient(135deg, rgba(236,0,0,.04), rgba(201,168,76,.04));
+  border-color:rgba(236,0,0,.25);
+}
+[data-theme="dark"] .service-card.featured{
+  background:linear-gradient(135deg, rgba(236,0,0,.08), rgba(201,168,76,.08));
+  border-color:rgba(236,0,0,.35);
+}
+.service-badge{
+  position:absolute;top:14px;right:14px;
+  background:var(--red);color:#fff;
+  font-size:.62rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:4px 10px;border-radius:100px;
+}
+.service-icon{font-size:2.2rem;line-height:1;margin-bottom:14px}
+.service-tag{
+  font-size:.62rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--red);
+  margin-bottom:8px;
+}
+.service-title{
+  font-size:1.2rem;font-weight:800;
+  letter-spacing:-.01em;line-height:1.2;
+  margin-bottom:10px;color:var(--text);
+}
+.service-desc{
+  font-size:.88rem;color:var(--text2);
+  line-height:1.55;margin-bottom:16px;
+}
+.service-features{
+  list-style:none;padding:0;margin:0 0 18px;
+  display:flex;flex-direction:column;gap:7px;
+}
+.service-features li{
+  font-size:.82rem;color:var(--text2);
+  display:flex;align-items:flex-start;gap:8px;line-height:1.45;
+}
+.service-features li::before{
+  content:'✓';color:var(--red);font-weight:800;flex-shrink:0;
+}
+.service-price{
+  font-family:'Inter',sans-serif;
+  font-size:1.5rem;font-weight:800;
+  color:var(--text);letter-spacing:-.02em;
+  margin-bottom:4px;
+}
+.service-price small{
+  font-size:.7rem;font-weight:500;color:var(--text3);
+  margin-left:4px;letter-spacing:0;text-transform:none;
+}
+.service-cta{
+  margin-top:auto;padding-top:14px;
+  font-size:.85rem;font-weight:700;color:var(--red);
+  display:flex;align-items:center;gap:6px;
+  transition:gap .2s;
+}
+.service-card:hover .service-cta{gap:10px}
+
+@media(max-width:900px){
+  .services-grid{grid-template-columns:1fr;gap:14px}
+  .service-card{padding:24px 22px}
+}
+
+/* Sticky mobile CTA removed - existing .floating-cta covers this */
+
+/* =============================================
+   DESIGN OPTIMIZATIONS - Micro-animations & Polish
+   Tutto rispetta prefers-reduced-motion.
+   ============================================= */
+
+/* ─── 1. Scroll Progress Bar (top, full width) ── */
+.scroll-progress{
+  position:fixed;top:0;left:0;height:3px;
+  background:linear-gradient(90deg,var(--red),var(--gold));
+  z-index:1001;width:0;
+  transition:width .1s linear;
+  box-shadow:0 0 12px rgba(236,0,0,.5);
+}
+
+/* ─── 2. Stagger fade-in: ritarda i figli ── */
+.services-grid .service-card{
+  opacity:0;transform:translateY(28px);
+  transition:opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
+}
+.services-grid.visible .service-card{opacity:1;transform:translateY(0)}
+.services-grid.visible .service-card:nth-child(1){transition-delay:.05s}
+.services-grid.visible .service-card:nth-child(2){transition-delay:.18s}
+.services-grid.visible .service-card:nth-child(3){transition-delay:.31s}
+
+/* Trust logos stagger */
+.trust-strip .trust-logo{
+  opacity:0;transform:translateY(12px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.trust-strip.visible .trust-logo{opacity:.7;transform:translateY(0)}
+.trust-strip.visible .trust-logo:nth-child(1){transition-delay:.0s}
+.trust-strip.visible .trust-logo:nth-child(2){transition-delay:.08s}
+.trust-strip.visible .trust-logo:nth-child(3){transition-delay:.16s}
+.trust-strip.visible .trust-logo:nth-child(4){transition-delay:.24s}
+.trust-strip.visible .trust-logo:nth-child(5){transition-delay:.32s}
+
+/* ─── 3. Service icon micro-bounce on hover ── */
+@keyframes iconBounce{
+  0%,100%{transform:translateY(0) rotate(0)}
+  30%{transform:translateY(-6px) rotate(-3deg)}
+  60%{transform:translateY(0) rotate(3deg)}
+}
+.service-card:hover .service-icon{
+  animation:iconBounce .7s cubic-bezier(.5,0,.5,1);
+}
+
+/* ─── 4. Service card "→" arrow slide ── */
+.service-cta{gap:8px;transition:gap .25s ease, color .25s ease}
+.service-card:hover .service-cta{color:var(--red-d);gap:14px}
+
+/* ─── 5. Hero profile card float — DISABLED (distracting on long viewing) ── */
+/* Was: .hero-card { animation: heroFloat 6s ease-in-out infinite } */
+
+/* ─── 6. Animated counter (hero stats + about stats) ── */
+.pstat-n,.about-stat-n{
+  display:inline-flex;align-items:baseline;
+  font-variant-numeric:tabular-nums;
+}
+.pstat-n[data-counter],.about-stat-n[data-counter]{
+  transition:color .3s ease;
+}
+
+/* ─── 7. Hero gradient orb mouse-react (CSS only fallback) ── */
+.hero-orbs{transition:opacity .3s ease}
+.hero:hover .orb{filter:blur(110px)}
+
+/* ─── 8. Button shimmer on hover (primary) ── */
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(110deg, transparent 25%, rgba(255,255,255,.25) 50%, transparent 75%);
+  transform:translateX(-100%);
+  transition:transform .8s cubic-bezier(.4,0,.2,1);
+  pointer-events:none;
+}
+.btn-primary:hover::after{transform:translateX(100%)}
+
+/* ─── 9. Service card pricing animated underline ── */
+.service-price{
+  position:relative;display:inline-block;
+}
+.service-price::after{
+  content:'';position:absolute;left:0;right:0;bottom:-2px;
+  height:2px;background:var(--red);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s cubic-bezier(.4,0,.2,1);
+}
+.service-card:hover .service-price::after{transform:scaleX(.4)}
+.service-card.featured:hover .service-price::after{transform:scaleX(.6)}
+
+/* ─── 10. Hero name letter-reveal (premium feel) ── */
+@keyframes nameRise{
+  from{opacity:0;transform:translateY(28px) scale(.96);filter:blur(8px)}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+}
+.hero-name .grad,.hero-name > span:not(.grad){
+  display:inline-block;
+  animation:nameRise .9s cubic-bezier(.2,.7,.2,1) both;
+}
+.hero-name > span:not(.grad){animation-delay:.15s}
+
+/* ─── 11. Section title underline reveal ── */
+@keyframes underlineReveal{
+  from{transform:scaleX(0)}
+  to{transform:scaleX(1)}
+}
+.section-label::before{
+  transform-origin:left;
+  transition:transform .5s cubic-bezier(.4,0,.2,1);
+}
+.section-head.visible .section-label::before{
+  animation:underlineReveal .6s cubic-bezier(.4,0,.2,1) .1s both;
+}
+
+/* ─── 12. CV: experience items hover lift (CV web mode) ── */
+@media (min-width:641px){
+  /* Only apply on cv.html/index-cv.html style not blog */
+  .exp-item{
+    transition:transform .3s ease, opacity .3s ease;
+    padding-left:0;border-radius:6px;
+  }
+  /* hover only on the inner content card if exists */
+}
+
+/* ─── 13. Trust logo hover glow ── */
+.trust-logo{transition:opacity .3s ease, transform .3s ease}
+.trust-logo:hover{opacity:1;transform:translateY(-2px)}
+
+/* ─── 14. Floating CTA pulse — DISABLED to avoid visual noise ── */
+/* Was: .floating-cta.visible { animation: ctaPulse 3.5s ... } */
+
+/* ─── 15. Smooth nav link underline ── */
+.nav-links a{position:relative}
+.nav-links a:not(.nav-cta)::after{
+  content:'';position:absolute;left:50%;right:50%;bottom:4px;
+  height:2px;background:var(--red);border-radius:1px;
+  transition:left .25s ease, right .25s ease;
+}
+.nav-links a:not(.nav-cta):hover::after{left:18%;right:18%}
+
+/* ─── 16. Hero scroll indicator gentle bounce ── */
+@keyframes scrollBounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(8px)}
+}
+.hero-scroll{animation:scrollBounce 2.2s ease-in-out infinite}
+
+/* ─── 17. Image lazy-reveal (when entering viewport) ── */
+.fade-in img{transition:filter .8s ease}
+.fade-in:not(.visible) img{filter:blur(4px)}
+
+/* ─── 18. Service badge subtle pulse — TONED DOWN ── */
+/* Only animates once on first viewport entry, not infinite */
+.service-badge{transition:transform .3s ease}
+.services-grid.visible .service-card.featured .service-badge{
+  animation:badgePulseOnce 1.2s cubic-bezier(.4,0,.2,1) .8s both;
+}
+@keyframes badgePulseOnce{
+  0%{transform:scale(.8);opacity:0}
+  60%{transform:scale(1.08);opacity:1}
+  100%{transform:scale(1);opacity:1}
+}
+
+/* ─── 19. Hero pill — static, no shimmer (was distracting) ── */
+
+/* ─── 20. RESPECT prefers-reduced-motion (CRITICAL for a11y) ── */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+  .hero-card,.hero-scroll,.floating-cta,.service-badge,.hero-pill{
+    animation:none !important;
+  }
+}
