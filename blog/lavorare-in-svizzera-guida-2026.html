@@ -804,7 +804,7 @@
     try {
       var ls = (navigator.languages || [navigator.language || "en"]).map(function(l){return String(l).toLowerCase();});
       var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-      lang = (ls.some(function(l){return l.indexOf("it")===0;}) || /Europe/(Rome|Vatican|San_Marino)/.test(tz)) ? "it" : "en";
+      lang = (ls.some(function(l){return l.indexOf("it")===0;}) || /Europe\/(Rome|Vatican|San_Marino)/.test(tz)) ? "it" : "en";
     } catch(e){ lang = "en"; }
   }
   document.documentElement.lang = lang;

@@ -392,8 +392,9 @@ let scrollTicking = false;
 window.addEventListener('scroll', () => {
   if (!scrollTicking) {
     requestAnimationFrame(() => {
-      navbar.classList.toggle('scrolled', window.scrollY > 30);
-      document.getElementById('back-top').classList.toggle('on', window.scrollY > 400);
+      if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 30);
+      const backTop = document.getElementById('back-top');
+      if (backTop) backTop.classList.toggle('on', window.scrollY > 400);
       const floatingCta = document.getElementById('floating-cta');
       if (floatingCta) {
         const docH = document.documentElement.scrollHeight;
@@ -422,16 +423,19 @@ function closeMenu() {
   document.body.style.top = '';
   window.scrollTo(0, menuScrollY);
 }
-hamburger.addEventListener('click', () => {
-  if (navLinks.classList.contains('open')) closeMenu();
-  else openMenu();
-});
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => closeMenu());
-});
+// Menu mobile assente su alcune pagine (es. blog): guard.
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    if (navLinks.classList.contains('open')) closeMenu();
+    else openMenu();
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => closeMenu());
+  });
+}
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
-    if (navLinks.classList.contains('open')) closeMenu();
+    if (navLinks && navLinks.classList.contains('open')) closeMenu();
     var overlay = document.querySelector('.cert-modal-overlay');
     if (overlay) overlay.remove();
   }
