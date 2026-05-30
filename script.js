@@ -353,9 +353,11 @@ function applyLang(lang) {
     if (d[key] !== undefined) el.placeholder = d[key];
   });
 
-  // Lang buttons
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+  // Lang buttons (assenti su pagine come il blog: guard)
+  const btnEn = document.getElementById('btn-en');
+  const btnIt = document.getElementById('btn-it');
+  if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+  if (btnIt) btnIt.classList.toggle('active', lang === 'it');
 
   // html lang attr
   document.documentElement.lang = lang;
@@ -452,49 +454,52 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
    HERO TYPING EFFECT
    ============================================= */
 const typingEl = document.getElementById('hero-title');
-const typingText = document.createElement('span');
-const typingCursor = document.createElement('span');
-typingCursor.className = 'cursor';
-typingEl.textContent = '';
-typingEl.appendChild(typingText);
-typingEl.appendChild(typingCursor);
+// Pagine senza hero (es. blog) non hanno typing: guard per non bloccare il resto dello script.
+if (typingEl) {
+  const typingText = document.createElement('span');
+  const typingCursor = document.createElement('span');
+  typingCursor.className = 'cursor';
+  typingEl.textContent = '';
+  typingEl.appendChild(typingText);
+  typingEl.appendChild(typingCursor);
 
-// Phrases differ between business homepage and CV mode (index-cv / cv.html)
-const isCVMode = /index-cv|\/cv\.html/.test(location.pathname);
-const phrases = isCVMode
-  ? {
-      en: ['Business Intelligence Specialist @ UBS','Power BI · SQL · ETL · Data Governance','Nova Talent · Double-Degree Master','BI @ UBS · Marketing & Digital Sales'],
-      it: ['Business Intelligence Specialist @ UBS','Power BI · SQL · ETL · Data Governance','Nova Talent · Doppia Laurea Magistrale','BI @ UBS · Marketing & Digital Sales']
-    }
-  : {
-      en: ['Career Coach Italy → Switzerland','BI Specialist @ UBS Zurich','I help Italians move to Switzerland','Nova Talent · Double-Degree Master'],
-      it: ['Career Coach Italia → Svizzera','BI Specialist @ UBS Zurigo','Aiuto italiani a trasferirsi in Svizzera','Nova Talent · Doppia Laurea Magistrale']
-    };
-let phraseIdx = 0, charIdx = 0, deleting = false;
+  // Phrases differ between business homepage and CV mode (index-cv / cv.html)
+  const isCVMode = /index-cv|\/cv\.html/.test(location.pathname);
+  const phrases = isCVMode
+    ? {
+        en: ['Business Intelligence Specialist @ UBS','Power BI · SQL · ETL · Data Governance','Nova Talent · Double-Degree Master','BI @ UBS · Marketing & Digital Sales'],
+        it: ['Business Intelligence Specialist @ UBS','Power BI · SQL · ETL · Data Governance','Nova Talent · Doppia Laurea Magistrale','BI @ UBS · Marketing & Digital Sales']
+      }
+    : {
+        en: ['Career Coach Italy → Switzerland','BI Specialist @ UBS Zurich','I help Italians move to Switzerland','Nova Talent · Double-Degree Master'],
+        it: ['Career Coach Italia → Svizzera','BI Specialist @ UBS Zurigo','Aiuto italiani a trasferirsi in Svizzera','Nova Talent · Doppia Laurea Magistrale']
+      };
+  let phraseIdx = 0, charIdx = 0, deleting = false;
 
-function type() {
-  const list    = phrases[currentLang] || phrases.en;
-  const current = list[phraseIdx % list.length];
+  function type() {
+    const list    = phrases[currentLang] || phrases.en;
+    const current = list[phraseIdx % list.length];
 
-  if (!deleting) {
-    charIdx++;
-    typingText.textContent = current.slice(0, charIdx);
-    if (charIdx === current.length) {
-      deleting = true;
-      setTimeout(type, 2400);
-      return;
+    if (!deleting) {
+      charIdx++;
+      typingText.textContent = current.slice(0, charIdx);
+      if (charIdx === current.length) {
+        deleting = true;
+        setTimeout(type, 2400);
+        return;
+      }
+    } else {
+      charIdx--;
+      typingText.textContent = current.slice(0, charIdx);
+      if (charIdx === 0) {
+        deleting = false;
+        phraseIdx++;
+      }
     }
-  } else {
-    charIdx--;
-    typingText.textContent = current.slice(0, charIdx);
-    if (charIdx === 0) {
-      deleting = false;
-      phraseIdx++;
-    }
+    setTimeout(type, deleting ? 38 : 68);
   }
-  setTimeout(type, deleting ? 38 : 68);
+  setTimeout(type, 900);
 }
-setTimeout(type, 900);
 
 /* =============================================
    INTERSECTIONOBSERVER – fade-in

@@ -650,5 +650,31 @@
 </section>
 
 <script src="../script.js?v=12"></script>
+<!-- Nav del blog allineata alla lingua scelta sul sito (indipendente da script.js) -->
+<script>
+(function(){
+  var lang = localStorage.getItem("lang");
+  if (lang !== "it" && lang !== "en") {
+    try {
+      var ls = (navigator.languages || [navigator.language || "en"]).map(function(l){return String(l).toLowerCase();});
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+      lang = (ls.some(function(l){return l.indexOf("it")===0;}) || /Europe/(Rome|Vatican|San_Marino)/.test(tz)) ? "it" : "en";
+    } catch(e){ lang = "en"; }
+  }
+  document.documentElement.lang = lang;
+  var L = {
+    "#services":  {it:"Servizi",    en:"Services"},
+    "#about":     {it:"Chi sono",   en:"About"},
+    "#experience":{it:"Esperienza", en:"Experience"},
+    "#education": {it:"Formazione", en:"Education"},
+    "#skills":    {it:"Competenze", en:"Skills"},
+    "#contact":   {it:"Contatti",   en:"Contact"}
+  };
+  document.querySelectorAll(".nav-links a").forEach(function(a){
+    var href = a.getAttribute("href") || "";
+    for (var k in L) { if (href.indexOf(k) !== -1) a.textContent = L[k][lang]; }
+  });
+})();
+</script>
 </body>
 </html>
