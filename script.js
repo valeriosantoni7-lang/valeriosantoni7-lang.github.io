@@ -684,12 +684,55 @@ applyLang(currentLang);
    - Magnetic effect on CTAs (subtle)
    Respects prefers-reduced-motion automatically.
    ============================================= */
+/* ===== VISIBILITÀ CONTENUTI (gira SEMPRE, anche con reduce-motion / webview IG) =====
+   Il contenuto critico (loghi trust, card servizi, sezioni) NON deve mai
+   restare nascosto se l'animazione non parte. Reveal garantito + safety net. */
 (function() {
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    return; // user wants no animations, exit silently
+  function reveal(el) { el.classList.add('visible'); }
+  var staggerSel = '.services-grid, .trust-strip, .section-head';
+
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) { reveal(entry.target); obs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(staggerSel).forEach(function(el) { obs.observe(el); });
+  } else {
+    // Browser senza IntersectionObserver: mostra tutto subito
+    document.querySelectorAll(staggerSel).forEach(reveal);
   }
 
-  /* 1) Scroll progress bar -------------------------------- */
+  // SAFETY NET: se qualcosa è ancora nascosto poco dopo il load (es. browser
+  // in-app di Instagram dove gli observer a volte non scattano), forzalo visibile.
+  function safetyReveal() {
+    document.querySelectorAll(
+      '.fade-in:not(.visible), .services-grid:not(.visible), .trust-strip:not(.visible), .section-head:not(.visible)'
+    ).forEach(reveal);
+  }
+  if (document.readyState === 'complete') {
+    setTimeout(safetyReveal, 1000);
+  } else {
+    window.addEventListener('load', function() { setTimeout(safetyReveal, 1000); });
+  }
+  setTimeout(safetyReveal, 2500); // fallback ulteriore
+
+  /* Navbar style on scroll (sempre attivo, non decorativo-critico) */
+  var navbar = document.getElementById('navbar');
+  if (navbar) {
+    window.addEventListener('scroll', function() {
+      navbar.classList.toggle('scrolled', window.scrollY > 24);
+    }, { passive: true });
+  }
+})();
+
+/* ===== POLISH DECORATIVO (saltato se reduce-motion) ===== */
+(function() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  /* Scroll progress bar */
   const bar = document.createElement('div');
   bar.className = 'scroll-progress';
   document.body.appendChild(bar);
@@ -708,29 +751,7 @@ applyLang(currentLang);
     }
   }, { passive: true });
 
-  /* 2) Animated counter for stats — DISABLED                  */
-  // The hero stats use nested <span> elements to style suffixes
-  // (e.g., "108<span>/110</span>"). Animating textContent flattens
-  // those, breaking the typography. Keeping the static numbers
-  // preserves the original visual hierarchy.
-
-  /* 3) Stagger trigger: add .visible to grid containers --- */
-  function initStagger() {
-    const containers = document.querySelectorAll('.services-grid, .trust-strip, .section-head');
-    if (!containers.length || !('IntersectionObserver' in window)) return;
-    const obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    containers.forEach(function(el) { obs.observe(el); });
-  }
-  initStagger();
-
-  /* 4) Subtle magnetic effect on hero CTAs (desktop only) - */
+  /* Magnetic effect su hero CTA (solo desktop) */
   if (window.matchMedia('(hover:hover) and (pointer:fine)').matches && window.innerWidth > 900) {
     document.querySelectorAll('.hero-btns .btn').forEach(function(btn) {
       btn.style.transition = 'transform .25s cubic-bezier(.4,0,.2,1)';
@@ -744,13 +765,5 @@ applyLang(currentLang);
         btn.style.transform = '';
       });
     });
-  }
-
-  /* 5) Sticky-navbar style toggle on scroll (no hide/show — kept simple) */
-  const navbar = document.getElementById('navbar');
-  if (navbar) {
-    window.addEventListener('scroll', function() {
-      navbar.classList.toggle('scrolled', window.scrollY > 24);
-    }, { passive: true });
   }
 })();

@@ -1408,4 +1408,13 @@ ul{list-style:none}
   .hero-card,.hero-scroll,.floating-cta,.service-badge,.hero-pill{
     animation:none !important;
   }
+  /* Contenuto reso visibile via JS: con reduce-motion mostralo SUBITO,
+     senza dipendere dagli observer (fix loghi invisibili da app Instagram). */
+  .fade-in,
+  .trust-strip .trust-logo,
+  .services-grid .service-card,
+  .section-head{
+    opacity:1 !important;
+    transform:none !important;
+  }
 }
