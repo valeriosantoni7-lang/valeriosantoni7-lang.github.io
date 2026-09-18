@@ -1124,8 +1124,9 @@ ul{list-style:none}
   text-transform:uppercase;color:var(--text3);
   font-weight:600;
 }
-[data-theme="dark"] .trust-logo img{filter:grayscale(1) brightness(0) invert(1) opacity(.55)}
-[data-theme="dark"] .trust-logo:hover img{filter:grayscale(0) brightness(1) invert(0) opacity(1)}
+/* Modalità scura: tessere chiare dietro i loghi (la sagoma bianca rendeva quadrati i loghi con sfondo pieno) */
+[data-theme="dark"] .trust-logo img{filter:grayscale(1) opacity(.85);background:#fff;border-radius:8px;padding:5px 7px;height:40px}
+[data-theme="dark"] .trust-logo:hover img{filter:grayscale(0) opacity(1)}
 @media(max-width:640px){
   .trust-strip{padding:26px 0 22px}
   .trust-logos{gap:28px 32px}
