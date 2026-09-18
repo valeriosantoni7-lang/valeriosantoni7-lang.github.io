@@ -61,6 +61,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#about"      data-i18n="nav.about">About</a></li>
       <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#ai-projects" data-i18n="cproj.nav">AI Projects</a></li>
       <li><a href="#highlights" data-i18n="nav.highlights">Highlights</a></li>
       <li><a href="#education"  data-i18n="nav.education">Education</a></li>
       <li><a href="#skills"     data-i18n="nav.skills">Skills</a></li>
@@ -238,7 +239,7 @@
       <div class="tl-group fade-in">
         <div class="company-sidebar">
           <div class="company-card">
-            <div class="co-logo logo-wef"><span>WEF</span></div>
+            <div class="co-logo logo-wef"><img src="assets/logos/wef.svg" alt="World Economic Forum" onerror="this.remove()" loading="lazy" onload="this.parentElement.classList.add('has-img')"/><span>WEF</span></div>
             <div><div class="co-name">World Economic Forum</div><div class="co-loc" data-i18n="wef.loc">Geneva, Switzerland</div></div>
           </div>
         </div>
@@ -366,6 +367,40 @@
             <div class="role-tags"><span class="rtag">Brainstorm Facilitation</span><span class="rtag">Design Thinking</span></div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AI PROJECTS ───────────────────────────── -->
+<section id="ai-projects" class="section section-alt">
+  <div class="container">
+    <div class="section-head fade-in">
+      <div class="section-label" data-i18n="cproj.label">AI Projects</div>
+      <h2 class="section-title" data-i18n="cproj.title">Built with <em>AI</em>, used every day</h2>
+      <p class="section-desc" data-i18n="cproj.desc">Personal projects I designed and built with AI-assisted development (Claude Code). They run my personal brand @valerio.swiss.</p>
+    </div>
+    <div class="services-grid fade-in">
+      <a href="https://www.instagram.com/valerio.swiss/" target="_blank" rel="noopener" class="service-card">
+        <div class="service-icon">🎬</div>
+        <div class="service-tag" data-i18n="cproj.p1.tag">Automation · Video</div>
+        <h3 class="service-title" data-i18n="cproj.p1.title">Automated content factory</h3>
+        <p class="service-desc" data-i18n="cproj.p1.desc">A pipeline that turns a short brief into branded carousels, reels and stories for Instagram and TikTok: data-driven motion graphics, captions and story assets in a single pass.</p>
+        <div class="role-tags"><span class="rtag">Remotion</span><span class="rtag">React</span><span class="rtag">TypeScript</span><span class="rtag">Node.js</span><span class="rtag">Claude</span></div>
+      </a>
+      <div class="service-card">
+        <div class="service-icon">🧭</div>
+        <div class="service-tag" data-i18n="cproj.p2.tag">AI workflow</div>
+        <h3 class="service-title" data-i18n="cproj.p2.title">AI coaching workflow</h3>
+        <p class="service-desc" data-i18n="cproj.p2.desc">A reusable Claude skill that turns a client's intake form and CV into a call prep sheet with live notes, then into a branded PDF plan and follow-up emails, backed by a resource library that grows after every session.</p>
+        <div class="role-tags"><span class="rtag">Claude Code skills</span><span class="rtag">HTML/CSS</span><span class="rtag">PDF</span><span class="rtag">Python</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎛</div>
+        <div class="service-tag" data-i18n="cproj.p3.tag">Dashboard</div>
+        <h3 class="service-title" data-i18n="cproj.p3.title">Operations cockpit</h3>
+        <p class="service-desc" data-i18n="cproj.p3.desc">A single-file dashboard to run the brand day to day: today's content with previews and one-click captions, the weekly plan, and strategic to-dos with saved progress.</p>
+        <div class="role-tags"><span class="rtag">HTML</span><span class="rtag">JavaScript</span><span class="rtag">localStorage</span></div>
       </div>
     </div>
   </div>
@@ -794,6 +829,6 @@
 
 <button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<script src="script.js?v=19"></script>
+<script src="script.js?v=20"></script>
 </body>
 </html>

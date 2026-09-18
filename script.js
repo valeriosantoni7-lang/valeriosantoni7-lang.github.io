@@ -3,6 +3,20 @@
    ============================================= */
 const T = {
   en: {
+    "cproj.nav":"AI Projects",
+    "cproj.label":"AI Projects",
+    "cproj.title":"Built with <em>AI</em>, used every day",
+    "cproj.desc":"Personal projects I designed and built with AI-assisted development (Claude Code). They run my personal brand @valerio.swiss.",
+    "cproj.p1.tag":"Automation · Video",
+    "cproj.p1.title":"Automated content factory",
+    "cproj.p1.desc":"A pipeline that turns a short brief into branded carousels, reels and stories for Instagram and TikTok: data-driven motion graphics, captions and story assets in a single pass.",
+    "cproj.p2.tag":"AI workflow",
+    "cproj.p2.title":"AI coaching workflow",
+    "cproj.p2.desc":"A reusable Claude skill that turns a client's intake form and CV into a call prep sheet with live notes, then into a branded PDF plan and follow-up emails, backed by a resource library that grows after every session.",
+    "cproj.p3.tag":"Dashboard",
+    "cproj.p3.title":"Operations cockpit",
+    "cproj.p3.desc":"A single-file dashboard to run the brand day to day: today's content with previews and one-click captions, the weekly plan, and strategic to-dos with saved progress.",
+
     "cnav.about":"About",
     "cnav.faq":"FAQ",
     "cnav.cv":"CV",
@@ -195,6 +209,20 @@ const T = {
     "footer.cv":"CV →"
   },
   it: {
+    "cproj.nav":"Progetti AI",
+    "cproj.label":"Progetti AI",
+    "cproj.title":"Costruiti con l'<em>AI</em>, usati ogni giorno",
+    "cproj.desc":"Progetti personali che ho progettato e costruito con lo sviluppo assistito dall'AI (Claude Code). Fanno girare il mio personal brand @valerio.swiss.",
+    "cproj.p1.tag":"Automazione · Video",
+    "cproj.p1.title":"Content factory automatizzata",
+    "cproj.p1.desc":"Una pipeline che trasforma un breve brief in caroselli, reel e storie brandizzati per Instagram e TikTok: motion graphics basate sui dati, caption e storie in un solo passaggio.",
+    "cproj.p2.tag":"Workflow AI",
+    "cproj.p2.title":"Workflow di coaching con l'AI",
+    "cproj.p2.desc":"Una skill Claude riutilizzabile che trasforma form e CV di un cliente in una scheda di preparazione con note live, poi in un piano PDF brandizzato e nelle email di follow-up, con una libreria di risorse che cresce a ogni sessione.",
+    "cproj.p3.tag":"Dashboard",
+    "cproj.p3.title":"Cockpit operativo",
+    "cproj.p3.desc":"Una dashboard in un solo file per gestire il brand giorno per giorno: contenuto del giorno con anteprime e caption copiabili in un clic, piano settimanale e azioni strategiche con i progressi salvati.",
+
     "cnav.about":"Chi sono",
     "cnav.faq":"FAQ",
     "cnav.cv":"CV",
@@ -565,8 +593,8 @@ if (typingEl) {
       }
     : isCVMode
     ? {
-        en: ['Business Intelligence & Data · Switzerland','Power BI · SQL · ETL · Data Governance','Nova Talent · Double-Degree Master','Italy → Switzerland, the real path'],
-        it: ['Business Intelligence & Data · Svizzera','Power BI · SQL · ETL · Data Governance','Nova Talent · Doppia Laurea Magistrale','Italia → Svizzera, il percorso vero']
+        en: ['Digital Product · AI & Business Transformation','Tools and automations built with AI','Power BI · SQL · Python · Data','Nova Talent · Double-Degree Master'],
+        it: ['Digital Product · AI & Business Transformation','Strumenti e automazioni costruiti con l\'AI','Power BI · SQL · Python · Dati','Nova Talent · Doppia Laurea Magistrale']
       }
     : {
         en: ['Career Coach Italy → Switzerland','Italian in Switzerland · real data, no fluff','I help Italians move to Switzerland','Nova Talent · Double-Degree Master'],
