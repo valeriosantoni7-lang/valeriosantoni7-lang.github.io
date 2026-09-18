@@ -546,6 +546,7 @@ ul{list-style:none}
 .logo-csb    {background:linear-gradient(135deg,#1A6F4A,#0D3D28)}
 .logo-wuerzburg{background:linear-gradient(135deg,#005B9F,#002D50)}
 .logo-swufe  {background:linear-gradient(135deg,#C0392B,#6B1F18)}
+.logo-wef    {background:linear-gradient(135deg,#1E3A5F,#0A1628)}
 .co-name{font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:4px}
 .co-loc{font-size:.7rem;color:var(--text3);line-height:1.5}
 
