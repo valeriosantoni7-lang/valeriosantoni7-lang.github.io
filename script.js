@@ -713,6 +713,7 @@ const recCards = document.querySelectorAll('#rec-track .rec-card');
 const recDots  = document.querySelectorAll('#rec-dots .rec-dot');
 
 function recGo(i) {
+  if (!recCards.length) return; // pagine senza sezione referenze
   recCards[recIdx].classList.remove('active');
   recDots[recIdx].classList.remove('active');
   recIdx = (i + recCards.length) % recCards.length;
@@ -722,10 +723,10 @@ function recGo(i) {
 function recCarousel(dir) { recGo(recIdx + dir); }
 
 /* Auto-advance every 8s */
-let recTimer = setInterval(() => recCarousel(1), 8000);
+let recTimer = recCards.length ? setInterval(() => recCarousel(1), 8000) : null;
 const recEl = document.querySelector('.rec-carousel');
 function recPause() { clearInterval(recTimer); }
-function recResume() { recTimer = setInterval(() => recCarousel(1), 8000); }
+function recResume() { if (recCards.length) recTimer = setInterval(() => recCarousel(1), 8000); }
 recEl?.addEventListener('mouseenter', recPause);
 recEl?.addEventListener('mouseleave', recResume);
 recEl?.addEventListener('focusin', recPause);
