@@ -473,14 +473,20 @@ if (typingEl) {
 
   // Phrases differ between business homepage and CV mode (index-cv / cv.html)
   const isCVMode = /index-cv|\/cv\.html/.test(location.pathname);
-  const phrases = isCVMode
+  const isCoachHome = document.body.dataset.phrases === 'coaching';
+  const phrases = isCoachHome
+    ? {
+        en: ['A Swiss CV that gets past screening','Interviews prepared properly','The right salary, not the first offer','Permits and paperwork without surprises'],
+        it: ['Un CV svizzero che passa la selezione','Colloqui preparati sul serio','Lo stipendio giusto, non il primo che capita','Permessi e burocrazia senza sorprese']
+      }
+    : isCVMode
     ? {
         en: ['Business Intelligence & Data · Switzerland','Power BI · SQL · ETL · Data Governance','Nova Talent · Double-Degree Master','Italy → Switzerland, the real path'],
         it: ['Business Intelligence & Data · Svizzera','Power BI · SQL · ETL · Data Governance','Nova Talent · Doppia Laurea Magistrale','Italia → Svizzera, il percorso vero']
       }
     : {
-        en: ['Career Coach Italy → Switzerland','BI Specialist @ UBS Zurich','I help Italians move to Switzerland','Nova Talent · Double-Degree Master'],
-        it: ['Career Coach Italia → Svizzera','BI Specialist @ UBS Zurigo','Aiuto italiani a trasferirsi in Svizzera','Nova Talent · Doppia Laurea Magistrale']
+        en: ['Career Coach Italy → Switzerland','Italian in Switzerland · real data, no fluff','I help Italians move to Switzerland','Nova Talent · Double-Degree Master'],
+        it: ['Career Coach Italia → Svizzera','Italiano in Svizzera · dati reali, niente fuffa','Aiuto italiani a trasferirsi in Svizzera','Nova Talent · Doppia Laurea Magistrale']
       };
   let phraseIdx = 0, charIdx = 0, deleting = false;
 
