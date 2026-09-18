@@ -3,6 +3,8 @@
    ============================================= */
 const T = {
   en: {
+    "trust.note":"Logos show where I have worked and studied. They do not imply affiliation with these organisations or their endorsement of my services.",
+
     "cproj.nav":"AI Projects",
     "cproj.label":"AI Projects",
     "cproj.title":"Built with <em>AI</em>, used every day",
@@ -209,6 +211,8 @@ const T = {
     "footer.cv":"CV →"
   },
   it: {
+    "trust.note":"I loghi indicano dove ho lavorato e studiato. Non implicano affiliazione con queste organizzazioni né la loro approvazione dei miei servizi.",
+
     "cproj.nav":"Progetti AI",
     "cproj.label":"Progetti AI",
     "cproj.title":"Costruiti con l'<em>AI</em>, usati ogni giorno",
@@ -430,6 +434,9 @@ function detectInitialLang() {
   // 1) Honor user's explicit previous choice
   const stored = localStorage.getItem('lang');
   if (stored === 'en' || stored === 'it') return stored;
+
+  // 1b) La home coaching parte in italiano: il pubblico è italiano, ed è la versione che legge Google
+  if (document.documentElement.dataset.defaultLang === 'it') return 'it';
 
   // 2) Browser language(s)
   try {
