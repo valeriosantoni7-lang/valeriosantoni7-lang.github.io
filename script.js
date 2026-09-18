@@ -5,8 +5,8 @@ const T = {
   en: {
     "nav.services":"Services","nav.about":"About","nav.experience":"Experience","nav.highlights":"Highlights",
     "nav.education":"Education","nav.skills":"Skills","nav.blog":"Blog","nav.contact":"Contact",
-    "hero.pill":"Coaching Italy → Switzerland · BI @ UBS","hero.first":"Valerio","hero.last":"Santoni",
-    "hero.lede":"I moved to Zurich to work at UBS. I help other Italians do the same, without wasting thousands of francs on mistakes I already made.",
+    "hero.pill":"Coaching Italy → Switzerland","hero.first":"Valerio","hero.last":"Santoni",
+    "hero.lede":"I moved to Switzerland for work. I help other Italians do the same, without wasting thousands of francs on mistakes I already made.",
     "hero.cta1":"See how I help","hero.cta2":"CV","hero.cta3":"Free guide",
     "cv.pill":"Available · Zurich, Switzerland",
     "cv.cta1":"View Experience","cv.cta2":"Download PDF","cv.cta3":"Compact CV",
@@ -35,7 +35,7 @@ const T = {
     "about.headline":"From Ancona to Zurich,<br>via Clermont-Ferrand, Würzburg &amp; Chengdu",
     "about.p1":"Double-degree Master's graduate in Management (Business Intelligence) and International Business (Digital Management) from Università di Pavia and Clermont School of Business. Passionate about turning complex data into clear, actionable stories that drive smarter decisions.",
     "about.p2":"At Philip Morris International in Lausanne, I supported the Brand Retail Deployment team, aligning databases across markets, automating reporting flows, and managing large-scale projects behind the global IQOS retail footprint.",
-    "about.p3":"Now at UBS in Zurich (P&amp;C – Marketing &amp; Digital Sales), I manage the client data management dashboard, support the Client Intelligence project, and oversee marketing events reporting, helping stakeholders access the right facts faster during the Credit Suisse integration.",
+    "about.p3":"At UBS in Zurich (P&amp;C – Marketing &amp; Digital Sales) I managed the client data management dashboard, supported the Client Intelligence project, and oversaw marketing events reporting, helping stakeholders access the right facts faster during the Credit Suisse integration.",
     "about.exp.label":"Experience","about.exp.unit":"yrs","about.exp.sub":"international industry experience",
     "about.scope.label":"Scope","about.scope.sub":"countries lived &amp; worked in",
     "about.impact.label":"Impact","about.impact.sub":"records reconciled at PMI",
@@ -45,7 +45,7 @@ const T = {
     "exp.label":"Career","exp.title":"Professional <em>Experience</em>",
     "exp.desc":"From Italian academia to Swiss banking, via global FMCG in Lausanne.",
     "badge.current":"Current",
-    "ubs.r1.title":"Business Intelligence Specialist","ubs.r1.date":"Mar 2026 – Present",
+    "ubs.r1.title":"Business Intelligence Specialist","ubs.r1.date":"Mar 2026 – Aug 2026",
     "ubs.r1.dept":"Personal &amp; Corporate Banking – Marketing &amp; Digital Sales",
     "ubs.r1.b1":"Managing and developing the client data management dashboard for Marketing &amp; Digital Sales (Power BI, SQL)",
     "ubs.r1.b2":"Supporting the Client Intelligence project, delivering data-driven insights to improve client engagement and segmentation",
@@ -98,7 +98,7 @@ const T = {
     "story.aside.sub":"A career built on curiosity, data, and the conviction that good decisions start with good information.",
     "story.p1":"I grew up with a deep curiosity about how organizations make decisions, and a quiet conviction that the best decisions are grounded in clear, well-structured information. That conviction became a career.",
     "story.p2":"From Ancona to Zurich, my path took me through an Erasmus+ semester in Würzburg, a summer academy in Chengdu, and a double-degree Master's between Pavia and Clermont School of Business. Along the way I earned recognition at entrepreneurship competitions, tutored teams through Design Thinking sprints, and panelled at the EU Parliament on AI policy, learning that the best decisions are only as good as the information behind them.",
-    "story.p3":"At PMI in Lausanne I saw firsthand how clean, connected data can accelerate a global organisation. Now at UBS in Zurich, embedded in the Credit Suisse integration, I manage the client data management dashboard, support the Client Intelligence project, and keep marketing events on track, the tool changes, the conviction stays the same.",
+    "story.p3":"At PMI in Lausanne I saw firsthand how clean, connected data can accelerate a global organisation. At UBS in Zurich, embedded in the Credit Suisse integration, I managed the client data management dashboard, supported the Client Intelligence project, and kept marketing events on track, the tool changes, the conviction stays the same.",
     "edu.label":"Academic","edu.title":"Education",
     "edu.desc":"A double-degree journey across Italy, France, Germany and China.",
     "edu.csb.degree":"Master in Management, Business Intelligence",
@@ -146,7 +146,8 @@ const T = {
     "form.email":"Email","form.email.ph":"your@email.com",
     "form.message":"Message","form.msg.ph":"What would you like to discuss?",
     "form.send":"Send Message →","form.sent":"✓ Message sent! I'll get back to you soon.","form.sending":"Sending…","form.error":"Something went wrong. Retry or email valeriosantoni7@gmail.com",
-    "footer.copy":"© 2026 Valerio Santoni · Built with passion in Zurich 🇨🇭",
+    "footer.copy":"© 2026 Valerio Santoni · Built with passion in Switzerland 🇨🇭",
+    "footer.disclaimer":"The views expressed on this website are my own and do not represent those of my employer. Coaching services and content are provided in a personal capacity and are not affiliated with, sponsored or endorsed by any employer.",
     "floating.cta":"Free guide",
     "footer.cv":"CV →"
   },
@@ -154,8 +155,8 @@ const T = {
     "nav.about":"Chi sono","nav.experience":"Esperienza","nav.highlights":"Highlights",
     "nav.education":"Formazione","nav.skills":"Competenze","nav.contact":"Contatti",
     "nav.services":"Servizi",
-    "hero.pill":"Coaching Italia → Svizzera · BI @ UBS","hero.first":"Valerio","hero.last":"Santoni",
-    "hero.lede":"Mi sono trasferito a Zurigo per lavorare in UBS. Aiuto altri italiani a fare lo stesso, senza buttare via migliaia di franchi in errori che ho già fatto io.",
+    "hero.pill":"Coaching Italia → Svizzera","hero.first":"Valerio","hero.last":"Santoni",
+    "hero.lede":"Mi sono trasferito in Svizzera per lavoro. Aiuto altri italiani a fare lo stesso, senza buttare via migliaia di franchi in errori che ho già fatto io.",
     "hero.cta1":"Scopri come ti aiuto","hero.cta2":"CV","hero.cta3":"Guida gratuita",
     "cv.pill":"Disponibile · Zurigo, Svizzera",
     "cv.cta1":"Vedi esperienza","cv.cta2":"Scarica PDF","cv.cta3":"CV compatto",
@@ -184,7 +185,7 @@ const T = {
     "about.headline":"Da Ancona a Zurigo,<br>via Clermont-Ferrand, Würzburg e Chengdu",
     "about.p1":"Laureato magistrale con doppio titolo in Management (Business Intelligence) e International Business (Digital Management) presso l'Università di Pavia e Clermont School of Business. Appassionato di trasformare dati complessi in storie chiare e azionabili che guidano decisioni migliori.",
     "about.p2":"In Philip Morris International a Losanna, ho supportato il team Brand Retail Deployment, allineando database tra mercati, automatizzando flussi di reporting e gestendo progetti su larga scala legati al retail globale IQOS.",
-    "about.p3":"Ora in UBS a Zurigo (P&amp;C – Marketing &amp; Digital Sales), gestisco la dashboard di client data management, supporto il progetto Client Intelligence e supervisiono il reporting degli eventi marketing, aiutando gli stakeholder ad accedere ai dati giusti durante l'integrazione Credit Suisse.",
+    "about.p3":"In UBS a Zurigo (P&amp;C – Marketing &amp; Digital Sales) ho gestito la dashboard di client data management, supportato il progetto Client Intelligence e supervisionato il reporting degli eventi marketing, aiutando gli stakeholder ad accedere ai dati giusti durante l'integrazione Credit Suisse.",
     "about.exp.label":"Esperienza","about.exp.unit":"anni","about.exp.sub":"di esperienza internazionale",
     "about.scope.label":"Raggio","about.scope.sub":"paesi in cui ho vissuto e lavorato",
     "about.impact.label":"Impatto","about.impact.sub":"record riconciliati in PMI",
@@ -194,7 +195,7 @@ const T = {
     "exp.label":"Carriera","exp.title":"Esperienza <em>professionale</em>",
     "exp.desc":"Dall'accademia italiana al banking svizzero, via FMCG globale a Losanna.",
     "badge.current":"In corso",
-    "ubs.r1.title":"Business Intelligence Specialist","ubs.r1.date":"Mar 2026 – Presente",
+    "ubs.r1.title":"Business Intelligence Specialist","ubs.r1.date":"Mar 2026 – Ago 2026",
     "ubs.r1.dept":"Personal &amp; Corporate Banking – Marketing &amp; Digital Sales",
     "ubs.r1.b1":"Gestione e sviluppo della dashboard di client data management per Marketing &amp; Digital Sales (Power BI, SQL)",
     "ubs.r1.b2":"Supporto al progetto Client Intelligence, fornitura di insight data-driven per migliorare engagement e segmentazione dei clienti",
@@ -247,7 +248,7 @@ const T = {
     "story.aside.sub":"Una carriera costruita sulla curiosità, i dati e la convinzione che le buone decisioni partono dalla buona informazione.",
     "story.p1":"Sono cresciuto con una profonda curiosità su come le organizzazioni prendono decisioni, e la convinzione che le migliori decisioni si fondino su informazioni chiare e strutturate. Quella convinzione è diventata una carriera.",
     "story.p2":"Da Ancona a Zurigo, il mio percorso mi ha portato attraverso un Erasmus+ a Würzburg, una summer academy a Chengdu e una laurea magistrale in doppio titolo tra Pavia e Clermont School of Business. Nel percorso ho ottenuto riconoscimenti in competizioni imprenditoriali, guidato team in sprint di Design Thinking e partecipato come panelist al Parlamento Europeo sull'AI policy, imparando che le migliori decisioni dipendono dalla qualità delle informazioni su cui si basano.",
-    "story.p3":"In PMI a Losanna ho visto direttamente come dati puliti e connessi possano accelerare un'organizzazione globale. Ora in UBS a Zurigo, nel contesto dell'integrazione Credit Suisse, gestisco la dashboard di client data management, supporto il progetto Client Intelligence e coordino il reporting degli eventi marketing, gli strumenti cambiano, la convinzione resta.",
+    "story.p3":"In PMI a Losanna ho visto direttamente come dati puliti e connessi possano accelerare un'organizzazione globale. In UBS a Zurigo, nel contesto dell'integrazione Credit Suisse, ho gestito la dashboard di client data management, supportato il progetto Client Intelligence e coordinato il reporting degli eventi marketing, gli strumenti cambiano, la convinzione resta.",
     "edu.label":"Formazione","edu.title":"Istruzione",
     "edu.desc":"Un percorso in doppio titolo tra Italia, Francia, Germania e Cina.",
     "edu.csb.degree":"Master in Management, Business Intelligence",
@@ -296,6 +297,7 @@ const T = {
     "form.message":"Messaggio","form.msg.ph":"Di cosa vorresti parlare?",
     "form.send":"Invia messaggio →","form.sent":"✓ Messaggio inviato! Ti rispondo presto.","form.sending":"Invio in corso…","form.error":"Qualcosa è andato storto. Riprova o scrivi a valeriosantoni7@gmail.com",
     "footer.copy":"© 2026 Valerio Santoni · Realizzato con passione a Zurigo 🇨🇭",
+    "footer.disclaimer":"Le opinioni espresse in questo sito sono personali e non rappresentano quelle del mio datore di lavoro. Le attività di coaching e i contenuti sono svolti a titolo personale e non sono affiliati, sponsorizzati o approvati da alcun datore di lavoro.",
     "floating.cta":"Guida gratuita",
     "footer.cv":"CV →"
   }
@@ -471,8 +473,8 @@ if (typingEl) {
   const isCVMode = /index-cv|\/cv\.html/.test(location.pathname);
   const phrases = isCVMode
     ? {
-        en: ['Business Intelligence Specialist @ UBS','Power BI · SQL · ETL · Data Governance','Nova Talent · Double-Degree Master','BI @ UBS · Marketing & Digital Sales'],
-        it: ['Business Intelligence Specialist @ UBS','Power BI · SQL · ETL · Data Governance','Nova Talent · Doppia Laurea Magistrale','BI @ UBS · Marketing & Digital Sales']
+        en: ['Business Intelligence & Data · Switzerland','Power BI · SQL · ETL · Data Governance','Nova Talent · Double-Degree Master','Italy → Switzerland, the real path'],
+        it: ['Business Intelligence & Data · Svizzera','Power BI · SQL · ETL · Data Governance','Nova Talent · Doppia Laurea Magistrale','Italia → Svizzera, il percorso vero']
       }
     : {
         en: ['Career Coach Italy → Switzerland','BI Specialist @ UBS Zurich','I help Italians move to Switzerland','Nova Talent · Double-Degree Master'],
