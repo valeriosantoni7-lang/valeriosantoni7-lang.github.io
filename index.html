@@ -43,7 +43,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css?v=12"/>
 </head>
-<body>
+<body data-phrases="coaching">
 
 <!-- ─── NAVBAR ───────────────────────────────── -->
 <nav class="navbar" id="navbar">
@@ -55,12 +55,11 @@
     </button>
 
     <ul class="nav-links" id="nav-links">
-      <li><a href="#services"   data-i18n="nav.services">Servizi</a></li>
-      <li><a href="#about"      data-i18n="nav.about">About</a></li>
-      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
-      <li><a href="#education"  data-i18n="nav.education">Education</a></li>
-      <li><a href="#skills"     data-i18n="nav.skills">Skills</a></li>
-      <li><a href="blog/"       data-i18n="nav.blog">Blog</a></li>
+      <li><a href="#services"     data-i18n="nav.services">Servizi</a></li>
+      <li><a href="#chi-sono"     data-i18n="cnav.about">Chi sono</a></li>
+      <li><a href="blog/"         data-i18n="nav.blog">Blog</a></li>
+      <li><a href="#faq"          data-i18n="cnav.faq">FAQ</a></li>
+      <li><a href="index-cv.html" data-i18n="cnav.cv">CV</a></li>
       <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
     </ul>
 
@@ -102,20 +101,13 @@
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-pill" data-i18n="hero.pill">Coaching Italia → Svizzera</div>
-      <h1 class="hero-name"><span class="grad" data-i18n="hero.first">Valerio</span><br><span data-i18n="hero.last">Santoni</span></h1>
+      <h1 class="hero-name hero-promise" data-i18n="chero.h1">Trova lavoro <span class="grad">in Svizzera</span> senza perdere mesi di tentativi</h1>
+      <p class="hero-byline" data-i18n="chero.by">Valerio Santoni · ho fatto il salto Italia → Svizzera</p>
       <p class="hero-role" id="hero-title"></p>
       <p class="hero-lede" data-i18n="hero.lede">Mi sono trasferito in Svizzera per lavoro. Aiuto altri italiani a fare lo stesso, senza buttare via migliaia di franchi in errori che ho già fatto io.</p>
-      <div class="hero-tags">
-        <span class="hero-tag">🎯 Coaching 1:1</span>
-        <span class="hero-tag">📘 Guida gratuita</span>
-        <span class="hero-tag">📄 CV pack svizzero</span>
-        <span class="hero-tag">📊 Dati reali, non teoria</span>
-        <span class="hero-tag">🇮🇹 → 🇨🇭</span>
-      </div>
       <div class="hero-btns">
-        <a href="#services" class="btn btn-primary" data-i18n="hero.cta1"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="vertical-align:-1px;margin-right:6px"><path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H17V0h-2v2H9V0H7v2H4.5C3.12 2 2.01 3.12 2.01 4.5L2 21c0 1.38 1.12 2.5 2.5 2.5h15c1.38 0 2.5-1.12 2.5-2.5V4.5C22 3.12 20.88 2 19.5 2zm0 19h-15V9h15v12z"/></svg>Scopri come ti aiuto</a>
-        <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener" class="btn btn-gold" data-i18n="hero.cta3"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="vertical-align:-1px;margin-right:6px"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>Guida gratuita</a>
-        <a href="cv.html" class="btn btn-ghost" data-i18n="hero.cta2">CV</a>
+        <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="hero.cta3"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="vertical-align:-1px;margin-right:6px"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>Guida gratuita</a>
+        <a href="#services" class="btn btn-ghost" data-i18n="hero.cta1"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="vertical-align:-1px;margin-right:6px"><path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H17V0h-2v2H9V0H7v2H4.5C3.12 2 2.01 3.12 2.01 4.5L2 21c0 1.38 1.12 2.5 2.5 2.5h15c1.38 0 2.5-1.12 2.5-2.5V4.5C22 3.12 20.88 2 19.5 2zm0 19h-15V9h15v12z"/></svg>Scopri come ti aiuto</a>
       </div>
     </div>
     <div>
@@ -128,15 +120,15 @@
           </div>
         </div>
         <p class="card-name">Valerio Santoni</p>
-        <p class="card-role">Italiano in Svizzera · Coaching carriera</p>
+        <p class="card-role" data-i18n="chero.role">Italiano in Svizzera · Coaching carriera</p>
         <a href="https://www.novatalent.com" target="_blank" class="nova-badge">
           <svg class="nova-logo" viewBox="0 0 369 112" width="52" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M195.098 55.96c0-17.4 11.375-29.64 27.765-29.64 16.38 0 27.843 12.24 27.843 29.64 0 17.41-11.531 29.63-27.92 29.63-16.39 0-27.688-12.22-27.688-29.63zm10.514 0c0 12.26 6.737 19.99 17.251 19.99s17.251-7.72 17.251-19.99-6.737-19.99-17.251-19.99-17.251 7.74-17.251 19.99zM139.191 27.33l26.893 40.62V27.33h9.884v57.32h-9.884l-26.97-40.61v40.61h-9.885V27.33h9.962zM291.868 60.35c-1.105 2.9-2.275 6.44-3.689 11.45-1.259-4.63-2.353-7.99-3.612-11.45L272.021 27.33h-10.658l21.636 57.32h10.349l21.337-57.32h-10.437l-12.38 33.02zM337.955 27.33h10.282l20.697 57.32h-10.592l-4.627-13.25h-21.404l-4.627 13.25h-10.426l20.697-57.33zm3.854 17.11l-6.505 18.51h15.562l-6.627-18.51c-.497-1.44-.888-2.92-1.171-4.42-.331 1.5-.751 2.97-1.259 4.42z" fill="#0EB0A4"/><path fill-rule="evenodd" clip-rule="evenodd" d="M77.1 43.13C50.936 47.55 27.754 63.01 12.977 85.1 7.32 93.28 2.945 102.28 0 111.78 17.571 35.94 50.373 0 50.373 0S63.206 14.06 77.1 43.13zm3.744 9.63l.618-.08c8.234 19.15 14.696 39 19.306 59.33 0 0-21.426-21.51-46.762-26.74a14.66 14.66 0 00-7.267 0c-24.86 5.12-45.944 25.91-46.74 26.7 8.926-17.36 21.97-32.27 38-43.42 7.86-5.32 16.47-9.44 25.55-12.22a113.5 113.5 0 0113.784-3.11c.352-.05.704-.1 1.056-.15.815-.11 1.63-.23 2.456-.31z" fill="#0EB0A4"/></svg>
         </a>
         <div class="card-stats">
-          <div class="pstat"><span class="pstat-n">5<span>+</span></span><span class="pstat-l" data-i18n="hero.stat.countries">Countries</span></div>
-          <div class="pstat"><span class="pstat-n">4<span>.0</span></span><span class="pstat-l" data-i18n="hero.stat.gpa">GPA CSB</span></div>
-          <div class="pstat"><span class="pstat-n">108<span>/110</span></span><span class="pstat-l" data-i18n="hero.stat.grade">Master grade</span></div>
-          <div class="pstat"><span class="pstat-n">1.5<span>K+</span></span><span class="pstat-l" data-i18n="hero.stat.records">Records reconciled</span></div>
+          <div class="pstat"><span class="pstat-n">5<span>+</span></span><span class="pstat-l" data-i18n="chero.s1">Paesi</span></div>
+          <div class="pstat"><span class="pstat-n">3</span><span class="pstat-l" data-i18n="chero.s2">Città svizzere</span></div>
+          <div class="pstat"><span class="pstat-n">4</span><span class="pstat-l" data-i18n="chero.s3">Lingue</span></div>
+          <div class="pstat"><span class="pstat-n">1<span>:1</span></span><span class="pstat-l" data-i18n="chero.s4">Coaching</span></div>
         </div>
       </div>
     </div>
@@ -235,572 +227,75 @@
   </div>
 </section>
 
-<!-- ─── ABOUT ────────────────────────────────── -->
-<section id="about" class="section">
+<!-- ─── CHI SONO (home coaching) ───────────────── -->
+<section id="chi-sono" class="section">
   <div class="container">
     <div class="section-head fade-in">
-      <div class="section-label" data-i18n="about.label">About</div>
-      <h2 class="section-title" data-i18n="about.title">Turning data into<br><em>decisions that matter</em></h2>
-      <p class="section-desc" data-i18n="about.desc">Double-degree graduate · Data analyst · Cross-cultural problem solver</p>
-    </div>
-    <div class="bento">
-      <div class="bento-main fade-in">
-        <div class="bento-tag" data-i18n="about.tag">Background</div>
-        <h3 class="bento-hl" data-i18n="about.headline">From Ancona to Zurich,<br>via Clermont-Ferrand, Würzburg &amp; Chengdu</h3>
-        <div class="bento-body">
-          <p data-i18n="about.p1">Double-degree Master's graduate in Management (Business Intelligence) and International Business (Digital Management) from Università di Pavia and Clermont School of Business. Passionate about turning complex data into clear, actionable stories that drive smarter decisions.</p>
-          <p data-i18n="about.p2">At Philip Morris International in Lausanne, I supported the Brand Retail Deployment team, aligning databases across markets, automating reporting flows, and managing large-scale projects behind the global IQOS retail footprint.</p>
-          <p data-i18n="about.p3">At UBS in Zurich (P&amp;C – Marketing &amp; Digital Sales) I managed the client data management dashboard, support the Client Intelligence project, and oversee marketing events reporting, helping stakeholders access the right facts faster during the Credit Suisse integration.</p>
-        </div>
-        <div class="pills">
-          <span class="pill" data-i18n="skill.pm">Project Management</span>
-          <span class="pill" data-i18n="skill.bi">Business Intelligence</span>
-          <span class="pill" data-i18n="skill.pres">Presentations</span>
-          <span class="pill" data-i18n="skill.anal">Analytical Skills</span>
-          <span class="pill" data-i18n="skill.dg">Data Governance</span>
-        </div>
-      </div>
-      <div class="bento-side">
-        <div class="bento-stat fade-in">
-          <div class="bento-tag" data-i18n="about.exp.label">Experience</div>
-          <div class="stat-big"><span class="ac">2</span> <span data-i18n="about.exp.unit">yrs</span></div>
-          <div class="stat-sub" data-i18n="about.exp.sub">international industry experience</div>
-        </div>
-        <div class="bento-stat fade-in">
-          <div class="bento-tag" data-i18n="about.scope.label">Scope</div>
-          <div class="stat-big"><span class="ac">5</span>+</div>
-          <div class="stat-sub" data-i18n="about.scope.sub">countries lived &amp; worked in</div>
-        </div>
-        <div class="bento-stat fade-in">
-          <div class="bento-tag" data-i18n="about.impact.label">Impact</div>
-          <div class="stat-big"><span class="ac">1.5K</span>+</div>
-          <div class="stat-sub" data-i18n="about.impact.sub">records reconciled at PMI</div>
-        </div>
-        <div class="bento-stat fade-in">
-          <div class="bento-tag" data-i18n="about.ubs.label">UBS</div>
-          <div class="stat-big"><span class="ac">Live</span></div>
-          <div class="stat-sub" data-i18n="about.ubs.sub">client data management dashboard &amp; Client Intelligence</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── EXPERIENCE ───────────────────────────── -->
-<section id="experience" class="section section-alt">
-  <div class="container">
-    <div class="section-head fade-in">
-      <div class="section-label" data-i18n="exp.label">Career</div>
-      <h2 class="section-title" data-i18n="exp.title">Professional <em>Experience</em></h2>
-      <p class="section-desc" data-i18n="exp.desc">From Italian academia to Swiss banking, via global FMCG in Lausanne.</p>
-    </div>
-    <div class="timeline">
-
-      <!-- WEF -->
-      <div class="tl-group fade-in">
-        <div class="company-sidebar">
-          <div class="company-card">
-            <div class="co-logo logo-wef"><span>WEF</span></div>
-            <div><div class="co-name">World Economic Forum</div><div class="co-loc" data-i18n="wef.loc">Geneva, Switzerland</div></div>
-          </div>
-        </div>
-        <div class="role-cards">
-          <div class="role-card">
-            <div class="role-header">
-              <h4 class="role-title" data-i18n="wef.r1.title">Digital Product Specialist, AI &amp; Business Transformation</h4>
-              <span class="role-badge" data-i18n="badge.current">Current</span>
-            </div>
-            <p class="role-date" data-i18n="wef.r1.date">Sep 2026 – Present</p>
-            <p class="role-dept" data-i18n="wef.r1.dept">Technology &amp; Digital Innovation</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- UBS -->
-      <div class="tl-group fade-in">
-        <div class="company-sidebar">
-          <div class="company-card">
-            <div class="co-logo logo-ubs"><img src="assets/logos/ubs.png" alt="UBS" onerror="this.remove()" loading="lazy" onload="this.parentElement.classList.add('has-img')"/><span>UBS</span></div>
-            <div><div class="co-name">UBS</div><div class="co-loc">Zurich, Switzerland<br>On-site</div></div>
-          </div>
-        </div>
-        <div class="role-cards">
-          <div class="role-card">
-            <div class="role-header">
-              <h4 class="role-title" data-i18n="ubs.r1.title">Business Intelligence Specialist</h4>
-            </div>
-            <p class="role-date" data-i18n="ubs.r1.date">Mar 2026 – Aug 2026</p>
-            <p class="role-dept" data-i18n="ubs.r1.dept">Personal &amp; Corporate Banking – Marketing &amp; Digital Sales</p>
-            <ul>
-              <li data-i18n="ubs.r1.b1">Managed and developed the client data management dashboard for Marketing &amp; Digital Sales (Power BI, SQL)</li>
-              <li data-i18n="ubs.r1.b2">Supported the Client Intelligence project, delivering data-driven insights to improve client engagement and segmentation</li>
-              <li data-i18n="ubs.r1.b3">Monitored marketing events end-to-end, from campaign setup to performance reporting and stakeholder delivery</li>
-              <li data-i18n="ubs.r1.b4">Collaborated with cross-functional teams on scalable, reliable analytics and reporting processes during the Credit Suisse integration</li>
-              <li data-i18n="ubs.r1.b5">Supported data governance and quality validation across client data platforms in a complex banking environment</li>
-            </ul>
-            <div class="role-tags"><span class="rtag">Client Intelligence</span><span class="rtag">Power BI</span><span class="rtag">SQL</span><span class="rtag">Client Data Management</span><span class="rtag">Data Governance</span></div>
-          </div>
-          <div class="role-card">
-            <div class="role-header"><h4 class="role-title" data-i18n="ubs.r2.title">Data &amp; Reporting Engineer Intern</h4></div>
-            <p class="role-date" data-i18n="ubs.r2.date">Sep 2025 – Feb 2026</p>
-            <ul>
-              <li data-i18n="ubs.r2.b1">Built and maintained a traffic monitoring system to track marketing performance and digital sales KPIs (Power BI, SQL)</li>
-              <li data-i18n="ubs.r2.b2">Worked with service management databases on Azure Databricks; built Power BI dashboards and dataflows from multiple sources</li>
-              <li data-i18n="ubs.r2.b3">Gathered requirements, developed test cases, deployed reporting solutions</li>
-              <li data-i18n="ubs.r2.b4">Used GitLab for project tracking and version control</li>
-              <li data-i18n="ubs.r2.b5">Delivered presentations at the Tech Architect Forum</li>
-            </ul>
-            <div class="role-tags"><span class="rtag">Traffic Monitoring</span><span class="rtag">Azure Databricks</span><span class="rtag">Power BI</span><span class="rtag">ServiceNow</span><span class="rtag">GitLab</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PMI -->
-      <div class="tl-group fade-in">
-        <div class="company-sidebar">
-          <div class="company-card">
-            <div class="co-logo logo-pmi"><img src="assets/logos/pmi.png" alt="PMI" onerror="this.remove()" loading="lazy" onload="this.parentElement.classList.add('has-img')"/><span>PMI</span></div>
-            <div><div class="co-name">Philip Morris International</div><div class="co-loc">Lausanne, Switzerland<br>On-site</div></div>
-          </div>
-        </div>
-        <div class="role-cards">
-          <div class="role-card">
-            <div class="role-header"><h4 class="role-title" data-i18n="pmi.r1.title">Data Analyst Intern</h4></div>
-            <p class="role-date" data-i18n="pmi.r1.date">Feb 2025 – Aug 2025</p>
-            <ul>
-              <li data-i18n="pmi.r1.b1">Analyzed deployment of retail touchpoints globally, aligning BREPT database with ISquare using Python</li>
-              <li data-i18n="pmi.r1.b2">Identified discrepancies in 1,500+ records and automated reconciliation of location data</li>
-              <li data-i18n="pmi.r1.b3">Designed Power BI dashboards to report Q1/Q2 KPIs and visualize ecosystem performance</li>
-              <li data-i18n="pmi.r1.b4">Suggested improvements for ISquare during the transition to ISquare 2.0</li>
-              <li data-i18n="pmi.r1.b5">Coordinated with project managers on point-of-sale openings governance</li>
-            </ul>
-            <div class="role-tags"><span class="rtag">Python</span><span class="rtag">Power BI</span><span class="rtag">Data Analysis</span><span class="rtag">Project Management</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- UniPV -->
-      <div class="tl-group fade-in">
-        <div class="company-sidebar">
-          <div class="company-card">
-            <div class="co-logo logo-unipv"><img src="assets/logos/unipv.png" alt="UniPV" onload="this.parentElement.classList.add('has-img')"/><span>PV</span></div>
-            <div><div class="co-name">Università di Pavia</div><div class="co-loc">Pavia, Italy · On-site</div></div>
-          </div>
-        </div>
-        <div class="role-cards">
-          <div class="role-card">
-            <div class="role-header"><h4 class="role-title" data-i18n="unipv.r1.title">Center for Global Strategic Engagement Intern</h4></div>
-            <p class="role-date" data-i18n="unipv.r1.date">Mar 2024 – Jun 2024</p>
-            <ul>
-              <li data-i18n="unipv.r1.b1">Organized and managed events for the GLOBEC – EC2U Alliance Unit</li>
-              <li data-i18n="unipv.r1.b2">Welcomed researchers from University of Turku and University of Poitiers</li>
-              <li data-i18n="unipv.r1.b3">Project reporting and documentation</li>
-              <li data-i18n="unipv.r1.b4">Featured in an <a href="https://www.unipv.news/notizie/tirocinio-curriculare-un-percorso-di-crescita-personale-e-professionale-alluniversita-di" target="_blank" style="color:var(--red);font-weight:600">official university article</a> about the internship experience</li>
-            </ul>
-            <div class="role-tags"><span class="rtag">Event Management</span><span class="rtag">EC2U Alliance</span><span class="rtag">Teamwork</span><span class="rtag">Organization</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- UNIVPM -->
-      <div class="tl-group fade-in">
-        <div class="company-sidebar">
-          <div class="company-card">
-            <div class="co-logo logo-univpm"><img src="assets/logos/univpm.png" alt="UNIVPM" onload="this.parentElement.classList.add('has-img')"/><span>AM</span></div>
-            <div><div class="co-name">Università Politecnica delle Marche</div><div class="co-loc">Ancona, Italy · Hybrid</div></div>
-          </div>
-        </div>
-        <div class="role-cards">
-          <div class="role-card">
-            <div class="role-header"><h4 class="role-title" data-i18n="univpm.r1.title">Disciplinary Tutor – Private Law</h4></div>
-            <p class="role-date" data-i18n="univpm.r1.date">Aug 2022 – Jan 2023</p>
-            <ul><li data-i18n="univpm.r1.b1">Disciplinary Tutor of Private Law (50 hours)</li></ul>
-            <div class="role-tags"><span class="rtag">Communication</span><span class="rtag">Organization</span></div>
-          </div>
-          <div class="role-card">
-            <div class="role-header"><h4 class="role-title" data-i18n="univpm.r2.title">Project Tutor – Design Thinking</h4></div>
-            <p class="role-date" data-i18n="univpm.r2.date">Feb 2022 – Jul 2022</p>
-            <ul>
-              <li data-i18n="univpm.r2.b1">Facilitated Design Thinking sessions using Miro Board and Microsoft Teams</li>
-              <li data-i18n="univpm.r2.b2">Led brainstorming sprints with student teams</li>
-              <li data-i18n="univpm.r2.b3">Managed coordination across tasks and deliverables</li>
-            </ul>
-            <div class="role-tags"><span class="rtag">Brainstorm Facilitation</span><span class="rtag">Design Thinking</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── HIGHLIGHTS ────────────────────────────── -->
-<section id="highlights" class="section">
-  <div class="container">
-    <div class="section-head fade-in">
-      <div class="section-label" data-i18n="hl.label">Gallery</div>
-      <h2 class="section-title" data-i18n="hl.title">Projects &amp; <em>Highlights</em></h2>
-      <p class="section-desc" data-i18n="hl.desc">Key moments from international experiences, competitions and academic projects.</p>
-    </div>
-    <div class="hl-grid">
-
-      <div class="hl-card fade-in">
-        <div class="hl-img">
-          <img src="assets/images/eu-ai.jpeg" alt="EU Parliament AI Act Panel" loading="lazy"/>
-          <span class="hl-cat" data-i18n="hl.1.cat">Policy &amp; Advocacy</span>
-        </div>
-        <div class="hl-body">
-          <h4 class="hl-title" data-i18n="hl.1.title">EU AI Act Panelist · European Parliament</h4>
-          <p class="hl-desc" data-i18n="hl.1.desc">Delivered policy recommendations on AI and employee rights at the European Students Assembly (ESA24) inside the EU Parliament plenary hall, Strasbourg.</p>
-          <span class="hl-meta">Feb–Apr 2024 · Strasbourg</span>
-        </div>
-      </div>
-
-      <div class="hl-card fade-in">
-        <div class="hl-img">
-          <img src="assets/images/china-swufe.jpeg" alt="SWUFE Global Academy Chengdu" loading="lazy"/>
-          <span class="hl-cat" data-i18n="hl.3.cat">International</span>
-        </div>
-        <div class="hl-body">
-          <h4 class="hl-title" data-i18n="hl.3.title">SWUFE Global Academy · Chengdu</h4>
-          <p class="hl-desc" data-i18n="hl.3.desc">Participated in the Southwestern University of Finance and Economics summer program, a cross-cultural dialogue on East &amp; West business management theories with 100+ international students.</p>
-          <span class="hl-meta">Jul 2024 · Chengdu, China</span>
-        </div>
-      </div>
-
-      <div class="hl-card fade-in">
-        <div class="hl-img">
-          <img src="assets/images/microstrategy-project.jpeg" alt="MicroStrategy Kings League" loading="lazy"/>
-          <span class="hl-cat" data-i18n="hl.4.cat">BI Project</span>
-        </div>
-        <div class="hl-body">
-          <h4 class="hl-title" data-i18n="hl.4.title">MicroStrategy · Kings League Dashboard, Sprint MVP</h4>
-          <p class="hl-desc" data-i18n="hl.4.desc">Served as Scrum Master on a MicroStrategy BI project at Clermont School of Business, building a performance analytics dashboard for the Kings League. Named Sprint MVP.</p>
-          <span class="hl-meta">Clermont School of Business, 2024–25</span>
-        </div>
-      </div>
-
-      <div class="hl-card fade-in">
-        <div class="hl-img">
-          <img src="assets/images/pm-app-project.jpeg" alt="University Library App" loading="lazy"/>
-          <span class="hl-cat" data-i18n="hl.5.cat">Project Management</span>
-        </div>
-        <div class="hl-body">
-          <h4 class="hl-title" data-i18n="hl.5.title">University Library System App</h4>
-          <p class="hl-desc" data-i18n="hl.5.desc">Managed the design and development of a full-featured university library app at Università di Pavia, featuring a ChatBot, Plagiarism checker, Book Finder, and Translator across mobile and desktop.</p>
-          <span class="hl-meta">Università di Pavia, 2023–24</span>
-        </div>
-      </div>
-
-      <div class="hl-card fade-in">
-        <div class="hl-img">
-          <img src="assets/images/big-data.jpeg" alt="Big Data Analysis Grammy Project" loading="lazy"/>
-          <span class="hl-cat" data-i18n="hl.6.cat">Academic Project</span>
-        </div>
-        <div class="hl-body">
-          <h4 class="hl-title" data-i18n="hl.6.title">Big Data Analysis · Grammy Awards Project</h4>
-          <p class="hl-desc" data-i18n="hl.6.desc">Academic project at Clermont School of Business analyzing Grammy "Record of the Year" historical data using advanced BI techniques to uncover patterns in musical success.</p>
-          <span class="hl-meta">Clermont School of Business, 2024–25</span>
-        </div>
-      </div>
-
-      <div class="hl-card fade-in">
-        <div class="hl-img">
-          <img src="assets/images/pwc-audita.jpeg" alt="PwC Be an Audit Solver" loading="lazy"/>
-          <span class="hl-cat" data-i18n="hl.7.cat">Competition</span>
-        </div>
-        <div class="hl-body">
-          <h4 class="hl-title" data-i18n="hl.7.title">PwC · Be an Audit Solver</h4>
-          <p class="hl-desc" data-i18n="hl.7.desc">Participated in PwC's "Be an Audit Solver" challenge, collaborative problem-solving under real audit scenarios, tackling complex business cases within a professional environment.</p>
-          <span class="hl-meta">PwC Italy</span>
-        </div>
-      </div>
-
-      <div class="hl-card fade-in">
-        <div class="hl-img">
-          <img src="assets/images/hackaton-pwc.jpeg" alt="PwC Hackathon" loading="lazy"/>
-          <span class="hl-cat" data-i18n="hl.8.cat">Hackathon</span>
-        </div>
-        <div class="hl-body">
-          <h4 class="hl-title" data-i18n="hl.8.title">PwC Hackathon · Final Pitch</h4>
-          <p class="hl-desc" data-i18n="hl.8.desc">Final presentation at a PwC hackathon, delivering a data-driven solution to a panel of senior professionals in a large-format competitive event setting.</p>
-          <span class="hl-meta">PwC Italy</span>
-        </div>
-      </div>
-
-      <div class="hl-card fade-in">
-        <div class="hl-img">
-          <img src="assets/images/contamination-lab.jpeg" alt="Contamination Lab Award" loading="lazy"/>
-          <span class="hl-cat" data-i18n="hl.9.cat">Award</span>
-        </div>
-        <div class="hl-body">
-          <h4 class="hl-title" data-i18n="hl.9.title">Contamination Lab · Award Ceremony</h4>
-          <p class="hl-desc" data-i18n="hl.9.desc">GreenMade project awarded at the Contamination Lab, selected for incubation by The Hive Business Incubator and recognized at the Enactus National Competition (Jun 2022).</p>
-          <span class="hl-meta">Jun 2022 · Università Politecnica delle Marche</span>
-        </div>
-      </div>
-
-      <div class="hl-card fade-in">
-        <div class="hl-img">
-          <img src="assets/images/hackaton-smart-hack.jpeg" alt="Smart & Hack Hackathon" loading="lazy"/>
-          <span class="hl-cat" data-i18n="hl.10.cat">Hackathon</span>
-        </div>
-        <div class="hl-body">
-          <h4 class="hl-title" data-i18n="hl.10.title">Smart &amp; Hack · Università di Pavia</h4>
-          <p class="hl-desc" data-i18n="hl.10.desc">Participated in the Smart &amp; Hack hackathon at Università di Pavia, collaborative innovation challenge focused on smart solutions and digital transformation.</p>
-          <span class="hl-meta">Università di Pavia</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ─── MY STORY ──────────────────────────────── -->
-<section id="story" class="section section-alt">
-  <div class="container">
-    <div class="section-head fade-in">
-      <div class="section-label" data-i18n="story.label">Narrative</div>
-      <h2 class="section-title" data-i18n="story.title">My <em>Story</em></h2>
+      <div class="section-label" data-i18n="cabout.label">Chi sono</div>
+      <h2 class="section-title" data-i18n="cabout.title">Ho fatto <em>il tuo stesso salto</em></h2>
     </div>
     <div class="story-wrap">
       <div class="story-aside fade-in">
-        <div class="story-num">01</div>
-        <div class="section-label" style="margin-top:10px" data-i18n="story.aside">First person</div>
-        <p style="font-size:.82rem;color:var(--text3);line-height:1.75;max-width:190px;margin-top:8px" data-i18n="story.aside.sub">A career built on curiosity, data, and the conviction that good decisions start with good information.</p>
+        <div class="route-flags">🇮🇹 → 🇨🇭</div>
+        <div class="section-label" style="margin-top:12px" data-i18n="cabout.aside">Il mio percorso</div>
+        <p class="route" data-i18n="cabout.route">Ancona → Losanna → Zurigo → Ginevra</p>
       </div>
       <div class="story-paras fade-in">
-        <p class="story-p" data-i18n="story.p1">I grew up with a deep curiosity about how organizations make decisions, and a quiet conviction that the best decisions are grounded in clear, well-structured information. That conviction became a career.</p>
-        <p class="story-p" data-i18n="story.p2">From Ancona to Zurich, my path took me through an Erasmus+ semester in Würzburg, a summer academy in Chengdu, and a double-degree Master's between Pavia and Clermont School of Business. Along the way I earned recognition at entrepreneurship competitions, tutored teams through Design Thinking sprints, and panelled at the EU Parliament on AI policy, learning that the best decisions are only as good as the information behind them.</p>
-        <p class="story-p" data-i18n="story.p3">At PMI in Lausanne I saw firsthand how clean, connected data can accelerate a global organisation. At UBS in Zurich, embedded in the Credit Suisse integration, I managed the client data management dashboard, supported the Client Intelligence project, and kept marketing events on track, the tool changes, the conviction stays the same.</p>
+        <p class="story-p" data-i18n="cabout.p1">Sono partito da Ancona. Dopo una doppia laurea tra Pavia e Clermont-Ferrand e un Erasmus in Germania, sono arrivato in Svizzera con un tirocinio a Losanna. Il primo stipendio mi sembrava enorme rispetto a quello che vedevo in Italia.</p>
+        <p class="story-p" data-i18n="cabout.p2">Poi Zurigo, in banca, e oggi Ginevra. In mezzo ci sono state candidature senza risposta, colloqui andati male e parecchi errori che nessuno mi aveva spiegato: sul CV, sui colloqui, sullo stipendio, sulla burocrazia.</p>
+        <p class="story-p" data-i18n="cabout.p3">Per questo faccio coaching: ti do la mappa che avrei voluto avere io, con dati reali e senza fuffa, così arrivi prima e sbagli meno.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── EDUCATION ─────────────────────────────── -->
-<section id="education" class="section">
+<!-- ─── DAL BLOG ─────────────────────────────── -->
+<section id="dal-blog" class="section section-alt">
   <div class="container">
     <div class="section-head fade-in">
-      <div class="section-label" data-i18n="edu.label">Academic</div>
-      <h2 class="section-title" data-i18n="edu.title">Education</h2>
-      <p class="section-desc" data-i18n="edu.desc">A double-degree journey across Italy, France, Germany and China.</p>
+      <div class="section-label" data-i18n="cblog.label">Dal blog</div>
+      <h2 class="section-title" data-i18n="cblog.title">Guide pratiche, <em>scritte da chi c'è passato</em></h2>
     </div>
-    <div class="edu-grid">
-      <div class="edu-card s7 fade-in">
-        <div class="edu-logo logo-csb"><img src="assets/logos/csb.png" alt="CSB" onerror="this.remove()" loading="lazy" onload="this.parentElement.classList.add('has-img')"/><span>CSB</span></div>
-        <div>
-          <div class="edu-school">Clermont School of Business</div>
-          <div class="edu-degree" data-i18n="edu.csb.degree">Master in Management, Business Intelligence</div>
-          <div class="edu-date">Sep 2024 – Dec 2025</div>
-          <div class="edu-grade">4.0 / 4.0</div>
-          <div class="edu-note" data-i18n="edu.csb.note">Double-Degree Programme Grande École – 3rd Year</div>
-          <div class="edu-courses" data-i18n="edu.csb.courses">BI Methodology · Fundamentals of BI · Segmentation of BI · French</div>
-        </div>
-      </div>
-      <div class="edu-card s4 fade-in">
-        <div class="edu-logo logo-swufe"><img src="assets/logos/swufe.png" alt="SWUFE" onload="this.parentElement.classList.add('has-img')"/><span>CN</span></div>
-        <div>
-          <div class="edu-school">Southwestern University of Finance and Economics (SWUFE) · Chengdu, China</div>
-          <div class="edu-degree" data-i18n="edu.cn.degree">Global Academy Summer Camp</div>
-          <div class="edu-date">Jul 2024</div>
-          <div class="edu-note" data-i18n="edu.cn.note">Dialogue on Business Management Theories East &amp; West</div>
-          <div class="cert-view" style="margin-top:6px" onclick="openCert('assets/certs/swufe.jpeg')"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View</div>
-        </div>
-      </div>
-      <div class="edu-card s5 fade-in">
-        <div class="edu-logo logo-unipv"><img src="assets/logos/unipv.png" alt="UniPV" onload="this.parentElement.classList.add('has-img')"/><span>PV</span></div>
-        <div>
-          <div class="edu-school">Università di Pavia</div>
-          <div class="edu-degree" data-i18n="edu.pv.degree">MSc International Business &amp; Entrepreneurship | Digital Management</div>
-          <div class="edu-date">Sep 2023 – Oct 2025</div>
-          <div class="edu-grade">108 / 110</div>
-          <div class="edu-note" data-i18n="edu.pv.note">Thesis: "Data-Driven Insights in Digital Retail Transformation – The Case of PMI"</div>
-        </div>
-      </div>
-      <div class="edu-card s4 fade-in">
-        <div class="edu-logo logo-wuerzburg"><img src="assets/logos/wuerzburg.png" alt="Würzburg" onerror="this.remove()" loading="lazy" onload="this.parentElement.classList.add('has-img')"/><span>WÜ</span></div>
-        <div>
-          <div class="edu-school">Julius-Maximilians-Universität Würzburg</div>
-          <div class="edu-degree" data-i18n="edu.wu.degree">Erasmus+, Business Administration</div>
-          <div class="edu-date">Mar – Aug 2023</div>
-          <div class="edu-courses" data-i18n="edu.wu.courses">Sales &amp; CRM · Strategic Innovation Management · Digital Entrepreneurship</div>
-        </div>
-      </div>
-      <div class="edu-card s4 fade-in">
-        <div class="edu-logo logo-univpm"><img src="assets/logos/univpm.png" alt="UNIVPM" onload="this.parentElement.classList.add('has-img')"/><span>AM</span></div>
-        <div>
-          <div class="edu-school">Università Politecnica delle Marche</div>
-          <div class="edu-degree" data-i18n="edu.am.degree">BSc Business Administration</div>
-          <div class="edu-date">Sep 2020 – Oct 2023</div>
-          <div class="edu-grade">101 / 110</div>
-          <div class="edu-note" data-i18n="edu.am.note">Thesis: "The Impact of AI on Marketing Strategies"</div>
-        </div>
-      </div>
+    <div class="services-grid fade-in">
+      <a href="blog/lavorare-in-svizzera-guida-2026.html" class="service-card">
+        <div class="service-icon">🧭</div>
+        <div class="service-tag" data-i18n="cblog.a1.tag">Guida completa</div>
+        <h3 class="service-title">Lavorare in Svizzera: la guida completa per italiani 2026</h3>
+        <p class="service-desc" data-i18n="cblog.a1.desc">Permessi, stipendi, settori, costo della vita e come candidarsi, tutto in un posto.</p>
+        <div class="service-cta"><span data-i18n="cblog.read">Leggi l'articolo</span> →</div>
+      </a>
+      <a href="blog/capital-gains-svizzera-2026.html" class="service-card">
+        <div class="service-icon">📈</div>
+        <div class="service-tag" data-i18n="cblog.a2.tag">Finanza personale</div>
+        <h3 class="service-title">Capital gains in Svizzera 2026: come funziona la tassazione</h3>
+        <p class="service-desc" data-i18n="cblog.a2.desc">Perché in Svizzera i guadagni di borsa del privato sono esenti, e quando invece no.</p>
+        <div class="service-cta"><span data-i18n="cblog.read">Leggi l'articolo</span> →</div>
+      </a>
+      <a href="blog/" class="service-card">
+        <div class="service-icon">📚</div>
+        <div class="service-tag" data-i18n="cblog.a3.tag">Archivio</div>
+        <h3 class="service-title" data-i18n="cblog.a3.title">Tutti gli articoli</h3>
+        <p class="service-desc" data-i18n="cblog.a3.desc">L'archivio completo, con le guide per trasferirti e lavorare in Svizzera.</p>
+        <div class="service-cta"><span data-i18n="cblog.all">Vai al blog</span> →</div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ─── SKILLS ────────────────────────────────── -->
-<section id="skills" class="section section-alt">
+<!-- ─── FAQ ──────────────────────────────────── -->
+<section id="faq" class="section">
   <div class="container">
     <div class="section-head fade-in">
-      <div class="section-label" data-i18n="skills.label">Expertise</div>
-      <h2 class="section-title" data-i18n="skills.title">Skills &amp; <em>Tools</em></h2>
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title" data-i18n="cfaq.title">Le domande <em>che mi fate sempre</em></h2>
     </div>
-    <div class="skills-grid">
-      <div class="skill-group fade-in">
-        <div class="sg-title" data-i18n="skills.cat1">Industry Knowledge</div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Business Intelligence</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Reporting &amp; Analysis</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Project Management</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Analytical Skills</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Data Governance</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
-      </div>
-      <div class="skill-group fade-in">
-        <div class="sg-title" data-i18n="skills.cat2">Tools &amp; Technologies</div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Microsoft Power BI</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Microsoft Excel</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">ETL</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Azure Databricks</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">SQL</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Python</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" data-w="70"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">MicroStrategy</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" data-w="65"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">GitLab</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" data-w="65"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">ServiceNow</span><span class="skill-pct">60%</span></div><div class="skill-track"><div class="skill-fill" data-w="60"></div></div></div>
-      </div>
-      <div class="skill-group fade-in">
-        <div class="sg-title" data-i18n="skills.cat3">Interpersonal</div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Problem Solving</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Teamwork</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Communication</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Organization Skills</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Brainstorm Facilitation</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── LANGUAGES ─────────────────────────────── -->
-<section id="languages" class="section">
-  <div class="container">
-    <div class="section-head fade-in">
-      <div class="section-label" data-i18n="lang.label">Languages</div>
-      <h2 class="section-title" data-i18n="lang.title">Communication<br>across <em>cultures</em></h2>
-    </div>
-    <div class="lang-grid">
-      <div class="lang-card fade-in"><span class="lang-flag">🇮🇹</span><div class="lang-name">Italiano</div><div class="lang-level" data-i18n="lang.it.lvl">Native or bilingual proficiency</div><div class="lang-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span></div></div>
-      <div class="lang-card fade-in"><span class="lang-flag">🇬🇧</span><div class="lang-name">English</div><div class="lang-level" data-i18n="lang.en.lvl">Full professional proficiency</div><div class="lang-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot half"></span></div></div>
-      <div class="lang-card fade-in"><span class="lang-flag">🇫🇷</span><div class="lang-name">Français</div><div class="lang-level" data-i18n="lang.fr.lvl">Limited working proficiency</div><div class="lang-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span class="dot"></span></div></div>
-      <div class="lang-card fade-in"><span class="lang-flag">🇩🇪</span><div class="lang-name">Deutsch</div><div class="lang-level" data-i18n="lang.de.lvl">Elementary proficiency</div><div class="lang-dots"><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── CERTIFICATIONS ─────────────────────────── -->
-<section id="certifications" class="section section-alt">
-  <div class="container">
-    <div class="section-head fade-in">
-      <div class="section-label" data-i18n="cert.label">Credentials</div>
-      <h2 class="section-title" data-i18n="cert.title">Certifications</h2>
-    </div>
-    <div class="cert-grid">
-      <div class="cert-card fade-in"><span class="cert-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="var(--gold)" stroke="var(--gold)"/></svg></span><div><div class="cert-title">Nova Member</div><div class="cert-org">Nova</div><div class="cert-date">Mar 2025</div><div class="cert-view" onclick="openCert('assets/certs/nova.jpeg')"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View</div></div></div>
-      <div class="cert-card fade-in"><span class="cert-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></span><div><div class="cert-title">Excel Fundamentals</div><div class="cert-org">DataCamp</div><div class="cert-date">Sep 2024</div><div class="cert-view" onclick="openCert('assets/certs/excel.jpeg')"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View</div></div></div>
-      <div class="cert-card fade-in"><span class="cert-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span><div><div class="cert-title">Power BI Fundamentals</div><div class="cert-org">DataCamp</div><div class="cert-date">Aug 2024</div><div class="cert-view" onclick="openCert('assets/certs/powerbi.jpeg')"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View</div></div></div>
-      <div class="cert-card fade-in"><span class="cert-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></span><div><div class="cert-title">Introductory Certificate in Project Management</div><div class="cert-org">IPMA</div><div class="cert-date">Jun 2024</div><div class="cert-view" onclick="openCert('assets/certs/project-management.jpeg')"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View</div></div></div>
-      <div class="cert-card fade-in"><span class="cert-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span><div><div class="cert-title">Strategic Communication and Negotiation</div><div class="cert-org">Accademia di Comunicazione Strategica</div><div class="cert-date">Dec 2023</div></div></div>
-      <div class="cert-card fade-in"><span class="cert-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></span><div><div class="cert-title">German A2 Certification</div><div class="cert-org">Universitat Wurzburg</div><div class="cert-date">Mar 2023</div></div></div>
-      <div class="cert-card fade-in"><span class="cert-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span><div><div class="cert-title">Enactus Student Open Badge</div><div class="cert-org">Enactus</div><div class="cert-date">Jul 2022</div></div></div>
-      <div class="cert-card fade-in"><span class="cert-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg></span><div><div class="cert-title">Ecapital 2.0 Business Plan Competition</div><div class="cert-org">ISTAO</div><div class="cert-date">Jun 2021</div></div></div>
-      <div class="cert-card fade-in"><span class="cert-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span><div><div class="cert-title">First Certificate in English B2</div><div class="cert-org">Cambridge English</div><div class="cert-date">May 2019</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── VOLUNTEERING ──────────────────────────── -->
-<section id="volunteering" class="section">
-  <div class="container">
-    <div class="section-head fade-in">
-      <div class="section-label" data-i18n="vol.label">Community</div>
-      <h2 class="section-title" data-i18n="vol.title">Volunteering</h2>
-    </div>
-    <div class="vol-grid">
-      <div class="vol-card fade-in"><div class="vol-logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="vol-title" data-i18n="vol.1.title">EU AI Act Panelist (ESA24)</div><div class="vol-org">European Universities Community · Feb–Apr 2024</div><div class="vol-desc" data-i18n="vol.1.desc">Policy recommendation on AI and employee rights protection</div><div class="cert-view" onclick="openCert('assets/certs/esa24.jpeg')"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View</div></div></div>
-      <div class="vol-card fade-in"><div class="vol-logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#009FE3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><div><div class="vol-title" data-i18n="vol.2.title">Incoming Global Volunteer – Sales &amp; IR</div><div class="vol-org">AIESEC · Feb–Jul 2024</div><div class="vol-desc" data-i18n="vol.2.desc">SDGs-based collaboration with schools and NGOs</div></div></div>
-      <div class="vol-card fade-in"><div class="vol-logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><div class="vol-title" data-i18n="vol.3.title">Blood Donor</div><div class="vol-org">Blutspende SRK Schweiz</div></div></div>
-      <div class="vol-card fade-in"><div class="vol-logo"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><div><div class="vol-title" data-i18n="vol.4.title">Support Associate</div><div class="vol-org">Unione Nazionale Pro Loco d'Italia · Jul 2018</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── HONORS ────────────────────────────────── -->
-<section id="honors" class="section section-alt">
-  <div class="container">
-    <div class="section-head fade-in">
-      <div class="section-label" data-i18n="honors.label">Recognition</div>
-      <h2 class="section-title" data-i18n="honors.title">Honors &amp; <em>Awards</em></h2>
-    </div>
-    <div class="honors-grid">
-      <div class="honor-card fade-in"><div class="honor-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div><div><div class="honor-title" data-i18n="honors.1.title">GreenMade Project Award</div><div class="honor-org">The Hive Business Incubator &amp; Enactus · Jun 2022</div><div class="honor-desc" data-i18n="honors.1.desc">Selected for incubation at Università Politecnica delle Marche and recognized at the Enactus National Competition.</div></div></div>
-      <div class="honor-card fade-in"><div class="honor-ico"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div><div><div class="honor-title" data-i18n="honors.2.title">Reference Letter – CRSII, Università Politecnica delle Marche</div><div class="honor-org">Centro di Ricerca e Servizio sull'Innovazione e l'Imprenditorialità · Jun 2022</div><div class="honor-quote" data-i18n="honors.2.quote">"Valerio Santoni showed enthusiasm, autonomy and capacity in supporting teachers and teams."</div><div class="cert-view" onclick="openCert('assets/certs/centro-imprenditorialita.jpeg')"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View letter</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── RECOMMENDATION ───────────────────────── -->
-<section id="recommendation" class="section">
-  <div class="container">
-    <div class="section-head fade-in">
-      <div class="section-label" data-i18n="rec.label">Testimonial</div>
-      <h2 class="section-title" data-i18n="rec.title">Recommendation</h2>
-    </div>
-    <div class="rec-carousel fade-in">
-      <div class="rec-track" id="rec-track">
-        <div class="rec-card active">
-          <div class="rec-q">"</div>
-          <p class="rec-text" data-i18n="rec.ubs.text">We have come to know Valerio Santoni as a motivated and interested intern who is keen to learn. He copes confidently under pressure and is flexible. His method of working is precise, independent and efficient, and he employs his specialist know-how appropriately when carrying out his tasks. We would especially like to highlight that Valerio Santoni has a remarkable ability to quickly grasp new reporting requirements and implement them efficiently, delivering work of a very high quality. He has made valuable contributions to the delivery framework by preparing a variety of reports. Similarly, his language proficiency allows him to communicate effortlessly in English. Valerio Santoni completes his tasks with clear understanding and personal dedication and always performs well. Valerio Santoni is continually balanced, trustworthy, open and amiable. Moreover, his friendly and obliging manner as well as positive attitude is appreciated by clients, superiors and colleagues alike.</p>
-          <div class="rec-author">
-            <div class="rec-av" style="background:linear-gradient(135deg,#EC0000,#8B0000)">UBS</div>
-            <div>
-              <div class="rec-name" data-i18n="rec.ubs.author">Ivana Germersdorf &amp; Simon Pascal Wendelspiess</div>
-              <div class="rec-meta" data-i18n="rec.ubs.meta">Directors · UBS Business Solutions AG · February 2026</div>
-            </div>
-          </div>
-          <div class="cert-view" style="margin-top:12px" onclick="openCert(['assets/certs/reference-ubs-p1.jpeg?v=1','assets/certs/reference-ubs-p2.jpeg?v=1'])"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View letter</div>
-        </div>
-        <div class="rec-card">
-          <div class="rec-q">"</div>
-          <p class="rec-text" data-i18n="rec.pmi.text">Valerio is an action-oriented, stand-alone and quick learner proposing innovating solutions and applying fresh ideas. He has demonstrated strong communication skills combined with ability to build and maintain professional working relationships with his colleagues and supervisors. Valerio has consistently shown positive approach and determination in performing his tasks in a timely manner and with minimum supervision. We would strongly recommend him to any future employer.</p>
-          <div class="rec-author">
-            <div class="rec-av" style="background:linear-gradient(135deg,#E87722,#9A4D11)">PMI</div>
-            <div>
-              <div class="rec-name" data-i18n="rec.pmi.author">Damien Hiroux &amp; Florence Delaloye</div>
-              <div class="rec-meta" data-i18n="rec.pmi.meta">Director Global Employee Relations &amp; Senior Manager P&amp;C · Philip Morris Products S.A. · August 2025</div>
-              <div class="cert-view" style="margin-top:8px" onclick="openCert('assets/certs/reference-pmi.jpeg')"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View letter</div>
-            </div>
-          </div>
-        </div>
-        <div class="rec-card">
-          <div class="rec-q">"</div>
-          <p class="rec-text" data-i18n="rec.text">I had the pleasure of mentoring Valerio through the Nova Mentorship Program, and I was truly impressed by his proactive attitude and openness to growth. Valerio consistently demonstrated a strong commitment to his career development, approaching every conversation with curiosity and a clear desire to learn. He quickly absorbed feedback and was eager to apply practical insights to his career planning in Switzerland. Valerio's thoughtful questions and willingness to reflect on new perspectives made our discussions both engaging and impactful. I am confident that Valerio's analytical mindset and genuine drive will be a great asset as he builds his international career.</p>
-          <div class="rec-author">
-            <div class="rec-av">AS</div>
-            <div>
-              <div class="rec-name">Andrea Soffiati, ACA</div>
-              <div class="rec-meta">Manager @ Zurich Insurance · January 2026 · via Nova Mentorship Program</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="rec-nav">
-        <button class="rec-arrow rec-prev" onclick="recCarousel(-1)" aria-label="Previous"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <div class="rec-dots" id="rec-dots">
-          <button class="rec-dot active" onclick="recGo(0)"></button>
-          <button class="rec-dot" onclick="recGo(1)"></button>
-          <button class="rec-dot" onclick="recGo(2)"></button>
-        </div>
-        <button class="rec-arrow rec-next" onclick="recCarousel(1)" aria-label="Next"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-      </div>
+    <div class="faq-list fade-in">
+      <details><summary data-i18n="cfaq.q1">Serve il tedesco per lavorare in Svizzera?</summary><p data-i18n="cfaq.a1">Dipende da città e settore. In molte multinazionali, nel tech e nella finanza internazionale di Zurigo e Ginevra l'inglese basta per entrare. Il tedesco (o il francese nella Svizzera romanda) però apre molte più porte, soprattutto nei ruoli a contatto con i clienti.</p></details>
+      <details><summary data-i18n="cfaq.q2">Quanto guadagna un neolaureato in Svizzera?</summary><p data-i18n="cfaq.a2">Indicativamente tra 75.000 e 100.000 CHF lordi l'anno, a seconda di settore e città. A Zurigo il netto di un junior è di solito tra 4.500 e 5.500 CHF al mese. Nella guida gratuita trovi le cifre per settore.</p></details>
+      <details><summary data-i18n="cfaq.q3">Che permesso mi serve?</summary><p data-i18n="cfaq.a3">Da cittadino UE puoi cercare lavoro in Svizzera. Con un contratto di almeno un anno ottieni il permesso B, per contratti più brevi il permesso L. Se vivi in Italia vicino al confine puoi lavorare da frontaliere con il permesso G. Una volta arrivato, hai 14 giorni per registrarti al Comune.</p></details>
+      <details><summary data-i18n="cfaq.q4">Come funziona il coaching 1:1?</summary><p data-i18n="cfaq.a4">Prenoti la call e compili un breve form, così arrivo già preparato sul tuo caso. In un'ora lavoriamo su profilo, CV, dove candidarti e stipendio target. Entro 24 ore ricevi un documento con il piano, e hai 7 giorni per farmi domande in DM.</p></details>
+      <details><summary data-i18n="cfaq.q5">Il coaching mi garantisce un lavoro?</summary><p data-i18n="cfaq.a5">No, e diffida di chi te lo promette. Ti do metodo, strategia e gli errori da evitare, ma le candidature restano nelle tue mani. Il mio lavoro è farti arrivare prima, con meno tentativi a vuoto.</p></details>
+      <details><summary data-i18n="cfaq.q6">Quanto costa vivere a Zurigo?</summary><p data-i18n="cfaq.a6">Per un single, tra 2.650 e 3.750 CHF al mese, affitto compreso. La voce più pesante è l'affitto (1.500-2.000 CHF), poi l'assicurazione sanitaria (350-500 CHF).</p></details>
     </div>
   </div>
 </section>
