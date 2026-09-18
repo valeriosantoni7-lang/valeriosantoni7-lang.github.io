@@ -1413,3 +1413,18 @@ ul{list-style:none}
     transform:none !important;
   }
 }
+
+/* ── Home coaching (settembre 2026) ─────────────────────── */
+.hero-name.hero-promise{font-size:clamp(2.2rem,5.4vw,3.9rem);line-height:1.05;letter-spacing:-.035em;max-width:16ch}
+.hero-byline{margin:14px 0 4px;font-weight:600;color:var(--text2);font-size:1.02rem}
+.route-flags{font-size:2.3rem;line-height:1.1}
+.route{font-size:.9rem;color:var(--text3);line-height:1.7;margin-top:8px;max-width:200px}
+.faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-list details{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px 22px;transition:border-color .2s}
+.faq-list details[open]{border-color:var(--border-h)}
+.faq-list summary{cursor:pointer;font-weight:700;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1.02rem}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";color:var(--red);font-weight:800;font-size:1.3rem;flex-shrink:0}
+.faq-list details[open] summary::after{content:"−"}
+.faq-list details p{margin-top:12px;color:var(--text2);line-height:1.75}
+@media(max-width:768px){.hero-name.hero-promise{font-size:2.05rem}}
