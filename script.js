@@ -21,7 +21,7 @@ const T = {
 
     "cnav.about":"About",
     "cnav.faq":"FAQ",
-    "cnav.cv":"CV",
+    "cnav.tools":"Tools","cnav.cv":"CV",
     "chero.h1":"Land a job <span class=\"grad\">in Switzerland</span> without months of trial and error",
     "chero.by":"Valerio Santoni · I made the move from Italy to Switzerland",
     "chero.s1":"Countries",
@@ -229,7 +229,7 @@ const T = {
 
     "cnav.about":"Chi sono",
     "cnav.faq":"FAQ",
-    "cnav.cv":"CV",
+    "cnav.tools":"Strumenti","cnav.cv":"CV",
     "chero.h1":"Trova lavoro <span class=\"grad\">in Svizzera</span> senza perdere mesi di tentativi",
     "chero.by":"Valerio Santoni · ho fatto il salto Italia → Svizzera",
     "chero.s1":"Paesi",

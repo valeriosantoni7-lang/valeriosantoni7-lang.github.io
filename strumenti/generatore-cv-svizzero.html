@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="it" data-default-lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+  <title>Generatore di prompt per il CV svizzero, gratis | Valerio Santoni</title>
+  <meta name="description" content="Strumento gratuito: inserisci ruolo, settore e annuncio e ottieni i prompt pronti per trasformare il tuo CV italiano in un CV svizzero, adattarlo all'annuncio e scrivere la lettera. Funziona nel tuo browser."/>
+  <meta name="author" content="Valerio Santoni"/>
+  <meta name="keywords" content="cv svizzero con ai, generatore prompt cv, adattare cv annuncio, lettera di presentazione svizzera, chatgpt cv, cv italiano in svizzera"/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://valerioswiss.com/strumenti/generatore-cv-svizzero.html"/>
+  <meta property="og:title" content="Generatore di prompt per il CV svizzero, gratis"/>
+  <meta property="og:description" content="Inserisci ruolo, settore e annuncio: ottieni i prompt pronti da incollare in ChatGPT o Claude per il tuo CV svizzero."/>
+  <meta property="og:image" content="https://valerioswiss.com/assets/og-image.png?v=2"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:locale" content="it_IT"/>
+  <meta property="og:site_name" content="Valerio Santoni · @valerio.swiss"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Generatore di prompt per il CV svizzero, gratis"/>
+  <meta name="twitter:description" content="I prompt pronti per il tuo CV svizzero, in 30 secondi."/>
+  <meta name="twitter:image" content="https://valerioswiss.com/assets/og-image.png?v=2"/>
+
+  <link rel="canonical" href="https://valerioswiss.com/strumenti/generatore-cv-svizzero.html"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Generatore di prompt per il CV svizzero",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://valerioswiss.com/strumenti/generatore-cv-svizzero.html",
+        "description": "Strumento gratuito che genera i prompt per trasformare un CV italiano in un CV svizzero, adattarlo a un annuncio e scrivere la lettera di presentazione.",
+        "inLanguage": "it",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+        "author": {"@type": "Person", "name": "Valerio Santoni", "url": "https://valerioswiss.com/"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://valerioswiss.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Strumenti", "item": "https://valerioswiss.com/strumenti/"},
+          {"@type": "ListItem", "position": 3, "name": "Generatore di prompt per il CV svizzero"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css?v=14"/>
+
+  <style>
+    .tool-hero{padding:calc(var(--nav-h) + 56px) 24px 40px;background:linear-gradient(180deg,var(--bg2),var(--bg));text-align:center}
+    .tool-hero .pill{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;
+      text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:18px}
+    .tool-hero h1{font-size:clamp(30px,5vw,50px);font-weight:800;line-height:1.08;letter-spacing:-.02em;max-width:820px;margin:0 auto 16px}
+    .tool-hero h1 em{color:var(--red);font-style:italic}
+    .tool-hero p{font-size:clamp(15px,2vw,19px);color:var(--text2);max-width:640px;margin:0 auto;line-height:1.55}
+    .privacy{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13px;color:var(--text3);
+      background:var(--surface);border:1px solid var(--border);padding:8px 14px;border-radius:999px}
+
+    .tool{max-width:860px;margin:0 auto;padding:10px 24px 70px}
+    .card-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:26px;margin-bottom:22px}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+    .field label{font-size:13px;font-weight:600;letter-spacing:.4px;color:var(--text2)}
+    .field .opt{color:var(--text4);font-weight:400}
+    input[type=text],select,textarea{font-family:var(--font);font-size:15px;color:var(--text);background:var(--bg);
+      border:1px solid var(--border);border-radius:12px;padding:12px 14px;width:100%}
+    textarea{min-height:120px;resize:vertical;line-height:1.5}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:var(--red)}
+    .btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:6px}
+    button.go{background:var(--red);color:#fff;border:none;font-family:var(--font);font-size:16px;font-weight:600;
+      padding:14px 28px;border-radius:999px;cursor:pointer;transition:var(--tr)}
+    button.go:hover{transform:translateY(-2px);box-shadow:0 10px 26px var(--red-glow)}
+    button.ghost{background:transparent;color:var(--text2);border:1px solid var(--border);font-family:var(--font);
+      font-size:14px;padding:12px 20px;border-radius:999px;cursor:pointer}
+    .hint{font-size:13px;color:var(--text3);margin-top:8px;line-height:1.5}
+
+    #out{display:none}
+    .prompt-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:22px;margin-bottom:18px}
+    .prompt-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+    .prompt-head h3{font-size:18px;font-weight:700;margin:0}
+    .prompt-head .num{display:inline-block;background:var(--red);color:#fff;width:26px;height:26px;border-radius:50%;
+      font-size:13px;font-weight:700;text-align:center;line-height:26px;margin-right:9px}
+    button.copy{background:var(--text);color:var(--bg);border:none;font-family:var(--font);font-size:13px;font-weight:600;
+      padding:9px 18px;border-radius:999px;cursor:pointer}
+    button.copy.done{background:#16A34A;color:#fff}
+    pre.prompt{white-space:pre-wrap;background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px;
+      font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;line-height:1.55;color:var(--text);max-height:340px;overflow:auto}
+    .steps-box{background:var(--surface);border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:18px 22px;margin:26px 0}
+    .steps-box ol{margin:8px 0 0 18px;padding:0}
+    .steps-box li{margin-bottom:7px;color:var(--text2);font-size:15px}
+    .cta-box{background:linear-gradient(135deg,var(--red),var(--red-d));color:#fff;border-radius:var(--r-lg);padding:30px 28px;margin-top:30px}
+    .cta-box h3{color:#fff;font-size:21px;margin:0 0 10px}
+    .cta-box p{color:rgba(255,255,255,.92);margin:0 0 18px;line-height:1.55}
+    .cta-box a{display:inline-block;background:#fff;color:var(--red);padding:11px 24px;border-radius:999px;font-weight:600;
+      text-decoration:none;margin-right:10px;margin-bottom:8px}
+    .foot-note{font-size:13px;color:var(--text3);border-top:1px solid var(--border);padding-top:18px;margin-top:36px;line-height:1.6}
+    @media(max-width:700px){.grid2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar--solid" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">VS</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#services">Servizi</a></li>
+      <li><a href="../index.html#chi-sono">Chi sono</a></li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="./generatore-cv-svizzero.html" class="active">Strumenti</a></li>
+      <li><a href="../index-cv.html">CV</a></li>
+      <li><a href="../index.html#contact" class="nav-cta">Contatti</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="tool-hero">
+  <span class="pill">Strumento gratuito</span>
+  <h1>Generatore di prompt per il <em>CV svizzero</em></h1>
+  <p>Rispondi a quattro domande, incolla l'annuncio e ottieni i prompt pronti da usare con ChatGPT, Claude o Gemini: conversione del CV, adattamento all'annuncio e lettera di presentazione.</p>
+  <div class="privacy">🔒 Funziona tutto nel tuo browser: annuncio e CV non vengono inviati da nessuna parte.</div>
+</header>
+
+<section class="tool">
+
+  <div class="card-box">
+    <div class="grid2">
+      <div class="field">
+        <label for="ruolo">Ruolo o posizione</label>
+        <input type="text" id="ruolo" placeholder="es. Data Analyst, HR Specialist, Project Manager"/>
+      </div>
+      <div class="field">
+        <label for="settore">Settore</label>
+        <select id="settore">
+          <option>Banking e finanza</option>
+          <option>Tech e IT</option>
+          <option>Consulenza</option>
+          <option>Pharma e life sciences</option>
+          <option>Beni di consumo e retail</option>
+          <option>Industria e ingegneria</option>
+          <option>Assicurazioni</option>
+          <option>Marketing e comunicazione</option>
+          <option>Organizzazioni internazionali</option>
+          <option>Altro</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="field">
+        <label for="lingua">Lingua del CV</label>
+        <select id="lingua">
+          <option>inglese</option>
+          <option>italiano</option>
+          <option>tedesco</option>
+          <option>francese</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="exp">Esperienza</label>
+        <select id="exp">
+          <option>neolaureato, primo lavoro</option>
+          <option>1-3 anni di esperienza</option>
+          <option>3-5 anni di esperienza</option>
+          <option>oltre 5 anni di esperienza</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="field">
+        <label for="citta">Città o area <span class="opt">(facoltativo)</span></label>
+        <input type="text" id="citta" placeholder="es. Zurigo, Ginevra, tutta la Svizzera"/>
+      </div>
+      <div class="field">
+        <label for="azienda">Azienda <span class="opt">(facoltativo)</span></label>
+        <input type="text" id="azienda" placeholder="es. il nome dell'azienda dell'annuncio"/>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="annuncio">Testo dell'annuncio <span class="opt">(facoltativo, ma è quello che fa la differenza)</span></label>
+      <textarea id="annuncio" placeholder="Incolla qui il testo dell'annuncio a cui vuoi candidarti."></textarea>
+    </div>
+
+    <div class="btn-row">
+      <button class="go" id="gen">Genera i prompt</button>
+      <button class="ghost" id="reset">Svuota</button>
+    </div>
+    <p class="hint">Se lasci un campo vuoto, nel prompt resta una parte tra parentesi quadre da completare a mano.</p>
+  </div>
+
+  <div id="out">
+    <div class="steps-box">
+      <strong>Come si usano</strong>
+      <ol>
+        <li>Copia il prompt 1 e incollalo in ChatGPT, Claude o Gemini, insieme al tuo CV attuale.</li>
+        <li>Controlla il risultato: numeri, date e nomi devono essere i tuoi, non inventati.</li>
+        <li>Usa il prompt 2 per adattare il CV all'annuncio e il prompt 3 per la lettera.</li>
+        <li>Impagina il testo finale nel tuo template, non copiarlo grezzo.</li>
+      </ol>
+    </div>
+    <div id="cards"></div>
+  </div>
+
+  <div class="cta-box">
+    <h3>📄 Gli altri due prompt e il template</h3>
+    <p>Nel CV Pack trovi la guida di 20 pagine sul CV svizzero, tutti e cinque i prompt (compresi LinkedIn e preparazione al colloquio), i template di CV e lettera e la revisione del tuo CV in chat con me.</p>
+    <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">Vedi il CV Pack, 19€</a>
+    <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">Guida gratuita</a>
+  </div>
+
+  <p class="foot-note">Questo strumento non usa l'AI: costruisce solo il testo del prompt, che poi incolli tu nello strumento che preferisci. Niente dati inviati, niente account. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro. <a href="../blog/">Leggi il blog</a> per le guide complete.</p>
+</section>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const v = (id, fallback) => ($(id).value || '').trim() || fallback;
+
+  function build(){
+    const ruolo    = v('ruolo', '[RUOLO]');
+    const settore  = $('settore').value;
+    const lingua   = $('lingua').value;
+    const exp      = $('exp').value;
+    const citta    = v('citta', 'Svizzera');
+    const azienda  = v('azienda', "[NOME AZIENDA]");
+    const annuncio = ($('annuncio').value || '').trim();
+    const ann      = annuncio || "[INCOLLA QUI IL TESTO DELL'ANNUNCIO]";
+
+    const p1 =
+`Sei un recruiter svizzero con dieci anni di esperienza nel settore ${settore}. Ti do il mio CV italiano: riscrivilo in formato svizzero per una candidatura come ${ruolo} in ${citta}.
+
+Profilo: ${exp}. Lingua del CV: ${lingua}.
+
+Regole:
+- Massimo 2 pagine. Struttura: header, profilo professionale, esperienza, formazione, lingue con livello CEFR, competenze tecniche.
+- Header con città, nazionalità, permesso di soggiorno se lo indico, telefono, email. Niente codice fiscale, stato civile o data di nascita.
+- Profilo professionale in 3 righe: chi sono, cosa so fare, cosa cerco. Niente frasi motivazionali.
+- Esperienza: 3-4 bullet per ruolo, ognuno con azione, contesto e risultato misurabile. Verbi al passato, numeri veri.
+- Non inventare nulla: se un dato non c'è, scrivi [DA COMPLETARE] invece di stimarlo.
+- Tono sobrio e concreto, adatto al mercato svizzero.
+
+Alla fine elencami le 5 informazioni che mi mancano per rendere il CV più forte.
+
+IL MIO CV ATTUALE:
+[INCOLLA QUI IL TUO CV]`;
+
+    const p2 =
+`Ti do un annuncio di lavoro svizzero e il mio CV. Fai tre cose.
+
+1. Estrai dall'annuncio le 10 parole chiave che un sistema ATS cercherebbe, in ordine di importanza.
+2. Dimmi quali sono già nel mio CV e quali mancano, distinguendo tra "ce l'ho ma non è scritto" e "non ce l'ho".
+3. Riscrivi il profilo professionale e i bullet dell'esperienza più rilevante usando solo le parole chiave che possiedo davvero, in ${lingua}.
+
+Restituisci il risultato in due blocchi: PRIMA e DOPO.
+
+ANNUNCIO (${ruolo}${azienda !== '[NOME AZIENDA]' ? ' · ' + azienda : ''}):
+${ann}
+
+IL MIO CV:
+[INCOLLA QUI IL TUO CV]`;
+
+    const p3 =
+`Scrivi una lettera di presentazione in ${lingua} per la posizione di ${ruolo} presso ${azienda}, massimo 250 parole, in 3 paragrafi.
+
+1. Perché questa azienda e questo ruolo, con un riferimento concreto preso dall'annuncio.
+2. Le due esperienze del mio CV più rilevanti per l'annuncio, con un risultato misurabile ciascuna.
+3. Chiusura con disponibilità e permesso di lavoro: sono cittadino italiano, quindi UE.
+
+Regole: niente frasi fatte tipo "sono una persona dinamica", niente superlativi, nessuna informazione che non sia nel CV. Tono professionale e diretto, adatto al mercato svizzero.
+
+ANNUNCIO:
+${ann}
+
+IL MIO CV:
+[INCOLLA QUI IL TUO CV]`;
+
+    return [
+      ['Trasforma il CV italiano in CV svizzero', p1],
+      ["Adatta il CV all'annuncio", p2],
+      ['Scrivi la lettera di presentazione', p3]
+    ];
+  }
+
+  function render(){
+    const cards = build();
+    const box = $('cards');
+    box.innerHTML = '';
+    cards.forEach(([title, text], i) => {
+      const el = document.createElement('div');
+      el.className = 'prompt-card';
+      const head = document.createElement('div');
+      head.className = 'prompt-head';
+      head.innerHTML = '<h3><span class="num">' + (i+1) + '</span>' + title + '</h3>';
+      const btn = document.createElement('button');
+      btn.className = 'copy'; btn.textContent = 'Copia';
+      btn.addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(text); }
+        catch(e){ const t=document.createElement('textarea'); t.value=text; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); }
+        btn.textContent = 'Copiato ✓'; btn.classList.add('done');
+        setTimeout(()=>{ btn.textContent='Copia'; btn.classList.remove('done'); }, 2000);
+      });
+      head.appendChild(btn);
+      const pre = document.createElement('pre');
+      pre.className = 'prompt'; pre.textContent = text;
+      el.appendChild(head); el.appendChild(pre); box.appendChild(el);
+    });
+    $('out').style.display = 'block';
+    $('out').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  $('gen').addEventListener('click', render);
+  $('reset').addEventListener('click', () => {
+    ['ruolo','citta','azienda','annuncio'].forEach(id => $(id).value = '');
+    $('out').style.display = 'none';
+  });
+})();
+</script>
+<script src="../script.js?v=24"></script>
+</body>
+</html>
