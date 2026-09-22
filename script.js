@@ -63,7 +63,6 @@ const T = {
 
     "nav.services":"Services","nav.about":"About","nav.experience":"Experience","nav.highlights":"Highlights",
     "nav.education":"Education","nav.skills":"Skills","nav.blog":"Blog","nav.contact":"Contact",
-    "nav.site":"Main site",
     "hero.pill":"Coaching Italy → Switzerland","hero.first":"Valerio","hero.last":"Santoni",
     "hero.lede":"I moved to Switzerland for work. I help other Italians do the same, without wasting thousands of francs on mistakes I already made.",
     "hero.cta1":"See how I help","hero.cta2":"CV","hero.cta3":"Free guide",
@@ -272,8 +271,7 @@ const T = {
 
     "nav.about":"Chi sono","nav.experience":"Esperienza","nav.highlights":"Highlights",
     "nav.education":"Formazione","nav.skills":"Competenze","nav.contact":"Contatti",
-    "nav.services":"Servizi",
-    "nav.site":"Sito",
+    "nav.services":"Servizi","nav.blog":"Blog",
     "hero.pill":"Coaching Italia → Svizzera","hero.first":"Valerio","hero.last":"Santoni",
     "hero.lede":"Mi sono trasferito in Svizzera per lavoro. Aiuto altri italiani a fare lo stesso, senza buttare via migliaia di franchi in errori che ho già fatto io.",
     "hero.cta1":"Scopri come ti aiuto","hero.cta2":"CV","hero.cta3":"Guida gratuita",
@@ -574,7 +572,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const target = document.querySelector(a.getAttribute('href'));
     if (!target) return;
     e.preventDefault();
-    const offset = navbar.offsetHeight + 12;
+    const sub = document.getElementById('subnav');
+    const offset = navbar.offsetHeight + (sub ? sub.offsetHeight : 0) + 12;
     window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
   });
 });
@@ -592,8 +591,8 @@ if (typingEl) {
   typingEl.appendChild(typingText);
   typingEl.appendChild(typingCursor);
 
-  // Phrases differ between business homepage and CV mode (index-cv / cv.html)
-  const isCVMode = /index-cv|\/cv\.html/.test(location.pathname);
+  // Phrases differ between business homepage and CV mode (body data-phrases="cv")
+  const isCVMode = document.body.dataset.phrases === 'cv' || /index-cv|\/cv(\.html)?$/.test(location.pathname);
   const isCoachHome = document.body.dataset.phrases === 'coaching';
   const phrases = isCoachHome
     ? {
@@ -898,4 +897,49 @@ applyLang(currentLang);
       });
     });
   }
+})();
+
+/* =============================================
+   CV: BARRA DELLE SEZIONI
+   Compare dopo l'hero ed evidenzia la sezione in vista.
+   ============================================= */
+(function () {
+  const subnav = document.getElementById('subnav');
+  if (!subnav) return;
+  const hero = document.getElementById('hero');
+  const links = [...subnav.querySelectorAll('a[href^="#"]')];
+  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  let ticking = false;
+  function update() {
+    const y = window.scrollY;
+    subnav.classList.toggle('on', !hero || y > hero.offsetHeight * 0.6);
+    const probe = y + (navbar ? navbar.offsetHeight : 0) + subnav.offsetHeight + 24;
+    let current = null;
+    sections.forEach(sec => { if (sec.offsetTop <= probe) current = sec.id; });
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  // Le immagini che arrivano dopo allungano la pagina: ricalcola.
+  window.addEventListener('load', update);
+  window.addEventListener('resize', update, { passive: true });
+  update();
+})();
+
+/* =============================================
+   INDIRIZZO PULITO
+   Chi arriva da un link vecchio (index.html, .html) vede nella barra
+   l'indirizzo canonico, senza ricaricare la pagina.
+   ============================================= */
+(function () {
+  const c = document.querySelector('link[rel="canonical"]');
+  if (!c || !window.history || !history.replaceState) return;
+  try {
+    const u = new URL(c.href);
+    if (u.origin === location.origin && u.pathname !== location.pathname) {
+      history.replaceState(null, '', u.pathname + location.search + location.hash);
+    }
+  } catch (e) { /* indirizzo non valido: lascia com'è */ }
 })();

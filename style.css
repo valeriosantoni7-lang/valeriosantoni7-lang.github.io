@@ -71,7 +71,7 @@ img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 .container{max-width:1160px;margin:0 auto;padding:0 28px}
-.section{padding:108px 0;content-visibility:auto;contain-intrinsic-size:auto 800px}
+.section{padding:108px 0}
 .section-alt{background:var(--bg2)}
 
 /* Grain overlay (dark only – disabled on mobile for performance) */
@@ -1430,11 +1430,40 @@ ul{list-style:none}
 .faq-list details p{margin-top:12px;color:var(--text2);line-height:1.75}
 @media(max-width:768px){.hero-name.hero-promise{font-size:2.05rem}}
 .trust-note{font-size:.72rem;color:var(--text3);text-align:center;max-width:640px;margin:18px auto 0;line-height:1.55}
-
-/* Torna al sito principale (dalla pagina CV) */
-.nav-links .nav-back::before{content:"←";margin-right:6px;font-weight:700}
-.nav-links .nav-back{color:var(--text2)}
-@media(max-width:768px){.nav-links .nav-back{order:-1}}
 /* Voce Home nel menu delle pagine interne: solo su mobile, dove il logo sparisce */
 .nav-links .nav-home{display:none}
 @media(max-width:768px){.nav-links .nav-home{display:block}}
+
+/* Voce della pagina in cui ti trovi */
+.nav-links a.active{color:var(--text);font-weight:600}
+.nav-links a.active:not(.nav-cta)::after{left:18%;right:18%}
+
+/* Pagina CV: barra delle sezioni sotto il menu */
+.subnav{
+  position:fixed;top:var(--nav-h);left:0;right:0;z-index:990;
+  background:var(--nav-bg);
+  -webkit-backdrop-filter:blur(20px) saturate(1.8);backdrop-filter:blur(20px) saturate(1.8);
+  border-bottom:1px solid var(--nav-border);
+  transform:translateY(-100%);opacity:0;pointer-events:none;
+  transition:transform var(--tr),opacity var(--tr);
+}
+.subnav.on{transform:none;opacity:1;pointer-events:auto}
+.subnav-inner{
+  max-width:1160px;margin:0 auto;padding:0 28px;height:44px;
+  display:flex;align-items:center;gap:4px;
+  overflow-x:auto;scrollbar-width:none;
+}
+.subnav-inner::-webkit-scrollbar{display:none}
+.subnav a{
+  flex-shrink:0;font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;
+  padding:6px 12px;border-radius:999px;transition:var(--tr);
+}
+.subnav a:hover{color:var(--text);background:var(--surface)}
+.subnav a.active{color:var(--red);background:var(--surface)}
+body.menu-open .subnav{opacity:0;pointer-events:none}
+body[data-phrases="cv"] section[id]{scroll-margin-top:calc(var(--nav-h) + 56px)}
+@media(max-width:768px){
+  .subnav{-webkit-backdrop-filter:none;backdrop-filter:none;background:#F8FAFC}
+  [data-theme="dark"] .subnav{background:#060D1A}
+  .subnav-inner{padding:0 12px}
+}
