@@ -54,7 +54,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style.css?v=14"/>
+  <link rel="stylesheet" href="../style.css?v=15"/>
 
   <style>
     .tool-hero{padding:calc(var(--nav-h) + 56px) 24px 34px;background:linear-gradient(180deg,var(--bg2),var(--bg));text-align:center}
@@ -120,7 +120,11 @@
 <nav class="navbar navbar--solid" id="navbar">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">VS</a>
-    <ul class="nav-links">
+    <button class="hamburger" id="hamburger" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html" class="nav-home">Home</a></li>
       <li><a href="../index.html#services">Servizi</a></li>
       <li><a href="../index.html#chi-sono">Chi sono</a></li>
       <li><a href="../blog/">Blog</a></li>
@@ -312,6 +316,6 @@
   render();
 })();
 </script>
-<script src="../script.js?v=25"></script>
+<script src="../script.js?v=26"></script>
 </body>
 </html>

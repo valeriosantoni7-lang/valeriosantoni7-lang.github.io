@@ -1430,3 +1430,11 @@ ul{list-style:none}
 .faq-list details p{margin-top:12px;color:var(--text2);line-height:1.75}
 @media(max-width:768px){.hero-name.hero-promise{font-size:2.05rem}}
 .trust-note{font-size:.72rem;color:var(--text3);text-align:center;max-width:640px;margin:18px auto 0;line-height:1.55}
+
+/* Torna al sito principale (dalla pagina CV) */
+.nav-links .nav-back::before{content:"←";margin-right:6px;font-weight:700}
+.nav-links .nav-back{color:var(--text2)}
+@media(max-width:768px){.nav-links .nav-back{order:-1}}
+/* Voce Home nel menu delle pagine interne: solo su mobile, dove il logo sparisce */
+.nav-links .nav-home{display:none}
+@media(max-width:768px){.nav-links .nav-home{display:block}}

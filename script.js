@@ -63,6 +63,7 @@ const T = {
 
     "nav.services":"Services","nav.about":"About","nav.experience":"Experience","nav.highlights":"Highlights",
     "nav.education":"Education","nav.skills":"Skills","nav.blog":"Blog","nav.contact":"Contact",
+    "nav.site":"Main site",
     "hero.pill":"Coaching Italy → Switzerland","hero.first":"Valerio","hero.last":"Santoni",
     "hero.lede":"I moved to Switzerland for work. I help other Italians do the same, without wasting thousands of francs on mistakes I already made.",
     "hero.cta1":"See how I help","hero.cta2":"CV","hero.cta3":"Free guide",
@@ -272,6 +273,7 @@ const T = {
     "nav.about":"Chi sono","nav.experience":"Esperienza","nav.highlights":"Highlights",
     "nav.education":"Formazione","nav.skills":"Competenze","nav.contact":"Contatti",
     "nav.services":"Servizi",
+    "nav.site":"Sito",
     "hero.pill":"Coaching Italia → Svizzera","hero.first":"Valerio","hero.last":"Santoni",
     "hero.lede":"Mi sono trasferito in Svizzera per lavoro. Aiuto altri italiani a fare lo stesso, senza buttare via migliaia di franchi in errori che ho già fatto io.",
     "hero.cta1":"Scopri come ti aiuto","hero.cta2":"CV","hero.cta3":"Guida gratuita",
