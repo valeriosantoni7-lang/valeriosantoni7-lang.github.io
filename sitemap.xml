@@ -15,9 +15,15 @@
   </url>
   <url>
     <loc>https://valerioswiss.com/strumenti/</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://valerioswiss.com/strumenti/calcolatore-stipendio-netto</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://valerioswiss.com/strumenti/checklist-trasferimento-svizzera</loc>

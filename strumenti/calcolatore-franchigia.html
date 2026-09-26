@@ -227,7 +227,7 @@
   const FR = [[300,'p300'],[500,'p500'],[1000,'p1000'],[1500,'p1500'],[2000,'p2000'],[2500,'p2500']];
   const COL = {300:'#C81E28',500:'#E8722C',1000:'#B8956A',1500:'#2FA38A',2000:'#3C86E8',2500:'#8B5CF6'};
   const MAX_QUOTA = 700, QUOTA = 0.10;
-  const chf = n => Math.round(n).toLocaleString('it-CH') + ' CHF';
+  const chf = n => Math.round(n).toLocaleString('it-IT', {useGrouping: 'always'}) + ' CHF';
 
   function opzioni(){
     return FR.map(([f,id]) => {

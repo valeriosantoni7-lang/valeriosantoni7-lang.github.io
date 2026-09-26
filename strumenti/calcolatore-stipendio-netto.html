@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="it" data-default-lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+  <title>Calcolo stipendio netto in Svizzera 2026: da lordo a netto | Valerio Santoni</title>
+  <meta name="description" content="Calcola lo stipendio netto in Svizzera con le tabelle ufficiali 2026 dell'imposta alla fonte di tutti i 26 Cantoni: contributi AVS, disoccupazione, 2° pilastro e tredicesima. Gratis, senza registrazione."/>
+  <meta name="author" content="Valerio Santoni"/>
+  <meta name="keywords" content="stipendio netto svizzera, calcolo stipendio netto svizzera, da lordo a netto svizzera, imposta alla fonte, busta paga svizzera, permesso B tasse, stipendio netto zurigo, stipendio netto ginevra"/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://valerioswiss.com/strumenti/calcolatore-stipendio-netto"/>
+  <meta property="og:title" content="Calcolatore dello stipendio netto in Svizzera (2026)"/>
+  <meta property="og:description" content="Da lordo a netto con le tabelle ufficiali dell'imposta alla fonte di tutti i 26 Cantoni. Gratis, nel tuo browser."/>
+  <meta property="og:image" content="https://valerioswiss.com/assets/og-image.png?v=2"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:locale" content="it_IT"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://valerioswiss.com/assets/og-image.png?v=2"/>
+
+  <link rel="canonical" href="https://valerioswiss.com/strumenti/calcolatore-stipendio-netto"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Calcolatore dello stipendio netto in Svizzera",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://valerioswiss.com/strumenti/calcolatore-stipendio-netto",
+        "description": "Calcolatore gratuito dello stipendio netto in Svizzera: contributi sociali, 2° pilastro e imposta alla fonte 2026 di tutti i 26 Cantoni, dalle tabelle ufficiali dell'Amministrazione federale delle contribuzioni.",
+        "inLanguage": "it",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CHF"},
+        "author": {"@type": "Person", "name": "Valerio Santoni", "url": "https://valerioswiss.com/"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://valerioswiss.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Strumenti", "item": "https://valerioswiss.com/strumenti/"},
+          {"@type": "ListItem", "position": 3, "name": "Calcolatore dello stipendio netto", "item": "https://valerioswiss.com/strumenti/calcolatore-stipendio-netto"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"Come si calcola lo stipendio netto in Svizzera?","acceptedAnswer":{"@type":"Answer","text":"Dal lordo si tolgono i contributi sociali (AVS/AI/IPG 5,3%, disoccupazione 1,1% fino a 148.200 franchi l'anno, assicurazione infortuni non professionali, 2° pilastro) e, con il permesso B, l'imposta alla fonte, che dipende da Cantone, stato civile, figli e reddito."}},
+          {"@type":"Question","name":"Quanto si paga di imposta alla fonte in Svizzera?","acceptedAnswer":{"@type":"Answer","text":"Dipende dal Cantone e dal reddito. Con le tabelle ufficiali 2026, un single senza figli e senza imposta di culto che guadagna 7.000 franchi lordi al mese paga il 7,75% a Zurigo, l'11,62% a Ginevra e il 3,73% a Zugo."}},
+          {"@type":"Question","name":"Chi paga l'imposta alla fonte?","acceptedAnswer":{"@type":"Answer","text":"In generale i lavoratori stranieri che vivono in Svizzera senza permesso C, per esempio con il permesso B: la trattiene il datore di lavoro ogni mese. Da 120.000 franchi lordi l'anno la dichiarazione ordinaria è obbligatoria e l'imposta finale può cambiare; sotto questa soglia si può chiedere entro il 31 marzo dell'anno dopo."}},
+          {"@type":"Question","name":"La tredicesima è tassata di più?","acceptedAnswer":{"@type":"Answer","text":"Nei Cantoni con il modello mensile sì: nel mese in cui la ricevi l'aliquota si calcola sul totale del mese, quindi sale. Friburgo, Ginevra, Ticino, Vaud e Vallese usano il modello annuale e calcolano l'aliquota sullo stipendio di tutto l'anno."}}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css?v=16"/>
+
+  <style>
+    .tool-hero{padding:calc(var(--nav-h) + 56px) 24px 34px;background:linear-gradient(180deg,var(--bg2),var(--bg));text-align:center}
+    .tool-hero .pill{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;
+      text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:18px}
+    .tool-hero h1{font-size:clamp(29px,5vw,48px);font-weight:800;line-height:1.08;letter-spacing:-.02em;max-width:820px;margin:0 auto 16px}
+    .tool-hero h1 em{color:var(--red);font-style:italic}
+    .tool-hero p{font-size:clamp(15px,2vw,18px);color:var(--text2);max-width:660px;margin:0 auto;line-height:1.55}
+    .privacy{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13px;color:var(--text3);
+      background:var(--surface);border:1px solid var(--border);padding:8px 14px;border-radius:999px}
+
+    .tool{max-width:900px;margin:0 auto;padding:10px 24px 70px}
+    .card-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:26px;margin-bottom:22px}
+    .card-box h2{font-size:18px;font-weight:700;margin:0 0 4px}
+    .card-box .sub{font-size:14px;color:var(--text3);margin-bottom:18px;line-height:1.5}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+    .field label,.field .lbl{font-size:13px;font-weight:600;color:var(--text2)}
+    .field .hint{font-size:12.5px;color:var(--text3);line-height:1.45}
+    input[type=number],select{font-family:var(--font);font-size:15px;color:var(--text);background:var(--bg);
+      border:1px solid var(--border);border-radius:12px;padding:12px 14px;width:100%}
+    select{appearance:none;-webkit-appearance:none;cursor:pointer;
+      background-image:linear-gradient(45deg,transparent 50%,var(--text3) 50%),linear-gradient(135deg,var(--text3) 50%,transparent 50%);
+      background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:36px}
+    input:focus,select:focus{outline:none;border-color:var(--red)}
+    .seg{display:inline-flex;align-self:flex-start;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:var(--bg)}
+    .seg button{font-family:var(--font);font-size:14px;border:0;background:transparent;color:var(--text2);padding:10px 18px;cursor:pointer}
+    .seg button.on{background:var(--red);color:#fff;font-weight:600}
+    .quick{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+    .quick button{background:var(--surface-h);border:1px solid var(--border);color:var(--text2);font-family:var(--font);
+      font-size:13px;padding:7px 14px;border-radius:999px;cursor:pointer}
+    .quick button:hover{border-color:var(--red);color:var(--red)}
+    .check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text2);cursor:pointer;line-height:1.45}
+    .check input{width:18px;height:18px;accent-color:var(--red);margin-top:1px;flex:none}
+    .more{margin-top:4px}
+    .more summary{cursor:pointer;font-size:14px;color:var(--red);font-weight:600;list-style:none}
+    .more summary::-webkit-details-marker{display:none}
+    .more[open] summary{margin-bottom:14px}
+
+    .result{background:linear-gradient(135deg,var(--red),var(--red-d));color:#fff;border-radius:var(--r-lg);padding:28px;margin-bottom:22px}
+    .result .lead{font-size:14px;letter-spacing:2px;text-transform:uppercase;opacity:.85;font-weight:700}
+    .result .big{font-size:clamp(34px,6vw,52px);font-weight:800;line-height:1.1;margin:8px 0 10px}
+    .result .big small{font-size:.42em;font-weight:600;opacity:.9}
+    .result .det{font-size:16px;line-height:1.6;color:rgba(255,255,255,.94)}
+    .result .det b{color:#fff}
+
+    .bar{display:flex;height:22px;border-radius:999px;overflow:hidden;margin:6px 0 12px;background:var(--bg2)}
+    .bar span{display:block;height:100%}
+    .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--text2)}
+    .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+    table.cmp{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
+    table.cmp th,table.cmp td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+    table.cmp th:first-child,table.cmp td:first-child{text-align:left;white-space:normal}
+    table.cmp th{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--text3);font-weight:600}
+    table.cmp td .p{font-size:12.5px;color:var(--text3);font-weight:400}
+    table.cmp td .d{display:block;margin-top:2px;white-space:nowrap}
+    table.cmp td .d.pos{color:#16A34A}table.cmp td .d.neg{color:var(--red)}
+    table.cmp tr.tot td{font-weight:800;border-bottom:0}
+    table.cmp tr.tot td:first-child{color:#16A34A}
+    table.cmp tr.me td{background:rgba(200,30,40,.08);font-weight:700}
+    .table-wrap{overflow-x:auto}
+    .btn{display:inline-block;background:var(--red);color:#fff;border:0;font-family:var(--font);font-size:15px;font-weight:600;
+      padding:11px 24px;border-radius:999px;cursor:pointer;text-decoration:none}
+    .btn:disabled{opacity:.6;cursor:wait}
+    .pos{color:#16A34A}.neg{color:var(--red)}
+
+    .note-box{background:var(--surface);border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15px;line-height:1.6;color:var(--text2)}
+    .note-box b{color:var(--text)}
+    .guide h2{font-size:20px;margin:34px 0 8px}
+    .guide p{color:var(--text2);line-height:1.65;margin:0 0 12px}
+    .cta-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px;margin-top:26px}
+    .cta-box h3{font-size:20px;margin:0 0 10px}
+    .cta-box p{color:var(--text2);margin:0 0 16px;line-height:1.55}
+    .cta-box a{display:inline-block;background:var(--red);color:#fff;padding:11px 24px;border-radius:999px;font-weight:600;text-decoration:none;margin:0 10px 8px 0}
+    .cta-box a.sec{background:transparent;color:var(--red);border:1px solid var(--red)}
+    .fonti{font-size:13.5px;color:var(--text3);line-height:1.7}
+    .fonti a{color:var(--text2)}
+    .foot-note{font-size:13px;color:var(--text3);border-top:1px solid var(--border);padding-top:18px;margin-top:34px;line-height:1.6}
+    .err{color:var(--red);font-weight:600}
+    @media(max-width:700px){
+      .grid2{grid-template-columns:1fr}
+      .tool{padding:10px 16px 60px}
+      .card-box{padding:18px}
+      table.cmp{font-size:13px}
+      table.cmp th,table.cmp td{padding:8px 4px}
+      table.cmp th{font-size:10.5px;letter-spacing:.5px}
+      #cmpTab th:nth-child(4),#cmpTab td:nth-child(4){display:none}
+      .seg button{padding:10px 14px}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar--solid" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">VS</a>
+    <button class="hamburger" id="hamburger" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/" class="nav-home">Home</a></li>
+      <li><a href="/#services">Servizi</a></li>
+      <li><a href="/#chi-sono">Chi sono</a></li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="./" class="active">Strumenti</a></li>
+      <li><a href="/cv">CV</a></li>
+      <li><a href="/#contact" class="nav-cta">Contatti</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="tool-hero">
+  <span class="pill">Strumento gratuito · 2026</span>
+  <h1>Quanto ti resta in tasca: da <em>lordo a netto</em> in Svizzera</h1>
+  <p>Inserisci lo stipendio lordo, il Cantone e la tua situazione: calcolo contributi, 2° pilastro e imposta alla fonte con le tabelle ufficiali 2026 di tutti i 26 Cantoni.</p>
+  <div class="privacy">🔒 Tutto nel tuo browser: nessun dato inviato, nessuna registrazione.</div>
+</header>
+
+<main class="tool">
+
+  <div class="card-box">
+    <h2>1 · Il tuo stipendio lordo</h2>
+    <p class="sub">Quello scritto nell'offerta o nel contratto, prima di qualsiasi trattenuta.</p>
+    <div class="grid2">
+      <div class="field">
+        <label for="annuo">Lordo annuo (CHF)</label>
+        <input type="number" id="annuo" value="80000" min="0" step="500" inputmode="numeric"/>
+      </div>
+      <div class="field">
+        <label for="mensile">Lordo al mese (CHF)</label>
+        <input type="number" id="mensile" min="0" step="50" inputmode="numeric"/>
+      </div>
+    </div>
+    <div class="field">
+      <span class="lbl">Quante mensilità</span>
+      <div class="seg" id="mens"><button type="button" data-v="12" class="on">12</button><button type="button" data-v="13">13 (con tredicesima)</button></div>
+    </div>
+    <div class="quick" aria-label="Stipendi di esempio">
+      <button type="button" data-v="60000">60.000</button>
+      <button type="button" data-v="75000">75.000</button>
+      <button type="button" data-v="90000">90.000</button>
+      <button type="button" data-v="110000">110.000</button>
+      <button type="button" data-v="130000">130.000</button>
+    </div>
+  </div>
+
+  <div class="card-box">
+    <h2>2 · Dove vivi e la tua situazione</h2>
+    <p class="sub">Con il permesso B l'imposta alla fonte dipende dal Cantone in cui abiti, dallo stato civile e dai figli.</p>
+    <div class="grid2">
+      <div class="field">
+        <label for="cantone">Cantone in cui vivi</label>
+        <select id="cantone"></select>
+      </div>
+      <div class="field">
+        <label for="eta">Età</label>
+        <select id="eta">
+          <option value="18">Sotto i 25 anni</option>
+          <option value="25" selected>25–34 anni</option>
+          <option value="35">35–44 anni</option>
+          <option value="45">45–54 anni</option>
+          <option value="55">55–65 anni</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="sit">Situazione</label>
+        <select id="sit">
+          <option value="A">Single, senza figli</option>
+          <option value="B">Sposato/a, lavora solo uno dei due</option>
+          <option value="C">Sposato/a, lavorate entrambi</option>
+          <option value="H">Genitore solo, con figli</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="figli">Figli</label>
+        <select id="figli">
+          <option value="0">Nessuno</option>
+          <option value="1">1 figlio</option>
+          <option value="2">2 figli</option>
+        </select>
+      </div>
+    </div>
+    <label class="check"><input type="checkbox" id="chiesa"/> <span>Paghi l'imposta di culto (se al Comune ti sei registrato come cattolico o protestante)</span></label>
+    <p class="field hint" id="chiesaNota" style="margin:8px 0 0"></p>
+
+    <details class="more">
+      <summary>Personalizza le trattenute (facoltativo)</summary>
+      <div class="grid2">
+        <div class="field">
+          <label for="nbu">Assicurazione infortuni non professionali (% del lordo)</label>
+          <input type="number" id="nbu" value="1.2" min="0" max="5" step="0.1"/>
+          <span class="hint">La decide l'assicurazione della tua azienda: la trovi in busta paga come AINP o NBU.</span>
+        </div>
+        <div class="field">
+          <label for="lpp">2° pilastro (% del lordo)</label>
+          <input type="number" id="lpp" min="0" max="20" step="0.1" placeholder="minimo di legge"/>
+          <span class="hint">Vuoto = minimo di legge. Molte casse pensione trattengono di più: lo trovi nel regolamento o in busta paga (LPP o BVG).</span>
+        </div>
+        <div class="field">
+          <label for="altre">Altre trattenute (% del lordo)</label>
+          <input type="number" id="altre" value="0" min="0" max="10" step="0.1"/>
+          <span class="hint">Per esempio l'assicurazione per la perdita di guadagno in caso di malattia, se l'azienda la trattiene.</span>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <div class="result" id="res" aria-live="polite">
+    <div class="lead">Netto al mese</div>
+    <div class="big" id="resBig">…</div>
+    <div class="det" id="resDet">Carico le tabelle del Cantone…</div>
+  </div>
+
+  <div class="card-box">
+    <h2>La busta paga, voce per voce</h2>
+    <p class="sub" id="bpSub"></p>
+    <div class="bar" id="bar" aria-hidden="true"></div>
+    <div class="legend" id="legend"></div>
+    <div class="table-wrap">
+      <table class="cmp" id="tab">
+        <thead><tr><th>Voce</th><th>Al mese</th><th>All'anno</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card-box">
+    <h2>Lo stesso stipendio negli altri Cantoni</h2>
+    <p class="sub">Stessi dati, cambia solo il Cantone in cui vivi. Carico le tabelle di tutti i 26 Cantoni (circa 300 KB).</p>
+    <button type="button" class="btn" id="cmpBtn">Confronta i 26 Cantoni</button>
+    <p class="sub" id="cmpSum" style="margin:16px 0 0"></p>
+    <div class="table-wrap">
+      <table class="cmp" id="cmpTab" hidden>
+        <thead><tr><th>Cantone</th><th>Aliquota</th><th>Netto al mese</th><th>Netto all'anno</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <b>Cosa include il calcolo.</b> Contributi AVS/AI/IPG (5,3%), assicurazione contro la disoccupazione (1,1% fino a 148.200 CHF l'anno), infortuni non professionali, 2° pilastro al minimo di legge e imposta alla fonte 2026 del tuo Cantone.<br/><br/>
+    <b>Cosa non include.</b> Assegni familiari, bonus, spese e premi della cassa malati, che paghi a parte. Il calcolo vale per chi paga l'imposta alla fonte, per esempio con il permesso B: con il permesso C le tasse arrivano con la dichiarazione e non vengono trattenute in busta paga. Non vale per i frontalieri, che hanno regole diverse.<br/><br/>
+    <b>È una stima.</b> Il netto vero dipende anche dal regolamento della tua cassa pensione e dall'assicurazione infortuni della tua azienda. Da 120.000 CHF lordi l'anno la dichiarazione è obbligatoria e l'imposta finale può cambiare.
+  </div>
+
+  <section class="guide">
+    <h2>Come si passa dal lordo al netto</h2>
+    <p>In Svizzera dallo stipendio lordo si tolgono prima i contributi sociali, uguali in tutto il Paese: il 5,3% per AVS, AI e IPG (vecchiaia, invalidità e indennità di perdita di guadagno) e l'1,1% per la disoccupazione. Poi c'è l'assicurazione infortuni non professionali, che cambia da azienda ad azienda, e il 2° pilastro, cioè la cassa pensione: il minimo di legge parte dai 25 anni e cresce con l'età.</p>
+    <h2>Imposta alla fonte: come funziona</h2>
+    <p>Se non hai il permesso C, le imposte te le trattiene il datore di lavoro ogni mese: è l'imposta alla fonte. L'aliquota si legge nelle tabelle del Cantone in cui vivi e dipende dallo stipendio lordo del mese, dallo stato civile, dai figli e dall'imposta di culto. Le tabelle includono già le deduzioni forfettarie, per questo l'aliquota si applica al lordo.</p>
+    <h2>La tredicesima e i due modelli</h2>
+    <p>Quasi tutti i Cantoni usano il modello mensile: nel mese in cui arriva la tredicesima lo stipendio raddoppia e l'aliquota sale. Friburgo, Ginevra, Ticino, Vaud e Vallese usano il modello annuale: l'aliquota si calcola sul lordo di tutto l'anno diviso per 12, e la tredicesima non fa salire l'aliquota di quel mese.</p>
+    <h2>Coppie con due stipendi</h2>
+    <p>Per le coppie sposate in cui lavorano entrambi le tabelle ipotizzano che il coniuge guadagni più o meno come te. Se i due stipendi sono molto diversi, la cifra definitiva può cambiare con la rettifica o con la dichiarazione.</p>
+  </section>
+
+  <div class="cta-box">
+    <h3>Stai valutando un'offerta in Svizzera?</h3>
+    <p>Nella guida gratuita trovi cosa controllare prima di firmare, il permesso, la cassa malati e i primi 30 giorni. Se vuoi guardare il tuo caso, dal CV allo stipendio da chiedere, c'è la call 1:1.</p>
+    <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">Scarica la guida gratuita</a>
+    <a class="sec" href="checklist-trasferimento-svizzera">Apri la checklist del trasferimento</a>
+  </div>
+
+  <h2 style="font-size:18px;margin:36px 0 10px">Fonti</h2>
+  <p class="fonti">
+    <a href="https://www.estv.admin.ch/de/quellensteuertarife-import-in-lohnbuchhaltungssysteme" target="_blank" rel="noopener">AFC, tabelle ufficiali dell'imposta alla fonte 2026 per tutti i Cantoni</a> ·
+    <a href="https://www.estv.admin.ch/it/imposta-alla-fonte" target="_blank" rel="noopener">AFC, imposta alla fonte</a> ·
+    <a href="https://www.ahv-iv.ch/p/2.01.i" target="_blank" rel="noopener">Centro d'informazione AVS/AI, contributi salariali (5,3%)</a> ·
+    <a href="https://www.ahv-iv.ch/p/2.08.i" target="_blank" rel="noopener">Centro d'informazione AVS/AI, contributi alla disoccupazione</a> ·
+    <a href="https://www.bsv.admin.ch/dam/de/sd-web/sAgdISSXenMT/d_Betr%C3%A4ge%202026.pdf" target="_blank" rel="noopener">UFAS, importi 2026 del 2° pilastro (PDF)</a> ·
+    <a href="https://www.ge.ch/bareme-c-impot-source" target="_blank" rel="noopener">Canton Ginevra, tariffa C per le coppie</a>
+  </p>
+
+  <p class="foot-note">Stima informativa con i dati che inserisci tu e le tabelle ufficiali 2026, non consulenza fiscale. Il sito è un'attività a titolo personale: le opinioni sono mie e non rappresentano quelle del mio datore di lavoro.</p>
+</main>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var CANTONI = [["AR","Appenzello Esterno"],["AI","Appenzello Interno"],["AG","Argovia"],["BL","Basilea Campagna"],["BS","Basilea Città"],
+    ["BE","Berna"],["FR","Friburgo"],["GE","Ginevra"],["JU","Giura"],["GL","Glarona"],["GR","Grigioni"],["LU","Lucerna"],["NE","Neuchâtel"],
+    ["NW","Nidvaldo"],["OW","Obvaldo"],["SG","San Gallo"],["SH","Sciaffusa"],["SO","Soletta"],["SZ","Svitto"],["TI","Ticino"],["TG","Turgovia"],
+    ["UR","Uri"],["VS","Vallese"],["VD","Vaud"],["ZG","Zugo"],["ZH","Zurigo"]];
+  var NOME = {}; CANTONI.forEach(function(c){ NOME[c[0]] = c[1]; });
+  // Valori 2026: Centro d'informazione AVS/AI (opuscoli 2.01 e 2.08) e UFAS (importi validi dal 1° gennaio 2026).
+  var AVS = 0.053, AD = 0.011, TETTO_AD = 148200;
+  var LPP_SOGLIA = 22680, LPP_COORD = 26460, LPP_MAX = 90720, LPP_MIN_COORD = 3780;
+  var ACCREDITI = {"18": 0, "25": 0.07, "35": 0.10, "45": 0.15, "55": 0.18};
+
+  // Numeri all'italiana, come nei contenuti: 5.507 CHF · 7,46%
+  var chf = function(n){ return Math.round(n).toLocaleString("it-IT", {useGrouping: "always"}) + " CHF"; };
+  var pct = function(x, d){ return (x * 100).toLocaleString("it-IT", {minimumFractionDigits: d, maximumFractionDigits: d}) + "%"; };
+  var num = function(id, def){ var v = parseFloat(String($(id).value).replace(",", ".")); return isFinite(v) ? v : def; };
+
+  // ---- tabelle dell'imposta alla fonte (una per Cantone, caricate quando servono)
+  var cache = {};
+  function carica(kt){
+    if (!cache[kt]){
+      cache[kt] = fetch("/strumenti/dati/qst-2026/" + kt.toLowerCase() + ".json")
+        .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function(d){
+          Object.keys(d.t).forEach(function(c){
+            var t = d.t[c], f = [];
+            t.f.forEach(function(s){ for (var i = 0; i < s[2]; i++) f.push(Math.round((s[0] + s[1] * i) * 100) / 100); });
+            t.da = f;
+          });
+          return d;
+        })
+        .catch(function(e){ delete cache[kt]; throw e; });
+    }
+    return cache[kt];
+  }
+  function aliquota(t, reddito){
+    var f = t.da, lo = 0, hi = f.length - 1, k = 0;
+    while (lo <= hi){ var m = (lo + hi) >> 1; if (f[m] <= reddito){ k = m; lo = m + 1; } else hi = m - 1; }
+    return t.r[k] / 10000;
+  }
+  function imposta(t, reddito, r){ return Math.max(t.m || 0, reddito * r); }
+  function codice(d, x){
+    var base = x.sit === "A" ? "A0" : x.sit === "H" ? "H" + Math.max(1, x.figli) : x.sit + x.figli;
+    var c = base + (x.chiesa ? "Y" : "N");
+    if (!d.t[c]) c = base + (x.chiesa ? "N" : "Y");
+    return d.t[c] ? c : null;
+  }
+
+  function lppMinimo(lordo, eta){
+    if (lordo < LPP_SOGLIA) return 0;
+    var coord = Math.max(Math.min(lordo, LPP_MAX) - LPP_COORD, LPP_MIN_COORD);
+    return coord * ACCREDITI[eta] / 2;
+  }
+
+  function calcola(d, x){
+    var c = codice(d, x); if (!c) return null;
+    var t = d.t[c], S = x.lordo, n = x.n, m = S / n;
+    var base = Math.min(S, TETTO_AD);
+    var anno = {avs: AVS * S, ad: AD * base, nbu: x.nbu / 100 * base, altre: x.altre / 100 * S,
+                lpp: x.lpp === null ? lppMinimo(S, x.eta) : x.lpp / 100 * S};
+    var rN, rD, qN, qD = 0;
+    if (d.annuale){ rN = rD = aliquota(t, S / 12); qN = imposta(t, m, rN); qD = imposta(t, 2 * m, rD); }
+    else { rN = aliquota(t, m); qN = imposta(t, m, rN); if (n === 13){ rD = aliquota(t, 2 * m); qD = imposta(t, 2 * m, rD); } }
+    function mese(g, q){
+      var v = {lordo: g, avs: anno.avs * g / S, ad: anno.ad * g / S, nbu: anno.nbu * g / S, altre: anno.altre * g / S, lpp: anno.lpp / 12, qst: q};
+      v.netto = g - v.avs - v.ad - v.nbu - v.altre - v.lpp - v.qst; return v;
+    }
+    var mN = mese(m, qN), mD = n === 13 ? mese(2 * m, qD) : null;
+    anno.lordo = S; anno.qst = n === 13 ? 11 * qN + qD : 12 * qN;
+    anno.netto = S - anno.avs - anno.ad - anno.nbu - anno.altre - anno.lpp - anno.qst;
+    return {codice: c, rN: rN, rD: rD, mese: mN, dic: mD, anno: anno, annuale: d.annuale};
+  }
+
+  // ---- input
+  CANTONI.forEach(function(c){ var o = document.createElement("option"); o.value = c[0]; o.textContent = c[1]; $("cantone").appendChild(o); });
+  $("cantone").value = "ZH";
+  var mensilita = 12;
+  function leggi(){
+    var lpp = String($("lpp").value).trim();
+    return {lordo: Math.max(0, num("annuo", 0)), n: mensilita, kt: $("cantone").value, eta: $("eta").value,
+            sit: $("sit").value, figli: +$("figli").value, chiesa: $("chiesa").checked,
+            nbu: Math.max(0, num("nbu", 1.2)), altre: Math.max(0, num("altre", 0)),
+            lpp: lpp === "" ? null : Math.max(0, num("lpp", 0))};
+  }
+  function syncMensile(){ var a = num("annuo", 0); $("mensile").value = a ? Math.round(a / mensilita) : ""; }
+  $("annuo").addEventListener("input", function(){ syncMensile(); aggiorna(); });
+  $("mensile").addEventListener("input", function(){ var m = num("mensile", 0); $("annuo").value = m ? Math.round(m * mensilita) : ""; aggiorna(); });
+  document.querySelectorAll("#mens button").forEach(function(b){
+    b.addEventListener("click", function(){
+      document.querySelectorAll("#mens button").forEach(function(x){ x.classList.toggle("on", x === b); });
+      mensilita = +b.dataset.v; syncMensile(); aggiorna();
+    });
+  });
+  document.querySelectorAll(".quick button").forEach(function(b){
+    b.addEventListener("click", function(){ $("annuo").value = b.dataset.v; syncMensile(); aggiorna(); });
+  });
+  function figliPerSituazione(){
+    var sit = $("sit").value, f = $("figli");
+    f.querySelector('option[value="0"]').disabled = sit === "H";
+    if (sit === "H" && f.value === "0") f.value = "1";
+    f.disabled = sit === "A"; if (sit === "A") f.value = "0";
+  }
+  ["cantone", "eta", "sit", "figli", "chiesa", "nbu", "lpp", "altre"].forEach(function(id){
+    $(id).addEventListener(id === "nbu" || id === "lpp" || id === "altre" ? "input" : "change", function(){
+      if (id === "sit") figliPerSituazione();
+      aggiorna();
+    });
+  });
+
+  // ---- risultato
+  var giro = 0;
+  function aggiorna(){
+    if (confrontoFatto) confronta();
+    var x = leggi(), mio = ++giro;
+    carica(x.kt).then(function(d){
+      if (mio !== giro) return;
+      notaChiesa(d);
+      var r = calcola(d, x);
+      if (!r || !x.lordo){ $("resBig").textContent = "—"; $("resDet").textContent = "Inserisci lo stipendio lordo."; return; }
+      mostra(r, x);
+    }).catch(function(){
+      if (mio !== giro) return;
+      $("resBig").textContent = "—";
+      $("resDet").innerHTML = '<span class="err">Non riesco a caricare le tabelle. Controlla la connessione e riprova.</span>';
+    });
+  }
+  function notaChiesa(d){
+    var s = "";
+    if (!d.chiesa) s = "Le tabelle di questo Cantone non distinguono l'imposta di culto: la scelta non cambia il calcolo.";
+    else if (!d.t["A0N"]) s = "Questo Cantone pubblica solo le tabelle con l'imposta di culto.";
+    $("chiesaNota").textContent = s;
+    $("chiesaNota").style.display = s ? "" : "none";
+  }
+
+  var VOCI = [
+    ["avs", "AVS, AI e IPG", "#8C8C96"], ["ad", "Disoccupazione (AD)", "#B4B4BE"], ["nbu", "Infortuni non professionali", "#D2D2DA"],
+    ["altre", "Altre trattenute", "#E4E4EA"], ["lpp", "2° pilastro (cassa pensione)", "#3C86E8"], ["qst", "Imposta alla fonte", "#C81E28"]
+  ];
+  function mostra(r, x){
+    var a = r.anno, m = r.mese;
+    $("resBig").innerHTML = chf(m.netto) + (x.n === 13 ? " <small>× 12 + tredicesima</small>" : " <small>× 12</small>");
+    var det = "Su un lordo di <b>" + chf(m.lordo) + "</b> al mese. In un anno ti restano <b>" + chf(a.netto) + "</b>: " +
+      Math.round(a.netto / a.lordo * 100) + " franchi ogni 100 di lordo.";
+    if (r.dic) det += " A dicembre, con la tredicesima, ricevi <b>" + chf(r.dic.netto) + "</b>.";
+    det += "<br/>Imposta alla fonte a " + NOME[x.kt] + ": <b>" + pct(r.rN, 2) + "</b> (tariffa " + r.codice + ")";
+    if (r.dic && !r.annuale && r.rD !== r.rN) det += ", " + pct(r.rD, 2) + " nel mese della tredicesima";
+    det += ".";
+    if (a.lordo >= 120000) det += "<br/>Da 120.000 CHF lordi l'anno la dichiarazione è obbligatoria: l'imposta finale può essere diversa.";
+    $("resDet").innerHTML = det;
+
+    $("bpSub").textContent = "Stipendio lordo " + chf(a.lordo) + " l'anno" + (x.n === 13 ? " in 13 mensilità" : " in 12 mensilità") +
+      (r.annuale ? ". " + NOME[x.kt] + " usa il modello annuale." : ".");
+    var bar = "", leg = "";
+    VOCI.forEach(function(v){
+      if (a[v[0]] <= 0) return;
+      bar += '<span style="width:' + (a[v[0]] / a.lordo * 100).toFixed(2) + '%;background:' + v[2] + '" title="' + v[1] + '"></span>';
+      leg += '<span><i style="background:' + v[2] + '"></i>' + v[1] + " " + pct(a[v[0]] / a.lordo, 1) + "</span>";
+    });
+    bar += '<span style="width:' + Math.max(0, a.netto / a.lordo * 100).toFixed(2) + '%;background:#16A34A" title="Netto"></span>';
+    leg = '<span><i style="background:#16A34A"></i>Netto ' + pct(a.netto / a.lordo, 1) + "</span>" + leg;
+    $("bar").innerHTML = bar; $("legend").innerHTML = leg;
+
+    var righe = '<tr><td>Stipendio lordo</td><td>' + chf(m.lordo) + '</td><td>' + chf(a.lordo) + '</td></tr>';
+    VOCI.forEach(function(v){
+      if (v[0] === "altre" && a.altre <= 0) return;
+      var nota = v[0] === "avs" ? "5,3%" : v[0] === "ad" ? "1,1%" : v[0] === "nbu" ? String(x.nbu).replace(".", ",") + "%" :
+                 v[0] === "lpp" ? (x.lpp === null ? "minimo di legge" : String(x.lpp).replace(".", ",") + "%") :
+                 v[0] === "qst" ? pct(r.rN, 2) : String(x.altre).replace(".", ",") + "%";
+      righe += '<tr><td>' + v[1] + ' <span class="p">' + nota + '</span></td><td>− ' + chf(m[v[0]]) + '</td><td>− ' + chf(a[v[0]]) + '</td></tr>';
+    });
+    righe += '<tr class="tot"><td>Netto</td><td>' + chf(m.netto) + '</td><td>' + chf(a.netto) + '</td></tr>';
+    $("tab").querySelector("tbody").innerHTML = righe;
+  }
+
+  // ---- confronto tra i Cantoni
+  var confrontoFatto = false;
+  function confronta(){
+    var x = leggi(); var btn = $("cmpBtn");
+    btn.disabled = true; btn.textContent = "Carico le tabelle…";
+    Promise.all(CANTONI.map(function(c){ return carica(c[0]).then(function(d){ return {kt: c[0], d: d}; }); })).then(function(tutti){
+      var righe = tutti.map(function(o){ var r = calcola(o.d, x); return r ? {kt: o.kt, r: r} : null; }).filter(Boolean)
+        .sort(function(p, q){ return q.r.anno.netto - p.r.anno.netto; });
+      var mio = righe.filter(function(o){ return o.kt === x.kt; })[0];
+      $("cmpTab").querySelector("tbody").innerHTML = righe.map(function(o, i){
+        var diff = mio ? o.r.anno.netto - mio.r.anno.netto : 0;
+        return '<tr' + (o.kt === x.kt ? ' class="me"' : '') + '><td>' + (i + 1) + '.&nbsp;' + NOME[o.kt] +
+          '<span class="p d ' + (o.kt === x.kt ? '' : diff >= 0 ? 'pos' : 'neg') + '">' +
+          (o.kt === x.kt ? 'il tuo Cantone' : (diff >= 0 ? '+' : '−') + chf(Math.abs(diff)) + ' all\'anno') + '</span>' +
+          '</td><td>' + pct(o.r.rN, 2) + '</td><td>' + chf(o.r.mese.netto) + '</td><td>' + chf(o.r.anno.netto) + '</td></tr>';
+      }).join("");
+      var primo = righe[0], ultimo = righe[righe.length - 1];
+      $("cmpSum").innerHTML = "Con " + chf(x.lordo) + " lordi l'anno ti restano <b>" + chf(primo.r.anno.netto) + "</b> a " + NOME[primo.kt] +
+        " e <b>" + chf(ultimo.r.anno.netto) + "</b> a " + NOME[ultimo.kt] + ": <b>" + chf(primo.r.anno.netto - ultimo.r.anno.netto) +
+        "</b> di differenza in un anno, solo per l'imposta alla fonte. Ricorda che affitti e premi della cassa malati cambiano molto da un Cantone all'altro.";
+      $("cmpTab").hidden = false; confrontoFatto = true;
+      btn.disabled = false; btn.textContent = "Aggiorna il confronto";
+    }).catch(function(){
+      btn.disabled = false; btn.textContent = "Riprova";
+      $("cmpSum").innerHTML = '<span class="err">Non riesco a caricare tutte le tabelle. Controlla la connessione e riprova.</span>';
+    });
+  }
+  $("cmpBtn").addEventListener("click", confronta);
+
+  syncMensile(); figliPerSituazione(); aggiorna();
+})();
+</script>
+<script src="../script.js?v=27"></script>
+</body>
+</html>
