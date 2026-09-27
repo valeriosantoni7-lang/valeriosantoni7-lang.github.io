@@ -112,7 +112,9 @@
     .cta-box p{color:var(--text2);margin:0 0 16px;line-height:1.55}
     .cta-box a{display:inline-block;background:var(--red);color:#fff;padding:11px 24px;border-radius:999px;font-weight:600;text-decoration:none;margin-right:10px}
     .foot-note{font-size:13px;color:var(--text3);border-top:1px solid var(--border);padding-top:18px;margin-top:34px;line-height:1.6}
+    .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
     @media(max-width:700px){.grid2{grid-template-columns:1fr}}
+    @media(max-width:480px){table.cmp{font-size:13.5px}table.cmp th,table.cmp td{padding:10px 6px}table.cmp th{font-size:10.5px;letter-spacing:.4px}}
   </style>
 </head>
 <body>
@@ -193,10 +195,10 @@
   <div class="card-box">
     <h2>Il confronto completo</h2>
     <p class="sub">Costo totale in un anno: premi più quello che paghi di tasca tua.</p>
-    <table class="cmp" id="tab">
+    <div class="table-wrap"><table class="cmp" id="tab">
       <thead><tr><th>Franchigia</th><th>Premi/anno</th><th>Di tasca tua</th><th>Totale</th></tr></thead>
       <tbody></tbody>
-    </table>
+    </table></div>
   </div>
 
   <div class="card-box">
