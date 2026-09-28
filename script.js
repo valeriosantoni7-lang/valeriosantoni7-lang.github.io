@@ -3,6 +3,46 @@
    ============================================= */
 const T = {
   en: {
+    "chero.toolnew":"Free",
+    "chero.tool":"How much will you take home? Net salary calculator with 2026 withholding tax for every canton (in Italian)",
+    "services.rating":"reviews on Stan",
+    "services.s1.tag":"Step 1 · Start here",
+    "services.s2.tag":"Step 2 · The right CV",
+    "services.s3.tag":"Step 3 · Your case",
+    "crev.label":"Reviews",
+    "crev.title":"What people <em>who've been through it</em> say",
+    "crev.cv":"on the CV Pack",
+    "crev.call":"on the 1:1 call",
+    "crev.src":"customer reviews on Stan (in Italian)",
+    "ctools.label":"Free tools",
+    "ctools.title":"Run the numbers <em>before you move</em>",
+    "ctools.desc":"Four tools built on official 2026 data. They run in your browser, they're free and they don't ask for any data. In Italian.",
+    "ctools.t1.tag":"Salary",
+    "ctools.t1.title":"Net salary calculator",
+    "ctools.t1.desc":"From gross to net: social contributions, 2nd pillar and withholding tax with the official tables of all 26 cantons. With the 13th salary and a canton comparison.",
+    "ctools.t1.gross":"Gross per year",
+    "ctools.t1.net":"Net per month · Zurich",
+    "ctools.t1.note":"Example: single, 80,000 CHF, withholding tax 7.46%",
+    "ctools.t2.tag":"Health insurance",
+    "ctools.t2.title":"Which deductible pays off",
+    "ctools.t2.desc":"Enter your insurer's premiums and see the break-even point. You can switch by 30 November.",
+    "ctools.t2.pt":"break-even","ctools.t2.ax":"medical costs →",
+    "ctools.t3.tag":"Moving",
+    "ctools.t3.title":"Moving checklist",
+    "ctools.t3.desc":"16 steps with the real deadlines and official sources, from the contract to your first year.",
+    "ctools.t3.s1":"Municipality",
+    "ctools.t3.s2":"Health insurance",
+    "ctools.t3.s4":"Driving licence",
+    "ctools.t4.tag":"CV and applications",
+    "ctools.t4.title":"Swiss CV prompt generator",
+    "ctools.t4.desc":"Paste the job ad and get ready-made prompts for ChatGPT, Claude or Gemini: Swiss-format CV, CV tailored to the ad, cover letter.",
+    "ctools.t4.ad":"Job ad:",
+    "ctools.t4.p1":"Convert the CV to the Swiss format",
+    "ctools.t4.p2":"Tailor the CV to this ad",
+    "ctools.t4.p3":"Write the cover letter",
+    "ctools.open":"Open the tool",
+    "ctools.open2":"Open the checklist",
+    "ctools.all":"All free tools →",
     "trust.note":"Logos show where I have worked and studied. They do not imply affiliation with these organisations or their endorsement of my services.",
 
     "cproj.nav":"AI Projects",
@@ -55,7 +95,7 @@ const T = {
     "cfaq.q3":"Which permit do I need?",
     "cfaq.a3":"As an EU citizen you can look for work in Switzerland. With a contract of at least one year you get a B permit, for shorter contracts an L permit. If you live in Italy near the border you can work as a cross-border commuter with a G permit. Once you arrive, you have 14 days to register with your municipality.",
     "cfaq.q4":"How does the 1:1 coaching work?",
-    "cfaq.a4":"You book the call and fill in a short form, so I arrive already prepared on your case. In one hour we work on your profile, CV, where to apply and your target salary. Within 24 hours you get a written plan, and you have 7 days to ask me follow-up questions via DM.",
+    "cfaq.a4":"You book the call and answer 4 quick questions, so I arrive already prepared on your case. In one hour we work on your profile, CV, where to apply and your target salary. Within 24 hours you get a written plan, and you have 7 days to ask me follow-up questions via DM.",
     "cfaq.q5":"Does the coaching guarantee me a job?",
     "cfaq.a5":"No, and be wary of anyone who promises that. I give you method, strategy and the mistakes to avoid, but the applications stay in your hands. My job is to get you there sooner, with fewer wasted attempts.",
     "cfaq.q6":"How much does it cost to live in Zurich?",
@@ -71,15 +111,15 @@ const T = {
     "trust.label":"Where I've worked and studied",
     "services.label":"Services","services.title":"How I can <em>help you</em>",
     "services.desc":"Three options based on where you are. Start free with the guide, end with 1:1 coaching when you need eyes on your specific case.",
-    "services.s1.tag":"Lead magnet","services.s1.title":"Free Switzerland guide",
+    "services.s1.title":"Free Switzerland guide",
     "services.s1.desc":"16 pages of stuff I wish I knew before moving. Real salaries, sectors that hire Italians, permits, the mistakes that cost real money.",
     "services.s1.f1":"Salaries by sector","services.s1.f2":"30-day roadmap","services.s1.f3":"3 mistakes to avoid",
     "services.s1.price":"Free","services.s1.cta":"Download now",
-    "services.s2.badge":"Most popular","services.s2.tag":"Digital product","services.s2.title":"Swiss CV pack",
+    "services.s2.badge":"Most popular","services.s2.title":"Swiss CV pack",
     "services.s2.desc":"The Swiss CV template ready to edit, a 20-page playbook with 5 ready-made AI prompts, and a chat open with me to tune it before you send it out.",
     "services.s2.f1":"Swiss CV template (Word)","services.s2.f2":"20-page guide + 5 AI prompts","services.s2.f3":"Chat consultation included",
     "services.s2.cta":"Buy now",
-    "services.s3.tag":"High-touch","services.s3.title":"1:1 Coaching",
+    "services.s3.title":"1:1 Coaching",
     "services.s3.desc":"One hour together on your real situation. Sector, dossier, salary, local network. After the call you get a written recap of everything we discussed.",
     "services.s3.f1":"Personalized 1h session","services.s3.f2":"Post-call summary document","services.s3.f3":"Concrete operational roadmap",
     "services.s3.cta":"Book coaching",
@@ -211,6 +251,46 @@ const T = {
     "footer.cv":"CV →"
   },
   it: {
+    "chero.toolnew":"Gratis",
+    "chero.tool":"Quanto ti resta in busta paga? Il calcolatore del netto con l'imposta alla fonte 2026 di tutti i Cantoni",
+    "services.rating":"recensioni su Stan",
+    "services.s1.tag":"Passo 1 · Parti da qui",
+    "services.s2.tag":"Passo 2 · Il CV giusto",
+    "services.s3.tag":"Passo 3 · Il tuo caso",
+    "crev.label":"Recensioni",
+    "crev.title":"Cosa dice <em>chi ci è passato</em>",
+    "crev.cv":"sul CV Pack",
+    "crev.call":"sulla call 1:1",
+    "crev.src":"recensioni dei clienti su Stan",
+    "ctools.label":"Strumenti gratuiti",
+    "ctools.title":"Fai i conti <em>prima di partire</em>",
+    "ctools.desc":"Quattro strumenti con i dati ufficiali 2026. Funzionano nel browser, sono gratuiti e non chiedono nessun dato.",
+    "ctools.t1.tag":"Stipendio",
+    "ctools.t1.title":"Calcolatore dello stipendio netto",
+    "ctools.t1.desc":"Da lordo a netto: contributi, 2° pilastro e imposta alla fonte con le tabelle ufficiali di tutti i 26 Cantoni. Con la tredicesima e il confronto tra Cantoni.",
+    "ctools.t1.gross":"Lordo annuo",
+    "ctools.t1.net":"Netto al mese · Zurigo",
+    "ctools.t1.note":"Esempio: single, 80.000 CHF, imposta alla fonte 7,46%",
+    "ctools.t2.tag":"Cassa malati",
+    "ctools.t2.title":"Quale franchigia conviene",
+    "ctools.t2.desc":"Metti i premi della tua cassa: ti mostra il punto di pareggio. Si cambia entro il 30 novembre.",
+    "ctools.t2.pt":"pareggio","ctools.t2.ax":"spese mediche →",
+    "ctools.t3.tag":"Trasferimento",
+    "ctools.t3.title":"Checklist per trasferirsi",
+    "ctools.t3.desc":"16 passi con le scadenze vere e le fonti ufficiali, dal contratto al primo anno.",
+    "ctools.t3.s1":"Comune",
+    "ctools.t3.s2":"Cassa malati",
+    "ctools.t3.s4":"Patente",
+    "ctools.t4.tag":"CV e candidature",
+    "ctools.t4.title":"Generatore di prompt per il CV svizzero",
+    "ctools.t4.desc":"Incolli l'annuncio e ottieni i prompt pronti per ChatGPT, Claude o Gemini: CV in formato svizzero, CV adattato all'annuncio, lettera di presentazione.",
+    "ctools.t4.ad":"Annuncio:",
+    "ctools.t4.p1":"Converti il CV nel formato svizzero",
+    "ctools.t4.p2":"Adatta il CV a questo annuncio",
+    "ctools.t4.p3":"Scrivi la lettera di presentazione",
+    "ctools.open":"Apri lo strumento",
+    "ctools.open2":"Apri la checklist",
+    "ctools.all":"Tutti gli strumenti gratuiti →",
     "trust.note":"I loghi indicano dove ho lavorato e studiato. Non implicano affiliazione con queste organizzazioni né la loro approvazione dei miei servizi.",
 
     "cproj.nav":"Progetti AI",
@@ -263,7 +343,7 @@ const T = {
     "cfaq.q3":"Che permesso mi serve?",
     "cfaq.a3":"Da cittadino UE puoi cercare lavoro in Svizzera. Con un contratto di almeno un anno ottieni il permesso B, per contratti più brevi il permesso L. Se vivi in Italia vicino al confine puoi lavorare da frontaliere con il permesso G. Una volta arrivato, hai 14 giorni per registrarti al Comune.",
     "cfaq.q4":"Come funziona il coaching 1:1?",
-    "cfaq.a4":"Prenoti la call e compili un breve form, così arrivo già preparato sul tuo caso. In un'ora lavoriamo su profilo, CV, dove candidarti e stipendio target. Entro 24 ore ricevi un documento con il piano, e hai 7 giorni per farmi domande in DM.",
+    "cfaq.a4":"Prenoti la call e rispondi a 4 domande veloci, così arrivo già preparato sul tuo caso. In un'ora lavoriamo su profilo, CV, dove candidarti e stipendio target. Entro 24 ore ricevi un documento con il piano, e hai 7 giorni per farmi domande in DM.",
     "cfaq.q5":"Il coaching mi garantisce un lavoro?",
     "cfaq.a5":"No, e diffida di chi te lo promette. Ti do metodo, strategia e gli errori da evitare, ma le candidature restano nelle tue mani. Il mio lavoro è farti arrivare prima, con meno tentativi a vuoto.",
     "cfaq.q6":"Quanto costa vivere a Zurigo?",
@@ -280,15 +360,15 @@ const T = {
     "trust.label":"Dove ho lavorato e studiato",
     "services.label":"Servizi","services.title":"Come posso <em>aiutarti</em>",
     "services.desc":"Tre strade in base a dove sei nel percorso. Si parte gratis con la guida, si arriva al coaching 1:1 quando vuoi una mano sul caso tuo.",
-    "services.s1.tag":"Lead magnet","services.s1.title":"Guida gratuita Svizzera",
+    "services.s1.title":"Guida gratuita Svizzera",
     "services.s1.desc":"16 pagine di cose che avrei voluto sapere prima di partire. Stipendi reali, settori che pescano italiani, permessi, gli errori che costano caro.",
     "services.s1.f1":"Stipendi per settore","services.s1.f2":"Roadmap dei primi 30 giorni","services.s1.f3":"3 errori da evitare",
     "services.s1.price":"Gratis","services.s1.cta":"Scarica ora",
-    "services.s2.badge":"Più scelto","services.s2.tag":"Prodotto digitale","services.s2.title":"CV pack svizzero",
+    "services.s2.badge":"Più scelto","services.s2.title":"CV pack svizzero",
     "services.s2.desc":"Il template del CV svizzero pronto da editare, una guida di 20 pagine con 5 prompt AI pronti e una chat aperta con me per sistemarlo prima che parta.",
     "services.s2.f1":"Template CV svizzero (Word)","services.s2.f2":"Guida 20 pagine + 5 prompt AI","services.s2.f3":"Consulenza in chat inclusa",
     "services.s2.cta":"Acquista",
-    "services.s3.tag":"High-touch","services.s3.title":"Coaching 1:1",
+    "services.s3.title":"Coaching 1:1",
     "services.s3.desc":"Un'ora insieme sul tuo caso reale. Settore, dossier, stipendio, network locale. A fine call ti mando un documento con tutto quello che ci siamo detti.",
     "services.s3.f1":"Sessione 1h personalizzata","services.s3.f2":"Documento riassuntivo post-call","services.s3.f3":"Roadmap operativa concreta",
     "services.s3.cta":"Prenota coaching",
@@ -942,4 +1022,37 @@ applyLang(currentLang);
       history.replaceState(null, '', u.pathname + location.search + location.hash);
     }
   } catch (e) { /* indirizzo non valido: lascia com'è */ }
+})();
+
+/* =============================================
+   NUMERI CHE SALGONO (data-count) e grafici degli strumenti
+   Parte quando il blocco entra nello schermo; con reduce-motion resta il valore finale.
+   ============================================= */
+(function () {
+  const els = document.querySelectorAll('[data-count]');
+  const viz = document.querySelectorAll('.viz');
+  // separatore delle migliaia anche sotto 10.000 (toLocaleString in italiano scrive 5507)
+  const fmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, currentLang === 'en' ? ',' : '.');
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) { viz.forEach(v => v.classList.add('on')); return; }
+  const run = el => {
+    const end = +el.dataset.count, t0 = performance.now(), dur = 1400;
+    const step = t => {
+      const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = fmt(end * e);
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('on');
+      en.target.querySelectorAll('[data-count]').forEach(run);
+      obs.unobserve(en.target);
+    });
+  }, { threshold: 0.35 });
+  viz.forEach(v => obs.observe(v));
+  // Rete di sicurezza: niente grafici vuoti se l'osservatore non scatta
+  setTimeout(() => viz.forEach(v => v.classList.add('on')), 4000);
 })();
