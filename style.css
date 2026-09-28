@@ -1623,3 +1623,19 @@ body[data-phrases="cv"] section[id]{scroll-margin-top:calc(var(--nav-h) + 56px)}
   .viz-chart .pt,.viz-chart .pt-l,.vp-out{opacity:1;transform:none}
   .caret{animation:none}
 }
+
+/* Avviso "pagina solo in italiano" (blog e strumenti in modalità inglese) */
+.lang-notice{
+  position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:1000;
+  width:min(560px,calc(100% - 32px));
+  display:flex;align-items:flex-start;gap:12px;
+  padding:12px 12px 12px 16px;border-radius:14px;
+  background:var(--bg);border:1px solid var(--border-h);box-shadow:var(--shadow-lg);
+  font-size:.85rem;line-height:1.5;color:var(--text2);
+  animation:lnIn .35s ease;
+}
+.lang-notice a{color:var(--red);font-weight:700}
+.lang-notice button{flex-shrink:0;border:0;background:var(--surface);color:var(--text2);width:28px;height:28px;border-radius:8px;font-size:1.1rem;line-height:1;cursor:pointer}
+.lang-notice button:hover{background:var(--surface-h)}
+[data-theme="dark"] .lang-notice{background:#0F2040;border-color:rgba(255,255,255,.14)}
+@keyframes lnIn{from{opacity:0;transform:translate(-50%,10px)}}

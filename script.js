@@ -3,6 +3,7 @@
    ============================================= */
 const T = {
   en: {
+    "cnav.home":"Home",
     "chero.toolnew":"Free",
     "chero.tool":"How much will you take home? Net salary calculator with 2026 withholding tax for every canton (in Italian)",
     "services.rating":"reviews on Stan",
@@ -251,6 +252,7 @@ const T = {
     "footer.cv":"CV →"
   },
   it: {
+    "cnav.home":"Home",
     "chero.toolnew":"Gratis",
     "chero.tool":"Quanto ti resta in busta paga? Il calcolatore del netto con l'imposta alla fonte 2026 di tutti i Cantoni",
     "services.rating":"recensioni su Stan",
@@ -562,8 +564,30 @@ function applyLang(lang) {
   if (btnEn) btnEn.classList.toggle('active', lang === 'en');
   if (btnIt) btnIt.classList.toggle('active', lang === 'it');
 
-  // html lang attr
-  document.documentElement.lang = lang;
+  // html lang attr: le pagine solo in italiano (blog, strumenti) restano lang="it"
+  if (!document.documentElement.dataset.contentLang) document.documentElement.lang = lang;
+  langNotice(lang);
+}
+
+/* Pagine solo in italiano: in inglese si traduce il menu e compare un avviso */
+function langNotice(lang) {
+  const only = document.documentElement.dataset.contentLang;
+  let box = document.getElementById('lang-notice');
+  let closed = false;
+  try { closed = sessionStorage.getItem('langNoticeClosed') === '1'; } catch (e) {}
+  if (!only || lang === only || closed) { if (box) box.remove(); return; }
+  if (box) return;
+  box = document.createElement('div');
+  box.id = 'lang-notice';
+  box.className = 'lang-notice';
+  box.setAttribute('role', 'status');
+  box.innerHTML = '<span>🇮🇹 This page is only available in Italian. Your browser can translate it, or go to the <a href="/">English home page</a>.</span>' +
+    '<button type="button" aria-label="Close">×</button>';
+  box.querySelector('button').addEventListener('click', () => {
+    try { sessionStorage.setItem('langNoticeClosed', '1'); } catch (e) {}
+    box.remove();
+  });
+  document.body.appendChild(box);
 }
 
 function setLang(lang) { applyLang(lang); }
