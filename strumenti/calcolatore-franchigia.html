@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="it" data-content-lang="it" data-default-lang="it" data-theme="light">
+<html lang="it" data-default-lang="it" data-theme="light" data-title-en="Swiss health insurance deductible calculator | Valerio Santoni">
 <head>
   <meta charset="UTF-8"/>
+  <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
   <title>Calcolatore franchigia cassa malati svizzera, gratis | Valerio Santoni</title>
@@ -54,7 +55,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style.css?v=18"/>
+  <link rel="stylesheet" href="../style.css?v=19"/>
 
   <style>
     .tool-hero{padding:calc(var(--nav-h) + 56px) 24px 34px;background:linear-gradient(180deg,var(--bg2),var(--bg));text-align:center}
@@ -165,88 +166,102 @@
 </nav>
 
 <header class="tool-hero">
-  <span class="pill">Strumento gratuito</span>
-  <h1>Quale <em>franchigia</em> ti conviene davvero</h1>
-  <p>Inserisci i premi della tua cassa malati e le spese mediche che prevedi: vedi il costo totale di ogni franchigia e il punto in cui conviene cambiare.</p>
-  <div class="privacy">🔒 Tutto nel tuo browser: nessun dato inviato, nessuna registrazione.</div>
+  <span class="pill" data-en="Free tool">Strumento gratuito</span>
+  <h1 data-en-html="Which &lt;em&gt;deductible&lt;/em&gt; really pays off">Quale <em>franchigia</em> ti conviene davvero</h1>
+  <p data-en="Enter your health insurance premiums and the medical costs you expect: see the total cost of each deductible and the point where switching pays off.">Inserisci i premi della tua cassa malati e le spese mediche che prevedi: vedi il costo totale di ogni franchigia e il punto in cui conviene cambiare.</p>
+  <div class="privacy" data-en="🔒 Everything stays in your browser: no data sent, no sign-up.">🔒 Tutto nel tuo browser: nessun dato inviato, nessuna registrazione.</div>
 </header>
 
 <section class="tool">
 
   <div class="card-box">
-    <h2>1 · I tuoi premi mensili</h2>
-    <p class="sub">Li trovi sul sito ufficiale <b>priminfo.admin.ch</b> o sul preventivo della tua cassa: cerca il premio per la tua età, il tuo Comune e il modello che hai scelto.</p>
+    <h2 data-en="1 · Your monthly premiums">1 · I tuoi premi mensili</h2>
+    <p class="sub" data-en-html="You can find them on the official site &lt;b&gt;priminfo.admin.ch&lt;/b&gt; or in your insurer&#x27;s quote: look for the premium for your age, your municipality and the model you chose.">Li trovi sul sito ufficiale <b>priminfo.admin.ch</b> o sul preventivo della tua cassa: cerca il premio per la tua età, il tuo Comune e il modello che hai scelto.</p>
     <div class="grid2">
       <div class="field">
-        <label for="p300">Premio mensile con franchigia 300 CHF</label>
+        <label for="p300" data-en="Monthly premium with a CHF 300 deductible">Premio mensile con franchigia 300 CHF</label>
         <input type="number" id="p300" value="420" min="0" step="1"/>
       </div>
       <div class="field">
-        <label for="p2500">Premio mensile con franchigia 2500 CHF</label>
+        <label for="p2500" data-en="Monthly premium with a CHF 2,500 deductible">Premio mensile con franchigia 2500 CHF</label>
         <input type="number" id="p2500" value="330" min="0" step="1"/>
       </div>
     </div>
 
     <details class="more">
-      <summary>Aggiungi anche le franchigie intermedie (facoltativo)</summary>
+      <summary data-en="Add the intermediate deductibles too (optional)">Aggiungi anche le franchigie intermedie (facoltativo)</summary>
       <div class="grid2">
-        <div class="field"><label for="p500">Premio con franchigia 500</label><input type="number" id="p500" min="0" step="1" placeholder="lascia vuoto per ignorarla"/></div>
-        <div class="field"><label for="p1000">Premio con franchigia 1000</label><input type="number" id="p1000" min="0" step="1" placeholder="lascia vuoto per ignorarla"/></div>
-        <div class="field"><label for="p1500">Premio con franchigia 1500</label><input type="number" id="p1500" min="0" step="1" placeholder="lascia vuoto per ignorarla"/></div>
-        <div class="field"><label for="p2000">Premio con franchigia 2000</label><input type="number" id="p2000" min="0" step="1" placeholder="lascia vuoto per ignorarla"/></div>
+        <div class="field"><label for="p500" data-en="Premium with a 500 deductible">Premio con franchigia 500</label><input type="number" id="p500" min="0" step="1" placeholder="lascia vuoto per ignorarla" data-en-placeholder="leave empty to skip"/></div>
+        <div class="field"><label for="p1000" data-en="Premium with a 1,000 deductible">Premio con franchigia 1000</label><input type="number" id="p1000" min="0" step="1" placeholder="lascia vuoto per ignorarla" data-en-placeholder="leave empty to skip"/></div>
+        <div class="field"><label for="p1500" data-en="Premium with a 1,500 deductible">Premio con franchigia 1500</label><input type="number" id="p1500" min="0" step="1" placeholder="lascia vuoto per ignorarla" data-en-placeholder="leave empty to skip"/></div>
+        <div class="field"><label for="p2000" data-en="Premium with a 2,000 deductible">Premio con franchigia 2000</label><input type="number" id="p2000" min="0" step="1" placeholder="lascia vuoto per ignorarla" data-en-placeholder="leave empty to skip"/></div>
       </div>
     </details>
   </div>
 
   <div class="card-box">
-    <h2>2 · Quanto prevedi di spendere in cure quest'anno</h2>
-    <p class="sub">Visite, farmaci, fisioterapia, esami: la somma delle fatture, prima di quello che rimborsa la cassa.</p>
-    <div class="spesa-row"><span class="spesa-val" id="spesaLbl">600 CHF</span><span>trascina per cambiare</span></div>
+    <h2 data-en="2 · How much you expect to spend on healthcare this year">2 · Quanto prevedi di spendere in cure quest'anno</h2>
+    <p class="sub" data-en="Doctor visits, medicines, physiotherapy, tests: the total of your bills, before anything your insurer reimburses.">Visite, farmaci, fisioterapia, esami: la somma delle fatture, prima di quello che rimborsa la cassa.</p>
+    <div class="spesa-row"><span class="spesa-val" id="spesaLbl">600 CHF</span><span data-en="drag to change">trascina per cambiare</span></div>
     <input type="range" id="spesa" min="0" max="10000" step="100" value="600"/>
     <div class="quick">
-      <button data-v="0">Quasi nulla</button>
-      <button data-v="600">Qualche visita</button>
-      <button data-v="1500">Cure regolari</button>
-      <button data-v="3000">Anno pesante</button>
-      <button data-v="6000">Intervento</button>
+      <button data-v="0" data-en="Almost nothing">Quasi nulla</button>
+      <button data-v="600" data-en="A few visits">Qualche visita</button>
+      <button data-v="1500" data-en="Regular treatment">Cure regolari</button>
+      <button data-v="3000" data-en="A heavy year">Anno pesante</button>
+      <button data-v="6000" data-en="Surgery">Intervento</button>
     </div>
   </div>
 
   <div class="result" id="res">
-    <div class="lead">Risultato</div>
+    <div class="lead" data-en="Result">Risultato</div>
     <div class="big" id="resBig">—</div>
     <div class="det" id="resDet"></div>
   </div>
 
   <div class="card-box">
-    <h2>Il confronto completo</h2>
-    <p class="sub">Costo totale in un anno: premi più quello che paghi di tasca tua.</p>
+    <h2 data-en="The full comparison">Il confronto completo</h2>
+    <p class="sub" data-en="Total cost over a year: premiums plus what you pay out of pocket.">Costo totale in un anno: premi più quello che paghi di tasca tua.</p>
     <div class="table-wrap"><table class="cmp" id="tab">
-      <thead><tr><th>Franchigia</th><th>Premi/anno</th><th>Di tasca tua</th><th>Totale</th></tr></thead>
+      <thead><tr><th data-en="Deductible">Franchigia</th><th data-en="Premiums/year">Premi/anno</th><th data-en="Out of pocket">Di tasca tua</th><th data-en="Total">Totale</th></tr></thead>
       <tbody></tbody>
     </table></div>
   </div>
 
   <div class="card-box">
-    <h2>Come cambia al variare delle spese</h2>
-    <p class="sub">Dove le linee si incrociano, cambia la franchigia più conveniente.</p>
-    <div class="chart-wrap"><svg class="chart" id="chart" viewBox="0 0 720 340" role="img" aria-label="Costo annuo per franchigia al variare delle spese mediche"></svg></div>
+    <h2 data-en="How it changes as your costs change">Come cambia al variare delle spese</h2>
+    <p class="sub" data-en="Where the lines cross, the cheapest deductible changes.">Dove le linee si incrociano, cambia la franchigia più conveniente.</p>
+    <div class="chart-wrap"><svg class="chart" id="chart" viewBox="0 0 720 340" role="img" aria-label="Costo annuo per franchigia al variare delle spese mediche" data-en-aria="Annual cost per deductible as medical costs change"></svg></div>
     <div class="legend" id="legend"></div>
   </div>
 
-  <div class="note-box">
+  <div class="l-it note-box">
     <b>Come funziona il conto.</b> Paghi i premi tutti i mesi, poi le prime spese mediche fino alla franchigia. Superata la franchigia paghi il <b>10% del resto</b>, fino a un massimo di <b>700 CHF all'anno</b> per gli adulti. Da lì in poi paga la cassa.<br/><br/>
     <b>Attenzione alle scadenze.</b> Per cambiare franchigia o cassa per l'anno successivo la disdetta deve arrivare <b>entro il 30 novembre</b>.<br/><br/>
     <b>Cosa non è incluso.</b> Il contributo giornaliero in caso di ricovero, le assicurazioni complementari e le franchigie ridotte per bambini e ragazzi.
   </div>
 
-  <div class="cta-box">
+  <div class="note-box l-en" lang="en">
+    <b>How the maths works.</b> You pay the premiums every month, then your first medical costs up to the deductible. Above the deductible you pay <b>10% of the rest</b>, up to a maximum of <b>CHF 700 a year</b> for adults. After that, the insurer pays.<br/><br/>
+    <b>Mind the deadlines.</b> To change your deductible or insurer for the following year, your notice must arrive <b>by 30 November</b>.<br/><br/>
+    <b>What is not included.</b> The daily contribution for hospital stays, supplementary insurance and the lower deductibles for children and young people.
+  </div>
+
+  <div class="l-it cta-box">
     <h3>📘 È la tua prima cassa malati in Svizzera?</h3>
     <p>Nella guida gratuita trovi la checklist del primo mese: annuncio al Comune, permesso, cassa malati entro 3 mesi e conto in banca. Sedici pagine, senza giri di parole.</p>
     <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">Scarica la guida gratuita</a>
   </div>
 
-  <p class="foot-note">Questo strumento fa una stima con i dati che inserisci tu e non è consulenza assicurativa. I premi ufficiali si consultano su priminfo.admin.ch. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro.</p>
+  <div class="cta-box l-en" lang="en">
+    <h3>📘 Is this your first health insurance in Switzerland?</h3>
+    <p>The free guide (in Italian) has the first-month checklist: registering with your municipality, your permit, health insurance within 3 months and a bank account. Sixteen pages, straight to the point.</p>
+    <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">Download the free guide</a>
+  </div>
+
+  <p class="l-it foot-note">Questo strumento fa una stima con i dati che inserisci tu e non è consulenza assicurativa. I premi ufficiali si consultano su priminfo.admin.ch. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro.</p>
+
+  <p class="foot-note l-en" lang="en">This tool gives an estimate based on the data you enter and is not insurance advice. Official premiums are listed on priminfo.admin.ch. Opinions are my own and do not represent those of my employer.</p>
 </section>
 
 <script>
@@ -255,7 +270,11 @@
   const FR = [[300,'p300'],[500,'p500'],[1000,'p1000'],[1500,'p1500'],[2000,'p2000'],[2500,'p2500']];
   const COL = {300:'#C81E28',500:'#E8722C',1000:'#B8956A',1500:'#2FA38A',2000:'#3C86E8',2500:'#8B5CF6'};
   const MAX_QUOTA = 700, QUOTA = 0.10;
-  const chf = n => Math.round(n).toLocaleString('it-IT', {useGrouping: 'always'}) + ' CHF';
+  // Lingua scelta sul sito (html data-lang): testi e numeri all'italiana o all'inglese
+  const EN = () => document.documentElement.dataset.lang === 'en';
+  const L = (it, en) => EN() ? en : it;
+  const fmt = n => Math.round(n).toLocaleString(EN() ? 'en-US' : 'it-IT', {useGrouping: 'always'});
+  const chf = n => fmt(n) + ' CHF';
 
   function opzioni(){
     return FR.map(([f,id]) => {
@@ -273,23 +292,25 @@
     const spese = +$('spesa').value;
     $('spesaLbl').textContent = chf(spese);
     if (ops.length < 2){
-      $('resBig').textContent = 'Inserisci almeno due premi';
-      $('resDet').textContent = 'Servono i premi di almeno due franchigie per confrontarle.';
+      $('resBig').textContent = L('Inserisci almeno due premi', 'Enter at least two premiums');
+      $('resDet').textContent = L('Servono i premi di almeno due franchigie per confrontarle.', 'You need the premiums for at least two deductibles to compare them.');
       return;
     }
     const righe = ops.map(o => ({...o, ...costo(o, spese)})).sort((a,b) => a.tot - b.tot);
     const best = righe[0], worst = righe[righe.length-1];
 
-    $('resBig').textContent = 'Franchigia ' + best.f + ': ' + chf(best.tot) + ' all\'anno';
-    $('resDet').innerHTML = 'Con ' + chf(spese) + ' di spese mediche è l\'opzione più conveniente. ' +
-      'Rispetto alla peggiore (franchigia ' + worst.f + ') risparmi <b>' + chf(worst.tot - best.tot) + '</b> in un anno.' +
+    $('resBig').textContent = L('Franchigia ' + best.f + ': ' + chf(best.tot) + ' all\'anno', 'Deductible ' + fmt(best.f) + ': ' + chf(best.tot) + ' a year');
+    $('resDet').innerHTML = L('Con ' + chf(spese) + ' di spese mediche è l\'opzione più conveniente. ' +
+      'Rispetto alla peggiore (franchigia ' + worst.f + ') risparmi <b>' + chf(worst.tot - best.tot) + '</b> in un anno.',
+      'With ' + chf(spese) + ' of medical costs this is the cheapest option. ' +
+      'Compared with the worst one (deductible ' + fmt(worst.f) + ') you save <b>' + chf(worst.tot - best.tot) + '</b> a year.') +
       pareggio(ops);
 
     const tb = $('tab').querySelector('tbody'); tb.innerHTML = '';
     righe.slice().sort((a,b) => a.f - b.f).forEach(r => {
       const tr = document.createElement('tr');
       if (r.f === best.f) tr.className = 'best';
-      tr.innerHTML = '<td>' + r.f + ' CHF</td><td>' + chf(r.premi) + '</td><td>' + chf(r.propria) + '</td><td>' + chf(r.tot) + '</td>';
+      tr.innerHTML = '<td>' + fmt(r.f) + ' CHF</td><td>' + chf(r.premi) + '</td><td>' + chf(r.propria) + '</td><td>' + chf(r.tot) + '</td>';
       tb.appendChild(tr);
     });
     chart(ops, spese);
@@ -304,10 +325,12 @@
       const d = costo(alta, s).tot - costo(bassa, s).tot;
       if (d >= 0){ cross = s; break; }
     }
-    if (cross === null) return ' Con questi premi la franchigia ' + alta.f + ' conviene sempre.';
-    if (cross === 0) return ' Con questi premi la franchigia ' + bassa.f + ' conviene sempre.';
-    return ' Il punto di pareggio tra ' + bassa.f + ' e ' + alta.f + ' è intorno a <b>' + chf(cross) +
-           '</b> di spese: sotto conviene la ' + alta.f + ', sopra la ' + bassa.f + '.';
+    if (cross === null) return L(' Con questi premi la franchigia ' + alta.f + ' conviene sempre.', ' With these premiums the ' + fmt(alta.f) + ' deductible always pays off.');
+    if (cross === 0) return L(' Con questi premi la franchigia ' + bassa.f + ' conviene sempre.', ' With these premiums the ' + fmt(bassa.f) + ' deductible always pays off.');
+    return L(' Il punto di pareggio tra ' + bassa.f + ' e ' + alta.f + ' è intorno a <b>' + chf(cross) +
+           '</b> di spese: sotto conviene la ' + alta.f + ', sopra la ' + bassa.f + '.',
+           ' The break-even point between ' + fmt(bassa.f) + ' and ' + fmt(alta.f) + ' is around <b>' + chf(cross) +
+           '</b> of costs: below it the ' + fmt(alta.f) + ' deductible is cheaper, above it the ' + fmt(bassa.f) + '.');
   }
 
   function chart(ops, spese){
@@ -331,9 +354,9 @@
       g += '<path d="'+d+'" fill="none" stroke="'+COL[o.f]+'" stroke-width="2.6" stroke-linejoin="round"/>';
     });
     g += '<line x1="'+x(spese)+'" y1="'+mT+'" x2="'+x(spese)+'" y2="'+(H-mB)+'" stroke="currentColor" stroke-opacity=".45" stroke-dasharray="5 5"/>';
-    g += '<text x="'+x(spese)+'" y="'+(mT+12)+'" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity=".7">le tue spese</text>';
+    g += '<text x="'+x(spese)+'" y="'+(mT+12)+'" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity=".7">' + L('le tue spese', 'your costs') + '</text>';
     $('chart').innerHTML = g;
-    $('legend').innerHTML = ops.map(o => '<span><i style="background:'+COL[o.f]+'"></i>Franchigia '+o.f+'</span>').join('');
+    $('legend').innerHTML = ops.map(o => '<span><i style="background:'+COL[o.f]+'"></i>' + L('Franchigia ', 'Deductible ') + fmt(o.f) + '</span>').join('');
   }
 
   ['p300','p500','p1000','p1500','p2000','p2500','spesa'].forEach(id => {
@@ -342,9 +365,11 @@
   document.querySelectorAll('.quick button').forEach(b => b.addEventListener('click', () => {
     $('spesa').value = b.dataset.v; render();
   }));
+  // Cambio di lingua: riscrive i testi generati qui
+  document.addEventListener('langchange', render);
   render();
 })();
 </script>
-<script src="../script.js?v=29"></script>
+<script src="../script.js?v=30"></script>
 </body>
 </html>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="it" data-default-lang="it" data-theme="light">
+<html lang="it" data-default-lang="it" data-theme="light" data-title-en="Page not found | Valerio Santoni">
 <head>
   <meta charset="UTF-8"/>
+  <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Pagina non trovata · Valerio Santoni</title>
   <meta name="robots" content="noindex, follow"/>
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css?v=18"/>
+  <link rel="stylesheet" href="style.css?v=19"/>
   <style>
     .nf{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;gap:10px}
     .nf .code{font-size:clamp(64px,12vw,120px);font-weight:900;line-height:1;color:var(--red);letter-spacing:-4px}
@@ -23,15 +24,15 @@
 <body>
   <div class="nf">
     <div class="code">404</div>
-    <h1>Questa pagina non esiste</h1>
-    <p>Forse il link è vecchio o c'è un refuso nell'indirizzo. Da qui puoi ripartire.</p>
+    <h1 data-en="This page does not exist">Questa pagina non esiste</h1>
+    <p data-en="Maybe the link is old or there is a typo in the address. You can start again from here.">Forse il link è vecchio o c'è un refuso nell'indirizzo. Da qui puoi ripartire.</p>
     <div class="links">
-      <a class="btn primary" href="/">Vai alla home</a>
-      <a class="btn" href="/blog/">Leggi il blog</a>
-      <a class="btn" href="https://stan.store/valerioswiss" target="_blank" rel="noopener">Guida gratuita</a>
-      <a class="btn" href="/cv">Il mio CV</a>
+      <a class="btn primary" href="/" data-en="Go to the home page">Vai alla home</a>
+      <a class="btn" href="/blog/" data-en="Read the blog">Leggi il blog</a>
+      <a class="btn" href="https://stan.store/valerioswiss" target="_blank" rel="noopener" data-en="Free guide">Guida gratuita</a>
+      <a class="btn" href="/cv" data-en="My CV">Il mio CV</a>
     </div>
   </div>
-  <script src="script.js?v=29"></script>
+  <script src="script.js?v=30"></script>
 </body>
 </html>

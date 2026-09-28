@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="it" data-content-lang="it" data-default-lang="it" data-theme="light">
+<html lang="it" data-default-lang="it" data-theme="light" data-title-en="Swiss CV prompt generator for ChatGPT, Claude and Gemini | Valerio Santoni">
 <head>
   <meta charset="UTF-8"/>
+  <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
   <title>Generatore di prompt per il CV svizzero, gratis | Valerio Santoni</title>
@@ -57,7 +58,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style.css?v=18"/>
+  <link rel="stylesheet" href="../style.css?v=19"/>
 
   <style>
     .tool-hero{padding:calc(var(--nav-h) + 56px) 24px 40px;background:linear-gradient(180deg,var(--bg2),var(--bg));text-align:center}
@@ -158,10 +159,10 @@
 </nav>
 
 <header class="tool-hero">
-  <span class="pill">Strumento gratuito</span>
-  <h1>Generatore di prompt per il <em>CV svizzero</em></h1>
-  <p>Rispondi a quattro domande, incolla l'annuncio e ottieni i prompt pronti da usare con ChatGPT, Claude o Gemini: conversione del CV, adattamento all'annuncio e lettera di presentazione.</p>
-  <div class="privacy">🔒 Funziona tutto nel tuo browser: annuncio e CV non vengono inviati da nessuna parte.</div>
+  <span class="pill" data-en="Free tool">Strumento gratuito</span>
+  <h1 data-en-html="Prompt generator for a &lt;em&gt;Swiss CV&lt;/em&gt;">Generatore di prompt per il <em>CV svizzero</em></h1>
+  <p data-en="Answer four questions, paste the job ad and get ready-made prompts for ChatGPT, Claude or Gemini: converting your CV, tailoring it to the ad and writing the cover letter.">Rispondi a quattro domande, incolla l'annuncio e ottieni i prompt pronti da usare con ChatGPT, Claude o Gemini: conversione del CV, adattamento all'annuncio e lettera di presentazione.</p>
+  <div class="privacy" data-en="🔒 Everything runs in your browser: your job ad and CV are not sent anywhere.">🔒 Funziona tutto nel tuo browser: annuncio e CV non vengono inviati da nessuna parte.</div>
 </header>
 
 <section class="tool">
@@ -169,91 +170,100 @@
   <div class="card-box">
     <div class="grid2">
       <div class="field">
-        <label for="ruolo">Ruolo o posizione</label>
-        <input type="text" id="ruolo" placeholder="es. Data Analyst, HR Specialist, Project Manager"/>
+        <label for="ruolo" data-en="Role or position">Ruolo o posizione</label>
+        <input type="text" id="ruolo" placeholder="es. Data Analyst, HR Specialist, Project Manager" data-en-placeholder="e.g. Data Analyst, HR Specialist, Project Manager"/>
       </div>
       <div class="field">
-        <label for="settore">Settore</label>
+        <label for="settore" data-en="Sector">Settore</label>
         <select id="settore">
-          <option>Banking e finanza</option>
-          <option>Tech e IT</option>
-          <option>Consulenza</option>
-          <option>Pharma e life sciences</option>
-          <option>Beni di consumo e retail</option>
-          <option>Industria e ingegneria</option>
-          <option>Assicurazioni</option>
-          <option>Marketing e comunicazione</option>
-          <option>Organizzazioni internazionali</option>
-          <option>Altro</option>
+          <option data-en="Banking and finance">Banking e finanza</option>
+          <option data-en="Tech and IT">Tech e IT</option>
+          <option data-en="Consulting">Consulenza</option>
+          <option data-en="Pharma and life sciences">Pharma e life sciences</option>
+          <option data-en="Consumer goods and retail">Beni di consumo e retail</option>
+          <option data-en="Industry and engineering">Industria e ingegneria</option>
+          <option data-en="Insurance">Assicurazioni</option>
+          <option data-en="Marketing and communications">Marketing e comunicazione</option>
+          <option data-en="International organisations">Organizzazioni internazionali</option>
+          <option data-en="Other">Altro</option>
         </select>
       </div>
     </div>
 
     <div class="grid2">
       <div class="field">
-        <label for="lingua">Lingua del CV</label>
+        <label for="lingua" data-en="CV language">Lingua del CV</label>
         <select id="lingua">
-          <option>inglese</option>
-          <option>italiano</option>
-          <option>tedesco</option>
-          <option>francese</option>
+          <option data-en="English">inglese</option>
+          <option data-en="Italian">italiano</option>
+          <option data-en="German">tedesco</option>
+          <option data-en="French">francese</option>
         </select>
       </div>
       <div class="field">
-        <label for="exp">Esperienza</label>
+        <label for="exp" data-en="Experience">Esperienza</label>
         <select id="exp">
-          <option>neolaureato, primo lavoro</option>
-          <option>1-3 anni di esperienza</option>
-          <option>3-5 anni di esperienza</option>
-          <option>oltre 5 anni di esperienza</option>
+          <option data-en="recent graduate, first job">neolaureato, primo lavoro</option>
+          <option data-en="1-3 years of experience">1-3 anni di esperienza</option>
+          <option data-en="3-5 years of experience">3-5 anni di esperienza</option>
+          <option data-en="over 5 years of experience">oltre 5 anni di esperienza</option>
         </select>
       </div>
     </div>
 
     <div class="grid2">
       <div class="field">
-        <label for="citta">Città o area <span class="opt">(facoltativo)</span></label>
-        <input type="text" id="citta" placeholder="es. Zurigo, Ginevra, tutta la Svizzera"/>
+        <label for="citta" data-en-html="City or area &lt;span class=&quot;opt&quot;&gt;(optional)&lt;/span&gt;">Città o area <span class="opt">(facoltativo)</span></label>
+        <input type="text" id="citta" placeholder="es. Zurigo, Ginevra, tutta la Svizzera" data-en-placeholder="e.g. Zurich, Geneva, anywhere in Switzerland"/>
       </div>
       <div class="field">
-        <label for="azienda">Azienda <span class="opt">(facoltativo)</span></label>
-        <input type="text" id="azienda" placeholder="es. il nome dell'azienda dell'annuncio"/>
+        <label for="azienda" data-en-html="Company &lt;span class=&quot;opt&quot;&gt;(optional)&lt;/span&gt;">Azienda <span class="opt">(facoltativo)</span></label>
+        <input type="text" id="azienda" placeholder="es. il nome dell'azienda dell'annuncio" data-en-placeholder="e.g. the company in the job ad"/>
       </div>
     </div>
 
     <div class="field">
-      <label for="annuncio">Testo dell'annuncio <span class="opt">(facoltativo, ma è quello che fa la differenza)</span></label>
-      <textarea id="annuncio" placeholder="Incolla qui il testo dell'annuncio a cui vuoi candidarti."></textarea>
+      <label for="annuncio" data-en-html="Job ad text &lt;span class=&quot;opt&quot;&gt;(optional, but it is what makes the difference)&lt;/span&gt;">Testo dell'annuncio <span class="opt">(facoltativo, ma è quello che fa la differenza)</span></label>
+      <textarea id="annuncio" placeholder="Incolla qui il testo dell'annuncio a cui vuoi candidarti." data-en-placeholder="Paste the text of the job ad you want to apply for."></textarea>
     </div>
 
     <div class="btn-row">
-      <button class="go" id="gen">Genera i prompt</button>
-      <button class="ghost" id="reset">Svuota</button>
+      <button class="go" id="gen" data-en="Generate the prompts">Genera i prompt</button>
+      <button class="ghost" id="reset" data-en="Clear">Svuota</button>
     </div>
-    <p class="hint">Se lasci un campo vuoto, nel prompt resta una parte tra parentesi quadre da completare a mano.</p>
+    <p class="hint" data-en="If you leave a field empty, the prompt keeps a part in square brackets for you to fill in by hand.">Se lasci un campo vuoto, nel prompt resta una parte tra parentesi quadre da completare a mano.</p>
   </div>
 
   <div id="out">
     <div class="steps-box">
-      <strong>Come si usano</strong>
+      <strong data-en="How to use them">Come si usano</strong>
       <ol>
-        <li>Copia il prompt 1 e incollalo in ChatGPT, Claude o Gemini, insieme al tuo CV attuale.</li>
-        <li>Controlla il risultato: numeri, date e nomi devono essere i tuoi, non inventati.</li>
-        <li>Usa il prompt 2 per adattare il CV all'annuncio e il prompt 3 per la lettera.</li>
-        <li>Impagina il testo finale nel tuo template, non copiarlo grezzo.</li>
+        <li data-en="Copy prompt 1 and paste it into ChatGPT, Claude or Gemini together with your current CV.">Copia il prompt 1 e incollalo in ChatGPT, Claude o Gemini, insieme al tuo CV attuale.</li>
+        <li data-en="Check the result: numbers, dates and names must be yours, not made up.">Controlla il risultato: numeri, date e nomi devono essere i tuoi, non inventati.</li>
+        <li data-en="Use prompt 2 to tailor the CV to the job ad and prompt 3 for the cover letter.">Usa il prompt 2 per adattare il CV all'annuncio e il prompt 3 per la lettera.</li>
+        <li data-en="Lay out the final text in your own template rather than pasting it raw.">Impagina il testo finale nel tuo template, non copiarlo grezzo.</li>
       </ol>
     </div>
     <div id="cards"></div>
   </div>
 
-  <div class="cta-box">
+  <div class="l-it cta-box">
     <h3>📄 Gli altri due prompt e il template</h3>
     <p>Nel CV Pack trovi la guida di 20 pagine sul CV svizzero, tutti e cinque i prompt (compresi LinkedIn e preparazione al colloquio), i template di CV e lettera e la revisione del tuo CV in chat con me.</p>
-    <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">Vedi il CV Pack, 19€</a>
+    <a href="https://stan.store/valerioswiss/p/il-cv-perfetto-per-lavorare-allestero" target="_blank" rel="noopener">Vedi il CV Pack, 19€</a>
     <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">Guida gratuita</a>
   </div>
 
-  <p class="foot-note">Questo strumento non usa l'AI: costruisce solo il testo del prompt, che poi incolli tu nello strumento che preferisci. Niente dati inviati, niente account. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro. <a href="../blog/">Leggi il blog</a> per le guide complete.</p>
+  <div class="cta-box l-en" lang="en">
+    <h3>📄 The other two prompts and the template</h3>
+    <p>The CV Pack (in Italian) includes the 20-page guide to the Swiss CV, all five prompts (including LinkedIn and interview preparation), CV and cover letter templates, and a review of your CV with me in chat.</p>
+    <a href="https://stan.store/valerioswiss/p/il-cv-perfetto-per-lavorare-allestero" target="_blank" rel="noopener">See the CV Pack, 19€</a>
+    <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">Free guide</a>
+  </div>
+
+  <p class="l-it foot-note">Questo strumento non usa l'AI: costruisce solo il testo del prompt, che poi incolli tu nello strumento che preferisci. Niente dati inviati, niente account. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro. <a href="../blog/">Leggi il blog</a> per le guide complete.</p>
+
+  <p class="foot-note l-en" lang="en">This tool does not use AI: it only builds the text of the prompt, which you then paste into the tool you prefer. No data sent, no account. Opinions are my own and do not represent those of my employer. <a href="../blog/">Read the blog</a> for the full guides.</p>
 </section>
 
 <script>
@@ -261,15 +271,75 @@
   const $ = id => document.getElementById(id);
   const v = (id, fallback) => ($(id).value || '').trim() || fallback;
 
+  const EN = () => document.documentElement.dataset.lang === 'en';
+
   function build(){
-    const ruolo    = v('ruolo', '[RUOLO]');
+    const en = EN();
+    const ruolo    = v('ruolo', en ? '[ROLE]' : '[RUOLO]');
     const settore  = $('settore').value;
     const lingua   = $('lingua').value;
     const exp      = $('exp').value;
-    const citta    = v('citta', 'Svizzera');
-    const azienda  = v('azienda', "[NOME AZIENDA]");
+    const citta    = v('citta', en ? 'Switzerland' : 'Svizzera');
+    const vuota    = en ? '[COMPANY NAME]' : '[NOME AZIENDA]';
+    const azienda  = v('azienda', vuota);
     const annuncio = ($('annuncio').value || '').trim();
-    const ann      = annuncio || "[INCOLLA QUI IL TESTO DELL'ANNUNCIO]";
+    const ann      = annuncio || (en ? "[PASTE THE JOB AD HERE]" : "[INCOLLA QUI IL TESTO DELL'ANNUNCIO]");
+
+    if (en) {
+      const e1 =
+`You are a Swiss recruiter with ten years of experience in ${settore}. Here is my current CV: rewrite it in the Swiss format for an application as ${ruolo} in ${citta}.
+
+Profile: ${exp}. CV language: ${lingua}.
+
+Rules:
+- Maximum 2 pages. Structure: header, professional profile, experience, education, languages with CEFR level, technical skills.
+- Header with city, nationality, residence permit if I mention it, phone, email. No tax code, marital status or date of birth.
+- Professional profile in 3 lines: who I am, what I can do, what I am looking for. No motivational phrases.
+- Experience: 3-4 bullets per role, each with action, context and a measurable result. Past tense, real numbers.
+- Do not make anything up: if a piece of information is missing, write [TO COMPLETE] instead of estimating it.
+- Sober, concrete tone suited to the Swiss job market.
+
+At the end, list the 5 pieces of information I am missing to make the CV stronger.
+
+MY CURRENT CV:
+[PASTE YOUR CV HERE]`;
+
+      const e2 =
+`Here is a Swiss job ad and my CV. Do three things.
+
+1. Extract the 10 keywords from the ad that an ATS would look for, in order of importance.
+2. Tell me which are already in my CV and which are missing, separating "I have it but it is not written" from "I do not have it".
+3. Rewrite the professional profile and the bullets of the most relevant experience using only the keywords I really have, in ${lingua}.
+
+Return the result in two blocks: BEFORE and AFTER.
+
+JOB AD (${ruolo}${azienda !== vuota ? ' · ' + azienda : ''}):
+${ann}
+
+MY CV:
+[PASTE YOUR CV HERE]`;
+
+      const e3 =
+`Write a cover letter in ${lingua} for the ${ruolo} position at ${azienda}, maximum 250 words, in 3 paragraphs.
+
+1. Why this company and this role, with a concrete reference taken from the job ad.
+2. The two experiences in my CV most relevant to the ad, with one measurable result each.
+3. A close with availability and work permit: I am an EU citizen [change if needed].
+
+Rules: no clichés like "I am a dynamic person", no superlatives, no information that is not in the CV. Professional, direct tone suited to the Swiss job market.
+
+JOB AD:
+${ann}
+
+MY CV:
+[PASTE YOUR CV HERE]`;
+
+      return [
+        ['Turn your CV into a Swiss CV', e1],
+        ['Tailor the CV to the job ad', e2],
+        ['Write the cover letter', e3]
+      ];
+    }
 
     const p1 =
 `Sei un recruiter svizzero con dieci anni di esperienza nel settore ${settore}. Ti do il mio CV italiano: riscrivilo in formato svizzero per una candidatura come ${ruolo} in ${citta}.
@@ -298,7 +368,7 @@ IL MIO CV ATTUALE:
 
 Restituisci il risultato in due blocchi: PRIMA e DOPO.
 
-ANNUNCIO (${ruolo}${azienda !== '[NOME AZIENDA]' ? ' · ' + azienda : ''}):
+ANNUNCIO (${ruolo}${azienda !== vuota ? ' · ' + azienda : ''}):
 ${ann}
 
 IL MIO CV:
@@ -326,7 +396,8 @@ IL MIO CV:
     ];
   }
 
-  function render(){
+  function render(scroll){
+    const copia = EN() ? 'Copy' : 'Copia', fatto = EN() ? 'Copied ✓' : 'Copiato ✓';
     const cards = build();
     const box = $('cards');
     box.innerHTML = '';
@@ -337,12 +408,12 @@ IL MIO CV:
       head.className = 'prompt-head';
       head.innerHTML = '<h3><span class="num">' + (i+1) + '</span>' + title + '</h3>';
       const btn = document.createElement('button');
-      btn.className = 'copy'; btn.textContent = 'Copia';
+      btn.className = 'copy'; btn.textContent = copia;
       btn.addEventListener('click', async () => {
         try { await navigator.clipboard.writeText(text); }
         catch(e){ const t=document.createElement('textarea'); t.value=text; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); }
-        btn.textContent = 'Copiato ✓'; btn.classList.add('done');
-        setTimeout(()=>{ btn.textContent='Copia'; btn.classList.remove('done'); }, 2000);
+        btn.textContent = fatto; btn.classList.add('done');
+        setTimeout(()=>{ btn.textContent=copia; btn.classList.remove('done'); }, 2000);
       });
       head.appendChild(btn);
       const pre = document.createElement('pre');
@@ -350,16 +421,18 @@ IL MIO CV:
       el.appendChild(head); el.appendChild(pre); box.appendChild(el);
     });
     $('out').style.display = 'block';
-    $('out').scrollIntoView({behavior:'smooth', block:'start'});
+    if (scroll !== false) $('out').scrollIntoView({behavior:'smooth', block:'start'});
   }
 
-  $('gen').addEventListener('click', render);
+  $('gen').addEventListener('click', () => render());
+  // Cambio di lingua: se i prompt sono già visibili li riscrive nella nuova lingua
+  document.addEventListener('langchange', () => { if ($('out').style.display === 'block') render(false); });
   $('reset').addEventListener('click', () => {
     ['ruolo','citta','azienda','annuncio'].forEach(id => $(id).value = '');
     $('out').style.display = 'none';
   });
 })();
 </script>
-<script src="../script.js?v=29"></script>
+<script src="../script.js?v=30"></script>
 </body>
 </html>

@@ -564,9 +564,46 @@ function applyLang(lang) {
   if (btnEn) btnEn.classList.toggle('active', lang === 'en');
   if (btnIt) btnIt.classList.toggle('active', lang === 'it');
 
-  // html lang attr: le pagine solo in italiano (blog, strumenti) restano lang="it"
+  // html lang attr: le pagine solo in italiano restano lang="it"
   if (!document.documentElement.dataset.contentLang) document.documentElement.lang = lang;
+  applyPageLang(lang);
   langNotice(lang);
+}
+
+/* =============================================
+   PAGINE BILINGUI (blog, strumenti)
+   - blocchi .l-it / .l-en: il CSS mostra quello della lingua scelta
+   - data-en="testo": sostituisce il testo di un elemento semplice
+   - data-en-html="...": sostituisce l'HTML interno
+   - data-en-placeholder / data-en-aria / data-en-title / data-en-href: attributi
+   - <html data-title-en="...">: titolo della scheda
+   - evento "langchange" per i testi scritti dal codice degli strumenti
+   ============================================= */
+function applyPageLang(lang) {
+  const root = document.documentElement;
+  const en = lang === 'en';
+  root.dataset.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(el => {
+    if (el._it === undefined) el._it = el.textContent;
+    el.textContent = en ? el.dataset.en : el._it;
+  });
+  document.querySelectorAll('[data-en-html]').forEach(el => {
+    if (el._itHtml === undefined) el._itHtml = el.innerHTML;
+    el.innerHTML = en ? el.dataset.enHtml : el._itHtml;
+  });
+  [['data-en-placeholder', 'placeholder'], ['data-en-aria', 'aria-label'], ['data-en-title', 'title'], ['data-en-href', 'href']]
+    .forEach(([sel, attr]) => {
+      document.querySelectorAll('[' + sel + ']').forEach(el => {
+        const k = '_it_' + attr;
+        if (el[k] === undefined) el[k] = el.getAttribute(attr) || '';
+        el.setAttribute(attr, en ? el.getAttribute(sel) : el[k]);
+      });
+    });
+  if (root.dataset.titleEn) {
+    if (root._itTitle === undefined) root._itTitle = document.title;
+    document.title = en ? root.dataset.titleEn : root._itTitle;
+  }
+  document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
 }
 
 /* Pagine solo in italiano: in inglese si traduce il menu e compare un avviso */

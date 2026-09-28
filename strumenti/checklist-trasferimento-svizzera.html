@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="it" data-content-lang="it" data-default-lang="it" data-theme="light">
+<html lang="it" data-default-lang="it" data-theme="light" data-title-en="Checklist for moving to Switzerland: steps and deadlines | Valerio Santoni">
 <head>
   <meta charset="UTF-8"/>
+  <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
   <title>Checklist per trasferirsi in Svizzera: cosa fare e entro quando | Valerio Santoni</title>
@@ -59,7 +60,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style.css?v=18"/>
+  <link rel="stylesheet" href="../style.css?v=19"/>
 
   <style>
     .tool-hero{padding:calc(var(--nav-h) + 56px) 24px 30px;background:linear-gradient(180deg,var(--bg2),var(--bg));text-align:center}
@@ -163,35 +164,46 @@
 </nav>
 
 <header class="tool-hero">
-  <span class="pill">Strumento gratuito</span>
-  <h1>Ti trasferisci in Svizzera? <em>Ecco cosa fare, e entro quando.</em></h1>
-  <p>16 passi dalla firma del contratto alla fine del primo anno, con le scadenze che contano e le fonti ufficiali. Spunta quello che hai già fatto.</p>
-  <span class="privacy">🔒 Le spunte restano solo sul tuo dispositivo</span>
+  <span class="pill" data-en="Free tool">Strumento gratuito</span>
+  <h1 data-en-html="Moving to Switzerland? &lt;em&gt;Here is what to do, and by when.&lt;/em&gt;">Ti trasferisci in Svizzera? <em>Ecco cosa fare, e entro quando.</em></h1>
+  <p data-en="16 steps from signing the contract to the end of your first year, with the deadlines that matter and official sources. Tick off what you have already done.">16 passi dalla firma del contratto alla fine del primo anno, con le scadenze che contano e le fonti ufficiali. Spunta quello che hai già fatto.</p>
+  <span class="privacy" data-en="🔒 Your ticks stay on your device only">🔒 Le spunte restano solo sul tuo dispositivo</span>
 </header>
 
 <main class="tool">
   <div class="progress" id="progress">
     <b id="count">0 su 16</b>
     <div class="bar"><i id="bar"></i></div>
-    <button type="button" onclick="window.print()">🖨 Stampa o salva PDF</button>
-    <button type="button" id="reset">Ricomincia</button>
+    <button type="button" onclick="window.print()" data-en="🖨 Print or save as PDF">🖨 Stampa o salva PDF</button>
+    <button type="button" id="reset" data-en="Start over">Ricomincia</button>
   </div>
 
   <div id="list"></div>
 
-  <div class="note-box">
+  <div class="l-it note-box">
     <b>Vale per cittadini italiani e UE/AELS.</b> Le regole pratiche cambiano un po' da Cantone a Cantone (documenti richiesti, tempi del permesso): per il tuo caso controlla sempre il sito del tuo Comune o del tuo Cantone.
   </div>
 
-  <div class="cta-box">
+  <div class="note-box l-en" lang="en">
+    <b>For Italian and EU/EFTA citizens.</b> The practical rules vary a little from canton to canton (documents required, permit processing times): for your case, always check the website of your municipality or canton.
+  </div>
+
+  <div class="l-it cta-box">
     <h3>Vuoi tutto il percorso, passo per passo?</h3>
     <p>Nella guida gratuita trovi lavoro, permesso, cassa malati e i primi 30 giorni in 16 pagine. Per la franchigia c'è il calcolatore.</p>
     <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">Scarica la guida gratuita</a>
     <a class="sec" href="calcolatore-franchigia">Calcola la franchigia</a>
   </div>
 
-  <h2 style="font-size:18px;margin:36px 0 10px">Fonti</h2>
-  <p class="fonti">
+  <div class="cta-box l-en" lang="en">
+    <h3>Want the whole journey, step by step?</h3>
+    <p>The free guide (in Italian) covers work, permits, health insurance and your first 30 days in 16 pages. For the deductible there is the calculator.</p>
+    <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">Download the free guide</a>
+    <a class="sec" href="calcolatore-franchigia">Work out your deductible</a>
+  </div>
+
+  <h2 style="font-size:18px;margin:36px 0 10px" data-en="Sources">Fonti</h2>
+  <p class="l-it fonti">
     <a href="https://www.sem.admin.ch/sem/it/home/themen/fza_schweiz-eu-efta.html" target="_blank" rel="noopener">Segreteria di Stato della migrazione (SEM), libera circolazione UE/AELS</a> ·
     <a href="https://www.bag.admin.ch/it/assicurazione-malattie" target="_blank" rel="noopener">Ufficio federale della sanità pubblica (UFSP), assicurazione malattie</a> ·
     <a href="https://www.priminfo.admin.ch/it" target="_blank" rel="noopener">Priminfo</a> ·
@@ -202,70 +214,105 @@
     <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_257_e" target="_blank" rel="noopener">Codice delle obbligazioni, art. 257e (garanzia della pigione)</a>
   </p>
 
-  <p class="foot-note">Informazioni generali aggiornate a settembre 2026, non consulenza legale, fiscale o assicurativa. Il sito è un'attività a titolo personale: le opinioni sono mie e non rappresentano quelle del mio datore di lavoro.</p>
+  <p class="fonti l-en" lang="en">
+    <a href="https://www.sem.admin.ch/sem/en/home/themen/fza_schweiz-eu-efta.html" target="_blank" rel="noopener">State Secretariat for Migration (SEM), EU/EFTA free movement</a> ·
+    <a href="https://www.bag.admin.ch/en/health-insurance" target="_blank" rel="noopener">Federal Office of Public Health (FOPH), health insurance</a> ·
+    <a href="https://www.priminfo.admin.ch/en" target="_blank" rel="noopener">Priminfo</a> ·
+    <a href="https://www.esteri.it/it/servizi-consolari-e-visti/italiani-all-estero/aire_0/" target="_blank" rel="noopener">Italian Ministry of Foreign Affairs, AIRE (in Italian)</a> ·
+    <a href="https://blog.astra.admin.ch/it/conversione-patente-estera/" target="_blank" rel="noopener">FEDRO, converting a foreign driving licence</a> ·
+    <a href="https://www.serafe.ch/en" target="_blank" rel="noopener">Serafe, radio and TV licence fee</a> ·
+    <a href="https://www.estv.admin.ch/en/tax-at-source" target="_blank" rel="noopener">FTA, tax at source</a> ·
+    <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en#art_257_e" target="_blank" rel="noopener">Code of Obligations, art. 257e (rent deposit)</a>
+  </p>
+
+  <p class="l-it foot-note">Informazioni generali aggiornate a settembre 2026, non consulenza legale, fiscale o assicurativa. Il sito è un'attività a titolo personale: le opinioni sono mie e non rappresentano quelle del mio datore di lavoro.</p>
+
+  <p class="foot-note l-en" lang="en">General information updated in September 2026, not legal, tax or insurance advice. This site is a personal project: the opinions are my own and do not represent those of my employer.</p>
 </main>
 
 <script>
 (function(){
   var FASI = [
-    {nome: "Prima di partire", nota: "quando hai l'offerta in mano", passi: [
-      {t: "Firma il contratto di lavoro", d: "Il tipo di permesso dipende dal contratto: sotto l'anno ricevi il permesso L, da un anno in su o a tempo indeterminato il B. Da italiano non ti serve un visto.", k: "Prima di tutto"},
-      {t: "Controlla che il documento d'identità sia valido", d: "Carta d'identità o passaporto: ti servono per annunciarti al Comune.", k: "Prima di partire"},
-      {t: "Prepara diplomi e certificati di lavoro in PDF", d: "Ti servono per le candidature e, se la tua professione lo richiede, per il riconoscimento del titolo.", k: "Prima di partire"},
-      {t: "Trova casa, anche temporanea", d: "Per annunciarti serve un indirizzo. La cauzione dell'affitto è al massimo di 3 mensilità e va su un conto intestato a te.", k: "Prima di partire"}
+    {nome: "Prima di partire", en: "Before you leave", nota: "quando hai l'offerta in mano", notaEn: "once you have the offer", passi: [
+      {t: "Firma il contratto di lavoro", d: "Il tipo di permesso dipende dal contratto: sotto l'anno ricevi il permesso L, da un anno in su o a tempo indeterminato il B. Da italiano non ti serve un visto.", k: "Prima di tutto",
+       te: "Sign the employment contract", de: "Your permit depends on the contract: under a year you get an L permit, one year or more or a permanent contract gets you a B. As an Italian (EU) citizen you do not need a visa.", ke: "First of all"},
+      {t: "Controlla che il documento d'identità sia valido", d: "Carta d'identità o passaporto: ti servono per annunciarti al Comune.", k: "Prima di partire",
+       te: "Check your ID is valid", de: "ID card or passport: you need it to register with your municipality.", ke: "Before you leave"},
+      {t: "Prepara diplomi e certificati di lavoro in PDF", d: "Ti servono per le candidature e, se la tua professione lo richiede, per il riconoscimento del titolo.", k: "Prima di partire",
+       te: "Get your diplomas and work references as PDFs", de: "You need them for applications and, if your profession requires it, to have your qualification recognised.", ke: "Before you leave"},
+      {t: "Trova casa, anche temporanea", d: "Per annunciarti serve un indirizzo. La cauzione dell'affitto è al massimo di 3 mensilità e va su un conto intestato a te.", k: "Prima di partire",
+       te: "Find a place to live, even a temporary one", de: "You need an address to register. The rent deposit is at most 3 months' rent and goes into an account in your name.", ke: "Before you leave"}
     ]},
-    {nome: "Primi 14 giorni", nota: "appena arrivi", passi: [
-      {t: "Annunciati al Comune", d: "Entro 14 giorni dall'arrivo e comunque prima di iniziare a lavorare, con documento, contratto di lavoro e contratto d'affitto. Con l'annuncio chiedi il permesso.", k: "Entro 14 giorni"},
-      {t: "Aspetta il permesso per posta", d: "Il permesso lo rilascia il Cantone, di solito in qualche settimana. Intanto puoi già lavorare.", k: "Dopo l'annuncio"},
-      {t: "Apri un conto in banca svizzero", d: "Per ricevere lo stipendio in franchi e pagare affitto e bollette.", k: "Prime settimane"},
-      {t: "SIM svizzera e abbonamento metà prezzo", d: "Con il metà prezzo dimezzi quasi tutti i biglietti di treni e mezzi pubblici.", k: "Prime settimane"}
+    {nome: "Primi 14 giorni", en: "First 14 days", nota: "appena arrivi", notaEn: "as soon as you arrive", passi: [
+      {t: "Annunciati al Comune", d: "Entro 14 giorni dall'arrivo e comunque prima di iniziare a lavorare, con documento, contratto di lavoro e contratto d'affitto. Con l'annuncio chiedi il permesso.", k: "Entro 14 giorni",
+       te: "Register with your municipality", de: "Within 14 days of arriving and in any case before you start work, with your ID, employment contract and rental contract. You apply for your permit when you register.", ke: "Within 14 days"},
+      {t: "Aspetta il permesso per posta", d: "Il permesso lo rilascia il Cantone, di solito in qualche settimana. Intanto puoi già lavorare.", k: "Dopo l'annuncio",
+       te: "Wait for your permit by post", de: "The canton issues the permit, usually within a few weeks. You can already work in the meantime.", ke: "After registering"},
+      {t: "Apri un conto in banca svizzero", d: "Per ricevere lo stipendio in franchi e pagare affitto e bollette.", k: "Prime settimane",
+       te: "Open a Swiss bank account", de: "To receive your salary in francs and pay rent and bills.", ke: "First weeks"},
+      {t: "SIM svizzera e abbonamento metà prezzo", d: "Con il metà prezzo dimezzi quasi tutti i biglietti di treni e mezzi pubblici.", k: "Prime settimane",
+       te: "Swiss SIM and Half Fare travelcard", de: "With the Half Fare travelcard almost every train and public transport ticket costs half.", ke: "First weeks"}
     ]},
-    {nome: "Entro 3 mesi", nota: "le scadenze con sanzioni", passi: [
-      {t: "Stipula la cassa malati di base", d: "È obbligatoria: va fatta entro 3 mesi dall'arrivo e copre in modo retroattivo dal giorno in cui sei arrivato. Le prestazioni di base sono uguali per tutte le casse: cambia il premio. Scegli la franchigia con il <a href=\"calcolatore-franchigia\">calcolatore</a>.", k: "Entro 3 mesi"},
-      {t: "Iscriviti all'AIRE", d: "Obbligatoria se resti all'estero più di 12 mesi. La richiesta si fa entro 90 giorni dall'arrivo dal portale Fast It del consolato. Dal 2024 chi non si iscrive rischia da 200 a 1.000 euro di sanzione per ogni anno.", k: "Entro 90 giorni"},
-      {t: "Tieni pronta la fattura del canone radio-TV", d: "Arriva da Serafe per ogni economia domestica: 335 franchi l'anno nel 2026, 312 dal 2027.", k: "Arriva in automatico"},
-      {t: "Valuta un'assicurazione di responsabilità civile privata", d: "Non è obbligatoria, ma costa poco e molti proprietari di casa la chiedono.", k: "Consigliata"}
+    {nome: "Entro 3 mesi", en: "Within 3 months", nota: "le scadenze con sanzioni", notaEn: "deadlines with penalties", passi: [
+      {t: "Stipula la cassa malati di base", d: "È obbligatoria: va fatta entro 3 mesi dall'arrivo e copre in modo retroattivo dal giorno in cui sei arrivato. Le prestazioni di base sono uguali per tutte le casse: cambia il premio. Scegli la franchigia con il <a href=\"calcolatore-franchigia\">calcolatore</a>.", k: "Entro 3 mesi",
+       te: "Take out basic health insurance", de: "It is mandatory: you must sign up within 3 months of arriving, and it covers you retroactively from the day you arrived. Basic benefits are the same with every insurer: only the premium changes. Choose your deductible with the <a href=\"calcolatore-franchigia\">calculator</a>.", ke: "Within 3 months"},
+      {t: "Iscriviti all'AIRE", d: "Obbligatoria se resti all'estero più di 12 mesi. La richiesta si fa entro 90 giorni dall'arrivo dal portale Fast It del consolato. Dal 2024 chi non si iscrive rischia da 200 a 1.000 euro di sanzione per ogni anno.", k: "Entro 90 giorni",
+       te: "Register with AIRE (Italian citizens)", de: "Mandatory for Italians staying abroad for more than 12 months. Apply within 90 days of arriving through the consulate's Fast It portal. Since 2024, not registering can cost a fine of 200 to 1,000 euros for each year.", ke: "Within 90 days"},
+      {t: "Tieni pronta la fattura del canone radio-TV", d: "Arriva da Serafe per ogni economia domestica: 335 franchi l'anno nel 2026, 312 dal 2027.", k: "Arriva in automatico",
+       te: "Expect the radio and TV licence bill", de: "Serafe sends it to every household: 335 francs a year in 2026, 312 from 2027.", ke: "Arrives automatically"},
+      {t: "Valuta un'assicurazione di responsabilità civile privata", d: "Non è obbligatoria, ma costa poco e molti proprietari di casa la chiedono.", k: "Consigliata",
+       te: "Consider private liability insurance", de: "It is not mandatory, but it is cheap and many landlords ask for it.", ke: "Recommended"}
     ]},
-    {nome: "Entro 12 mesi", nota: "il primo anno", passi: [
-      {t: "Converti la patente italiana", d: "Va convertita entro 12 mesi dall'inizio del soggiorno all'ufficio della circolazione del tuo Cantone. Se passi la scadenza, può servire un esame di guida.", k: "Entro 12 mesi"},
-      {t: "Controlla l'imposta alla fonte in busta paga", d: "Con il permesso B le imposte te le trattiene il datore di lavoro: stima il netto con il <a href=\"calcolatore-stipendio-netto\">calcolatore</a>. Da 120.000 franchi lordi l'anno la dichiarazione ordinaria è obbligatoria; sotto puoi chiederla tu entro il 31 marzo dell'anno dopo.", k: "Ogni mese"},
-      {t: "Informati sul 3° pilastro", d: "È facoltativo e i versamenti si deducono dal reddito imponibile. Con l'imposta alla fonte, per farli valere serve la dichiarazione ordinaria.", k: "Facoltativo"},
-      {t: "Ricontrolla la cassa malati a fine anno", d: "Per cambiare cassa o abbassare la franchigia la comunicazione deve arrivare entro il 30 novembre; per alzarla c'è tempo fino al 31 dicembre.", k: "Entro il 30 novembre"}
+    {nome: "Entro 12 mesi", en: "Within 12 months", nota: "il primo anno", notaEn: "your first year", passi: [
+      {t: "Converti la patente italiana", d: "Va convertita entro 12 mesi dall'inizio del soggiorno all'ufficio della circolazione del tuo Cantone. Se passi la scadenza, può servire un esame di guida.", k: "Entro 12 mesi",
+       te: "Convert your Italian driving licence", de: "It must be converted within 12 months of the start of your stay at your canton's road traffic office. If you miss the deadline, you may need to take a driving test.", ke: "Within 12 months"},
+      {t: "Controlla l'imposta alla fonte in busta paga", d: "Con il permesso B le imposte te le trattiene il datore di lavoro: stima il netto con il <a href=\"calcolatore-stipendio-netto\">calcolatore</a>. Da 120.000 franchi lordi l'anno la dichiarazione ordinaria è obbligatoria; sotto puoi chiederla tu entro il 31 marzo dell'anno dopo.", k: "Ogni mese",
+       te: "Check the withholding tax on your payslip", de: "With a B permit your employer deducts taxes from your pay: estimate your net pay with the <a href=\"calcolatore-stipendio-netto\">calculator</a>. From 120,000 francs gross a year an ordinary tax return is mandatory; below that you can request one by 31 March of the following year.", ke: "Every month"},
+      {t: "Informati sul 3° pilastro", d: "È facoltativo e i versamenti si deducono dal reddito imponibile. Con l'imposta alla fonte, per farli valere serve la dichiarazione ordinaria.", k: "Facoltativo",
+       te: "Learn about the 3rd pillar", de: "It is optional and contributions are deductible from taxable income. If you are taxed at source, you need an ordinary tax return to claim them.", ke: "Optional"},
+      {t: "Ricontrolla la cassa malati a fine anno", d: "Per cambiare cassa o abbassare la franchigia la comunicazione deve arrivare entro il 30 novembre; per alzarla c'è tempo fino al 31 dicembre.", k: "Entro il 30 novembre",
+       te: "Review your health insurance at year end", de: "To change insurer or lower your deductible, your notice must arrive by 30 November; to raise it you have until 31 December.", ke: "By 30 November"}
     ]}
   ];
+  var EN = function(){ return document.documentElement.dataset.lang === "en"; };
 
   var KEY = "checklist-svizzera:";
   function get(i){ try { return localStorage.getItem(KEY + i) === "1"; } catch(e) { return false; } }
   function set(i, v){ try { localStorage.setItem(KEY + i, v ? "1" : "0"); } catch(e) {} }
 
-  var list = document.getElementById("list"), n = 0, html = "";
-  FASI.forEach(function(f){
-    html += '<div class="fase"><h2>' + f.nome + '</h2><span>' + f.nota + '</span></div>';
-    f.passi.forEach(function(p){
-      var id = n++;
-      html += '<label class="item" data-i="' + id + '"><input type="checkbox" data-i="' + id + '"><div><div class="t">' + p.t +
-              '</div><div class="d">' + p.d + '</div><div class="meta"><span class="chip dl">' + p.k + '</span></div></div></label>';
+  var list = document.getElementById("list"), boxes = [];
+  function disegna(){
+    var n = 0, html = "", en = EN();
+    FASI.forEach(function(f){
+      html += '<div class="fase"><h2>' + (en ? f.en : f.nome) + '</h2><span>' + (en ? f.notaEn : f.nota) + '</span></div>';
+      f.passi.forEach(function(p){
+        var id = n++;
+        html += '<label class="item" data-i="' + id + '"><input type="checkbox" data-i="' + id + '"><div><div class="t">' + (en ? p.te : p.t) +
+                '</div><div class="d">' + (en ? p.de : p.d) + '</div><div class="meta"><span class="chip dl">' + (en ? p.ke : p.k) + '</span></div></div></label>';
+      });
     });
-  });
-  list.innerHTML = html;
-
-  var boxes = list.querySelectorAll("input[type=checkbox]");
+    list.innerHTML = html;
+    boxes = list.querySelectorAll("input[type=checkbox]");
+    boxes.forEach(function(b){
+      b.checked = get(b.dataset.i);
+      b.addEventListener("change", function(){ set(b.dataset.i, b.checked); update(); });
+    });
+    update();
+  }
   function update(){
     var done = 0;
     boxes.forEach(function(b){ b.closest(".item").classList.toggle("done", b.checked); if (b.checked) done++; });
-    document.getElementById("count").textContent = done + " su " + boxes.length;
+    document.getElementById("count").textContent = done + (EN() ? " of " : " su ") + boxes.length;
     document.getElementById("bar").style.width = (done / boxes.length * 100) + "%";
   }
-  boxes.forEach(function(b){
-    b.checked = get(b.dataset.i);
-    b.addEventListener("change", function(){ set(b.dataset.i, b.checked); update(); });
-  });
   document.getElementById("reset").addEventListener("click", function(){
     boxes.forEach(function(b){ b.checked = false; set(b.dataset.i, false); }); update();
   });
-  update();
+  // Cambio di lingua: riscrive la lista mantenendo le spunte
+  document.addEventListener("langchange", disegna);
+  disegna();
 })();
 </script>
-<script src="../script.js?v=29"></script>
+<script src="../script.js?v=30"></script>
 </body>
 </html>

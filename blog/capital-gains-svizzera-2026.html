@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="it" data-content-lang="it" data-theme="light">
+<html lang="it" data-default-lang="it" data-theme="light" data-title-en="Capital gains in Switzerland 2026: 0% tax for private investors, explained">
 <head>
   <meta charset="UTF-8"/>
+  <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
   <!-- SEO Primary -->
@@ -151,7 +152,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style.css?v=18"/>
+  <link rel="stylesheet" href="../style.css?v=19"/>
 
   <style>
     /* Article-specific styles, identici a blog #1 per coerenza */
@@ -399,7 +400,7 @@
 </nav>
 
 <!-- ─── ARTICLE HERO ─────────────────────────── -->
-<header class="article-hero">
+<header class="l-it article-hero">
   <div class="article-meta">
     <span>📅 27 maggio 2026</span>
     <span class="dot">·</span>
@@ -414,8 +415,24 @@
   </div>
 </header>
 
+<header class="article-hero l-en" lang="en">
+  <div class="article-meta">
+    <span>📅 27 May 2026</span>
+    <span class="dot">·</span>
+    <span>⏱ 10 min read</span>
+    <span class="dot">·</span>
+    <span>💰 Investing & Tax</span>
+  </div>
+  <h1>Capital gains in Switzerland: <em>0%</em> tax for private investors (explained properly)</h1>
+  <p class="article-subtitle">For 95% of private investors in Switzerland, capital gains are tax-free. But only under 5 specific criteria. A 2026 guide with worked examples, the "professional trader" rules and a comparison with Italy.</p>
+  <div class="author-card">
+    👤 by <strong>Valerio Santoni</strong> · Italian in Switzerland
+  </div>
+</header>
+
+
 <!-- ─── ARTICLE BODY ─────────────────────────── -->
-<article class="article-body">
+<article class="l-it article-body">
 
   <!-- TOC -->
   <nav class="toc">
@@ -656,8 +673,249 @@
 
 </article>
 
+<article class="article-body l-en" lang="en">
+
+  <nav class="toc">
+    <div class="toc-title">In this guide</div>
+    <ol>
+      <li><a href="#en-regola">The rule: 0% on capital gains (and why it exists)</a></li>
+      <li><a href="#en-criteri">The 5 "professional trader" criteria</a></li>
+      <li><a href="#en-esempi">Three worked examples: private vs professional</a></li>
+      <li><a href="#en-confronto">Italy vs Switzerland</a></li>
+      <li><a href="#en-dividendi">Dividends and coupons: NOT capital gains</a></li>
+      <li><a href="#en-pilastro">3rd pillar: the tax multiplier</a></li>
+      <li><a href="#en-esteri">Foreign accounts and CH-IT data exchange</a></li>
+      <li><a href="#en-rientro">What if you move back to Italy?</a></li>
+      <li><a href="#en-errori">3 mistakes to avoid</a></li>
+      <li><a href="#en-faq">Frequently asked questions</a></li>
+    </ol>
+  </nav>
+
+  <p>Switzerland is one of the few countries in the world where a private investor can buy shares, ETFs or bonds, hold them for a few years, sell them at a profit and <strong>pay not a cent of tax on the gain</strong>.</p>
+
+  <p>It is the same rule that makes finance creators say "capital gains are zero in Switzerland". True, but it is a truth that comes with instructions. If you do not know the instructions, sooner or later you get into trouble. This guide gives you the 5 exact conditions to meet, worked examples and real numbers to understand what this advantage is really worth.</p>
+
+  <div class="disclaimer">
+    ⚠️ <strong>Disclaimer:</strong> This article is information, not financial or tax advice. The rules quoted refer to FTA Circular no. 36 (Swiss Federal Tax Administration) and cantonal practice in ZH/GE 2025-2026. For your specific case, consult an accountant or a licensed tax adviser.
+    Article written in a personal capacity: the opinions are my own and do not represent those of my employer.
+  </div>
+
+  <h2 id="en-regola">The <em>rule</em>: 0% on capital gains (and why it exists)</h2>
+
+  <p>Article 16 paragraph 3 of the Federal Act on Direct Federal Taxation (DBG/LIFD) is clear: <strong>"capital gains realised on the disposal of private assets are exempt"</strong>. In other words, if you sell a share, an ETF or a bond that was part of your personal wealth, the gain is not taxed at federal level. Most cantons apply the same logic.</p>
+
+  <p>Why does this rule exist? The Swiss legislator's logic is simple: wealth is already taxed every year through the <em>Vermögenssteuer</em> (wealth tax, 0.1-0.5% of net worth, depending on the canton). Taxing the gain as well would mean taxing the same wealth twice.</p>
+
+  <div class="stat-box">
+    <div class="stat"><div class="n">0%</div><div class="l">capital gains (private)</div></div>
+    <div class="stat"><div class="n">26%</div><div class="l">capital gains (Italy)</div></div>
+    <div class="stat"><div class="n">~0.3%</div><div class="l">wealth tax (ZH)</div></div>
+    <div class="stat"><div class="n">35%</div><div class="l">Swiss dividend withholding</div></div>
+  </div>
+
+  <p>The key point: <strong>the rule only applies to private individuals</strong>. If the tax authority reclassifies you as a "professional trader", the gain becomes self-employment income and is taxed like a salary (15-40% marginal rate, depending on income and canton). And you also pay OASI/AHV (~10%) on top.</p>
+
+  <h2 id="en-criteri">The 5 "professional trader" <em>criteria</em></h2>
+
+  <p>FTA Circular no. 36 sets <strong>5 criteria</strong> to tell a private investor from a professional trader. If you meet all 5, you are automatically in the safe zone. If you break even one, the authority may still treat you as private based on an overall assessment, but the risk goes up.</p>
+
+  <h3>1) Average holding period ≥ 6 months</h3>
+  <p>Securities must have been held for at least 6 months on average before being sold. Buying and selling the same security in the same week pushes you towards "professional". Long-term <em>buy & hold</em> keeps you safe.</p>
+
+  <h3>2) Annual trading volume ≤ 5x the portfolio</h3>
+  <p>The total volume of trades (buys + sells) in the year must not exceed 5 times the value of the portfolio at the start of the year. Example: with a CHF 50,000 portfolio, the maximum "safe" annual volume is CHF 250,000.</p>
+
+  <h3>3) Capital gains ≤ 50% of net employment income</h3>
+  <p>Gains realised in the year must not exceed 50% of your net employment income. If you earn CHF 70,000 net a year, your "safe" gains go up to CHF 35,000 a year. Above that, questions arise.</p>
+
+  <h3>4) No significant use of leverage</h3>
+  <p>Margin trading, CFDs and futures with leverage above 2x are strong indicators of professional activity. The same goes for options used directionally. Investing <em>cash</em>, even in foreign instruments, is the simplest way to stay private.</p>
+
+  <h3>5) No use of derivatives to speculate</h3>
+  <p>Derivatives are only accepted to hedge a portfolio risk (e.g. a put option protecting a share you own). Using them to bet on rises or falls puts you in the "professional" category.</p>
+
+  <blockquote>
+    For 95% of retail investors with a "buy a global ETF every month, hold for years" approach, all 5 criteria are met automatically. The problematic 5% are day traders, aggressive crypto traders and people "swing trading" on margin.
+  </blockquote>
+
+  <h2 id="en-esempi">Three <em>worked examples</em>: private vs professional</h2>
+
+  <h3>✅ Example 1, Marco, BI specialist in Zurich</h3>
+  <p>Marco earns CHF 5,500 net a month. Every month he invests CHF 1,500 in a global ETF (VWCE) on Interactive Brokers. After 4 years he sells half the portfolio to buy a home: a CHF 35,000 gain.</p>
+  <ul>
+    <li>Average holding period: ~2 years ✅</li>
+    <li>Annual volume: CHF 18,000 invested, no sales for 4 years ✅</li>
+    <li>Gain vs income: CHF 35,000 on CHF 66,000 a year = 53% ⚠️ (borderline)</li>
+    <li>No leverage, no derivatives ✅</li>
+  </ul>
+  <p><strong>Result:</strong> qualifies as private. The gain realised in a single year is slightly above 50%, but with all the other criteria met the authority does not make a fuss. <strong>Tax paid on the CHF 35,000: zero.</strong></p>
+
+  <h3>❌ Example 2, Luca, crypto "swing trader"</h3>
+  <p>Luca works in tech in Zurich (CHF 90,000 net). He opens IBKR and Kraken, makes 200 trades a year in tech stocks and crypto, uses 5x leverage on Bitcoin and makes a CHF 60,000 gain in 12 months.</p>
+  <ul>
+    <li>Average holding: 2-3 weeks ❌</li>
+    <li>Volume: CHF 1.2 million (12x the portfolio) ❌</li>
+    <li>Gain vs income: 67% ❌</li>
+    <li>5x leverage ❌</li>
+  </ul>
+  <p><strong>Result:</strong> classified as a professional trader. CHF 60,000 taxed as ordinary income (marginal rate ~30% in Zurich) + 10% OASI/AHV. <strong>Tax paid: ~CHF 24,000.</strong> Of the CHF 60,000, about CHF 36,000 is left.</p>
+
+  <h3>✅ Example 3, Sara, employee with a bonus in UBS shares</h3>
+  <p>Sara receives CHF 8,000 a year of bonus in restricted UBS shares (RSUs). After 3 years of vesting, she sells CHF 24,000 of shares with a CHF 6,000 gain.</p>
+  <ul>
+    <li>Holding: 3+ years ✅ Volume: 1 sale ✅ Small gain ✅ No leverage ✅ No derivatives ✅</li>
+  </ul>
+  <p><strong>Result:</strong> private. The shares were already taxed as employment income when they vested (at their market value). The subsequent CHF 6,000 gain is <strong>tax-free</strong>.</p>
+
+  <h2 id="en-confronto"><em>Italy vs Switzerland</em> on the same investment</h2>
+
+  <p>Take the same scenario: €50,000 invested in a global ETF for 30 years, with an average return of 7% a year. After 30 years the portfolio is worth ~€380,000. Gain: €330,000.</p>
+
+  <table>
+    <thead><tr><th>Item</th><th>🇮🇹 Italy</th><th>🇨🇭 Switzerland</th></tr></thead>
+    <tbody>
+      <tr><td>Gross gain (30 years)</td><td>€330,000</td><td>CHF 330,000</td></tr>
+      <tr><td>Tax on the gain</td><td>26% = <strong>€85,800</strong></td><td>0% = <strong>CHF 0</strong></td></tr>
+      <tr><td>Annual wealth tax (cumulative)</td><td>~€6,000 (0.2% stamp duty)</td><td>~CHF 25,000 (~0.3% average)</td></tr>
+      <tr><td><strong>Final net</strong></td><td><strong>€238,200</strong></td><td><strong>CHF 305,000</strong></td></tr>
+      <tr><td><strong>Net difference</strong></td><td>·</td><td><strong>+CHF 67,000 (~€70,000)</strong></td></tr>
+    </tbody>
+  </table>
+
+  <p>Even after paying 30 years of wealth tax, in Switzerland you end up with <strong>€70,000 more</strong> on exactly the same investment. The point: capital gains tax matters more than the Vermögenssteuer because it applies to a much bigger figure (the cumulative gain), while wealth is only taxed on the annual balance.</p>
+
+  <h2 id="en-dividendi">Dividends and coupons: <em>NOT capital gains</em></h2>
+
+  <p>A common confusion: <strong>dividends are not capital gains</strong>. They are <em>investment income</em>, and in Switzerland they are taxed as ordinary income in the cantonal and federal tax return.</p>
+
+  <p>The practical rules:</p>
+  <ul>
+    <li><strong>Swiss dividends (Swiss shares):</strong> 35% withholding tax (<em>Verrechnungssteuer</em>), fully recoverable through your tax return.</li>
+    <li><strong>US dividends:</strong> 30% withheld at source, reducible to 15% with form <strong>W-8BEN</strong> (fill it in with your broker, it is free). Part of the 15% can be recovered with form DA-1 in your tax return.</li>
+    <li><strong>EU dividends (e.g. German or French shares):</strong> variable withholding (15-30%), partly recoverable.</li>
+    <li><strong>Accumulating ETFs (e.g. VWCE):</strong> they do not pay out dividends, they reinvest them. But in Switzerland you still have to declare the <em>notional dividends</em> through the ICTax system (the federal system that calculates them for you).</li>
+  </ul>
+
+  <blockquote>
+    Practical consequence for your investments: in Switzerland <strong>accumulating</strong> ETFs are taxed almost the same as distributing ones (you still declare the notional dividend), but they are more efficient if you reinvest automatically.
+  </blockquote>
+
+  <h2 id="en-pilastro">3rd pillar: the <em>tax multiplier</em></h2>
+
+  <p>The <strong>pillar 3a</strong> is the single most powerful tool in the Swiss tax system. It works like this:</p>
+
+  <ul>
+    <li><strong>You pay in up to CHF 7,258 a year</strong> (the 2025-2026 figure for employees with a 2nd pillar) into a dedicated account or fund.</li>
+    <li>The amount paid in is <strong>deductible from taxable income</strong>. In Zurich, with a net salary of CHF 5,500 a month, the tax saving is CHF 1,500-2,000 a year.</li>
+    <li>Gains inside the fund (dividends + capital gains) are <strong>tax-free throughout the accumulation phase</strong>.</li>
+    <li>On withdrawal (retirement, buying a home, leaving Switzerland for good) you pay a reduced one-off tax, much lower than if it were taxed as ordinary income (~5-10% depending on canton and amount).</li>
+  </ul>
+
+  <p>Example: you pay in CHF 7,258 a year for 30 years at an average return of 5%, ending with ~CHF 500,000. Taxes saved along the way: ~CHF 50,000. Tax on the final withdrawal: ~CHF 30,000. <strong>Net tax advantage: ~CHF 20,000.</strong> Plus the ~CHF 270,000 of internal gains that are completely tax-free during accumulation.</p>
+
+  <p>The 3a providers Italians in Switzerland use most: <strong>VIAC</strong>, <strong>Frankly</strong>, <strong>Finpension</strong>, <strong>Findependent</strong>. All have low costs (0.3-0.5% TER) and global ETF portfolios.</p>
+
+  <div class="callout">
+    <h3>📘 Getting ready to work in Switzerland?</h3>
+    <p>The free guide "How to start looking for work in Switzerland" (in Italian) covers cities and sectors, the Swiss CV, permits, net salaries and your first 30 days (municipality, health insurance, bank account). 16 pages, free.</p>
+    <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener" class="btn-callout">📥 Download the free guide</a>
+  </div>
+
+  <h2 id="en-esteri">Foreign accounts and <em>CH-IT data exchange</em></h2>
+
+  <p>Since January 2018, Switzerland and Italy have taken part in the <strong>Common Reporting Standard (CRS)</strong>, the OECD standard for the automatic exchange of tax information. In practice:</p>
+
+  <ul>
+    <li>Every year, Italian banks automatically report to the Swiss tax authorities the accounts held by Swiss tax residents (balance at 31/12, aggregated movements, income earned).</li>
+    <li>And vice versa: Swiss banks report the same data to the Italian Revenue Agency for Italian tax residents with accounts in Switzerland.</li>
+  </ul>
+
+  <p>Direct consequence: <strong>all your Italian accounts must be declared in your Swiss cantonal tax return</strong>. The same goes for investments, pension funds and insurance policies. The Swiss authority <em>already knows</em>: leaving them out is not "clever", it is just a pointless risk of penalties (proportional penalties, even though the tax due in Switzerland is often low or zero).</p>
+
+  <p>Where to declare them:</p>
+  <ul>
+    <li><strong>Wealth section (Vermögen):</strong> account balances, value of securities, policies, property at 31/12.</li>
+    <li><strong>Income section (Einkommen):</strong> dividends, coupons and interest earned during the year.</li>
+    <li><strong>Form DA-1 (if applicable):</strong> to recover foreign withholding tax already paid.</li>
+  </ul>
+
+  <h2 id="en-rientro">What if you move back to <em>Italy</em>?</h2>
+
+  <p>A key question if you see your move as temporary: the 0% capital gains rule <strong>stops applying from the day you become an Italian tax resident again</strong>.</p>
+
+  <p>This means:</p>
+  <ul>
+    <li>Gains realised <em>before</em> you return remain permanently tax-free (they were realised as a Swiss resident).</li>
+    <li>Gains realised <em>after</em> you return are taxed at 26% (the standard Italian regime).</li>
+    <li>Positions you sell <em>after</em> returning are taxed on the difference between the sale price and the original purchase price, not just on the increase while you were in Italy.</li>
+  </ul>
+
+  <p>A smart move if you are planning to go back: <strong>realise your gains (even just a "step-up": selling and buying back on the same day) before your tax residence changes</strong>. This "resets the cost basis" and lets you pay 0% now instead of 26% later. It can be worth tens of thousands of euros on a mature portfolio. Do it with a cross-border accountant, not on your own.</p>
+
+  <h2 id="en-errori">3 <em>mistakes</em> to avoid</h2>
+
+  <h3>1) Day trading "because it's 0% anyway"</h3>
+  <p>The risk is twofold: being classified as a professional + losing money (90% of retail day traders lose money). If the idea is to profit from the patience of the markets, a global ETF + buy & hold is the choice that <strong>maximises both returns and the tax advantage</strong>.</p>
+
+  <h3>2) Not opening a 3rd pillar in your first year of work</h3>
+  <p>70% of Italians who arrive in Switzerland do not open a 3a in their first year. Result: they hand the state ~CHF 1,500-2,000 of avoidable tax. The maximum contribution is not retroactive: every year you skip is lost forever.</p>
+
+  <h3>3) Keeping undeclared Italian accounts</h3>
+  <p>The most common mistake, even among people who have been in Switzerland for years. CRS makes the data exchange automatic: the Swiss authority already knows about your Italian accounts. Declaring them often costs nothing in tax. Not declaring them can cost proportional penalties on the undeclared wealth.</p>
+
+  <h2 id="en-faq">Frequently asked questions</h2>
+
+  <div class="faq-item">
+    <h3>Are capital gains really taxed at 0% in Switzerland?</h3>
+    <p>Yes, for private investors who are Swiss tax residents. The rule is in art. 16 para. 3 DBG and applies if you meet the 5 criteria of FTA Circular no. 36. For 95% of retail investors doing long-term buy & hold, an effective 0% is the reality.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What are the criteria for being a "professional trader"?</h3>
+    <p>Five: average holding period ≥ 6 months, annual volume ≤ 5x the portfolio, gains ≤ 50% of employment income, no leverage, no speculative derivatives. If you meet all of them, you are automatically private.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Are dividends taxed?</h3>
+    <p>Yes, as ordinary income. Swiss dividends carry a recoverable 35% withholding tax. US dividends, 15% with the W-8BEN. EU dividends, it varies.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Is it better to use Interactive Brokers or a Swiss broker?</h3>
+    <p>IBKR is the most popular among Italians in Switzerland for its low costs (~$1 commission per trade) and wide range. Gains stay tax-free if you meet the private criteria. The account must be declared in the wealth section of your tax return. Swiss brokers (Swissquote, Saxo) charge more but provide ready-made tax reporting.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How much does pillar 3a save you?</h3>
+    <p>Paying in the maximum (CHF 7,258 in 2025-2026), the immediate tax saving is CHF 1,500-2,000 a year in Zurich. Plus tax-free internal gains for the whole period.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Do I have to declare my Italian accounts in Switzerland?</h3>
+    <p>Yes, always. Worldwide wealth is taxed in Switzerland. The automatic CRS exchange makes any omission easy to spot. The tax due is often low; the penalties for omission are not.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>If I go back to Italy, does the 0% still apply?</h3>
+    <p>No. From the day you become an Italian tax resident again, new gains are taxed at 26%. Old ones remain exempt. Planning a possible return with a cross-border accountant can be worth tens of thousands of euros.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Do cryptocurrencies follow the 0% rule?</h3>
+    <p>Yes, if held as a private investment. Crypto holdings must be declared at market value on 31/12. Frequent trading or leverage moves you into the professional category for crypto too.</p>
+  </div>
+
+  <div class="callout">
+    <h3>💼 Want an analysis of YOUR case?</h3>
+    <p>A one-hour 1:1 coaching session to review your 3rd pillar, broker, tax return and a possible return to Italy. <strong>69€</strong>: 1h session + written summary after the call.</p>
+    <a href="https://stan.store/valerioswiss/p/book-a-11-call-with-me-q95sgm4b" target="_blank" rel="noopener" class="btn-callout">📅 Book a call</a>
+  </div>
+
+</article>
+
+
 <!-- ─── RELATED ──────────────────────────────── -->
-<section class="related">
+<section class="l-it related">
   <h3>Esplora di più</h3>
   <div class="related-grid">
     <a href="lavorare-in-svizzera-guida-2026" class="related-card">
@@ -683,6 +941,33 @@
   </div>
 </section>
 
-<script src="../script.js?v=29"></script>
+<section class="related l-en" lang="en">
+  <h3>Explore more</h3>
+  <div class="related-grid">
+    <a href="lavorare-in-svizzera-guida-2026" class="related-card">
+      <div class="tag">📚 Complete guide</div>
+      <div class="title">Working in Switzerland 2026</div>
+      <div class="desc">Salaries, CV, permits, a 30-day roadmap: the guide to getting to Switzerland</div>
+    </a>
+    <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener" class="related-card">
+      <div class="tag">📘 Resources</div>
+      <div class="title">Free Switzerland guide</div>
+      <div class="desc">16 practical pages to start your move (in Italian)</div>
+    </a>
+    <a href="https://stan.store/valerioswiss/p/book-a-11-call-with-me-q95sgm4b" target="_blank" rel="noopener" class="related-card">
+      <div class="tag">💼 Coaching</div>
+      <div class="title">1:1 personal strategy</div>
+      <div class="desc">1h video call + written summary (69€)</div>
+    </a>
+    <a href="https://www.instagram.com/valerio.swiss/" target="_blank" rel="noopener" class="related-card">
+      <div class="tag">📱 Social</div>
+      <div class="title">@valerio.swiss</div>
+      <div class="desc">Real numbers on Switzerland, every week</div>
+    </a>
+  </div>
+</section>
+
+
+<script src="../script.js?v=30"></script>
 </body>
 </html>

@@ -1639,3 +1639,7 @@ body[data-phrases="cv"] section[id]{scroll-margin-top:calc(var(--nav-h) + 56px)}
 .lang-notice button:hover{background:var(--surface-h)}
 [data-theme="dark"] .lang-notice{background:#0F2040;border-color:rgba(255,255,255,.14)}
 @keyframes lnIn{from{opacity:0;transform:translate(-50%,10px)}}
+
+/* Pagine bilingui: mostra solo i blocchi della lingua scelta (italiano di base, anche senza JS) */
+html:not([data-lang="en"]) .l-en{display:none !important}
+html[data-lang="en"] .l-it{display:none !important}
