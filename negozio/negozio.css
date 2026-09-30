@@ -94,3 +94,8 @@ a.shop-card .go:after{content:" →"}
   .pd-wrap{grid-template-columns:1fr;gap:28px}
   .pd-cover{max-width:360px}
 }
+
+/* Riquadro del calendario (call 1:1) */
+.pd-cal{max-width:640px}
+.pd-cal p{color:var(--text2);line-height:1.55;margin:0 0 16px}
+.pd-cal .pd-btn{display:inline-block;width:auto}
