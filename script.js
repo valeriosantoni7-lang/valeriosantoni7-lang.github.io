@@ -3,6 +3,7 @@
    ============================================= */
 const T = {
   en: {
+    "chero.f1":"Countries lived in","chero.f2":"Swiss cities","chero.f3":"Languages","chero.bio":"Italian in Geneva · background in banking, data and AI · double master's degree",
     "chero.leap":"I made the move","chero.where":"Italian in Geneva · work and career in Switzerland","chero.gt":"Free guide","chero.gs":"16 pages · PDF (in Italian)",
     "menu.guide":"Get the free guide","menu.note":"Work and life in Switzerland, with real data",
     "cnav.home":"Home",
@@ -254,6 +255,7 @@ const T = {
     "footer.cv":"CV →"
   },
   it: {
+    "chero.f1":"Paesi vissuti","chero.f2":"Città svizzere","chero.f3":"Lingue","chero.bio":"Italiano a Ginevra · esperienza in banca, dati e AI · doppia laurea magistrale",
     "chero.leap":"Ho fatto il salto","chero.where":"Italiano a Ginevra · lavoro e carriera in Svizzera","chero.gt":"Guida gratuita","chero.gs":"16 pagine · PDF",
     "menu.guide":"Scarica la guida gratuita","menu.note":"Lavoro e vita in Svizzera, con dati veri",
     "cnav.home":"Home",

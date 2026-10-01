@@ -1645,23 +1645,21 @@ html:not([data-lang="en"]) .l-en{display:none !important}
 html[data-lang="en"] .l-it{display:none !important}
 
 /* ── Home: foto iniziale con prova sociale (01/10/2026, al posto della scheda con i numeri) ── */
-.hero-visual{position:relative;width:min(370px,100%);margin:0 auto;padding:10px 0 70px}
+.hero-visual{position:relative;width:min(370px,100%);margin:0 auto;padding:18px 0 10px}
+.hv-frame{position:relative;z-index:1}
 .hero-visual::before{content:"";position:absolute;inset:6% -8% 4% 8%;z-index:0;
   background:radial-gradient(circle at 60% 40%,rgba(236,0,0,.30),rgba(201,168,76,.12) 45%,transparent 70%);filter:blur(34px)}
 .hv-photo{position:relative;z-index:1;aspect-ratio:4/5;border-radius:30px;overflow:hidden;
   border:1px solid var(--border);box-shadow:var(--shadow-xl);transform:rotate(1.5deg);background:var(--bg3)}
 .hv-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;display:block}
 .hv-photo::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(10,22,40,0) 45%,rgba(10,22,40,.8) 100%)}
+  background:linear-gradient(180deg,rgba(10,22,40,0) 70%,rgba(10,22,40,.35) 100%)}
 .hv-route{position:absolute;z-index:2;top:16px;left:16px;display:inline-flex;align-items:center;gap:7px;
   padding:7px 13px 7px 11px;border-radius:999px;font-size:.78rem;color:#0A1628;
   background:rgba(255,255,255,.93);box-shadow:0 6px 18px rgba(10,22,40,.18)}
 .hv-route::before{content:"";width:8px;height:8px;border-radius:50%;background:#16A34A;box-shadow:0 0 0 3px rgba(22,163,74,.22)}
 .hv-route b{font-weight:700}
-.hv-name{position:absolute;z-index:2;left:22px;right:22px;bottom:74px;color:#fff;line-height:1.35}
-.hv-name b{display:block;font-size:1.25rem;font-weight:800;letter-spacing:-.01em}
-.hv-name span{display:block;font-size:.8rem;opacity:.88}
-.hv-guide{position:absolute;z-index:3;right:-34px;top:23%;display:flex;align-items:center;gap:11px;
+.hv-guide{position:absolute;z-index:3;right:-38px;bottom:27%;display:flex;align-items:center;gap:11px;
   padding:10px 16px 10px 10px;border-radius:16px;color:var(--text);
   background:var(--bg);border:1px solid var(--border);box-shadow:var(--shadow-lg);
   transform:rotate(2.5deg);transition:transform .25s,box-shadow .25s}
@@ -1670,7 +1668,7 @@ html[data-lang="en"] .l-it{display:none !important}
   background:linear-gradient(135deg,var(--red),#8E0B14)}
 .hv-guide b{display:block;font-size:.9rem;line-height:1.2}
 .hv-guide small{display:block;font-size:.72rem;color:var(--text3)}
-.hv-review{position:absolute;z-index:3;left:-36px;bottom:0;width:236px;margin:0;padding:14px 16px 12px;
+.hv-review{position:absolute;z-index:3;left:-36px;bottom:-30px;width:236px;margin:0;padding:14px 16px 12px;
   border-radius:18px;background:var(--bg);border:1px solid var(--border);box-shadow:var(--shadow-lg);transform:rotate(-2.5deg)}
 .hv-stars{font-size:.85rem;color:#F5B301;letter-spacing:1px}
 .hv-stars b{color:var(--text);letter-spacing:0;margin-left:3px}
@@ -1686,11 +1684,9 @@ html[data-lang="en"] .l-it{display:none !important}
 }
 @media(max-width:1024px){.hero-visual{margin-top:18px}}
 @media(max-width:768px){
-  .hero-visual{width:min(300px,82vw);padding:6px 0 64px}
+  .hero-visual{width:min(300px,84vw);padding:6px 0 0}
   .hv-guide{display:none}
-  .hv-review{left:-12px;bottom:0;width:214px}
-  .hv-name{bottom:64px}
-  .hv-name b{font-size:1.1rem}
+  .hv-review{left:-12px;bottom:-34px;width:214px}
 }
 
 /* ── Menu su telefono (01/10/2026): pannello sotto la barra, voci grandi, guida e social in fondo ── */
@@ -1733,4 +1729,20 @@ html[data-lang="en"] .l-it{display:none !important}
   .menu-social a::after{display:none}
   .menu-social svg{width:20px;height:20px;fill:var(--text2)}
   .menu-note{text-align:center;font-size:.8rem;color:var(--text3);margin:0}
+}
+
+/* Dettagli di carriera sotto la foto (01/10/2026, su richiesta di Valerio) */
+.hv-facts{position:relative;z-index:1;margin-top:46px;display:grid;grid-template-columns:repeat(3,1fr);
+  background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:12px 6px}
+.hv-facts div{text-align:center;padding:2px 4px}
+.hv-facts div+div{border-left:1px solid var(--border)}
+.hv-facts b{display:block;font-size:1.45rem;font-weight:800;letter-spacing:-.02em;color:var(--text);line-height:1.15}
+.hv-facts b i{font-style:normal;color:var(--red)}
+.hv-facts span{display:block;font-size:.7rem;font-weight:500;color:var(--text3);margin-top:2px}
+.hv-bio{position:relative;z-index:1;text-align:center;font-size:.8rem;line-height:1.5;color:var(--text3);margin:10px 6px 0}
+[data-theme="dark"] .hv-facts{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1)}
+@media(max-width:768px){
+  .hv-facts{margin-top:50px;padding:10px 4px}
+  .hv-facts b{font-size:1.25rem}
+  .hv-facts span{font-size:.66rem}
 }
