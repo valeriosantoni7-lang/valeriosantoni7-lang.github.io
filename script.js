@@ -3,6 +3,8 @@
    ============================================= */
 const T = {
   en: {
+    "chero.leap":"I made the move","chero.where":"Italian in Geneva · work and career in Switzerland","chero.gt":"Free guide","chero.gs":"16 pages · PDF (in Italian)",
+    "menu.guide":"Get the free guide","menu.note":"Work and life in Switzerland, with real data",
     "cnav.home":"Home",
     "chero.toolnew":"Free",
     "chero.tool":"How much will you take home? Net salary calculator with 2026 withholding tax for every canton (in Italian)",
@@ -107,7 +109,7 @@ const T = {
     "hero.pill":"Coaching Italy → Switzerland","hero.first":"Valerio","hero.last":"Santoni",
     "hero.lede":"I moved to Switzerland for work. I help other Italians do the same, without wasting thousands of francs on mistakes I already made.",
     "hero.cta1":"See how I help","hero.cta2":"CV","hero.cta3":"Free guide",
-    "cv.pill":"Available · Geneva, Switzerland",
+    "cv.pill":"Based in Geneva, Switzerland",
     "cv.cta1":"View Experience","cv.cta2":"Download PDF","cv.cta3":"Compact CV",
     "trust.label":"Where I've worked and studied",
     "services.label":"Services","services.title":"How I can <em>help you</em>",
@@ -252,6 +254,8 @@ const T = {
     "footer.cv":"CV →"
   },
   it: {
+    "chero.leap":"Ho fatto il salto","chero.where":"Italiano a Ginevra · lavoro e carriera in Svizzera","chero.gt":"Guida gratuita","chero.gs":"16 pagine · PDF",
+    "menu.guide":"Scarica la guida gratuita","menu.note":"Lavoro e vita in Svizzera, con dati veri",
     "cnav.home":"Home",
     "chero.toolnew":"Gratis",
     "chero.tool":"Quanto ti resta in busta paga? Il calcolatore del netto con l'imposta alla fonte 2026 di tutti i Cantoni",
@@ -357,7 +361,7 @@ const T = {
     "hero.pill":"Coaching Italia → Svizzera","hero.first":"Valerio","hero.last":"Santoni",
     "hero.lede":"Mi sono trasferito in Svizzera per lavoro. Aiuto altri italiani a fare lo stesso, senza buttare via migliaia di franchi in errori che ho già fatto io.",
     "hero.cta1":"Scopri come ti aiuto","hero.cta2":"CV","hero.cta3":"Guida gratuita",
-    "cv.pill":"Disponibile · Ginevra, Svizzera",
+    "cv.pill":"Basato a Ginevra, Svizzera",
     "cv.cta1":"Vedi esperienza","cv.cta2":"Scarica PDF","cv.cta3":"CV compatto",
     "trust.label":"Dove ho lavorato e studiato",
     "services.label":"Servizi","services.title":"Come posso <em>aiutarti</em>",
@@ -671,6 +675,19 @@ window.addEventListener('scroll', () => {
     scrollTicking = true;
   }
 }, { passive: true });
+
+/* Menu su telefono: in fondo la guida gratuita e i social (aggiunti qui, così valgono per tutte le pagine) */
+if (navLinks && !navLinks.querySelector('.menu-extra')) {
+  const social = document.querySelector('.nav-social');
+  const li = document.createElement('li');
+  li.className = 'menu-extra';
+  li.innerHTML =
+    '<a class="menu-guide" href="https://stan.store/valerioswiss" target="_blank" rel="noopener">' +
+      '<span class="mg-ico" aria-hidden="true">📘</span><span data-i18n="menu.guide">Scarica la guida gratuita</span><span class="mg-arrow" aria-hidden="true">→</span></a>' +
+    (social ? '<div class="menu-social">' + social.innerHTML + '</div>' : '') +
+    '<p class="menu-note"><span data-i18n="menu.note">Lavoro e vita in Svizzera, con dati veri</span> · @valerio.swiss</p>';
+  navLinks.appendChild(li);
+}
 
 let menuScrollY = 0;
 function openMenu() {
