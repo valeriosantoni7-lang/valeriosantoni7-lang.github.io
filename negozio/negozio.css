@@ -99,3 +99,20 @@ a.shop-card .go:after{content:" →"}
 .pd-cal{max-width:640px}
 .pd-cal p{color:var(--text2);line-height:1.55;margin:0 0 16px}
 .pd-cal .pd-btn{display:inline-block;width:auto}
+
+/* Pagine di ringraziamento (guida, CV Pack, call) */
+.ty-hero{padding:calc(var(--nav-h) + 44px) 24px 30px;background:linear-gradient(180deg,var(--bg2),var(--bg));text-align:center}
+.ty-hero .pd-back{display:block;margin:0 auto 18px}
+.ty-hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin:0 auto 14px;max-width:760px}
+.ty-hero h1 em{color:var(--red);font-style:italic}
+.ty-hero .pd-lead{max-width:620px;margin:0 auto}
+.ty-check{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:var(--red);color:#fff;font-size:32px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(200,30,40,.28)}
+.pd-steps li a,.ty-help a{color:var(--red);font-weight:600}
+.ty-tools{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.ty-tools .shop-card{padding:20px}
+.ty-tools .shop-card h2{font-size:18px}
+.ty-tools .shop-card p{font-size:14.5px}
+.ty-cta{max-width:1040px;margin:0 auto;padding:22px 24px 0}
+.ty-cta .pd-btn{display:inline-block;width:auto}
+.ty-help p{color:var(--text2);line-height:1.6;margin:0}
+.ty-help b{color:var(--text)}
