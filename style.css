@@ -1746,3 +1746,8 @@ html[data-lang="en"] .l-it{display:none !important}
   .hv-facts b{font-size:1.25rem}
   .hv-facts span{font-size:.66rem}
 }
+
+/* Link a privacy e note legali (fondo pagina) */
+.legal-links{text-align:center;font-size:.78rem;color:var(--text3);margin:14px auto 0;padding:0 16px 22px}
+.legal-links a{color:var(--text3);text-decoration:underline;text-underline-offset:2px}
+.legal-links a:hover{color:var(--red)}
