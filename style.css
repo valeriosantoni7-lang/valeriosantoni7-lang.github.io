@@ -1751,3 +1751,12 @@ html[data-lang="en"] .l-it{display:none !important}
 .legal-links{text-align:center;font-size:.78rem;color:var(--text3);margin:14px auto 0;padding:0 16px 22px}
 .legal-links a{color:var(--text3);text-decoration:underline;text-underline-offset:2px}
 .legal-links a:hover{color:var(--red)}
+
+/* Menu aperto su telefono (02/10/2026): la barra in alto diventa piena. Aprendo il menu la pagina si blocca,
+   scrollY torna a 0 e la barra perdeva .scrolled, restando trasparente sopra la foto. */
+@media(max-width:768px){
+  body.menu-open .navbar{background:var(--bg);border-bottom:0;box-shadow:none;transition:none;
+    -webkit-backdrop-filter:none;backdrop-filter:none}
+  [data-theme="dark"] body.menu-open .navbar{background:#060D1A}
+  .nav-links a.nav-home{display:flex}
+}
