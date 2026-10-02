@@ -1148,3 +1148,107 @@ applyLang(currentLang);
   // Rete di sicurezza: niente grafici vuoti se l'osservatore non scatta
   setTimeout(() => viz.forEach(v => v.classList.add('on')), 4000);
 })();
+
+/* =============================================
+   IL TUO PIANO (02/10/2026): 3 domande → piano con strumenti e passo successivo.
+   Niente salvato né inviato: tutto nel browser.
+   ============================================= */
+(function () {
+  const card = document.getElementById('pf-card');
+  if (!card) return;
+  const out = document.getElementById('pf-result');
+  const ans = {};
+  const STAN = 'https://stan.store/valerioswiss';
+  const ITEMS = {
+    netto: ['💰', 'strumenti/calcolatore-stipendio-netto', ['Calcola il tuo netto', 'Work out your net pay'], ['Dal lordo al netto con l\'imposta alla fonte 2026 di tutti i Cantoni.', 'Gross to net with the 2026 withholding tax of every canton.']],
+    franchigia: ['🩺', 'strumenti/calcolatore-franchigia', ['Scegli la franchigia giusta', 'Pick the right deductible'], ['Quanto ti costa davvero la cassa malati in un anno.', 'What health insurance really costs you in a year.']],
+    checklist: ['✅', 'strumenti/checklist-trasferimento-svizzera', ['Checklist del trasferimento', 'Moving checklist'], ['16 passi con scadenze e fonti ufficiali.', '16 steps with deadlines and official sources.']],
+    permessi: ['🛂', 'blog/permessi-lavoro-svizzera-italiani', ['Quale permesso ti serve', 'Which permit you need'], ['B, C, L e G spiegati, con le fonti.', 'B, C, L and G explained, with sources.']],
+    generatore: ['🤖', 'strumenti/generatore-cv-svizzero', ['Adatta il CV all\'annuncio', 'Tailor your CV to the ad'], ['Incolli l\'annuncio e hai i prompt pronti, gratis.', 'Paste the job ad and get ready-made prompts, free.']],
+    network: ['🤝', 'blog/trovare-lavoro-svizzera-networking', ['Il lavoro che non vedi negli annunci', 'The jobs you never see posted'], ['Alumni, caffè di 15 minuti e referral.', 'Alumni, 15-minute coffees and referrals.']],
+    lavorare: ['🧭', 'blog/lavorare-in-svizzera-guida-2026', ['Lavorare in Svizzera: la guida 2026', 'Working in Switzerland: the 2026 guide'], ['Stipendi, settori, lingue e permessi in un articolo.', 'Salaries, sectors, languages and permits in one article.']],
+    guida: ['📘', STAN, ['Guida gratuita · 16 pagine', 'Free guide · 16 pages'], ['Stipendi per settore, primi 30 giorni, errori da evitare.', 'Salaries by sector, your first 30 days, mistakes to avoid.']],
+    cvpack: ['📄', STAN + '/p/il-cv-perfetto-per-lavorare-allestero', ['CV Pack svizzero · 19€', 'Swiss CV Pack · €19'], ['Template, guida di 20 pagine e consulenza in chat.', 'Template, 20-page guide and a chat review.']],
+    call: ['💼', STAN + '/p/book-a-11-call-with-me-q95sgm4b', ['Call 1:1 sul tuo caso · 69€', '1:1 call on your case · €69'], ['Un\'ora insieme e un documento riassuntivo dopo.', 'One hour together and a written summary after.']],
+  };
+  const PLANS = {
+    lavoro: { junior: ['guida', 'network', 'cvpack'], mid: ['network', 'cvpack', 'guida'], senior: ['network', 'cvpack', 'call'] },
+    cv: { junior: ['generatore', 'cvpack', 'guida'], mid: ['generatore', 'cvpack', 'call'], senior: ['generatore', 'cvpack', 'call'] },
+    soldi: { junior: ['netto', 'franchigia', 'guida'], mid: ['netto', 'franchigia', 'guida'], senior: ['netto', 'franchigia', 'call'] },
+    trasferimento: { junior: ['checklist', 'permessi', 'franchigia'], mid: ['checklist', 'permessi', 'franchigia'], senior: ['checklist', 'permessi', 'call'] },
+    valutare: { junior: ['lavorare', 'netto', 'guida'], mid: ['lavorare', 'netto', 'call'], senior: ['lavorare', 'netto', 'call'] },
+  };
+  const COUNTRY = { de: ['in Germania', 'in Germany'], lu: ['in Lussemburgo', 'in Luxembourg'], nl: ['nei Paesi Bassi', 'in the Netherlands'], altro: ['all\'estero', 'abroad'] };
+  const en = () => document.documentElement.dataset.lang === 'en';
+  const L = (pair) => pair[en() ? 1 : 0];
+
+  function steps() { return Array.from(card.querySelectorAll('.pf-step')); }
+  function refresh() {
+    const order = ['goal', 'country', 'level'];
+    steps().forEach((s, i) => {
+      const done = Boolean(ans[order[i]]);
+      const open = !done && order.slice(0, i).every(k => ans[k]);
+      s.classList.toggle('is-done', done);
+      s.classList.toggle('is-open', open);
+    });
+  }
+  function render() {
+    if (!(ans.goal && ans.country && ans.level)) { out.hidden = true; return; }
+    let keys = PLANS[ans.goal][ans.level].slice();
+    let note = en()
+      ? 'Free tools first, then the next step. All in your browser: nothing is saved.'
+      : 'Prima gli strumenti gratuiti, poi il passo successivo. Tutto nel tuo browser: non salviamo niente.';
+    if (ans.country !== 'ch') {
+      keys = ans.goal === 'cv' ? ['generatore', 'cvpack', 'call'] : ['guida', 'generatore', 'call'];
+      note = en()
+        ? 'My tools are built on Switzerland. For working ' + L(COUNTRY[ans.country]) + ', the CV method and the 1:1 call still apply: that is where I would start.'
+        : 'I miei strumenti sono costruiti sulla Svizzera. Per lavorare ' + L(COUNTRY[ans.country]) + ' valgono comunque il metodo per il CV e la call 1:1: partirei da qui.';
+    }
+    const list = keys.map(k => {
+      const [ico, href, t, d] = ITEMS[k];
+      const ext = href.startsWith('http') ? ' target="_blank" rel="noopener"' : '';
+      return '<a class="pf-item" href="' + href + '"' + ext + '><span class="pf-ico" aria-hidden="true">' + ico + '</span><span><b>' + L(t) + '</b><small>' + L(d) + '</small></span><span class="pf-go" aria-hidden="true">→</span></a>';
+    }).join('');
+    const cta = keys.includes('guida')
+      ? '<a class="btn btn-primary" href="' + ITEMS.call[1] + '" target="_blank" rel="noopener">' + (en() ? 'Talk it through 1:1' : 'Parliamone 1:1') + '</a>'
+      : '<a class="btn btn-primary" href="' + STAN + '" target="_blank" rel="noopener">' + (en() ? 'Get the free guide' : 'Scarica la guida gratuita') + '</a>';
+    out.innerHTML = '<h3>' + (en() ? 'Your plan' : 'Il tuo piano') + '</h3><p class="pf-note">' + note + '</p><div class="pf-list">' + list + '</div>' +
+      '<div class="pf-actions">' + cta + '<button type="button" class="pf-reset">' + (en() ? 'Start over' : 'Ricomincia') + '</button></div>';
+    out.hidden = false;
+    out.querySelector('.pf-reset').addEventListener('click', () => {
+      Object.keys(ans).forEach(k => delete ans[k]);
+      card.querySelectorAll('.pf-chip.is-on').forEach(c => c.classList.remove('is-on'));
+      refresh(); render();
+    });
+  }
+  card.addEventListener('click', (e) => {
+    const chip = e.target.closest('.pf-chip');
+    if (!chip) return;
+    const q = chip.dataset.q;
+    card.querySelectorAll('.pf-chip[data-q="' + q + '"]').forEach(c => c.classList.toggle('is-on', c === chip));
+    ans[q] = chip.dataset.v;
+    refresh(); render();
+    if (!out.hidden && q === 'level' && window.innerWidth < 980) out.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+  document.addEventListener('langchange', render);
+  refresh();
+})();
+
+/* Il percorso in 5 passi: la linea si riempie e le tappe si accendono scorrendo */
+(function () {
+  const track = document.getElementById('path-track');
+  if (!track) return;
+  const cards = Array.from(track.querySelectorAll('.path-card'));
+  let ticking = false;
+  function update() {
+    ticking = false;
+    const r = track.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const p = Math.max(0, Math.min(1, (vh * 0.8 - r.top) / (r.height + vh * 0.25)));
+    track.style.setProperty('--p', p.toFixed(3));
+    cards.forEach((c, i) => c.classList.toggle('is-lit', p >= (i + 0.35) / cards.length || p > 0.98));
+  }
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();

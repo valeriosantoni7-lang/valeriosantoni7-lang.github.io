@@ -1760,3 +1760,83 @@ html[data-lang="en"] .l-it{display:none !important}
   [data-theme="dark"] body.menu-open .navbar{background:#060D1A}
   .nav-links a.nav-home{display:flex}
 }
+
+/* ── Il tuo piano: percorso guidato in 3 domande (02/10/2026, ispirato alla UX di abroadCV) ── */
+.pf-wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px;align-items:start}
+.pf-intro{position:sticky;top:calc(var(--nav-h) + 32px)}
+.pf-intro .section-desc{margin-bottom:26px}
+.pf-perks{list-style:none;display:flex;flex-direction:column;gap:12px;padding:0}
+.pf-perks li{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--text2);font-size:.95rem}
+.pf-perks li::before{content:"✓";display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--red-glow);color:var(--red);font-weight:800;font-size:.8rem;flex-shrink:0}
+.pf-card{position:relative;background:var(--bg);border:1px solid var(--border);border-radius:28px;padding:30px 30px 26px;box-shadow:var(--shadow-xl)}
+[data-theme="dark"] .pf-card{background:var(--bg2)}
+.pf-step{position:relative;display:flex;gap:18px;padding-bottom:22px;opacity:.38;transition:opacity var(--tr)}
+.pf-step.is-open,.pf-step.is-done{opacity:1}
+.pf-step:not(:last-of-type)::before{content:"";position:absolute;left:19px;top:44px;bottom:4px;width:2px;background:var(--border);border-radius:2px}
+.pf-step.is-done::before{background:var(--red) !important}
+.pf-dot{flex-shrink:0;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.95rem;border:2px solid var(--border-h);color:var(--text3);background:var(--bg);transition:all var(--tr);position:relative;z-index:1}
+.pf-step.is-open .pf-dot{border-color:var(--red);color:var(--red);box-shadow:0 0 0 6px var(--red-glow)}
+.pf-step.is-done .pf-dot{background:var(--red);border-color:var(--red);color:#fff}
+.pf-step.is-done .pf-dot span{display:none}
+.pf-step.is-done .pf-dot::after{content:"✓";font-weight:800}
+.pf-body{flex:1;min-width:0}
+.pf-body h3{font-size:1.02rem;font-weight:700;color:var(--text);margin:8px 0 14px}
+.pf-chips{display:flex;flex-wrap:wrap;gap:10px}
+.pf-chip{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:14px;border:1.5px solid var(--border);background:var(--surface);color:var(--text);font:inherit;font-size:.92rem;font-weight:600;cursor:pointer;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s}
+.pf-chip:hover{border-color:var(--red);transform:translateY(-2px)}
+.pf-chip.is-on{border-color:var(--red);background:var(--red);color:#fff;box-shadow:0 8px 22px var(--red-glow)}
+.pf-step:not(.is-open):not(.is-done) .pf-chip{pointer-events:none}
+.pf-result{margin-top:6px;border-top:1px dashed var(--border-h);padding-top:22px;animation:pfIn .5s ease both}
+@keyframes pfIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.pf-result h3{font-size:1.25rem;font-weight:800;color:var(--text);margin:0 0 6px}
+.pf-result .pf-note{font-size:.88rem;color:var(--text3);margin:0 0 16px;line-height:1.55}
+.pf-list{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.pf-item{display:flex;gap:14px;align-items:center;padding:14px 16px;border-radius:16px;border:1px solid var(--border);background:var(--surface);color:var(--text);text-decoration:none;transition:border-color .2s,transform .2s}
+.pf-item:hover{border-color:var(--red);transform:translateX(4px)}
+.pf-item .pf-ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--bg);border:1px solid var(--border);font-size:1.2rem;flex-shrink:0}
+.pf-item b{display:block;font-size:.98rem}
+.pf-item small{display:block;color:var(--text3);font-size:.84rem;line-height:1.45;margin-top:2px}
+.pf-item .pf-go{margin-left:auto;color:var(--red);font-weight:800}
+.pf-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.pf-reset{background:none;border:0;color:var(--text3);font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;text-decoration:underline;padding:8px}
+
+/* ── Il percorso in 5 passi, linea che si disegna allo scorrimento ── */
+.path-head{text-align:center}
+.path-head .section-label{justify-content:center}
+.path-track{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;--p:0}
+.path-line{position:absolute;left:8%;right:8%;top:38px;height:3px;background:var(--border);border-radius:3px;overflow:hidden}
+.path-line span{display:block;height:100%;width:calc(var(--p) * 100%);background:linear-gradient(90deg,var(--red),#ff6a3d);border-radius:3px}
+.path-card{position:relative;display:flex;flex-direction:column;gap:8px;padding:20px 18px 22px;border-radius:22px;border:1px solid var(--border);background:var(--bg);color:var(--text);text-decoration:none;box-shadow:var(--shadow);opacity:.45;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease,border-color .25s,box-shadow .25s}
+[data-theme="dark"] .path-card{background:var(--bg2)}
+.path-card.is-lit{opacity:1;transform:none;border-color:rgba(236,0,0,.35)}
+.path-card:hover{box-shadow:var(--shadow-lg);border-color:var(--red)}
+.path-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.path-ico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:1.15rem;background:var(--surface);border:1px solid var(--border);position:relative;z-index:1}
+.path-card.is-lit .path-ico{background:var(--red);border-color:var(--red);box-shadow:0 6px 18px var(--red-glow)}
+.path-num{font-size:1.9rem;font-weight:900;letter-spacing:-.03em;color:var(--border-h)}
+.path-card.is-lit .path-num{color:var(--red);opacity:.85}
+.path-tag{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.path-card h3{font-size:1.02rem;font-weight:800;line-height:1.3;margin:0}
+.path-card p{font-size:.86rem;line-height:1.55;color:var(--text3);margin:0;flex:1}
+.path-link{font-size:.86rem;font-weight:700;color:var(--red);margin-top:6px}
+
+@media(max-width:980px){
+  .pf-wrap{grid-template-columns:1fr;gap:28px}
+  .pf-intro{position:static}
+  .path-track{grid-template-columns:1fr;gap:14px;padding-left:34px}
+  .path-line{left:14px;right:auto;top:20px;bottom:20px;width:3px;height:auto}
+  .path-line span{width:100%;height:calc(var(--p) * 100%)}
+  .path-card{transform:translateX(18px)}
+}
+@media(max-width:560px){
+  .pf-card{padding:22px 16px 18px;border-radius:22px}
+  .pf-step{gap:12px}
+  .pf-dot{width:34px;height:34px;font-size:.85rem}
+  .pf-step:not(:last-of-type)::before{left:16px;top:38px}
+  .pf-chip{padding:10px 13px;font-size:.88rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .path-card,.pf-step,.pf-chip,.pf-item{transition:none}
+  .path-card{opacity:1;transform:none}
+  .pf-result{animation:none}
+}
