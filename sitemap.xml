@@ -45,8 +45,14 @@
   </url>
   <url>
     <loc>https://valerioswiss.com/blog/</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://valerioswiss.com/blog/trovare-lavoro-svizzera-networking</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
