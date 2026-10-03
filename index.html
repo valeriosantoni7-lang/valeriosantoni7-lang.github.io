@@ -142,6 +142,47 @@
   <div class="hero-scroll"><div class="scroll-line"></div><span class="scroll-txt" data-i18n="hero.scroll">scroll</span></div>
 </section>
 
+
+<!-- ─── IL TUO PIANO (02/10/2026, percorso guidato in 3 domande) ── -->
+<section id="percorso" class="section pf-section">
+  <div class="container pf-wrap">
+    <div class="pf-intro fade-in">
+      <div class="section-label" data-en="Your plan">Il tuo piano</div>
+      <h2 class="section-title" data-en-html="Where do you <em>start</em>?">Da dove <em>parti</em>?</h2>
+      <p class="section-desc" data-en="Three questions, 30 seconds: you get the free tools and the next step that fit your situation.">Tre domande, 30 secondi: ti mostro gli strumenti gratuiti e il passo giusto per la tua situazione.</p>
+      <ul class="pf-perks">
+        <li data-en="Free, no sign-up">Gratis, senza registrazione</li>
+        <li data-en="Official 2026 data">Dati ufficiali 2026</li>
+        <li data-en="Nothing is saved">Non salviamo niente</li>
+      </ul>
+    </div>
+    <div class="pf-card fade-in" id="pf-card">
+      <div class="pf-step is-open" data-step="1">
+        <div class="pf-dot"><span>1</span></div>
+        <div class="pf-body">
+          <h3 data-en="What do you need right now?">Cosa ti serve adesso?</h3>
+          <div class="pf-chips"><button type="button" class="pf-chip" data-q="goal" data-v="lavoro"><span aria-hidden="true">💼</span><span data-en="Find a job">Trovare lavoro</span></button><button type="button" class="pf-chip" data-q="goal" data-v="cv"><span aria-hidden="true">📄</span><span data-en="Fix my CV">Sistemare il CV</span></button><button type="button" class="pf-chip" data-q="goal" data-v="soldi"><span aria-hidden="true">💰</span><span data-en="Understand my salary">Capire quanto guadagno</span></button><button type="button" class="pf-chip" data-q="goal" data-v="trasferimento"><span aria-hidden="true">📦</span><span data-en="Plan the move">Organizzare il trasferimento</span></button><button type="button" class="pf-chip" data-q="goal" data-v="valutare"><span aria-hidden="true">🧭</span><span data-en="Decide whether to go">Capire se partire</span></button></div>
+        </div>
+      </div>
+      <div class="pf-step" data-step="2">
+        <div class="pf-dot"><span>2</span></div>
+        <div class="pf-body">
+          <h3 data-en="Where do you want to work?">In che Paese vuoi lavorare?</h3>
+          <div class="pf-chips"><button type="button" class="pf-chip" data-q="country" data-v="ch"><span aria-hidden="true">🇨🇭</span><span data-en="Switzerland">Svizzera</span></button><button type="button" class="pf-chip" data-q="country" data-v="de"><span aria-hidden="true">🇩🇪</span><span data-en="Germany">Germania</span></button><button type="button" class="pf-chip" data-q="country" data-v="lu"><span aria-hidden="true">🇱🇺</span><span data-en="Luxembourg">Lussemburgo</span></button><button type="button" class="pf-chip" data-q="country" data-v="nl"><span aria-hidden="true">🇳🇱</span><span data-en="Netherlands">Paesi Bassi</span></button><button type="button" class="pf-chip" data-q="country" data-v="altro"><span aria-hidden="true">🌍</span><span data-en="Other">Altro</span></button></div>
+        </div>
+      </div>
+      <div class="pf-step" data-step="3">
+        <div class="pf-dot"><span>3</span></div>
+        <div class="pf-body">
+          <h3 data-en="Where are you at?">A che punto sei?</h3>
+          <div class="pf-chips"><button type="button" class="pf-chip" data-q="level" data-v="junior"><span aria-hidden="true">🎓</span><span data-en="Graduate or student">Neolaureato o studente</span></button><button type="button" class="pf-chip" data-q="level" data-v="mid"><span aria-hidden="true">👔</span><span data-en="1-5 years of experience">1-5 anni di esperienza</span></button><button type="button" class="pf-chip" data-q="level" data-v="senior"><span aria-hidden="true">⭐</span><span data-en="More than 5 years">Più di 5 anni</span></button></div>
+        </div>
+      </div>
+      <div class="pf-result" id="pf-result" hidden aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ─── SERVICES ─────────────────────────────── -->
 <section id="services" class="section section-alt">
   <div class="container">
@@ -261,6 +302,55 @@
           <blockquote>I consigli sono concreti e applicabili subito, e il format della guida è di altissima qualità. Davvero un'iniziativa preziosa per chi sta cercando lavoro all'estero.</blockquote>
           <figcaption><span class="rv-av">M</span><span><b>Marco</b><small>CV Pack · Stan</small></span></figcaption>
         </figure>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── IL PERCORSO IN 5 PASSI (02/10/2026) ── -->
+<section id="passi" class="section path-section">
+  <div class="container">
+    <div class="section-head fade-in path-head">
+      <div class="section-label" data-en="The path">Il percorso</div>
+      <h2 class="section-title" data-en-html="From the idea to your <em>first day</em>, in five steps">Dall'idea al <em>primo giorno</em>, in cinque passi</h2>
+    </div>
+    <div class="path-track" id="path-track">
+      <div class="path-line" aria-hidden="true"><span></span></div>
+      <a class="path-card" href="strumenti/calcolatore-stipendio-netto" style="--i:1">
+        <div class="path-top"><span class="path-ico" aria-hidden="true">💰</span><span class="path-num">01</span></div>
+        <div class="path-tag" data-en="Salary">Stipendio</div>
+        <h3 data-en="Know what you will earn">Capisci quanto guadagni</h3>
+        <p data-en="From gross to net with the 2026 withholding tax of all 26 cantons.">Dal lordo al netto con l'imposta alla fonte 2026 di tutti i 26 Cantoni.</p>
+        <span class="path-link"><span data-en="Open the calculator">Apri il calcolatore</span> →</span>
+      </a>
+      <a class="path-card" href="strumenti/generatore-cv-svizzero" style="--i:2">
+        <div class="path-top"><span class="path-ico" aria-hidden="true">📄</span><span class="path-num">02</span></div>
+        <div class="path-tag" data-en="CV">CV</div>
+        <h3 data-en="Get a Swiss-style CV">Prepara il CV svizzero</h3>
+        <p data-en="Paste the job ad and get the prompts to tailor your CV, for free. The template is in the CV Pack.">Incolli l'annuncio e prepari i prompt per adattare il CV, gratis. Il template è nel CV Pack.</p>
+        <span class="path-link"><span data-en="Try the generator">Prova il generatore</span> →</span>
+      </a>
+      <a class="path-card" href="blog/trovare-lavoro-svizzera-networking" style="--i:3">
+        <div class="path-top"><span class="path-ico" aria-hidden="true">🤝</span><span class="path-num">03</span></div>
+        <div class="path-tag" data-en="Applications">Candidature</div>
+        <h3 data-en="Apply the right way">Candidati nel modo giusto</h3>
+        <p data-en="Fewer, targeted applications, networking and referrals: the jobs you never see posted.">Poche candidature mirate, network e referral: il lavoro che non vedi negli annunci.</p>
+        <span class="path-link"><span data-en="Read how">Leggi come</span> →</span>
+      </a>
+      <a class="path-card" href="strumenti/checklist-trasferimento-svizzera" style="--i:4">
+        <div class="path-top"><span class="path-ico" aria-hidden="true">📦</span><span class="path-num">04</span></div>
+        <div class="path-tag" data-en="The move">Trasferimento</div>
+        <h3 data-en="Move without mistakes">Trasferisciti senza errori</h3>
+        <p data-en="16 steps with deadlines and official sources: commune, permit, health insurance, AIRE.">16 passi con scadenze e fonti ufficiali: Comune, permesso, cassa malati, AIRE.</p>
+        <span class="path-link"><span data-en="Open the checklist">Apri la checklist</span> →</span>
+      </a>
+      <a class="path-card" href="https://stan.store/valerioswiss/p/book-a-11-call-with-me-q95sgm4b" target="_blank" rel="noopener" style="--i:5">
+        <div class="path-top"><span class="path-ico" aria-hidden="true">💼</span><span class="path-num">05</span></div>
+        <div class="path-tag" data-en="Your case">Il tuo caso</div>
+        <h3 data-en="One hour on your case">Un'ora sul tuo caso</h3>
+        <p data-en="Sector, CV, salary and plan: afterwards you get a written summary.">Settore, CV, stipendio e piano: alla fine ricevi un documento con tutto.</p>
+        <span class="path-link"><span data-en="Book the call">Prenota la call</span> →</span>
+      </a>
     </div>
   </div>
 </section>
