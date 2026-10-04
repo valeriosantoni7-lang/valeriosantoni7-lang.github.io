@@ -1232,6 +1232,12 @@ applyLang(currentLang);
   });
   document.addEventListener('langchange', render);
   refresh();
+  // Scorciatoia dall'apertura: la prima risposta si dà già lì, poi si continua nella sezione
+  document.querySelectorAll('.hs-chip').forEach((b) => b.addEventListener('click', () => {
+    const chip = card.querySelector('.pf-chip[data-q="goal"][data-v="' + b.dataset.goal + '"]');
+    if (chip) chip.click();
+    document.getElementById('percorso').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
 })();
 
 /* Il percorso in 5 passi: la linea si riempie e le tappe si accendono scorrendo */
