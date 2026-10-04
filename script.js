@@ -262,7 +262,7 @@ const T = {
   },
   it: {
     "legal.privacy":"Privacy","legal.terms":"Note legali e condizioni",
-    "chero.f1":"Paesi vissuti","chero.f2":"Città svizzere","chero.f3":"Lingue","chero.bio":"Italiano a Ginevra · esperienza in banca, dati e AI · doppia laurea magistrale",
+    "chero.f1":"Paesi in cui ho vissuto","chero.f2":"Città svizzere","chero.f3":"Lingue","chero.bio":"Italiano a Ginevra · esperienza in banca, dati e AI · doppia laurea magistrale",
     "chero.leap":"Ho fatto il salto","chero.where":"Italiano a Ginevra · lavoro e carriera in Svizzera","chero.gt":"Guida gratuita","chero.gs":"16 pagine · PDF",
     "menu.guide":"Scarica la guida gratuita","menu.note":"Lavoro e vita in Svizzera, con dati veri",
     "cnav.home":"Home",
@@ -1132,7 +1132,7 @@ applyLang(currentLang);
    ============================================= */
 (function () {
   const els = document.querySelectorAll('[data-count]');
-  const viz = document.querySelectorAll('.viz');
+  const viz = document.querySelectorAll('.viz, .count-on-view');
   // separatore delle migliaia anche sotto 10.000 (toLocaleString in italiano scrive 5507)
   const fmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, currentLang === 'en' ? ',' : '.');
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
