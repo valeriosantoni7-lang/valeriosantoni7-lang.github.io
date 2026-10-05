@@ -4,7 +4,7 @@
 const T = {
   en: {
     "legal.privacy":"Privacy","legal.terms":"Legal notice and terms",
-    "chero.f1":"Countries lived in","chero.f2":"Swiss cities","chero.f3":"Languages","chero.bio":"Italian in Geneva · background in banking, data and AI · double master's degree",
+    "chero.f1":"Countries lived in","chero.f2":"Swiss cities","chero.f3":"Languages","chero.bio":"Italian in Geneva · background in banking, data and AI · double degree across Europe and China",
     "chero.leap":"I made the move","chero.where":"Italian in Geneva · work and career in Switzerland","chero.gt":"Free guide","chero.gs":"16 pages · PDF (in Italian)",
     "menu.guide":"Get the free guide","menu.note":"Work and life in Switzerland, with real data",
     "cnav.home":"Home",
@@ -145,7 +145,7 @@ const T = {
     "about.p2":"At Philip Morris International in Lausanne, I supported the Brand Retail Deployment team, aligning databases across markets, automating reporting flows, and managing large-scale projects behind the global IQOS retail footprint.",
     "about.p3":"At UBS in Zurich (P&amp;C – Marketing &amp; Digital Sales) I managed the client data management dashboard, supported the Client Intelligence project, and oversaw marketing events reporting, helping stakeholders access the right facts faster during the Credit Suisse integration.",
     "about.exp.label":"Experience","about.exp.unit":"yrs","about.exp.sub":"international industry experience",
-    "about.scope.label":"Scope","about.scope.sub":"countries lived &amp; worked in",
+    "about.scope.label":"Scope","about.scope.sub":"countries lived, studied or worked in",
     "about.impact.label":"Impact","about.impact.sub":"records reconciled at PMI",
     "about.ubs.label":"UBS","about.ubs.sub":"client data management dashboard &amp; Client Intelligence",
     "skill.pm":"Project Management","skill.bi":"Business Intelligence",
@@ -262,7 +262,7 @@ const T = {
   },
   it: {
     "legal.privacy":"Privacy","legal.terms":"Note legali e condizioni",
-    "chero.f1":"Paesi in cui ho vissuto","chero.f2":"Città svizzere","chero.f3":"Lingue","chero.bio":"Italiano a Ginevra · esperienza in banca, dati e AI · doppia laurea magistrale",
+    "chero.f1":"Paesi in cui ho vissuto","chero.f2":"Città svizzere","chero.f3":"Lingue","chero.bio":"Italiano a Ginevra · esperienza in banca, dati e AI · doppia laurea tra Europa e Cina",
     "chero.leap":"Ho fatto il salto","chero.where":"Italiano a Ginevra · lavoro e carriera in Svizzera","chero.gt":"Guida gratuita","chero.gs":"16 pagine · PDF",
     "menu.guide":"Scarica la guida gratuita","menu.note":"Lavoro e vita in Svizzera, con dati veri",
     "cnav.home":"Home",
@@ -404,7 +404,7 @@ const T = {
     "about.p2":"In Philip Morris International a Losanna, ho supportato il team Brand Retail Deployment, allineando database tra mercati, automatizzando flussi di reporting e gestendo progetti su larga scala legati al retail globale IQOS.",
     "about.p3":"In UBS a Zurigo (P&amp;C – Marketing &amp; Digital Sales) ho gestito la dashboard di client data management, supportato il progetto Client Intelligence e supervisionato il reporting degli eventi marketing, aiutando gli stakeholder ad accedere ai dati giusti durante l'integrazione Credit Suisse.",
     "about.exp.label":"Esperienza","about.exp.unit":"anni","about.exp.sub":"di esperienza internazionale",
-    "about.scope.label":"Raggio","about.scope.sub":"paesi in cui ho vissuto e lavorato",
+    "about.scope.label":"Raggio","about.scope.sub":"Paesi in cui ho vissuto, studiato o lavorato",
     "about.impact.label":"Impatto","about.impact.sub":"record riconciliati in PMI",
     "about.ubs.label":"UBS","about.ubs.sub":"dashboard client data management &amp; Client Intelligence",
     "skill.pm":"Project Management","skill.bi":"Business Intelligence",
