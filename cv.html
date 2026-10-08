@@ -38,9 +38,15 @@
   <!-- Schema.org JSON-LD esteso: Person + Occupation + Education + Awards -->
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://valerioswiss.com/cv#person","name":"Valerio Santoni","givenName":"Valerio","familyName":"Santoni","jobTitle":"Digital Product Associate","description":"Italian professional in Switzerland. Specialized in Client Intelligence, data governance, Power BI dashboards, SQL data engineering. Double-degree graduate from Università di Pavia and Clermont School of Business with study exchanges in Würzburg (Germany) and Chengdu (China).","image":"https://valerioswiss.com/assets/images/profile.jpg","url":"https://valerioswiss.com/cv","email":"valeriosantoni7@gmail.com","nationality":{"@type":"Country","name":"Italy"},"birthPlace":{"@type":"Place","name":"Ancona, Italy"},"workLocation":{"@type":"Place","name":"Geneva, Switzerland","address":{"@type":"PostalAddress","addressLocality":"Geneva","addressCountry":"CH"}},"hasOccupation":{"@type":"Occupation","name":"Digital Product Associate","occupationalCategory":"15-2051","skills":["Power BI","SQL","Python","Azure Databricks","Data Governance","Client Intelligence","ETL","Data Modeling","Project Management"],"estimatedSalary":{"@type":"MonetaryAmountDistribution","name":"Digital Product Associate Switzerland","currency":"CHF","duration":"P1Y","percentile50":80000}},"knowsAbout":["Business Intelligence","Power BI","SQL","Python","Azure Databricks","Client Intelligence","Data Governance","Data Analytics","ETL","Project Management","Reporting","Marketing Analytics"],"knowsLanguage":[{"@type":"Language","name":"Italian","alternateName":"it"},{"@type":"Language","name":"English","alternateName":"en"},{"@type":"Language","name":"French","alternateName":"fr"},{"@type":"Language","name":"German","alternateName":"de"}],"sameAs":["https://www.linkedin.com/in/valeriosantoni","https://www.instagram.com/valerio.swiss/","https://www.tiktok.com/@valerio.swiss","https://stan.store/valerioswiss"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Università di Pavia","url":"https://www.unipv.it","sameAs":"https://en.wikipedia.org/wiki/University_of_Pavia"},{"@type":"CollegeOrUniversity","name":"Clermont School of Business","url":"https://www.esc-clermont.fr"},{"@type":"CollegeOrUniversity","name":"University of Würzburg","url":"https://www.uni-wuerzburg.de"},{"@type":"CollegeOrUniversity","name":"Southwestern University of Finance and Economics (Chengdu)","url":"https://en.swufe.edu.cn"}],"award":["Nova Talent Member","Master's Degree 108/110 with distinction"]},{"@type":"ProfilePage","@id":"https://valerioswiss.com/cv#profile","url":"https://valerioswiss.com/cv","name":"Valerio Santoni · CV","mainEntity":{"@id":"https://valerioswiss.com/cv#person"},"inLanguage":"en"}]}</script>
   <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
-  <link rel="stylesheet" href="style.css?v=28"/>
+  <link rel="stylesheet" href="style.css?v=29"/>
 </head>
 <body data-phrases="cv">
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="2.5" y="6" width="13" height="12" rx="2.5"/><path d="m15.5 10.5 6-3.5v10l-6-3.5"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3.5" width="7" height="6" rx="1.5"/><rect x="14" y="14.5" width="7" height="6" rx="1.5"/><path d="M6.5 9.5v3.5a2 2 0 0 0 2 2H14"/><path d="m11.5 12.5 2.5 2.5-2.5 2.5"/></symbol>
+  <symbol id="i-dash" viewBox="0 0 24 24"><rect x="3" y="3.5" width="18" height="17" rx="2.5"/><path d="M3 9h18M9 9v11.5M12.5 13.5h5M12.5 17h3"/></symbol>
+</svg>
+
 
 <!-- ─── NAVBAR ───────────────────────────────── -->
 <nav class="navbar" id="navbar">
@@ -392,21 +398,21 @@
     </div>
     <div class="services-grid fade-in">
       <a href="https://www.instagram.com/valerio.swiss/" target="_blank" rel="noopener" class="service-card">
-        <div class="service-icon">🎬</div>
+        <div class="service-icon"><svg class="ico" aria-hidden="true"><use href="#i-video"/></svg></div>
         <div class="service-tag" data-i18n="cproj.p1.tag">Automation · Video</div>
         <h3 class="service-title" data-i18n="cproj.p1.title">Automated content factory</h3>
         <p class="service-desc" data-i18n="cproj.p1.desc">A pipeline that turns a short brief into branded carousels, reels and stories for Instagram and TikTok: data-driven motion graphics, captions and story assets in a single pass.</p>
         <div class="role-tags"><span class="rtag">Remotion</span><span class="rtag">React</span><span class="rtag">TypeScript</span><span class="rtag">Node.js</span><span class="rtag">Claude</span></div>
       </a>
       <div class="service-card">
-        <div class="service-icon">🧭</div>
+        <div class="service-icon"><svg class="ico" aria-hidden="true"><use href="#i-flow"/></svg></div>
         <div class="service-tag" data-i18n="cproj.p2.tag">AI workflow</div>
         <h3 class="service-title" data-i18n="cproj.p2.title">AI coaching workflow</h3>
         <p class="service-desc" data-i18n="cproj.p2.desc">A reusable Claude skill that turns a client's intake form and CV into a call prep sheet with live notes, then into a branded PDF plan and follow-up emails, backed by a resource library that grows after every session.</p>
         <div class="role-tags"><span class="rtag">Claude Code skills</span><span class="rtag">HTML/CSS</span><span class="rtag">PDF</span><span class="rtag">Python</span></div>
       </div>
       <div class="service-card">
-        <div class="service-icon">🎛</div>
+        <div class="service-icon"><svg class="ico" aria-hidden="true"><use href="#i-dash"/></svg></div>
         <div class="service-tag" data-i18n="cproj.p3.tag">Dashboard</div>
         <h3 class="service-title" data-i18n="cproj.p3.title">Operations cockpit</h3>
         <p class="service-desc" data-i18n="cproj.p3.desc">A single-file dashboard to run the brand day to day: today's content with previews and one-click captions, the weekly plan, and strategic to-dos with saved progress.</p>
@@ -839,7 +845,7 @@
 
 <button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<script src="script.js?v=41"></script>
+<script src="script.js?v=42"></script>
 <!-- Statistiche senza cookie (GoatCounter, dal 04/10/2026; vedi /privacy) -->
 <script data-goatcounter="https://valerio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

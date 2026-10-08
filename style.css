@@ -1876,3 +1876,288 @@ html[data-lang="en"] .l-it{display:none !important}
   .hero-btns{display:grid;grid-template-columns:1fr;gap:12px}
   .hero-btns .btn{width:100%;justify-content:center;text-align:center}
 }
+
+/* =============================================
+   RIFINITURA DI DESIGN (08/10/2026, anteprima con le skill Impeccable, Emil Kowalski e Taste)
+   Stesso mondo dei caroselli: rosso svizzero #C81E28, carta #FAF8F5, inchiostro #141414, corsivo serif negli accenti.
+   Un solo colore d'accento (via l'oro), niente testo sfumato, niente etichette sopra i titoli,
+   schede bianche con un'ombra sola, movimenti brevi con curva ease-out decisa.
+   ============================================= */
+:root{
+  --bg:#FAF8F5;--bg2:#F3EFE9;--bg3:#EAE4DA;--card:#FFFFFF;
+  --surface:rgba(48,32,16,.035);--surface-h:rgba(48,32,16,.065);
+  --border:rgba(48,32,16,.11);--border-h:rgba(48,32,16,.2);
+  --text:#141414;--text2:#3B3631;--text3:#685F57;--text4:#9A9188;
+  --red:#C81E28;--red-d:#A3161F;--red-ink:#C81E28;--red-soft:rgba(200,30,40,.08);--red-glow:rgba(200,30,40,.2);
+  --gold:var(--red);--gold-d:var(--red);--gold-glow:var(--red-glow);
+  --nav-bg:rgba(250,248,245,.88);--nav-border:rgba(48,32,16,.09);
+  --shadow:0 1px 2px rgba(48,32,16,.05),0 4px 14px rgba(48,32,16,.06);
+  --shadow-lg:0 2px 4px rgba(48,32,16,.05),0 14px 36px rgba(48,32,16,.09);
+  --shadow-xl:0 4px 10px rgba(48,32,16,.06),0 26px 64px rgba(48,32,16,.13);
+  --serif:'Playfair Display',Georgia,serif;
+  --ease-out:cubic-bezier(.23,1,.32,1);--ease-in-out:cubic-bezier(.77,0,.175,1);
+  --tr:.22s var(--ease-out);
+}
+[data-theme="dark"]{
+  --bg:#121110;--bg2:#181615;--bg3:#211E1C;--card:#1C1A18;
+  --surface:rgba(255,245,235,.045);--surface-h:rgba(255,245,235,.08);
+  --border:rgba(255,245,235,.10);--border-h:rgba(255,245,235,.2);
+  --text:rgba(255,250,245,.93);--text2:rgba(255,250,245,.74);--text3:rgba(255,250,245,.56);--text4:rgba(255,250,245,.36);
+  --red:#D2343B;--red-d:#B3242B;--red-ink:#FF7A7F;--red-soft:rgba(255,122,127,.1);--red-glow:rgba(210,52,59,.3);
+  --nav-bg:rgba(18,17,16,.86);--nav-border:rgba(255,245,235,.08);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.3);
+  --shadow-lg:0 2px 6px rgba(0,0,0,.4),0 16px 44px rgba(0,0,0,.45);
+  --shadow-xl:0 4px 12px rgba(0,0,0,.45),0 30px 72px rgba(0,0,0,.55);
+}
+body{background:var(--bg)}
+
+/* Superfici del browser: selezione, focus, numeri */
+::selection{background:rgba(200,30,40,.18);color:inherit}
+:focus-visible{outline:2px solid var(--red-ink);outline-offset:3px;border-radius:6px}
+input:focus-visible,textarea:focus-visible{outline:none}
+h1,h2,h3{text-wrap:balance}
+p,li,blockquote{text-wrap:pretty}
+.pb-item b,.service-price,.hv-facts b,.path-num{font-variant-numeric:lining-nums tabular-nums}
+
+/* Titoli: accento in corsivo serif rosso, come nei caroselli (niente sfumature) */
+.section-label{display:none}
+.section-title{letter-spacing:-.035em}
+.section-title em,.hero-name .grad,[data-theme="dark"] .hero-name .grad{
+  font-family:var(--serif);font-style:italic;font-weight:700;letter-spacing:-.01em;
+  background:none;-webkit-text-fill-color:currentColor;color:var(--red-ink);margin-right:-.05em}
+.hero-name.hero-promise{letter-spacing:-.04em}
+
+/* Apertura più pulita: via le macchie colorate e la griglia di sfondo */
+.hero-orbs,.hero-grid{display:none}
+.hero{background:radial-gradient(1100px 520px at 88% -10%,rgba(200,30,40,.07),transparent 60%),var(--bg)}
+.hero-byline{margin-bottom:14px}
+
+/* Icone disegnate */
+.ico{width:18px;height:18px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.hs-chip .ico,.pf-chip .ico{color:var(--red-ink);transition:color var(--tr)}
+.hs-chip:hover .ico,.pf-chip.is-on .ico{color:#fff}
+.service-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:0;
+  background:var(--red-soft);color:var(--red-ink);margin-bottom:18px}
+.service-icon .ico{width:22px;height:22px}
+.service-card:hover .service-icon{transform:none;background:var(--red);color:#fff}
+.path-ico{font-size:0;color:var(--text3)}
+.path-ico .ico{width:20px;height:20px}
+.path-card.is-lit .path-ico{color:#fff}
+.hv-ico{font-size:0;color:#fff;background:var(--red)}
+.hv-ico .ico{width:20px;height:20px}
+
+/* Schede: bianche, un'ombra sola, nessun bordo colorato */
+.service-card,.tool,.rv-card,.path-card,.faq-list details,.pf-card,.hero-start,.hv-guide,.hv-review,.contact-chip{
+  background:var(--card);border-color:transparent;box-shadow:var(--shadow)}
+[data-theme="dark"] .service-card,[data-theme="dark"] .tool,[data-theme="dark"] .hero-start,[data-theme="dark"] .path-card{background:var(--card);border-color:var(--border)}
+.service-card{border-radius:20px;transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out)}
+.service-card:hover,.tool:hover,.rv-card:hover,.path-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:transparent}
+.service-card.featured,[data-theme="dark"] .service-card.featured{background:var(--card);box-shadow:0 0 0 1.5px var(--red),var(--shadow-lg)}
+.service-tag,.tool-tag,.path-tag{letter-spacing:.12em;color:var(--red-ink)}
+.service-cta,.tool-go,.path-link,.tools-all a{color:var(--red-ink)}
+.service-price{font-family:var(--serif);font-weight:800;letter-spacing:-.01em}
+.service-features li::before{color:var(--red-ink)}
+
+/* Fascia dei numeri: separatori sottili al posto delle barre rosse, numeri in serif */
+.proof-band{background:var(--bg2)}
+[data-theme="dark"] .proof-band{background:var(--bg2)}
+.pb-item{border-left:1px solid var(--border);padding-left:20px}
+.pb-item:first-child{border-left:0;padding-left:0}
+.pb-item b{font-family:var(--serif);font-weight:800;font-size:2.1rem;letter-spacing:-.02em}
+@media(max-width:980px){.pb-item:nth-child(3){border-left:0;padding-left:0}}
+
+/* "Dall'idea al primo giorno": i passi restano leggibili, si accendono solo icona e linea */
+.path-card{opacity:1;transform:none}
+.path-card.is-lit{border-color:transparent}
+.path-line span{background:var(--red)}
+.path-num{color:var(--bg3)}
+.path-card.is-lit .path-num{color:var(--red-ink);opacity:.9}
+
+/* Chip e pulsanti: risposta immediata alla pressione */
+.btn,.hs-chip,.pf-chip,.nav-cta,.book-cta,.contact-chip{transition:transform .16s var(--ease-out),background-color .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease}
+.btn:hover,.hs-chip:hover,.pf-chip:hover{transform:translateY(-1px)}
+.btn:active,.hs-chip:active,.pf-chip:active,.book-cta:active,.service-card:active,.tool:active,.path-card:active{transform:scale(.97)}
+.btn-primary,.btn-primary:hover{box-shadow:0 1px 2px rgba(120,10,16,.25),0 8px 20px var(--red-glow)}
+.btn-ghost{background:var(--card);border-color:var(--border)}
+[data-theme="dark"] .btn-ghost{background:var(--surface)}
+.hs-chip,.pf-chip{background:var(--bg);border-color:var(--border)}
+[data-theme="dark"] .hs-chip,[data-theme="dark"] .pf-chip{background:var(--surface);border-color:var(--border)}
+.nav-logo{background:var(--red);box-shadow:none}
+.nav-links .nav-cta{box-shadow:none}
+.book-cta{background:var(--red);box-shadow:var(--shadow)}
+.footer-cv,.chip-val.gold{color:var(--red-ink)}
+
+/* Recensioni e FAQ */
+.rv-card blockquote::before{font-family:var(--serif);color:var(--red-ink)}
+.faq-list details{border:0;padding:20px 24px}
+.faq-list details[open]{box-shadow:var(--shadow-lg)}
+.faq-list summary::after{color:var(--red-ink);transition:transform .2s var(--ease-out)}
+
+/* Moduli */
+.form-group input,.form-group textarea{background:var(--card);border-color:var(--border)}
+.form-group input:focus,.form-group textarea:focus{background:var(--card);border-color:var(--red);box-shadow:0 0 0 3px var(--red-soft)}
+
+/* Ingressi più corti e decisi; niente movimento per chi lo ha disattivato */
+.fade-in{transform:translateY(14px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+@media (prefers-reduced-motion:reduce){
+  .fade-in{opacity:1;transform:none;transition:none}
+  .btn:active,.hs-chip:active,.pf-chip:active,.service-card:active{transform:none}
+}
+
+/* Tema scuro: stesso inchiostro caldo ovunque (via il blu notte residuo) */
+[data-theme="dark"] .hero{background:radial-gradient(1100px 520px at 88% -10%,rgba(210,52,59,.12),transparent 60%),var(--bg)}
+[data-theme="dark"] .hv-guide,[data-theme="dark"] .hv-review,[data-theme="dark"] .profile-inner,[data-theme="dark"] .lang-notice{background:var(--card);border-color:var(--border)}
+[data-theme="dark"] .hv-route{background:rgba(18,17,16,.86)}
+[data-theme="dark"] .navbar.scrolled,[data-theme="dark"] .subnav,[data-theme="dark"] body.menu-open .navbar{background:var(--bg)}
+@media(max-width:1100px){[data-theme="dark"] .nav-links{background:var(--bg)}}
+.hl-cat{background:rgba(18,17,16,.82)}
+
+/* =============================================
+   DETTAGLI VERI E UNICI (08/10/2026, scelta di Valerio: sito attuale rifinito + 2-3 dettagli suoi)
+   1. la mappa del percorso Ancona → Losanna → Zurigo → Ginevra (confini swisstopo, come nei reel)
+   2. il linguaggio dei caroselli: numero con pallino rosso e barra a segmenti
+   3. i post veri più visti
+   Più: niente etichette in maiuscolo spaziato
+   ============================================= */
+
+/* 1. Mappa del percorso */
+.story-wrap{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px}
+.route-map{margin:0}
+.route-map svg{width:100%;height:auto;display:block;overflow:visible}
+.route-map .ch{fill:var(--card);stroke:var(--border-h);stroke-width:2.5;stroke-linejoin:round}
+.route-map .lake{fill:#DCE5E8}
+[data-theme="dark"] .route-map .lake{fill:#2A3236}
+.route-map .leg-it{fill:none;stroke:var(--red-ink);stroke-width:4;stroke-dasharray:2 14;stroke-linecap:round;opacity:.7}
+.route-map .leg-ch{fill:none;stroke:var(--red);stroke-width:5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s var(--ease-in-out) .25s}
+.story-aside.visible .route-map .leg-ch{stroke-dashoffset:0}
+.route-map .stop{fill:var(--red);stroke:var(--bg);stroke-width:5}
+.route-map .stop.now{fill:var(--bg);stroke:var(--red);stroke-width:7}
+.route-map .start{fill:var(--red-ink);opacity:.7}
+.route-map text{font-family:var(--font);paint-order:stroke;stroke:var(--bg);stroke-width:10px;stroke-linejoin:round}
+.route-map .n{font-size:34px;font-weight:800;fill:var(--text)}
+.route-map .s{font-size:27px;font-weight:500;fill:var(--text3)}
+.route{max-width:none;margin-top:14px}
+@media (prefers-reduced-motion:reduce){.route-map .leg-ch{stroke-dashoffset:0;transition:none}}
+@media(max-width:768px){.story-wrap{grid-template-columns:1fr;gap:28px}.route-map{max-width:460px}}
+
+/* 2. Il linguaggio dei caroselli: numero con il pallino rosso e barra a segmenti */
+.path-line{display:none}
+.path-card{overflow:hidden}
+.path-card::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--bg3);transition:background-color .4s var(--ease-out)}
+.path-card.is-lit::before{background:var(--red)}
+.path-num{display:inline-flex;align-items:flex-start;gap:3px}
+.path-num::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--red);margin-top:7px}
+
+/* 3. I post veri */
+.my-posts{margin-top:72px}
+.my-posts h3{font-size:1.25rem;font-weight:800;letter-spacing:-.01em;margin-bottom:18px}
+.mp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.mp{display:flex;flex-direction:column;gap:12px;color:var(--text)}
+.mp img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;box-shadow:var(--shadow);transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out)}
+a.mp:hover img{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+a.mp:active img{transform:scale(.98)}
+.mp > span{font-size:.92rem;color:var(--text3)}
+.mp > span b{color:var(--text);font-weight:800;font-variant-numeric:lining-nums tabular-nums}
+.mp-follow{aspect-ratio:1;border-radius:14px;background:var(--red);color:#fff;padding:26px;justify-content:space-between}
+.mp-follow p{font-family:var(--serif);font-size:1.45rem;line-height:1.25;font-weight:700}
+.mp-links{display:flex;flex-wrap:wrap;gap:8px}
+.mp-links a{padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.16);font-weight:700;font-size:.85rem;transition:background-color .2s}
+.mp-links a:hover{background:rgba(255,255,255,.28)}
+.mp-handle{font-weight:800;letter-spacing:.06em;font-size:.8rem;opacity:.85}
+@media(max-width:768px){.mp-grid{grid-template-columns:1fr 1fr}.mp-follow{grid-column:1/-1;aspect-ratio:auto;gap:18px}}
+
+/* Meno "AI": etichette in minuscolo normale, niente maiuscolo spaziato */
+.service-tag,.tool-tag,.path-tag,.chip-label,.book-label,.form-group label,.trust-label,.service-badge{
+  text-transform:none;letter-spacing:0}
+.service-tag,.tool-tag,.path-tag{font-size:.82rem;font-weight:700}
+.chip-label,.book-label,.form-group label{font-size:.78rem;font-weight:600}
+.trust-label{font-size:.85rem;font-weight:600}
+.service-badge{font-size:.72rem;border-radius:6px;padding:4px 9px}
+.story-p:hover{border-color:var(--border-h)}
+.mp img{height:auto}
+.mp-follow .mp-handle{color:#fff;font-size:.8rem}
+
+/* =============================================
+   ARTICOLI, INDICE DEL BLOG, STRUMENTI, PAGINE LEGALI (08/10/2026)
+   Le pagine hanno stili propri nella testa: qui "html" davanti al selettore
+   basta a prevalere e allinea tutto alla home (carta, schede bianche, corsivo serif, niente maiuscolo spaziato)
+   ============================================= */
+/* Titoli: accento in corsivo serif rosso come in home */
+html .article-hero h1 em,html .article-body h2 em,html .blog-hero h1 em,html .hub-hero h1 em,html .tool-hero h1 em,html .hero h1 em{
+  font-family:var(--serif);font-style:italic;font-weight:700;color:var(--red-ink);letter-spacing:-.005em}
+html .article-hero h1,html .blog-hero h1,html .hub-hero h1{letter-spacing:-.035em}
+
+/* Etichette sopra i titoli: via; righe di servizio in minuscolo normale */
+html .blog-hero .label,html .hub-hero .label,html .legal .label{display:none}
+html .article-hero .article-meta,html .toc-title,html .related h3,html .stat .l,html .related-card .tag,html .article-card .article-tag,html .tool-card .tag{
+  text-transform:none;letter-spacing:0}
+html .article-hero .article-meta{font-size:14px;font-weight:500}
+html .toc-title,html .related h3{font-size:15px;font-weight:700;color:var(--text)}
+html .related-card .tag,html .article-card .article-tag,html .tool-card .tag{font-size:13px;font-weight:700;color:var(--red-ink)}
+html .stat .l{font-size:13px;color:var(--text3)}
+
+/* Autore con la foto vera */
+html .article-hero .author-card{background:var(--card);border-color:transparent;box-shadow:var(--shadow);padding:6px 16px 6px 6px}
+.author-ava{width:30px;height:30px;border-radius:50%;object-fit:cover;object-position:50% 22%;display:inline-block;vertical-align:middle}
+
+/* Superfici: schede bianche con un'ombra sola */
+html .toc,html .related-card,html .article-card,html .tool-card,html .stat,html .permit,html .legal .box{
+  background:var(--card);border-color:transparent;box-shadow:var(--shadow)}
+html .related-card:hover,html .article-card:hover,html .tool-card:hover{background:var(--card);box-shadow:var(--shadow-lg);border-color:transparent}
+html .stat .n{font-family:var(--serif);font-variant-numeric:lining-nums;color:var(--red-ink)}
+html .article-body th{background:var(--bg2)}
+html .article-body a{color:var(--red-ink)}
+html .callout{background:var(--red)}
+html .callout a.btn-callout{color:var(--red)}
+html .callout a.btn-callout:active{transform:scale(.97)}
+html .permit.c .letter{background:var(--red-d)}
+html .coming-soon{background:transparent;border-color:var(--border-h)}
+
+/* Citazioni e note: niente barra colorata a sinistra */
+html .article-body blockquote{border-left:0;background:var(--card);box-shadow:var(--shadow);border-radius:16px;
+  font-family:var(--serif);font-size:19px;line-height:1.5;padding:22px 26px}
+html .note-box{border-left:0;background:var(--red-soft);border-radius:14px}
+
+/* Spunte, croci e avvisi disegnati (al posto di ✅ ❌ ⚠️) */
+.mk{display:inline-block;width:1.05em;height:1.05em;vertical-align:-.17em;margin:0 .15em;background:center/contain no-repeat}
+.mk-ok{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%232E7D4F'/%3E%3Cpath d='m7 12.5 3.2 3.2L17 9' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.mk-no{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23C81E28'/%3E%3Cpath d='m8.5 8.5 7 7m0-7-7 7' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")}
+.mk-warn{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.5 22.5 21h-21z' fill='%23B7791F' stroke='%23B7791F' stroke-linejoin='round' stroke-width='1.5'/%3E%3Cpath d='M12 9.5v4.8m0 3v.2' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E")}
+
+/* Pagine degli strumenti: la sezione <section class="tool"> non è una scheda della home (lo stile della home ci finiva dentro) */
+html section.tool{display:block;background:none;border:0;border-radius:0;box-shadow:none;overflow:visible}
+html section.tool:hover,html section.tool:active{transform:none;box-shadow:none}
+html .tool-hero .pill{background:var(--red-soft);color:var(--red-ink);text-transform:none;letter-spacing:0;font-size:13.5px;font-weight:700}
+html .card-box,html .prompt-card,html .item,html .cta-box:not(.red),html .progress{background:var(--card);border-color:transparent;box-shadow:var(--shadow)}
+html .result{background:var(--red)}
+html .result .lead,html table.cmp th{text-transform:none;letter-spacing:0}
+html .result .lead{font-size:15px}
+html table.cmp th{font-size:13px}
+html .note-box,html .steps-box{border-left:0;background:var(--red-soft);border-radius:14px}
+html .progress .bar i{background:var(--red)}
+html .quick button{background:var(--bg2)}
+html .tool-hero{background:var(--bg)}
+html .cta-box.red{background:var(--red)}
+html .tg-card{background:var(--red);color:#fff}
+html .tg-card:hover{background:var(--red-d)}
+html .tg-card .article-tag,html .tg-card .article-desc,html .tg-card .article-meta{color:rgba(255,255,255,.88)}
+html .tg-card .article-title{font-family:var(--serif);font-size:24px}
+html .tg-card .article-meta{font-weight:700;color:#fff}
+html .toc a{color:var(--text);text-decoration:none}html .toc a:hover{color:var(--red-ink)}
+
+/* CV (08/10/2026): stesse superfici della home, niente maiuscolo spaziato, niente "scroll" */
+.hero-card,.bento-main,.bento-stat,.role-card,.edu-card,.cert-card,.hl-card,.honor-card,.lang-card,.vol-card,.skill-group,.rec-card,.company-card,.pstat{
+  background:var(--card);border-color:transparent;box-shadow:var(--shadow)}
+.bento-stat:hover,.edu-card:hover,.cert-card:hover,.lang-card:hover,.vol-card:hover,.honor-card:hover,.hl-card:hover,.role-card:hover{
+  background:var(--card);border-color:transparent;box-shadow:var(--shadow-lg)}
+.pstat{box-shadow:none;background:var(--bg2)}
+.bento-tag,.sg-title,.role-badge,.trust-logo .tl-sub,.hero-tool .ht-new{text-transform:none;letter-spacing:0}
+.bento-tag{font-size:.8rem}
+.bento-tag::before{display:none}
+.sg-title{font-size:.9rem}
+.role-badge{font-size:.72rem}
+.hero-scroll{display:none}
+[data-theme="dark"] .hero-card,[data-theme="dark"] .bento-main,[data-theme="dark"] .bento-stat,[data-theme="dark"] .role-card,[data-theme="dark"] .edu-card,[data-theme="dark"] .company-card{border-color:var(--border)}
+html .timeline{background:var(--card);border-color:transparent;box-shadow:var(--shadow)}
+html .tl-step .when{text-transform:none;letter-spacing:0;font-size:13px}
+html .tl-step .letter{background:var(--card)}
