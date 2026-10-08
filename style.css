@@ -2158,6 +2158,6 @@ html .toc a{color:var(--text);text-decoration:none}html .toc a:hover{color:var(-
 .role-badge{font-size:.72rem}
 .hero-scroll{display:none}
 [data-theme="dark"] .hero-card,[data-theme="dark"] .bento-main,[data-theme="dark"] .bento-stat,[data-theme="dark"] .role-card,[data-theme="dark"] .edu-card,[data-theme="dark"] .company-card{border-color:var(--border)}
-html .timeline{background:var(--card);border-color:transparent;box-shadow:var(--shadow)}
+html .article-body .timeline{background:var(--card);border-color:transparent;box-shadow:var(--shadow)}
 html .tl-step .when{text-transform:none;letter-spacing:0;font-size:13px}
 html .tl-step .letter{background:var(--card)}
