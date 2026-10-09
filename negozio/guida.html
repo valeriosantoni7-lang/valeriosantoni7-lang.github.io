@@ -23,7 +23,7 @@
 
   <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
   <link rel="stylesheet" href="../style.css?v=30"/>
-  <link rel="stylesheet" href="negozio.css?v=4"/>
+  <link rel="stylesheet" href="negozio.css?v=5"/>
 </head>
 <body>
 
@@ -82,17 +82,23 @@
 
       <div class="pd-box">
         <!-- SEGNAPOSTO (passo 4.1): qui va il form di MailerLite. Finché non c'è, il form non invia nulla e rimanda a Stan. -->
-        <form class="pd-form" id="guide-form" data-placeholder="mailerlite" novalidate>
+        <form class="pd-form" id="guide-form" novalidate
+              data-ml-action="https://assets.mailerlite.com/jsonp/2683285/forms/200487535580809020/subscribe"
+              data-attivo="no">
           <label for="g-name" data-en="First name">Nome</label>
           <input type="text" id="g-name" name="name" autocomplete="given-name" placeholder="Il tuo nome" data-en-placeholder="Your first name"/>
           <label for="g-email" data-en="Email">Email</label>
           <input type="email" id="g-email" name="email" autocomplete="email" required placeholder="nome@email.com" data-en-placeholder="name@email.com"/>
           <button type="submit" class="pd-btn" data-en="Send me the guide">Mandami la guida</button>
         </form>
-        <p class="pd-small" data-en="You get the guide by email and, over the following days, a few emails with free tools and practical tips. You can unsubscribe with one click from any email. No spam, and your address is never passed on.">Ricevi la guida via email e, nei giorni dopo, qualche email con strumenti gratuiti e consigli pratici. Puoi cancellarti con un clic da ogni email. Niente spam, e il tuo indirizzo non viene ceduto a nessuno.</p>
+        <p class="pd-small"><span class="l-it">Ricevi la guida via email e, nei giorni dopo, qualche email con strumenti gratuiti e consigli pratici. Puoi cancellarti con un clic da ogni email. Niente spam, e il tuo indirizzo non viene ceduto a nessuno. <a href="/privacy">Informativa privacy</a>.</span><span class="l-en" lang="en">You get the guide by email and, over the following days, a few emails with free tools and practical tips. You can unsubscribe with one click from any email. No spam, and your address is never passed on. <a href="/privacy">Privacy notice</a>.</span></p>
         <div class="pd-msg" id="guide-msg" role="status">
           <span class="l-it">Il modulo è ancora in costruzione e non ha inviato nulla. Per ora la guida si scarica da qui: <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">scarica la guida</a>.</span>
           <span class="l-en" lang="en">This form is still being built and hasn't sent anything. For now you can get the guide here: <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">download the guide</a>.</span>
+        </div>
+        <div class="pd-msg" id="guide-err" role="alert">
+          <span class="l-it">Qualcosa non ha funzionato. Controlla l'indirizzo email e riprova, oppure scarica la guida da qui: <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">scarica la guida</a>.</span>
+          <span class="l-en" lang="en">Something went wrong. Check your email address and try again, or get the guide here: <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">download the guide</a>.</span>
         </div>
       </div>
     </div>
@@ -153,11 +159,35 @@
 
 <script src="../script.js?v=42"></script>
 <script>
-/* Segnaposto finché non c'è MailerLite (passo 4.1): non invia nessun dato. */
-document.getElementById('guide-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-  document.getElementById('guide-msg').classList.add('show');
-});
+/* Iscrizione alla guida con MailerLite (passo 4.1).
+   data-attivo="no": il modulo non invia nulla e rimanda a Stan.
+   Si passa a "si" solo con il "VAI ONLINE" di Valerio (automazione di benvenuto attiva). */
+(function () {
+  var form = document.getElementById('guide-form');
+  var msg = document.getElementById('guide-msg');
+  var err = document.getElementById('guide-err');
+  var btn = form.querySelector('button');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    msg.classList.remove('show'); err.classList.remove('show');
+    if (form.dataset.attivo !== 'si') { msg.classList.add('show'); return; }
+    var email = form.querySelector('#g-email');
+    if (!email.value || !email.checkValidity()) { err.classList.add('show'); email.focus(); return; }
+    var data = new FormData();
+    data.append('fields[email]', email.value.trim());
+    data.append('fields[name]', form.querySelector('#g-name').value.trim());
+    data.append('ml-submit', '1');
+    data.append('anticsrf', 'true');
+    btn.disabled = true;
+    fetch(form.dataset.mlAction, { method: 'POST', body: data })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (j && j.success) { location.href = '/negozio/grazie-guida'; }
+        else { throw new Error('ml'); }
+      })
+      .catch(function () { btn.disabled = false; err.classList.add('show'); });
+  });
+})();
 </script>
 </body>
 </html>

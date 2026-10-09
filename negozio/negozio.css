@@ -1,6 +1,6 @@
 /* Pagine del negozio (/negozio/): si appoggiano a style.css e ai suoi colori per il tema chiaro e scuro. */
 .shop-hero{padding:calc(var(--nav-h) + 60px) 24px 30px;background:linear-gradient(180deg,var(--bg2),var(--bg));text-align:center}
-.shop-hero .label{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.shop-hero .label{font-size:14px;font-weight:600;color:var(--red);margin-bottom:14px}
 .shop-hero h1{font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:14px}
 .shop-hero h1 em{color:var(--red);font-style:italic}
 .shop-hero p{color:var(--text2);max-width:640px;margin:0 auto;font-size:17px;line-height:1.55}
@@ -10,7 +10,7 @@
   padding:26px;text-decoration:none;color:var(--text);transition:var(--tr)}
 a.shop-card:hover{background:var(--surface-h);transform:translateY(-2px)}
 .shop-card--main{border-color:var(--red)}
-.shop-card .tag{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--red)}
+.shop-card .tag{font-size:13px;font-weight:600;color:var(--red)}
 .shop-card h2{font-size:22px;font-weight:700;margin:8px 0 8px}
 .shop-card p{color:var(--text2);line-height:1.55;margin:0;flex:1}
 .shop-card .price{font-size:28px;font-weight:800;margin-top:18px}
@@ -25,12 +25,12 @@ a.shop-card .go:after{content:" →"}
 .pd-wrap{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
 .pd-back{display:inline-block;font-size:14px;color:var(--text3);text-decoration:none;margin-bottom:18px}
 .pd-back:hover{color:var(--red)}
-.pd-pill{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:16px}
+.pd-pill{display:inline-block;background:var(--red);color:#fff;font-size:13px;font-weight:600;padding:7px 16px;border-radius:999px;margin-bottom:16px}
 .pd-hero h1{font-size:clamp(30px,5vw,50px);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin:0 0 14px}
 .pd-hero h1 em{color:var(--red);font-style:italic}
 .pd-lead{font-size:clamp(16px,2vw,18px);color:var(--text2);line-height:1.55;margin:0 0 22px}
 .pd-rating{font-size:14px;color:var(--text2);margin-bottom:18px}
-.pd-rating .stars{color:#F59E0B;letter-spacing:1px}
+.pd-rating .stars{color:#C81E28;letter-spacing:1px}
 .pd-cover{width:100%;max-width:440px;justify-self:center;border-radius:var(--r-lg);box-shadow:0 24px 60px rgba(0,0,0,.18);display:block;height:auto}
 
 /* Copertina della guida disegnata in CSS (sempre allineata al numero di pagine) */
@@ -38,12 +38,12 @@ a.shop-card .go:after{content:" →"}
 .g-cover:after{content:"";position:absolute;right:-6%;top:16%;width:34%;height:44%;background:
   linear-gradient(rgba(255,255,255,.12),rgba(255,255,255,.12)) center/34% 100% no-repeat,
   linear-gradient(rgba(255,255,255,.12),rgba(255,255,255,.12)) center/100% 34% no-repeat}
-.g-cover .g-top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:clamp(9px,1.4vw,12px);font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.g-cover .g-top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:clamp(9px,1.4vw,12px);font-weight:700;letter-spacing:.5px}
 .g-cover .g-tag{background:#fff;color:#C81E28;padding:6px 12px;border-radius:999px}
 .g-cover .g-title{font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:clamp(30px,5.2vw,50px);line-height:1;margin-top:auto;position:relative;z-index:1}
 .g-cover .g-title i{display:block;color:#FFC9CD;font-weight:400;margin-top:6px}
 .g-cover .g-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:auto;font-size:clamp(10px,1.5vw,13px);font-weight:700;letter-spacing:1.5px}
-.g-cover .g-dark{background:#0F1A2A;padding:7px 12px;border-radius:8px;text-transform:uppercase}
+.g-cover .g-dark{background:#121110;padding:7px 12px;border-radius:8px}
 .g-cover .g-handle{font-family:Georgia,serif;font-style:italic;font-weight:400;letter-spacing:0;font-size:clamp(13px,1.9vw,17px)}
 
 /* Box d'azione: form della guida e acquisto */
@@ -57,6 +57,7 @@ a.shop-card .go:after{content:" →"}
 .pd-btn{display:block;width:100%;text-align:center;background:var(--red);color:#fff;border:0;font-family:var(--font);font-size:16px;font-weight:700;padding:14px 22px;border-radius:999px;cursor:pointer;text-decoration:none;transition:var(--tr)}
 .pd-btn:hover{background:var(--red-d)}
 .pd-small{font-size:12.5px;color:var(--text3);line-height:1.5;margin:10px 0 0}
+.pd-small a{color:inherit;text-decoration:underline}
 .pd-msg{display:none;margin-top:12px;padding:12px 14px;border-radius:12px;background:var(--surface-h);font-size:14px;line-height:1.5;color:var(--text2)}
 .pd-msg.show{display:block}
 .pd-msg a{color:var(--red);font-weight:600}
