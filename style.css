@@ -1770,7 +1770,7 @@ html[data-lang="en"] .l-it{display:none !important}
 .pf-perks li::before{content:"✓";display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--red-glow);color:var(--red);font-weight:800;font-size:.8rem;flex-shrink:0}
 .pf-card{position:relative;background:var(--bg);border:1px solid var(--border);border-radius:28px;padding:30px 30px 26px;box-shadow:var(--shadow-xl)}
 [data-theme="dark"] .pf-card{background:var(--bg2)}
-.pf-step{position:relative;display:flex;gap:18px;padding-bottom:22px;opacity:.38;transition:opacity var(--tr)}
+.pf-step{position:relative;display:flex;gap:18px;padding-bottom:22px;opacity:.45;transition:opacity var(--tr)}
 .pf-step.is-open,.pf-step.is-done{opacity:1}
 .pf-step:not(:last-of-type)::before{content:"";position:absolute;left:19px;top:44px;bottom:4px;width:2px;background:var(--border);border-radius:2px}
 .pf-step.is-done::before{background:var(--red) !important}
@@ -1887,7 +1887,7 @@ html[data-lang="en"] .l-it{display:none !important}
   --bg:#FAF8F5;--bg2:#F3EFE9;--bg3:#EAE4DA;--card:#FFFFFF;
   --surface:rgba(48,32,16,.035);--surface-h:rgba(48,32,16,.065);
   --border:rgba(48,32,16,.11);--border-h:rgba(48,32,16,.2);
-  --text:#141414;--text2:#3B3631;--text3:#685F57;--text4:#9A9188;
+  --text:#141414;--text2:#3B3631;--text3:#685F57;--text4:#736A61;
   --red:#C81E28;--red-d:#A3161F;--red-ink:#C81E28;--red-soft:rgba(200,30,40,.08);--red-glow:rgba(200,30,40,.2);
   --gold:var(--red);--gold-d:var(--red);--gold-glow:var(--red-glow);
   --nav-bg:rgba(250,248,245,.88);--nav-border:rgba(48,32,16,.09);
@@ -1902,7 +1902,7 @@ html[data-lang="en"] .l-it{display:none !important}
   --bg:#121110;--bg2:#181615;--bg3:#211E1C;--card:#1C1A18;
   --surface:rgba(255,245,235,.045);--surface-h:rgba(255,245,235,.08);
   --border:rgba(255,245,235,.10);--border-h:rgba(255,245,235,.2);
-  --text:rgba(255,250,245,.93);--text2:rgba(255,250,245,.74);--text3:rgba(255,250,245,.56);--text4:rgba(255,250,245,.36);
+  --text:rgba(255,250,245,.93);--text2:rgba(255,250,245,.74);--text3:rgba(255,250,245,.6);--text4:rgba(255,250,245,.52);
   --red:#D2343B;--red-d:#B3242B;--red-ink:#FF7A7F;--red-soft:rgba(255,122,127,.1);--red-glow:rgba(210,52,59,.3);
   --nav-bg:rgba(18,17,16,.86);--nav-border:rgba(255,245,235,.08);
   --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.3);
@@ -2161,3 +2161,21 @@ html .toc a{color:var(--text);text-decoration:none}html .toc a:hover{color:var(-
 html .article-body .timeline{background:var(--card);border-color:transparent;box-shadow:var(--shadow)}
 html .tl-step .when{text-transform:none;letter-spacing:0;font-size:13px}
 html .tl-step .letter{background:var(--card)}
+
+/* =============================================
+   ACCESSIBILITÀ (15/10/2026)
+   Link nel testo sottolineati, "Salta al contenuto" per chi usa la tastiera,
+   contorno visibile sul focus.
+   ============================================= */
+html p a:not([class]),html li a:not([class]),html .d a:not([class]),html td a:not([class]){text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+html nav li a:not([class]),html footer li a:not([class]),html .menu-extra a:not([class]){text-decoration:none}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:10000;background:var(--text);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:700;font-size:.9rem;text-decoration:none;transition:top .15s}
+.skip-link:focus{top:12px}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.contact-form .form-privacy{font-size:.78rem;color:var(--text3);margin:4px 0 14px;line-height:1.5}
+.contact-form .form-privacy a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.hp-field{position:absolute !important;left:-9999px !important;width:1px;height:1px;overflow:hidden}
+/* numero decorativo del CV disegnato dal CSS (non è testo da leggere) e testi chiari sul rosso */
+.story-num[data-n]::before{content:attr(data-n)}
+html .mp-handle{opacity:1}
+html .book-label{color:#fff}

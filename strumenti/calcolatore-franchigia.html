@@ -2,6 +2,7 @@
 <html lang="it" data-default-lang="it" data-theme="light" data-title-en="Swiss health insurance deductible calculator | Valerio Santoni">
 <head>
   <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://valerio.goatcounter.com; font-src 'self'; connect-src 'self' https://valerio.goatcounter.com https://formsubmit.co; form-action 'self' https://formsubmit.co; media-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'"/>
   <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
@@ -53,7 +54,7 @@
   </script>
 
   <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
-  <link rel="stylesheet" href="../style.css?v=30"/>
+  <link rel="stylesheet" href="../style.css?v=31"/>
 
   <style>
     .tool-hero{padding:calc(var(--nav-h) + 56px) 24px 34px;background:linear-gradient(180deg,var(--bg2),var(--bg));text-align:center}
@@ -89,7 +90,7 @@
     .quick button:hover{border-color:var(--red);color:var(--red)}
 
     .result{background:linear-gradient(135deg,var(--red),var(--red-d));color:#fff;border-radius:var(--r-lg);padding:28px;margin-bottom:22px}
-    .result .lead{font-size:14px;letter-spacing:2px;text-transform:uppercase;opacity:.85;font-weight:700}
+    .result .lead{font-size:15px;font-weight:700;color:#fff}
     .result .big{font-size:clamp(28px,5vw,40px);font-weight:800;line-height:1.15;margin:8px 0 10px}
     .result .det{font-size:16px;line-height:1.6;color:rgba(255,255,255,.94)}
     .result .det b{color:#fff}
@@ -201,7 +202,7 @@
     <h2 data-en="2 · How much you expect to spend on healthcare this year">2 · Quanto prevedi di spendere in cure quest'anno</h2>
     <p class="sub" data-en="Doctor visits, medicines, physiotherapy, tests: the total of your bills, before anything your insurer reimburses.">Visite, farmaci, fisioterapia, esami: la somma delle fatture, prima di quello che rimborsa la cassa.</p>
     <div class="spesa-row"><span class="spesa-val" id="spesaLbl">600 CHF</span><span data-en="drag to change">trascina per cambiare</span></div>
-    <input type="range" id="spesa" min="0" max="10000" step="100" value="600"/>
+    <input type="range" id="spesa" min="0" max="10000" step="100" value="600" aria-label="Spesa per le cure in un anno, in CHF" data-en-aria="Healthcare spending in a year, in CHF" aria-describedby="spesaLbl"/>
     <div class="quick">
       <button data-v="0" data-en="Almost nothing">Quasi nulla</button>
       <button data-v="600" data-en="A few visits">Qualche visita</button>
@@ -368,8 +369,8 @@
   render();
 })();
 </script>
-<script src="../script.js?v=42"></script>
+<script src="../script.js?v=43"></script>
 <!-- Statistiche senza cookie (GoatCounter, dal 04/10/2026; vedi /privacy) -->
-<script data-goatcounter="https://valerio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://valerio.goatcounter.com/count" async src="https://gc.zgo.at/count.v5.js" crossorigin="anonymous" integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
 </body>
 </html>

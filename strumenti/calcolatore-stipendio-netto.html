@@ -2,6 +2,7 @@
 <html lang="it" data-default-lang="it" data-theme="light" data-title-en="Swiss net salary calculator 2026: gross to net | Valerio Santoni">
 <head>
   <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://valerio.goatcounter.com; font-src 'self'; connect-src 'self' https://valerio.goatcounter.com https://formsubmit.co; form-action 'self' https://formsubmit.co; media-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'"/>
   <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
@@ -62,7 +63,7 @@
   </script>
 
   <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
-  <link rel="stylesheet" href="../style.css?v=30"/>
+  <link rel="stylesheet" href="../style.css?v=31"/>
 
   <style>
     .tool-hero{padding:calc(var(--nav-h) + 56px) 24px 34px;background:linear-gradient(180deg,var(--bg2),var(--bg));text-align:center}
@@ -103,7 +104,7 @@
     .more[open] summary{margin-bottom:14px}
 
     .result{background:linear-gradient(135deg,var(--red),var(--red-d));color:#fff;border-radius:var(--r-lg);padding:28px;margin-bottom:22px}
-    .result .lead{font-size:14px;letter-spacing:2px;text-transform:uppercase;opacity:.85;font-weight:700}
+    .result .lead{font-size:15px;font-weight:700;color:#fff}
     .result .big{font-size:clamp(34px,6vw,52px);font-weight:800;line-height:1.1;margin:8px 0 10px}
     .result .big small{font-size:.42em;font-weight:600;opacity:.9}
     .result .det{font-size:16px;line-height:1.6;color:rgba(255,255,255,.94)}
@@ -120,15 +121,15 @@
     table.cmp th{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--text3);font-weight:600}
     table.cmp td .p{font-size:12.5px;color:var(--text3);font-weight:400}
     table.cmp td .d{display:block;margin-top:2px;white-space:nowrap}
-    table.cmp td .d.pos{color:#16A34A}table.cmp td .d.neg{color:var(--red)}
+    table.cmp td .d.pos{color:#15803D}table.cmp td .d.neg{color:var(--red)}
     table.cmp tr.tot td{font-weight:800;border-bottom:0}
-    table.cmp tr.tot td:first-child{color:#16A34A}
+    table.cmp tr.tot td:first-child{color:#15803D}
     table.cmp tr.me td{background:rgba(200,30,40,.08);font-weight:700}
     .table-wrap{overflow-x:auto}
     .btn{display:inline-block;background:var(--red);color:#fff;border:0;font-family:var(--font);font-size:15px;font-weight:600;
       padding:11px 24px;border-radius:999px;cursor:pointer;text-decoration:none}
     .btn:disabled{opacity:.6;cursor:wait}
-    .pos{color:#16A34A}.neg{color:var(--red)}
+    .pos{color:#15803D}.neg{color:var(--red)}
 
     .note-box{background:var(--surface);border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15px;line-height:1.6;color:var(--text2)}
     .note-box b{color:var(--text)}
@@ -651,8 +652,8 @@
   etichettaConfronto(); syncMensile(); figliPerSituazione(); aggiorna();
 })();
 </script>
-<script src="../script.js?v=42"></script>
+<script src="../script.js?v=43"></script>
 <!-- Statistiche senza cookie (GoatCounter, dal 04/10/2026; vedi /privacy) -->
-<script data-goatcounter="https://valerio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://valerio.goatcounter.com/count" async src="https://gc.zgo.at/count.v5.js" crossorigin="anonymous" integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
 </body>
 </html>

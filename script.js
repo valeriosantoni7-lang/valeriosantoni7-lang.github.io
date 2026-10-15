@@ -4,6 +4,7 @@
 const T = {
   en: {
     "legal.privacy":"Privacy","legal.terms":"Legal notice and terms",
+    "a11y.skip":"Skip to content",
     "chero.f1":"Countries lived in","chero.f2":"Swiss cities","chero.f3":"Languages","chero.bio":"Italian in Geneva · background in banking, data and AI · double degree across Europe and China",
     "chero.leap":"I made the move","chero.where":"Italian in Geneva · work and career in Switzerland","chero.gt":"Free guide","chero.gs":"16 pages · PDF (in Italian)",
     "menu.guide":"Get the free guide","menu.note":"Work and life in Switzerland, with real data",
@@ -255,7 +256,7 @@ const T = {
     "form.name":"Name","form.name.ph":"Your name",
     "form.email":"Email","form.email.ph":"your@email.com",
     "form.message":"Message","form.msg.ph":"What would you like to discuss?",
-    "form.send":"Send Message →","form.sent":"✓ Message sent! I'll get back to you soon.","form.sending":"Sending…","form.error":"Something went wrong. Retry or email valeriosantoni7@gmail.com",
+    "form.privacy":"By sending this form you accept the <a href=\"/privacy\">privacy notice</a>: I use your name, email and message only to reply.","form.send":"Send Message →","form.sent":"✓ Message sent! I'll get back to you soon.","form.sending":"Sending…","form.error":"Something went wrong. Retry or email valeriosantoni7@gmail.com",
     "footer.copy":"© 2026 Valerio Santoni · Built with passion in Switzerland 🇨🇭",
     "footer.disclaimer":"The views expressed on this website are my own and do not represent those of my employer. Coaching services and content are provided in a personal capacity and are not affiliated with, sponsored or endorsed by any employer.",
     "floating.cta":"Free guide",
@@ -263,6 +264,7 @@ const T = {
   },
   it: {
     "legal.privacy":"Privacy","legal.terms":"Note legali e condizioni",
+    "a11y.skip":"Salta al contenuto",
     "chero.f1":"Paesi in cui ho vissuto","chero.f2":"Città svizzere","chero.f3":"Lingue","chero.bio":"Italiano a Ginevra · esperienza in banca, dati e AI · doppia laurea tra Europa e Cina",
     "chero.leap":"Ho fatto il salto","chero.where":"Italiano a Ginevra · lavoro e carriera in Svizzera","chero.gt":"Guida gratuita","chero.gs":"16 pagine · PDF",
     "menu.guide":"Scarica la guida gratuita","menu.note":"Lavoro e vita in Svizzera, con dati veri",
@@ -515,7 +517,7 @@ const T = {
     "form.name":"Nome","form.name.ph":"Il tuo nome",
     "form.email":"Email","form.email.ph":"tua@email.com",
     "form.message":"Messaggio","form.msg.ph":"Di cosa vorresti parlare?",
-    "form.send":"Invia messaggio →","form.sent":"✓ Messaggio inviato! Ti rispondo presto.","form.sending":"Invio in corso…","form.error":"Qualcosa è andato storto. Riprova o scrivi a valeriosantoni7@gmail.com",
+    "form.privacy":"Usando il modulo accetti l'<a href=\"/privacy\">informativa privacy</a>: uso nome, email e messaggio solo per risponderti.","form.send":"Invia messaggio →","form.sent":"✓ Messaggio inviato! Ti rispondo presto.","form.sending":"Invio in corso…","form.error":"Qualcosa è andato storto. Riprova o scrivi a valeriosantoni7@gmail.com",
     "footer.copy":"© 2026 Valerio Santoni · Realizzato con passione in Svizzera 🇨🇭",
     "footer.disclaimer":"Le opinioni espresse in questo sito sono personali e non rappresentano quelle del mio datore di lavoro. Le attività di coaching e i contenuti sono svolti a titolo personale e non sono affiliati, sponsorizzati o approvati da alcun datore di lavoro.",
     "floating.cta":"Guida gratuita",
@@ -727,6 +729,22 @@ if (!document.querySelector('.legal-links')) {
   else (document.querySelector('main') || document.body).appendChild(ll);
 }
 
+/* "Salta al contenuto" per chi naviga con la tastiera (15/10/2026) */
+if (!document.querySelector('.skip-link')) {
+  const target = document.querySelector('main') ||
+    Array.from(document.querySelectorAll('section, article, header')).find(el => !el.closest('nav'));
+  if (target) {
+    if (!target.id) target.id = 'contenuto';
+    if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+    const sk = document.createElement('a');
+    sk.className = 'skip-link';
+    sk.href = '#' + target.id;
+    sk.setAttribute('data-i18n', 'a11y.skip');
+    sk.textContent = document.documentElement.lang === 'en' ? 'Skip to content' : 'Salta al contenuto';
+    document.body.insertBefore(sk, document.body.firstChild);
+  }
+}
+
 let menuScrollY = 0;
 function openMenu() {
   menuScrollY = window.scrollY;
@@ -872,6 +890,9 @@ document.querySelectorAll('.hl-grid .fade-in, .cert-grid .fade-in, .lang-grid .f
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     const note = document.getElementById('form-note');
+    // Campo nascosto anti-spam: se è compilato è un bot, non si invia niente
+    const honey = form.elements['_honey'];
+    if (honey && honey.value) { form.reset(); return; }
     const btn  = form.querySelector('button[type="submit"]');
     const L    = currentLang || 'it';
 
@@ -885,7 +906,8 @@ document.querySelectorAll('.hl-grid .fade-in, .cert-grid .fade-in, .lang-grid .f
       message: form.elements['message'].value,
       _subject: 'Nuovo messaggio dal sito · valerioswiss',
       _template: 'table',
-      _captcha: 'false'
+      _captcha: 'false',
+      _honey: ''
     };
 
     var submittedNatively = false;
@@ -1215,6 +1237,8 @@ applyLang(currentLang);
       const open = !done && order.slice(0, i).every(k => ans[k]);
       s.classList.toggle('is-done', done);
       s.classList.toggle('is-open', open);
+      // I passi non ancora aperti non si raggiungono con la tastiera
+      s.inert = !(done || open);
     });
   }
   function render() {
