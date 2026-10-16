@@ -256,7 +256,7 @@ const T = {
     "form.name":"Name","form.name.ph":"Your name",
     "form.email":"Email","form.email.ph":"your@email.com",
     "form.message":"Message","form.msg.ph":"What would you like to discuss?",
-    "form.privacy":"By sending this form you accept the <a href=\"/privacy\">privacy notice</a>: I use your name, email and message only to reply.","form.send":"Send Message →","form.sent":"✓ Message sent! I'll get back to you soon.","form.sending":"Sending…","form.error":"Something went wrong. Retry or email valeriosantoni7@gmail.com",
+    "form.privacy":"By sending this form you accept the <a href=\"/privacy\">privacy notice</a>: I use your name, email and message only to reply.","form.send":"Send Message →","form.sent":"✓ Message sent! I'll get back to you soon.","form.sending":"Sending…","form.error":"Something went wrong. Retry or email ciao@valerioswiss.com",
     "footer.copy":"© 2026 Valerio Santoni · Built with passion in Switzerland 🇨🇭",
     "footer.disclaimer":"The views expressed on this website are my own and do not represent those of my employer. Coaching services and content are provided in a personal capacity and are not affiliated with, sponsored or endorsed by any employer.",
     "floating.cta":"Free guide",
@@ -517,7 +517,7 @@ const T = {
     "form.name":"Nome","form.name.ph":"Il tuo nome",
     "form.email":"Email","form.email.ph":"tua@email.com",
     "form.message":"Messaggio","form.msg.ph":"Di cosa vorresti parlare?",
-    "form.privacy":"Usando il modulo accetti l'<a href=\"/privacy\">informativa privacy</a>: uso nome, email e messaggio solo per risponderti.","form.send":"Invia messaggio →","form.sent":"✓ Messaggio inviato! Ti rispondo presto.","form.sending":"Invio in corso…","form.error":"Qualcosa è andato storto. Riprova o scrivi a valeriosantoni7@gmail.com",
+    "form.privacy":"Usando il modulo accetti l'<a href=\"/privacy\">informativa privacy</a>: uso nome, email e messaggio solo per risponderti.","form.send":"Invia messaggio →","form.sent":"✓ Messaggio inviato! Ti rispondo presto.","form.sending":"Invio in corso…","form.error":"Qualcosa è andato storto. Riprova o scrivi a ciao@valerioswiss.com",
     "footer.copy":"© 2026 Valerio Santoni · Realizzato con passione in Svizzera 🇨🇭",
     "footer.disclaimer":"Le opinioni espresse in questo sito sono personali e non rappresentano quelle del mio datore di lavoro. Le attività di coaching e i contenuti sono svolti a titolo personale e non sono affiliati, sponsorizzati o approvati da alcun datore di lavoro.",
     "floating.cta":"Guida gratuita",
@@ -919,7 +919,7 @@ document.querySelectorAll('.hl-grid .fade-in, .cert-grid .fade-in, .lang-grid .f
       form.submit();
     }
 
-    fetch('https://formsubmit.co/ajax/valeriosantoni7@gmail.com', {
+    fetch('https://formsubmit.co/ajax/ciao@valerioswiss.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
