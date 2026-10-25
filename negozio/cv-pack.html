@@ -2,13 +2,14 @@
 <html lang="it" data-default-lang="it" data-theme="light" data-title-en="Swiss CV Pack: template, guide and chat feedback | Valerio Santoni">
 <head>
   <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.cal.com https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://valerio.goatcounter.com; font-src 'self'; connect-src 'self' https://assets.mailerlite.com https://app.cal.com https://valerio.goatcounter.com; form-action 'self'; media-src 'self'; frame-src https://app.cal.com https://cal.com; object-src 'none'; base-uri 'self'"/>
   <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
   <title>CV Pack svizzero: template, guida e feedback in chat | Valerio Santoni</title>
   <meta name="description" content="Il template del CV svizzero in Word, un esempio compilato, una guida di 20 pagine con 5 prompt AI e il mio feedback in chat sul tuo CV. 19 €, una tantum."/>
   <meta name="author" content="Valerio Santoni"/>
-  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="robots" content="index, follow"/>
 
   <meta property="og:type" content="product"/>
   <meta property="og:url" content="https://valerioswiss.com/negozio/cv-pack"/>
@@ -22,8 +23,8 @@
   <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
 
   <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
-  <link rel="stylesheet" href="../style.css?v=30"/>
-  <link rel="stylesheet" href="negozio.css?v=5"/>
+  <link rel="stylesheet" href="../style.css?v=31"/>
+  <link rel="stylesheet" href="negozio.css?v=7"/>
 </head>
 <body>
 
@@ -75,7 +76,7 @@
 <header class="pd-hero">
   <div class="pd-wrap">
     <div>
-      <a href="/negozio/" class="pd-back" data-en="← Guide, CV Pack and 1:1 call">← Guida, CV Pack e call 1:1</a><br/>
+      <a href="/negozio/" class="pd-back" data-en="← Guide, CV Pack, CV review and 1:1 call">← Guida, CV Pack, revisione e call 1:1</a><br/>
       <span class="pd-pill" data-en="CV Pack · 2026 edition">CV Pack · Edizione 2026</span>
       <h1 data-en-html="The CV that works &lt;em&gt;in Switzerland&lt;/em&gt;">Il CV che funziona <em>in Svizzera</em></h1>
       <p class="pd-lead" data-en="An Italian-style CV rarely makes it past the first read in Switzerland. This pack gives you the right format and walks you through writing it, with my feedback on your version. Materials are in Italian.">Un CV all'italiana, in Svizzera, raramente supera la prima lettura. Questo pack ti dà il formato giusto e ti accompagna a scriverlo, con il mio feedback sulla tua versione.</p>
@@ -84,9 +85,10 @@
       <div class="pd-box">
         <div class="price">19 € <small data-en="one-off payment">una tantum</small></div>
         <p class="pd-small" style="margin:6px 0 16px" data-en="Instant access: you get the files by email straight after payment.">Accesso immediato: ricevi i file via email subito dopo il pagamento.</p>
-        <!-- SEGNAPOSTO (passo 4.1): qui va il Payment Link di Stripe (con PayPal attivo). Finché non c'è, il pulsante porta alla pagina del CV Pack su Stan. -->
-        <a class="pd-btn" id="buy-btn" data-placeholder="stripe" href="https://stan.store/valerioswiss/p/il-cv-perfetto-per-lavorare-allestero" target="_blank" rel="noopener" data-en="Get the CV Pack · €19">Acquista il CV Pack · 19 €</a>
+        <!-- Link reale di Stripe (live, creato il 25/10/2026). -->
+        <a class="pd-btn" id="buy-btn" data-stripe="live" href="https://buy.stripe.com/aFaeVf6FC85FdaA11Y6J200" data-en="Get the CV Pack · €19">Acquista il CV Pack · 19 €</a>
         <p class="pd-small" data-en="Secure payment by card or PayPal.">Pagamento sicuro con carta o PayPal.</p>
+        <p class="pd-small pd-legal"><span class="l-it">Acquistando confermi di avere almeno 18 anni, accetti le <a href="/note-legali">condizioni</a> e chiedi la consegna immediata dei file: se vivi nell'Unione europea, una volta ricevuti perdi il diritto di recesso di 14 giorni. Se un file non funziona, ti mando quello giusto o ti rimborso. <a href="/privacy">Privacy</a>.</span><span class="l-en" lang="en">By buying you confirm you are 18 or over, accept the <a href="/note-legali">terms</a> and ask for immediate delivery of the files: if you live in the European Union, once you receive them you lose the 14-day right of withdrawal. If a file does not work, I send you the right one or refund you. <a href="/privacy">Privacy</a>.</span></p>
       </div>
     </div>
 
@@ -156,6 +158,7 @@
 
 <p class="pd-note" data-en="Content and services offered in a personal capacity: general information, not legal, tax or financial advice. Opinions are my own and do not represent those of my employer.">Contenuti e servizi offerti a titolo personale: informazioni generali, non consulenza legale, fiscale o finanziaria. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro.</p>
 
-<script src="../script.js?v=42"></script>
+<script src="../script.js?v=47"></script>
+<script data-goatcounter="https://valerio.goatcounter.com/count" async src="https://gc.zgo.at/count.v5.js" crossorigin="anonymous" integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
 </body>
 </html>

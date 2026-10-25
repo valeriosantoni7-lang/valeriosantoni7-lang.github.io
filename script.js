@@ -945,11 +945,11 @@ document.querySelectorAll('.hl-grid .fade-in, .cert-grid .fade-in, .lang-grid .f
 })();
 
 /* =============================================
-   STANSTORE LINK (legacy hook, kept for safety)
+   CALL LINK (legacy hook, kept for safety): ora porta alla call nel negozio
    ============================================= */
 function openCalendly(e) {
   if (e && e.preventDefault) e.preventDefault();
-  window.open('https://stan.store/valerioswiss', '_blank', 'noopener');
+  window.location.href = '/negozio/call';
 }
 
 /* =============================================
@@ -1204,7 +1204,6 @@ applyLang(currentLang);
   if (!card) return;
   const out = document.getElementById('pf-result');
   const ans = {};
-  const STAN = 'https://stan.store/valerioswiss';
   const GUIDA = '/negozio/guida'; // guida gratuita sul sito (MailerLite) dal lancio della guida
   const ITEMS = {
     netto: ['💰', 'strumenti/calcolatore-stipendio-netto', ['Calcola il tuo netto', 'Work out your net pay'], ['Dal lordo al netto con l\'imposta alla fonte 2026 di tutti i Cantoni.', 'Gross to net with the 2026 withholding tax of every canton.']],
@@ -1215,9 +1214,9 @@ applyLang(currentLang);
     network: ['🤝', 'blog/trovare-lavoro-svizzera-networking', ['Il lavoro che non vedi negli annunci', 'The jobs you never see posted'], ['Alumni, caffè di 15 minuti e referral.', 'Alumni, 15-minute coffees and referrals.']],
     lavorare: ['🧭', 'blog/lavorare-in-svizzera-guida-2026', ['Lavorare in Svizzera: la guida 2026', 'Working in Switzerland: the 2026 guide'], ['Stipendi, settori, lingue e permessi in un articolo.', 'Salaries, sectors, languages and permits in one article.']],
     guida: ['📘', GUIDA, ['Guida gratuita · 16 pagine', 'Free guide · 16 pages'], ['Stipendi per settore, primi 30 giorni, errori da evitare.', 'Salaries by sector, your first 30 days, mistakes to avoid.']],
-    cvpack: ['📄', STAN + '/p/il-cv-perfetto-per-lavorare-allestero', ['CV Pack svizzero · 19€', 'Swiss CV Pack · €19'], ['Template, guida di 20 pagine e consulenza in chat.', 'Template, 20-page guide and a chat review.']],
-    revisione: ['✍️', STAN + '/p/revisione-del-cv-in-48-ore', ['Revisione del CV in 48 ore · 39€', 'CV review in 48h · €39'], ['Me lo mandi e te lo rimando corretto, punto per punto.', 'Send it to me and get it back fixed, point by point.']],
-    call: ['💼', STAN + '/p/book-a-11-call-with-me-q95sgm4b', ['Call 1:1 sul tuo caso · 69€', '1:1 call on your case · €69'], ['Un\'ora insieme e un documento riassuntivo dopo.', 'One hour together and a written summary after.']],
+    cvpack: ['📄', '/negozio/cv-pack', ['CV Pack svizzero · 19€', 'Swiss CV Pack · €19'], ['Template, guida di 20 pagine e consulenza in chat.', 'Template, 20-page guide and a chat review.']],
+    revisione: ['✍️', '/negozio/revisione-cv', ['Revisione del CV in 48 ore · 39€', 'CV review in 48h · €39'], ['Me lo mandi e te lo rimando corretto, punto per punto.', 'Send it to me and get it back fixed, point by point.']],
+    call: ['💼', '/negozio/call', ['Call 1:1 sul tuo caso · 69€', '1:1 call on your case · €69'], ['Un\'ora insieme e un documento riassuntivo dopo.', 'One hour together and a written summary after.']],
   };
   const PLANS = {
     lavoro: { junior: ['guida', 'network', 'cvpack'], mid: ['network', 'cvpack', 'guida'], senior: ['network', 'cvpack', 'call'] },

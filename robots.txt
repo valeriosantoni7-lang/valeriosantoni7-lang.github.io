@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Allow: /negozio/guida$
-Disallow: /negozio/
 
 Sitemap: https://valerioswiss.com/sitemap.xml

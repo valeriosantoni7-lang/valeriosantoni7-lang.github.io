@@ -2,7 +2,7 @@
 <html lang="it" data-default-lang="it" data-theme="light" data-title-en="Free guide: working in Switzerland | Valerio Santoni">
 <head>
   <meta charset="UTF-8"/>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.cal.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://assets.mailerlite.com https://app.cal.com; form-action 'self'; media-src 'self'; frame-src https://app.cal.com https://cal.com; object-src 'none'; base-uri 'self'"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.cal.com https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://valerio.goatcounter.com; font-src 'self'; connect-src 'self' https://assets.mailerlite.com https://app.cal.com https://valerio.goatcounter.com; form-action 'self'; media-src 'self'; frame-src https://app.cal.com https://cal.com; object-src 'none'; base-uri 'self'"/>
   <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
@@ -82,7 +82,7 @@
       <p class="pd-lead" data-en="The guide I wish I'd had when I started. 16 practical pages to get going from scratch without wasting months. It's in Italian.">La guida che avrei voluto avere quando ho iniziato. 16 pagine pratiche per partire da zero senza perdere mesi.</p>
 
       <div class="pd-box">
-        <!-- SEGNAPOSTO (passo 4.1): qui va il form di MailerLite. Finché non c'è, il form non invia nulla e rimanda a Stan. -->
+        <!-- Modulo di MailerLite (acceso dal 25/10/2026): gruppo Guida → automazione di benvenuto. -->
         <form class="pd-form" id="guide-form" novalidate
               data-ml-action="https://assets.mailerlite.com/jsonp/2683285/forms/200487535580809020/subscribe"
               data-attivo="si">
@@ -95,12 +95,12 @@
         </form>
         <p class="pd-small"><span class="l-it">Ricevi la guida via email e, nei giorni dopo, qualche email con strumenti gratuiti e consigli pratici. Puoi cancellarti con un clic da ogni email. Niente spam, e il tuo indirizzo non viene ceduto a nessuno. Iscrivendoti confermi di avere almeno 16 anni. <a href="/privacy">Informativa privacy</a>.</span><span class="l-en" lang="en">You get the guide by email and, over the following days, a few emails with free tools and practical tips. You can unsubscribe with one click from any email. No spam, and your address is never passed on. By signing up you confirm you are 16 or over. <a href="/privacy">Privacy notice</a>.</span></p>
         <div class="pd-msg" id="guide-msg" role="status">
-          <span class="l-it">Il modulo è ancora in costruzione e non ha inviato nulla. Per ora la guida si scarica da qui: <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">scarica la guida</a>.</span>
-          <span class="l-en" lang="en">This form is still being built and hasn't sent anything. For now you can get the guide here: <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">download the guide</a>.</span>
+          <span class="l-it">Il modulo è ancora in costruzione e non ha inviato nulla. Per ora la guida si scarica da qui: <a href="mailto:ciao@valerioswiss.com?subject=Guida%20gratuita">scarica la guida</a>.</span>
+          <span class="l-en" lang="en">This form is still being built and hasn't sent anything. For now you can get the guide here: <a href="mailto:ciao@valerioswiss.com?subject=Guida%20gratuita">download the guide</a>.</span>
         </div>
         <div class="pd-msg" id="guide-err" role="alert">
-          <span class="l-it">Qualcosa non ha funzionato. Controlla l'indirizzo email e riprova, oppure scarica la guida da qui: <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">scarica la guida</a>.</span>
-          <span class="l-en" lang="en">Something went wrong. Check your email address and try again, or get the guide here: <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">download the guide</a>.</span>
+          <span class="l-it">Qualcosa non ha funzionato. Controlla l'indirizzo email e riprova, oppure scrivimi a <a href="mailto:ciao@valerioswiss.com?subject=Guida%20gratuita">ciao@valerioswiss.com</a> e te la mando io.</span>
+          <span class="l-en" lang="en">Something went wrong. Check your email address and try again, or email me at <a href="mailto:ciao@valerioswiss.com?subject=Guida%20gratuita">ciao@valerioswiss.com</a> and I will send it to you.</span>
         </div>
       </div>
     </div>
@@ -155,10 +155,10 @@
 
 <p class="pd-note" data-en="Content and services offered in a personal capacity: general information, not legal, tax or financial advice. Opinions are my own and do not represent those of my employer.">Contenuti e servizi offerti a titolo personale: informazioni generali, non consulenza legale, fiscale o finanziaria. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro.</p>
 
-<script src="../script.js?v=46"></script>
+<script src="../script.js?v=47"></script>
 <script>
 /* Iscrizione alla guida con MailerLite (passo 4.1).
-   data-attivo="no": il modulo non invia nulla e rimanda a Stan.
+   data-attivo="no": il modulo non invia nulla (spento).
    Si passa a "si" con marketing/negozio/lancio_guida.py (lancio della guida).
    Si passa a "si" solo con il "VAI ONLINE" di Valerio (automazione di benvenuto attiva). */
 (function () {
@@ -191,5 +191,6 @@
   });
 })();
 </script>
+<script data-goatcounter="https://valerio.goatcounter.com/count" async src="https://gc.zgo.at/count.v5.js" crossorigin="anonymous" integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
 </body>
 </html>

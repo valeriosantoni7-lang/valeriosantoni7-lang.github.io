@@ -2,13 +2,14 @@
 <html lang="it" data-default-lang="it" data-theme="light" data-title-en="1:1 call: one hour on your move to Switzerland | Valerio Santoni">
 <head>
   <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.cal.com https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://valerio.goatcounter.com; font-src 'self'; connect-src 'self' https://assets.mailerlite.com https://app.cal.com https://valerio.goatcounter.com; form-action 'self'; media-src 'self'; frame-src https://app.cal.com https://cal.com; object-src 'none'; base-uri 'self'"/>
   <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
   <title>Call 1:1: un'ora sul tuo trasferimento in Svizzera | Valerio Santoni</title>
   <meta name="description" content="Un'ora in videochiamata sul tuo caso: roadmap Italia → Svizzera, aziende e portali per il tuo profilo, stipendio realistico. Documento riassuntivo entro 24 ore. 69 €."/>
   <meta name="author" content="Valerio Santoni"/>
-  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="robots" content="index, follow"/>
 
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://valerioswiss.com/negozio/call"/>
@@ -21,8 +22,8 @@
   <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
 
   <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
-  <link rel="stylesheet" href="../style.css?v=30"/>
-  <link rel="stylesheet" href="negozio.css?v=5"/>
+  <link rel="stylesheet" href="../style.css?v=31"/>
+  <link rel="stylesheet" href="negozio.css?v=7"/>
 </head>
 <body>
 
@@ -74,7 +75,7 @@
 <header class="pd-hero">
   <div class="pd-wrap">
     <div>
-      <a href="/negozio/" class="pd-back" data-en="← Guide, CV Pack and 1:1 call">← Guida, CV Pack e call 1:1</a><br/>
+      <a href="/negozio/" class="pd-back" data-en="← Guide, CV Pack, CV review and 1:1 call">← Guida, CV Pack, revisione e call 1:1</a><br/>
       <span class="pd-pill" data-en="1:1 call · 60 minutes">Call 1:1 · 60 minuti</span>
       <h1 data-en-html="One hour &lt;em&gt;on your case&lt;/em&gt;">Un'ora <em>sul tuo caso</em></h1>
       <p class="pd-lead" data-en="No theory and no pep talk: we look at your profile together and build the plan for getting to Switzerland. After the call you get everything in writing.">Niente teoria e niente discorsi motivazionali: guardiamo insieme il tuo profilo e costruiamo il piano per arrivare in Svizzera. Dopo la call ricevi tutto per iscritto.</p>
@@ -83,17 +84,14 @@
       <div class="pd-box">
         <div class="price">69 € <small data-en="one hour, video call">un'ora, in videochiamata</small></div>
         <p class="pd-small" style="margin:6px 0 16px" data-en="Includes the written summary within 24 hours and 7 days of follow-up questions by DM.">Compresi il documento riassuntivo entro 24 ore e 7 giorni per farmi domande in DM.</p>
-        <!-- SEGNAPOSTO (passo 4.1): qui va il link di prenotazione di Cal.com (pagamento con Stripe e PayPal). Finché non c'è, il pulsante porta alla call su Stan. -->
-        <a class="pd-btn" id="book-btn" data-placeholder="calcom" href="https://stan.store/valerioswiss/p/book-a-11-call-with-me-q95sgm4b" target="_blank" rel="noopener" data-en="Book the call · €69">Prenota la call · 69 €</a>
+        <!-- Prenotazione con Cal.com (dal 25/10/2026): 69 € con Stripe al momento della prenotazione. -->
+        <a class="pd-btn" id="book-btn" href="#prenota" data-en="Book the call · €69">Prenota la call · 69 €</a>
         <p class="pd-small" data-en="Pick a day and time, then pay by card or PayPal.">Scegli giorno e ora, poi paghi con carta o PayPal.</p>
+        <p class="pd-small pd-legal"><span class="l-it">Prenotando confermi di avere almeno 18 anni e accetti le <a href="/note-legali">condizioni</a>: puoi annullare gratis fino a 24 ore prima, con rimborso completo. Se vivi nell'Unione europea e la call avviene entro 14 giorni dall'acquisto, è perché l'hai chiesto tu: dopo la call il recesso non vale più. Se uso le note automatiche di Google Meet te lo dico prima. <a href="/privacy">Privacy</a>.</span><span class="l-en" lang="en">By booking you confirm you are 18 or over and accept the <a href="/note-legali">terms</a>: you can cancel free of charge up to 24 hours before, with a full refund. If you live in the European Union and the call takes place within 14 days of purchase, it is because you asked for it: after the call the right of withdrawal no longer applies. If I use Google Meet automatic notes, I tell you beforehand. <a href="/privacy">Privacy</a>.</span></p>
       </div>
     </div>
 
-    <div class="pd-cover g-cover" role="img" aria-label="Copertina della call 1:1: un'ora sul tuo caso" data-en-aria="1:1 call cover: one hour on your case">
-      <div class="g-top"><span class="g-tag" data-en="1:1 call">Call 1:1</span><span data-en="Video call · 60 min">Videochiamata · 60 min</span></div>
-      <div class="g-title"><span data-en="One hour on your case,">Un'ora sul tuo caso,</span><i data-en="a plan in writing.">un piano per iscritto.</i></div>
-      <div class="g-bottom"><span class="g-dark" data-en="€69 · summary included">69 € · riassunto incluso</span><span class="g-handle">@valerio.swiss</span></div>
-    </div>
+    <img class="pd-cover" src="../assets/products/call-1x1.png" width="1080" height="1080" alt="Copertina della call 1:1: Valerio in videochiamata, la tua strategia Italia → Svizzera" data-en-aria="1:1 call cover: Valerio on a video call, your Italy → Switzerland strategy"/>
   </div>
 </header>
 
@@ -132,12 +130,15 @@
 
 <section class="pd-sec" id="prenota">
   <h2 data-en="Pick a day and time">Scegli giorno e ora</h2>
-  <!-- SEGNAPOSTO (passo 4.1): qui va il calendario di Cal.com incorporato. -->
-  <div class="pd-box pd-cal" id="cal-embed" data-placeholder="calcom">
-    <p class="l-it">Il calendario per prenotare direttamente da qui arriva a breve. Nel frattempo trovi i giorni liberi e prenoti dalla mia pagina attuale: stesso prezzo, stessa call.</p>
-    <p class="l-en" lang="en">The calendar for booking straight from this page is coming soon. Meanwhile you can see the free slots and book on my current page: same price, same call.</p>
-    <a class="pd-btn" href="https://stan.store/valerioswiss/p/book-a-11-call-with-me-q95sgm4b" target="_blank" rel="noopener" data-en="See free slots">Vedi i giorni liberi</a>
-  </div>
+  <!-- Calendario di Cal.com incorporato (25/10/2026): evento cal.com/valerioswiss/call, orari lun-ven 18:30-21:00 e sabato 11:00-15:00. -->
+  <div class="pd-box pd-cal" id="cal-embed" style="padding:0;overflow:hidden;min-height:640px"></div>
+  <p class="pd-small"><span class="l-it">Il calendario non si carica? Prenota da qui: </span><span class="l-en" lang="en">Calendar not loading? Book here: </span><a href="https://cal.com/valerioswiss/call" target="_blank" rel="noopener">cal.com/valerioswiss/call</a></p>
+  <script>
+  (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "call", { origin: "https://cal.com" });
+  Cal.ns.call("inline", { elementOrSelector: "#cal-embed", calLink: "valerioswiss/call", config: { layout: "month_view", theme: "light" } });
+  Cal.ns.call("ui", { hideEventTypeDetails: false, layout: "month_view", theme: "light", cssVarsPerTheme: { light: { "cal-brand": "#C81E28" } } });
+  </script>
 </section>
 
 <section class="pd-sec">
@@ -173,6 +174,7 @@
 
 <p class="pd-note" data-en="Content and services offered in a personal capacity: general information, not legal, tax or financial advice. Opinions are my own and do not represent those of my employer.">Contenuti e servizi offerti a titolo personale: informazioni generali, non consulenza legale, fiscale o finanziaria. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro.</p>
 
-<script src="../script.js?v=42"></script>
+<script src="../script.js?v=47"></script>
+<script data-goatcounter="https://valerio.goatcounter.com/count" async src="https://gc.zgo.at/count.v5.js" crossorigin="anonymous" integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
 </body>
 </html>
