@@ -2,13 +2,14 @@
 <html lang="it" data-default-lang="it" data-theme="light" data-title-en="Free guide: working in Switzerland | Valerio Santoni">
 <head>
   <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.cal.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://assets.mailerlite.com https://app.cal.com; form-action 'self'; media-src 'self'; frame-src https://app.cal.com https://cal.com; object-src 'none'; base-uri 'self'"/>
   <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
   <title>Guida gratuita · Lavorare in Svizzera | Valerio Santoni</title>
   <meta name="description" content="16 pagine pratiche per cercare lavoro in Svizzera: città, settori e portali, CV svizzero, permessi, stipendi 2026, i primi passi dopo l'arrivo e il piano dei primi 30 giorni. Gratis via email."/>
   <meta name="author" content="Valerio Santoni"/>
-  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="robots" content="index, follow"/>
 
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://valerioswiss.com/negozio/guida"/>
@@ -22,8 +23,8 @@
   <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
 
   <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
-  <link rel="stylesheet" href="../style.css?v=30"/>
-  <link rel="stylesheet" href="negozio.css?v=5"/>
+  <link rel="stylesheet" href="../style.css?v=31"/>
+  <link rel="stylesheet" href="negozio.css?v=7"/>
 </head>
 <body>
 
@@ -75,7 +76,7 @@
 <header class="pd-hero">
   <div class="pd-wrap">
     <div>
-      <a href="/negozio/" class="pd-back" data-en="← Guide, CV Pack and 1:1 call">← Guida, CV Pack e call 1:1</a><br/>
+      <a href="/negozio/" class="pd-back" data-en="← Guide, CV Pack, CV review and 1:1 call">← Guida, CV Pack, revisione e call 1:1</a><br/>
       <span class="pd-pill" data-en="Free guide · PDF">Guida gratuita · PDF</span>
       <h1 data-en-html="Looking for work in Switzerland: &lt;em&gt;where to start&lt;/em&gt;">Cercare lavoro in Svizzera: <em>da dove partire</em></h1>
       <p class="pd-lead" data-en="The guide I wish I'd had when I started. 16 practical pages to get going from scratch without wasting months. It's in Italian.">La guida che avrei voluto avere quando ho iniziato. 16 pagine pratiche per partire da zero senza perdere mesi.</p>
@@ -84,14 +85,15 @@
         <!-- SEGNAPOSTO (passo 4.1): qui va il form di MailerLite. Finché non c'è, il form non invia nulla e rimanda a Stan. -->
         <form class="pd-form" id="guide-form" novalidate
               data-ml-action="https://assets.mailerlite.com/jsonp/2683285/forms/200487535580809020/subscribe"
-              data-attivo="no">
+              data-attivo="si">
           <label for="g-name" data-en="First name">Nome</label>
           <input type="text" id="g-name" name="name" autocomplete="given-name" placeholder="Il tuo nome" data-en-placeholder="Your first name"/>
           <label for="g-email" data-en="Email">Email</label>
           <input type="email" id="g-email" name="email" autocomplete="email" required placeholder="nome@email.com" data-en-placeholder="name@email.com"/>
+          <div class="hp-field" aria-hidden="true"><label for="g-website">Lascia vuoto</label><input type="text" id="g-website" name="website" tabindex="-1" autocomplete="off"/></div>
           <button type="submit" class="pd-btn" data-en="Send me the guide">Mandami la guida</button>
         </form>
-        <p class="pd-small"><span class="l-it">Ricevi la guida via email e, nei giorni dopo, qualche email con strumenti gratuiti e consigli pratici. Puoi cancellarti con un clic da ogni email. Niente spam, e il tuo indirizzo non viene ceduto a nessuno. <a href="/privacy">Informativa privacy</a>.</span><span class="l-en" lang="en">You get the guide by email and, over the following days, a few emails with free tools and practical tips. You can unsubscribe with one click from any email. No spam, and your address is never passed on. <a href="/privacy">Privacy notice</a>.</span></p>
+        <p class="pd-small"><span class="l-it">Ricevi la guida via email e, nei giorni dopo, qualche email con strumenti gratuiti e consigli pratici. Puoi cancellarti con un clic da ogni email. Niente spam, e il tuo indirizzo non viene ceduto a nessuno. Iscrivendoti confermi di avere almeno 16 anni. <a href="/privacy">Informativa privacy</a>.</span><span class="l-en" lang="en">You get the guide by email and, over the following days, a few emails with free tools and practical tips. You can unsubscribe with one click from any email. No spam, and your address is never passed on. By signing up you confirm you are 16 or over. <a href="/privacy">Privacy notice</a>.</span></p>
         <div class="pd-msg" id="guide-msg" role="status">
           <span class="l-it">Il modulo è ancora in costruzione e non ha inviato nulla. Per ora la guida si scarica da qui: <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">scarica la guida</a>.</span>
           <span class="l-en" lang="en">This form is still being built and hasn't sent anything. For now you can get the guide here: <a href="https://stan.store/valerioswiss" target="_blank" rel="noopener">download the guide</a>.</span>
@@ -103,11 +105,7 @@
       </div>
     </div>
 
-    <div class="pd-cover g-cover" role="img" aria-label="Copertina della guida gratuita Cercare lavoro in Svizzera" data-en-aria="Cover of the free guide Looking for work in Switzerland">
-      <div class="g-top"><span class="g-tag" data-en="Free guide">Guida gratuita</span><span data-en="2026 edition · PDF">Edizione 2026 · PDF</span></div>
-      <div class="g-title"><span data-en="Looking for work in Switzerland">Cercare lavoro in Svizzera</span><i data-en="where to start.">da dove partire.</i></div>
-      <div class="g-bottom"><span class="g-dark" data-en="Free · 16 pages">Gratis · 16 pagine</span><span class="g-handle">@valerio.swiss</span></div>
-    </div>
+    <img class="pd-cover" src="../assets/products/guida-1x1.png" width="1080" height="1080" alt="Copertina della guida gratuita Cercare lavoro in Svizzera: città, portali, stipendi e primi 30 giorni" data-en-aria="Cover of the free guide Looking for work in Switzerland: cities, job portals, salaries and your first 30 days"/>
   </div>
 </header>
 
@@ -157,10 +155,11 @@
 
 <p class="pd-note" data-en="Content and services offered in a personal capacity: general information, not legal, tax or financial advice. Opinions are my own and do not represent those of my employer.">Contenuti e servizi offerti a titolo personale: informazioni generali, non consulenza legale, fiscale o finanziaria. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro.</p>
 
-<script src="../script.js?v=42"></script>
+<script src="../script.js?v=46"></script>
 <script>
 /* Iscrizione alla guida con MailerLite (passo 4.1).
    data-attivo="no": il modulo non invia nulla e rimanda a Stan.
+   Si passa a "si" con marketing/negozio/lancio_guida.py (lancio della guida).
    Si passa a "si" solo con il "VAI ONLINE" di Valerio (automazione di benvenuto attiva). */
 (function () {
   var form = document.getElementById('guide-form');
@@ -171,6 +170,9 @@
     e.preventDefault();
     msg.classList.remove('show'); err.classList.remove('show');
     if (form.dataset.attivo !== 'si') { msg.classList.add('show'); return; }
+    // Campo nascosto anti-spam: se è compilato è un bot, non si invia niente
+    var hp = form.querySelector('#g-website');
+    if (hp && hp.value) { location.href = '/negozio/grazie-guida'; return; }
     var email = form.querySelector('#g-email');
     if (!email.value || !email.checkValidity()) { err.classList.add('show'); email.focus(); return; }
     var data = new FormData();

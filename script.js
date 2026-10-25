@@ -712,7 +712,7 @@ if (navLinks && !navLinks.querySelector('.menu-extra')) {
   const li = document.createElement('li');
   li.className = 'menu-extra';
   li.innerHTML =
-    '<a class="menu-guide" href="https://stan.store/valerioswiss" target="_blank" rel="noopener">' +
+    '<a class="menu-guide" href="/negozio/guida">' +
       '<span class="mg-ico" aria-hidden="true">📘</span><span data-i18n="menu.guide">Scarica la guida gratuita</span><span class="mg-arrow" aria-hidden="true">→</span></a>' +
     (social ? '<div class="menu-social">' + social.innerHTML + TG_LINK('nav-icon') + '</div>' : '') +
     '<p class="menu-note"><span data-i18n="menu.note">Lavoro e vita in Svizzera, con dati veri</span> · @valerio.swiss</p>';
@@ -1205,6 +1205,7 @@ applyLang(currentLang);
   const out = document.getElementById('pf-result');
   const ans = {};
   const STAN = 'https://stan.store/valerioswiss';
+  const GUIDA = '/negozio/guida'; // guida gratuita sul sito (MailerLite) dal lancio della guida
   const ITEMS = {
     netto: ['💰', 'strumenti/calcolatore-stipendio-netto', ['Calcola il tuo netto', 'Work out your net pay'], ['Dal lordo al netto con l\'imposta alla fonte 2026 di tutti i Cantoni.', 'Gross to net with the 2026 withholding tax of every canton.']],
     franchigia: ['🩺', 'strumenti/calcolatore-franchigia', ['Scegli la franchigia giusta', 'Pick the right deductible'], ['Quanto ti costa davvero la cassa malati in un anno.', 'What health insurance really costs you in a year.']],
@@ -1213,7 +1214,7 @@ applyLang(currentLang);
     generatore: ['🤖', 'strumenti/generatore-cv-svizzero', ['Adatta il CV all\'annuncio', 'Tailor your CV to the ad'], ['Incolli l\'annuncio e hai i prompt pronti, gratis.', 'Paste the job ad and get ready-made prompts, free.']],
     network: ['🤝', 'blog/trovare-lavoro-svizzera-networking', ['Il lavoro che non vedi negli annunci', 'The jobs you never see posted'], ['Alumni, caffè di 15 minuti e referral.', 'Alumni, 15-minute coffees and referrals.']],
     lavorare: ['🧭', 'blog/lavorare-in-svizzera-guida-2026', ['Lavorare in Svizzera: la guida 2026', 'Working in Switzerland: the 2026 guide'], ['Stipendi, settori, lingue e permessi in un articolo.', 'Salaries, sectors, languages and permits in one article.']],
-    guida: ['📘', STAN, ['Guida gratuita · 16 pagine', 'Free guide · 16 pages'], ['Stipendi per settore, primi 30 giorni, errori da evitare.', 'Salaries by sector, your first 30 days, mistakes to avoid.']],
+    guida: ['📘', GUIDA, ['Guida gratuita · 16 pagine', 'Free guide · 16 pages'], ['Stipendi per settore, primi 30 giorni, errori da evitare.', 'Salaries by sector, your first 30 days, mistakes to avoid.']],
     cvpack: ['📄', STAN + '/p/il-cv-perfetto-per-lavorare-allestero', ['CV Pack svizzero · 19€', 'Swiss CV Pack · €19'], ['Template, guida di 20 pagine e consulenza in chat.', 'Template, 20-page guide and a chat review.']],
     revisione: ['✍️', STAN + '/p/revisione-del-cv-in-48-ore', ['Revisione del CV in 48 ore · 39€', 'CV review in 48h · €39'], ['Me lo mandi e te lo rimando corretto, punto per punto.', 'Send it to me and get it back fixed, point by point.']],
     call: ['💼', STAN + '/p/book-a-11-call-with-me-q95sgm4b', ['Call 1:1 sul tuo caso · 69€', '1:1 call on your case · €69'], ['Un\'ora insieme e un documento riassuntivo dopo.', 'One hour together and a written summary after.']],
@@ -1260,7 +1261,7 @@ applyLang(currentLang);
     }).join('');
     const cta = keys.includes('guida')
       ? '<a class="btn btn-primary" href="' + ITEMS.call[1] + '" target="_blank" rel="noopener">' + (en() ? 'Talk it through 1:1' : 'Parliamone 1:1') + '</a>'
-      : '<a class="btn btn-primary" href="' + STAN + '" target="_blank" rel="noopener">' + (en() ? 'Get the free guide' : 'Scarica la guida gratuita') + '</a>';
+      : '<a class="btn btn-primary" href="' + GUIDA + '">' + (en() ? 'Get the free guide' : 'Scarica la guida gratuita') + '</a>';
     out.innerHTML = '<h3>' + (en() ? 'Your plan' : 'Il tuo piano') + '</h3><p class="pf-note">' + note + '</p><div class="pf-list">' + list + '</div>' +
       '<div class="pf-actions">' + cta + '<button type="button" class="pf-reset">' + (en() ? 'Start over' : 'Ricomincia') + '</button></div>';
     out.hidden = false;

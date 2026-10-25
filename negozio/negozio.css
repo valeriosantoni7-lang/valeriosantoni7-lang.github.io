@@ -5,7 +5,8 @@
 .shop-hero h1 em{color:var(--red);font-style:italic}
 .shop-hero p{color:var(--text2);max-width:640px;margin:0 auto;font-size:17px;line-height:1.55}
 
-.shop-grid{max-width:1040px;margin:0 auto;padding:36px 24px 60px;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.shop-grid{max-width:1040px;margin:0 auto;padding:36px 24px 60px;display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:640px){.shop-grid{grid-template-columns:repeat(2,1fr)}}
 .shop-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
   padding:26px;text-decoration:none;color:var(--text);transition:var(--tr)}
 a.shop-card:hover{background:var(--surface-h);transform:translateY(-2px)}
@@ -117,3 +118,6 @@ a.shop-card .go:after{content:" →"}
 .ty-cta .pd-btn{display:inline-block;width:auto}
 .ty-help p{color:var(--text2);line-height:1.6;margin:0}
 .ty-help b{color:var(--text)}
+
+/* copertine dei prodotti nelle schede, come nella vetrina di Stan (19/10/2026) */
+.shop-thumb{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:calc(var(--r-lg) - 6px);margin:-6px 0 16px;box-shadow:0 10px 28px rgba(0,0,0,.12)}
