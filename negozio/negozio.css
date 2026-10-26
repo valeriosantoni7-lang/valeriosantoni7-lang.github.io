@@ -87,7 +87,7 @@ a.shop-card .go:after{content:" →"}
 .pd-faq details[open] summary:after{content:"–"}
 .pd-faq p{color:var(--text2);line-height:1.6;margin:10px 0 0}
 .pd-next{max-width:1040px;margin:34px auto 0;padding:0 24px}
-.pd-next a{display:block;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--red);border-radius:0 14px 14px 0;padding:18px 22px;text-decoration:none;color:var(--text2);line-height:1.55}
+.pd-next a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 22px;text-decoration:none;color:var(--text2);line-height:1.55}
 .pd-next a b{color:var(--text)}
 .pd-next a:hover{background:var(--surface-h)}
 .pd-note{max-width:1040px;margin:0 auto;padding:34px 24px 70px;font-size:13px;color:var(--text3);line-height:1.6}
@@ -121,3 +121,6 @@ a.shop-card .go:after{content:" →"}
 
 /* copertine dei prodotti nelle schede, come nella vetrina di Stan (19/10/2026) */
 .shop-thumb{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:calc(var(--r-lg) - 6px);margin:-6px 0 16px;box-shadow:0 10px 28px rgba(0,0,0,.12)}
+
+/* prezzo con il dato chiave al posto dell'etichetta sopra il titolo (26/10/2026) */
+.shop-card .price span{font-size:15px;font-weight:500;color:var(--text2)}
