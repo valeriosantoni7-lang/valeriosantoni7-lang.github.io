@@ -2207,3 +2207,48 @@ html .post-all a{color:var(--red-ink);font-weight:700}
   html .post-list time{grid-column:1/-1}
   html .post-list .pl-t{font-size:1.12rem}
 }
+
+/* ─── 28/10/2026: gli ultimi post (al posto dei più visti), fascia dei numeri che si accende, accento dei titoli sottolineato ─── */
+.mp-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.mp-head h3{margin-bottom:0}
+.mp-head a{font-size:.9rem;font-weight:700;color:var(--red-ink)}
+.mp-head a:hover{text-decoration:underline;text-underline-offset:3px}
+.mp-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.mp-img{position:relative;display:block;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);transition:transform .3s var(--ease-out),box-shadow .3s var(--ease-out)}
+.mp .mp-img img{display:block;aspect-ratio:4/5;border-radius:0;box-shadow:none;transition:transform .6s var(--ease-out)}
+a.mp:hover .mp-img{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+a.mp:hover .mp-img img{transform:scale(1.04)}
+a.mp:hover img{box-shadow:none}
+a.mp:active .mp-img{transform:scale(.98)}
+.mp-reel{position:absolute;top:10px;right:10px;width:30px;height:30px;padding:7px;border-radius:50%;background:rgba(18,17,16,.55);fill:#fff}
+.mp > .mp-meta{display:flex;flex-direction:column;gap:3px;color:var(--text)}
+.mp-meta time{font-size:.78rem;font-weight:600;color:var(--text3);font-variant-numeric:lining-nums tabular-nums}
+.mp-t{font-size:.95rem;font-weight:700;line-height:1.3}
+a.mp:hover .mp-t{color:var(--red-ink)}
+.mp-follow{aspect-ratio:auto}
+.mp-follow p{font-size:1.2rem}
+@media(max-width:980px){.mp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mp-follow{grid-column:auto}}
+@media(max-width:768px){
+  .mp-grid{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:70%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+  .mp-grid::-webkit-scrollbar{display:none}
+  .mp-grid > *{scroll-snap-align:start}
+  .mp-follow{grid-column:auto;aspect-ratio:auto}
+}
+
+/* Fascia dei numeri: le voci entrano una dopo l'altra quando arrivano nello schermo */
+@media (prefers-reduced-motion:no-preference){
+  .proof-inner .pb-item{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+  .proof-inner.on .pb-item{opacity:1;transform:none}
+  .proof-inner.on .pb-item:nth-child(2){transition-delay:.08s}
+  .proof-inner.on .pb-item:nth-child(3){transition-delay:.16s}
+  .proof-inner.on .pb-item:nth-child(4){transition-delay:.24s}
+}
+
+/* Accento dei titoli: una passata di rosso sotto la parola in corsivo, che si stende quando il titolo entra */
+.section-title em{background-image:linear-gradient(color-mix(in srgb,var(--red) 22%,transparent),color-mix(in srgb,var(--red) 22%,transparent));
+  background-repeat:no-repeat;background-position:0 88%;background-size:100% .16em;-webkit-background-clip:border-box;background-clip:border-box;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media (prefers-reduced-motion:no-preference){
+  .section-title em{transition:background-size 1s var(--ease-out) .3s}
+  .section-head:not(.visible) .section-title em{background-size:0% .16em}
+}
