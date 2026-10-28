@@ -2237,11 +2237,11 @@ a.mp:hover .mp-t{color:var(--red-ink)}
 
 /* Fascia dei numeri: le voci entrano una dopo l'altra quando arrivano nello schermo */
 @media (prefers-reduced-motion:no-preference){
-  .proof-inner .pb-item{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
-  .proof-inner.on .pb-item{opacity:1;transform:none}
-  .proof-inner.on .pb-item:nth-child(2){transition-delay:.08s}
-  .proof-inner.on .pb-item:nth-child(3){transition-delay:.16s}
-  .proof-inner.on .pb-item:nth-child(4){transition-delay:.24s}
+  .pb-anim .proof-inner .pb-item{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+  .pb-anim .proof-inner.on .pb-item{opacity:1;transform:none}
+  .pb-anim .proof-inner.on .pb-item:nth-child(2){transition-delay:.08s}
+  .pb-anim .proof-inner.on .pb-item:nth-child(3){transition-delay:.16s}
+  .pb-anim .proof-inner.on .pb-item:nth-child(4){transition-delay:.24s}
 }
 
 /* Accento dei titoli: una passata di rosso sotto la parola in corsivo, che si stende quando il titolo entra */
@@ -2252,3 +2252,9 @@ a.mp:hover .mp-t{color:var(--red-ink)}
   .section-title em{transition:background-size 1s var(--ease-out) .3s}
   .section-head:not(.visible) .section-title em{background-size:0% .16em}
 }
+/* Tema scuro: la scheda rossa "Ogni settimana" più scura, così i pulsanti bianchi si leggono (contrasto AA) */
+[data-theme="dark"] .mp-follow{background:#A51D24}
+.rv-marquee:focus-visible{outline:2px solid var(--red);outline-offset:4px;border-radius:12px}
+/* CV in tema scuro: date, etichette e link rossi con il rosso chiaro dei testi (prima 3,5:1, sotto il minimo AA) */
+[data-theme="dark"] :is(.role-badge,.bento-tag,.role-date,.hl-meta,.edu-degree,.sg-title,.cert-date,.cert-view,.vol-org,.honor-org),
+[data-theme="dark"] a[style*="color:var(--red)"]{color:var(--red-ink)!important}

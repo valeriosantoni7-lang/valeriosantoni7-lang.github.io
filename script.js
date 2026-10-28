@@ -1175,6 +1175,7 @@ applyLang(currentLang);
   const fmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, currentLang === 'en' ? ',' : '.');
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce || !('IntersectionObserver' in window)) { viz.forEach(v => v.classList.add('on')); return; }
+  document.documentElement.classList.add('pb-anim'); // la fascia dei numeri si anima solo se questo script gira
   const run = el => {
     const end = +el.dataset.count, t0 = performance.now(), dur = 1400;
     const step = t => {
