@@ -1054,19 +1054,29 @@ applyLang(currentLang);
     document.querySelectorAll(staggerSel).forEach(reveal);
   }
 
-  // SAFETY NET: se qualcosa è ancora nascosto poco dopo il load (es. browser
-  // in-app di Instagram dove gli observer a volte non scattano), forzalo visibile.
+  // SAFETY NET: se l'observer non scatta (es. browser in-app di Instagram),
+  // mostra solo ciò che è già stato raggiunto scorrendo. Il resto aspetta di
+  // entrare nello schermo, così le animazioni si vedono quando ci arrivi.
   function safetyReveal() {
+    var vh = window.innerHeight || document.documentElement.clientHeight;
     document.querySelectorAll(
       '.fade-in:not(.visible), .services-grid:not(.visible), .trust-strip:not(.visible), .section-head:not(.visible)'
-    ).forEach(reveal);
+    ).forEach(function(el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < vh * 0.9 || r.bottom <= vh) reveal(el);
+    });
   }
   if (document.readyState === 'complete') {
     setTimeout(safetyReveal, 1000);
   } else {
     window.addEventListener('load', function() { setTimeout(safetyReveal, 1000); });
   }
-  setTimeout(safetyReveal, 2500); // fallback ulteriore
+  var safetyWait = false;
+  window.addEventListener('scroll', function() {
+    if (safetyWait) return;
+    safetyWait = true;
+    setTimeout(function() { safetyWait = false; safetyReveal(); }, 500);
+  }, { passive: true });
 
   /* Navbar style on scroll (sempre attivo, non decorativo-critico) */
   var navbar = document.getElementById('navbar');
@@ -1194,8 +1204,20 @@ applyLang(currentLang);
     });
   }, { threshold: 0.35 });
   viz.forEach(v => obs.observe(v));
-  // Rete di sicurezza: niente grafici vuoti se l'osservatore non scatta
-  setTimeout(() => viz.forEach(v => v.classList.add('on')), 4000);
+  // Rete di sicurezza: niente grafici vuoti se l'osservatore non scatta,
+  // ma solo per quelli già raggiunti scorrendo (gli altri si animano quando arrivano)
+  const late = () => viz.forEach(v => {
+    if (v.classList.contains('on')) return;
+    const r = v.getBoundingClientRect();
+    if (r.top < innerHeight * 0.9 || r.bottom <= innerHeight) { v.classList.add('on'); obs.unobserve(v); }
+  });
+  setTimeout(late, 4000);
+  let lateWait = false;
+  addEventListener('scroll', () => {
+    if (lateWait) return;
+    lateWait = true;
+    setTimeout(() => { lateWait = false; late(); }, 800);
+  }, { passive: true });
 })();
 
 /* =============================================
