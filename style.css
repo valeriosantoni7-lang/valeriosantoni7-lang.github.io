@@ -2258,3 +2258,5 @@ a.mp:hover .mp-t{color:var(--red-ink)}
 /* CV in tema scuro: date, etichette e link rossi con il rosso chiaro dei testi (prima 3,5:1, sotto il minimo AA) */
 [data-theme="dark"] :is(.role-badge,.bento-tag,.role-date,.hl-meta,.edu-degree,.sg-title,.cert-date,.cert-view,.vol-org,.honor-org),
 [data-theme="dark"] a[style*="color:var(--red)"]{color:var(--red-ink)!important}
+/* CV in tema scuro: etichette sotto i numeri della scheda leggibili (contrasto AA) */
+[data-theme="dark"] .pstat-l{color:rgba(255,255,255,.68)}
