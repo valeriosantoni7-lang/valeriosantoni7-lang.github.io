@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="it" data-default-lang="it" data-theme="light" data-title-en="Withdraw from a contract | Valerio Santoni">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://formsubmit.co https://cloudflareinsights.com; form-action 'self' https://formsubmit.co; media-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'"/>
+  <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+  <title>Recedi dal contratto | Valerio Santoni</title>
+  <meta name="description" content="Recesso dalla call 1:1 o dalla revisione del CV: modulo online con conferma, condizioni e tempi del rimborso."/>
+  <meta name="author" content="Valerio Santoni"/>
+  <meta name="robots" content="noindex, nofollow"/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://valerioswiss.com/negozio/recesso"/>
+  <meta property="og:title" content="Recedi dal contratto"/>
+  <meta property="og:description" content="Modulo online per il recesso, con conferma."/>
+  <meta property="og:locale" content="it_IT"/>
+
+  <link rel="canonical" href="https://valerioswiss.com/negozio/recesso"/>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+
+  <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
+  <link rel="stylesheet" href="../style.css?v=34"/>
+  <link rel="stylesheet" href="negozio.css?v=8"/>
+  <style>
+    /* Modulo di recesso (3/11/2026): stessi campi del modulo del negozio, più select, data e note */
+    .wd-box{max-width:640px}
+    .pd-form select,.pd-form input[type=date],.pd-form textarea{font-family:var(--font);font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:12px 14px;width:100%}
+    .pd-form textarea{resize:vertical;min-height:90px}
+    .pd-form select:focus,.pd-form input[type=date]:focus,.pd-form textarea:focus{outline:none;border-color:var(--red)}
+    .wd-sum{margin:0 0 14px;padding:14px 16px;border-radius:12px;background:var(--surface-h);line-height:1.6;color:var(--text2)}
+    .wd-sum b{color:var(--text)}
+    .wd-row{display:flex;gap:10px;flex-wrap:wrap}
+    .wd-row .pd-btn{flex:1 1 220px}
+    .pd-btn.ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+    .pd-btn.ghost:hover{background:var(--surface-h)}
+    .wd-done h2{margin-top:0}
+    .wd-rules li{margin:0 0 8px;line-height:1.55;color:var(--text2)}
+    .wd-rules b{color:var(--text)}
+    [hidden]{display:none !important}
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar--solid" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">VS</a>
+    <button class="hamburger" id="hamburger" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/" class="nav-home" data-i18n="cnav.home">Home</a></li>
+      <li><a href="/#services" data-i18n="nav.services">Servizi</a></li>
+      <li><a href="/#chi-sono" data-i18n="cnav.about">Chi sono</a></li>
+      <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+      <li><a href="/#faq" data-i18n="cnav.faq">FAQ</a></li>
+      <li><a href="/strumenti/" data-i18n="cnav.tools">Strumenti</a></li>
+      <li><a href="/cv" data-i18n="cnav.cv">CV</a></li>
+      <li><a href="/#contact" class="nav-cta" data-i18n="nav.contact">Contatti</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Social icons -->
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/valeriosantoni" target="_blank" rel="noopener" class="nav-icon" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/valerio.swiss/" target="_blank" rel="noopener" class="nav-icon" title="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@valerio.swiss" target="_blank" rel="noopener" class="nav-icon" title="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.84 4.84 0 01-1.01-.07z"/></svg>
+        </a>
+      </div>
+      <!-- Language toggle -->
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')" aria-label="Switch to English">EN</button>
+        <button class="lang-btn" id="btn-it" onclick="setLang('it')" aria-label="Passa all'italiano">IT</button>
+      </div>
+      <!-- Theme toggle -->
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="#F59E0B"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v1a1 1 0 01-2 0V3a1 1 0 011-1zm0 18a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zM5.64 5.64a1 1 0 011.41 0l.71.71a1 1 0 01-1.41 1.41l-.71-.71a1 1 0 010-1.41zm12.02 12.02a1 1 0 011.41 0l.71.71a1 1 0 01-1.41 1.41l-.71-.71a1 1 0 010-1.41zM2 12a1 1 0 011-1h1a1 1 0 010 2H3a1 1 0 01-1-1zm18 0a1 1 0 011-1h1a1 1 0 010 2h-1a1 1 0 01-1-1zM5.64 18.36a1 1 0 010-1.41l.71-.71a1 1 0 011.41 1.41l-.71.71a1 1 0 01-1.41 0zm12.02-12.02a1 1 0 010-1.41l.71-.71a1 1 0 011.41 1.41l-.71.71a1 1 0 01-1.41 0z"/></svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21.64 13a1 1 0 00-1.05-.14 8.05 8.05 0 01-3.37.73A8.15 8.15 0 019.08 5.49a8.59 8.59 0 01.25-2 1 1 0 00-1.28-1.18A10 10 0 1021.78 14.05a1 1 0 00-.14-1.05z"/></svg>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<header class="ty-hero">
+  <a href="/negozio/" class="pd-back" data-en="← Guide, CV Pack, CV review and 1:1 call">← Guida, CV Pack, revisione e call 1:1</a>
+  <span class="pd-pill" data-en="Right of withdrawal">Diritto di recesso</span>
+  <h1 data-en-html="Withdraw &lt;em&gt;from a contract&lt;/em&gt;">Recedi <em>dal contratto</em></h1>
+  <p class="pd-lead" data-en="If you bought the 1:1 call or the CV review, you can withdraw within 14 days of purchase, as long as the service hasn't been fully performed. Fill in the form: you get a confirmation with date and time straight away.">Se hai comprato la call 1:1 o la revisione del CV, puoi recedere entro 14 giorni dall'acquisto, finché il servizio non è stato svolto per intero. Compila il modulo: ricevi subito una conferma con data e ora.</p>
+</header>
+
+<main>
+<section class="pd-sec">
+  <div class="pd-box wd-box">
+    <form class="pd-form" id="wd-form" novalidate>
+      <div id="wd-step1">
+        <label for="wd-name" data-en="Full name">Nome e cognome</label>
+        <input type="text" id="wd-name" name="name" autocomplete="name" maxlength="120" required/>
+        <label for="wd-email" data-en="Email used for the purchase">Email usata per l'acquisto</label>
+        <input type="email" id="wd-email" name="email" autocomplete="email" maxlength="200" required/>
+        <label for="wd-product" data-en="What you want to withdraw from">Da cosa vuoi recedere</label>
+        <select id="wd-product" name="prodotto" required>
+          <option value="" data-en="Choose…">Scegli…</option>
+          <option value="Call 1:1 (69 €)" data-en="1:1 call (€69)">Call 1:1 (69 €)</option>
+          <option value="Revisione del CV (39 €)" data-en="CV review (€39)">Revisione del CV (39 €)</option>
+          <option value="CV Pack (19 €)" data-en="CV Pack (€19)">CV Pack (19 €)</option>
+        </select>
+        <label for="wd-date" data-en="Purchase date (if you remember it)">Data dell'acquisto (se te la ricordi)</label>
+        <input type="date" id="wd-date" name="data_acquisto"/>
+        <label for="wd-note" data-en="Notes (optional, you don't have to give a reason)">Note (facoltative, non serve un motivo)</label>
+        <textarea id="wd-note" name="note" maxlength="2000"></textarea>
+        <div class="hp-field" aria-hidden="true"><label for="wd-honey">Lascia vuoto</label><input type="text" id="wd-honey" name="_honey" tabindex="-1" autocomplete="off"/></div>
+        <p class="pd-small" data-en-html="I use these details only to handle your withdrawal and the refund (&lt;a href=&quot;/privacy&quot;&gt;privacy&lt;/a&gt;).">Uso questi dati solo per gestire il recesso e il rimborso (<a href="/privacy">privacy</a>).</p>
+        <button type="button" class="pd-btn" id="wd-next" data-en="Withdraw from the contract here">Recedi dal contratto qui</button>
+        <p class="pd-msg" id="wd-err" role="alert"></p>
+      </div>
+
+      <div id="wd-step2" hidden>
+        <p class="wd-sum" id="wd-sum"></p>
+        <div class="wd-row">
+          <button type="submit" class="pd-btn" id="wd-confirm" data-en="Confirm withdrawal">Conferma il recesso</button>
+          <button type="button" class="pd-btn ghost" id="wd-back" data-en="Edit">Modifica</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="wd-done" id="wd-done" hidden aria-live="polite">
+      <h2 id="wd-done-h">Recesso ricevuto</h2>
+      <p class="wd-sum" id="wd-done-sum"></p>
+      <p class="pd-small" id="wd-done-note"></p>
+    </div>
+  </div>
+</section>
+
+<section class="pd-sec">
+  <h2 data-en="What applies">Cosa vale</h2>
+  <ul class="wd-rules">
+    <li class="l-it"><b>Call 1:1:</b> puoi recedere entro 14 giorni dall'acquisto, finché la call non si è svolta. Fino a 24 ore prima puoi anche annullarla direttamente dal link di Cal.com, con rimborso completo.</li>
+    <li class="l-en" lang="en"><b>1:1 call:</b> you can withdraw within 14 days of purchase, as long as the call hasn't taken place. Up to 24 hours before, you can also cancel it directly from the Cal.com link, with a full refund.</li>
+    <li class="l-it"><b>Revisione del CV:</b> finché non ho iniziato a lavorarci il rimborso è completo; una volta consegnata la revisione il diritto di recesso non vale più.</li>
+    <li class="l-en" lang="en"><b>CV review:</b> until I have started working on it the refund is in full; once the review is delivered the right of withdrawal no longer applies.</li>
+    <li class="l-it"><b>CV Pack:</b> con la consegna immediata dei file il diritto di recesso non si applica. Se un file non funziona o non corrisponde alla descrizione, ti mando quello giusto o ti rimborso: usa lo stesso modulo.</li>
+    <li class="l-en" lang="en"><b>CV Pack:</b> with immediate delivery of the files the right of withdrawal does not apply. If a file doesn't work or doesn't match the description, I send you the right one or refund you: use the same form.</li>
+    <li class="l-it"><b>Rimborso:</b> se è dovuto parte entro 14 giorni, sullo stesso metodo di pagamento (Stripe, Link o Cal.com; per gli acquisti su Stan tramite Stan). Ti rispondo entro 5 giorni lavorativi. Tutte le condizioni sono nelle <a href="/note-legali">note legali</a>.</li>
+    <li class="l-en" lang="en"><b>Refund:</b> if due, it is issued within 14 days to the same payment method (Stripe, Link or Cal.com; for purchases on Stan, through Stan). I reply within 5 working days. Full terms in the <a href="/note-legali">legal notice</a>.</li>
+  </ul>
+</section>
+</main>
+
+<p class="pd-note" data-en="Content and services offered in a personal capacity: general information, not legal, tax or financial advice. Opinions are my own and do not represent those of my employer.">Contenuti e servizi offerti a titolo personale: informazioni generali, non consulenza legale, fiscale o finanziaria. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro.</p>
+
+<script src="../script.js?v=52"></script>
+<script>
+/* Funzione di recesso online (direttiva UE 2023/2673, art. 11a della direttiva 2011/83, dal 19/06/2026):
+   1) "Recedi dal contratto qui" 2) "Conferma il recesso" 3) conferma con data e ora a schermo e via email.
+   Se FormSubmit non risponde, la stessa richiesta parte come email già scritta: non si perde niente. */
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const form = $('wd-form');
+  if (!form) return;
+  const L = (it, en) => ((typeof currentLang !== 'undefined' ? currentLang : 'it') === 'en' ? en : it);
+  let data = null;
+
+  function readForm() {
+    const v = (id) => $(id).value.trim();
+    return { name: v('wd-name'), email: v('wd-email'), prodotto: v('wd-product'), data_acquisto: v('wd-date'), note: v('wd-note') };
+  }
+  const day = (iso) => (iso ? iso.split('-').reverse().join('/') : '');
+  function esc(s) { return s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+  function summary(d) {
+    return L('Recesso da: ', 'Withdrawal from: ') + '<b>' + esc(d.prodotto) + '</b>' +
+      (d.data_acquisto ? L(', acquistato il ', ', bought on ') + esc(day(d.data_acquisto)) : '') + '<br>' +
+      L('A nome di: ', 'Name: ') + '<b>' + esc(d.name) + '</b> · ' + esc(d.email) +
+      (d.when ? '<br>' + L('Richiesta inviata il: ', 'Request sent on: ') + '<b>' + esc(d.when) + '</b>' : '');
+  }
+  function text(d) {
+    return 'Recesso dal contratto\nProdotto: ' + d.prodotto + '\nData dell\'acquisto: ' + (day(d.data_acquisto) || '-') +
+      '\nNome: ' + d.name + '\nEmail: ' + d.email + '\nData e ora della richiesta: ' + d.when + (d.note ? '\nNote: ' + d.note : '');
+  }
+  function done(viaMail) {
+    $('wd-done-h').textContent = viaMail ? L('Ultimo passo: invia l\'email', 'Last step: send the email') : L('Recesso ricevuto', 'Withdrawal received');
+    $('wd-done-sum').innerHTML = summary(data);
+    $('wd-done-note').innerHTML = viaMail
+      ? L('Il modulo in questo momento non risponde: ', 'The form isn\'t responding right now: ') +
+        '<a href="mailto:ciao@valerioswiss.com?subject=' + encodeURIComponent('Recesso dal contratto · ' + data.prodotto) + '&body=' + encodeURIComponent(text(data)) + '">' +
+        L('invia la stessa richiesta via email →', 'send the same request by email →') + '</a> ' +
+        L('Vale allo stesso modo e ti resta una copia tra le email inviate.', 'It counts just the same and you keep a copy in your sent emails.')
+      : L('Ti ho mandato una conferma via email (guarda anche in Spam). Salva o stampa questa pagina: ti rispondo entro 5 giorni lavorativi e, se il rimborso è dovuto, parte entro 14 giorni.',
+          'I have sent you a confirmation by email (check Spam too). Save or print this page: I reply within 5 working days and, if a refund is due, it is issued within 14 days.');
+    form.hidden = true;
+    $('wd-done').hidden = false;
+    $('wd-done').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  $('wd-next').addEventListener('click', function () {
+    const d = readForm();
+    const err = $('wd-err');
+    if (!d.name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email) || !d.prodotto) {
+      err.textContent = L('Inserisci nome, email e prodotto.', 'Please enter name, email and product.');
+      err.classList.add('show');
+      return;
+    }
+    err.classList.remove('show');
+    data = d;
+    $('wd-sum').innerHTML = summary(d);
+    $('wd-step1').hidden = true;
+    $('wd-step2').hidden = false;
+    $('wd-confirm').focus();
+  });
+  $('wd-back').addEventListener('click', function () {
+    $('wd-step2').hidden = true;
+    $('wd-step1').hidden = false;
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!data || form.elements['_honey'].value) return;
+    const btn = $('wd-confirm');
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+    data.when = new Date().toLocaleString('it-CH', { timeZone: 'Europe/Zurich', dateStyle: 'long', timeStyle: 'short' });
+    const payload = {
+      name: data.name, email: data.email, prodotto: data.prodotto,
+      'Data dell\'acquisto': day(data.data_acquisto) || '-', note: data.note || '-',
+      'Data e ora della richiesta': data.when,
+      _subject: 'Recesso dal contratto · ' + data.prodotto,
+      _template: 'table', _captcha: 'false',
+      _autoresponse: 'Ho ricevuto la tua richiesta di recesso (' + data.prodotto + ') del ' + data.when +
+        '. Ti rispondo entro 5 giorni lavorativi; se il rimborso è dovuto, parte entro 14 giorni sullo stesso metodo di pagamento. ' +
+        'Valerio Swiss · ciao@valerioswiss.com · Condizioni: valerioswiss.com/note-legali'
+    };
+    const timer = new AbortController();
+    setTimeout(() => timer.abort(), 15000);
+    fetch('https://formsubmit.co/ajax/ciao@valerioswiss.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: timer.signal
+    })
+      .then((r) => r.json().catch(() => ({})))
+      .then((res) => done(!(res && String(res.success) === 'true')))
+      .catch(() => done(true));
+  });
+})();
+</script>
+<!-- Statistiche senza cookie (Cloudflare Web Analytics, dal 26/10/2026; vedi /privacy) -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "af2e90f55a5d426983c303538f4f463f"}'></script>
+</body>
+</html>

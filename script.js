@@ -3,7 +3,7 @@
    ============================================= */
 const T = {
   en: {
-    "legal.privacy":"Privacy","legal.terms":"Legal notice and terms",
+    "legal.privacy":"Privacy","legal.terms":"Legal notice and terms","legal.withdraw":"Withdraw from a contract",
     "a11y.skip":"Skip to content",
     "chero.f1":"Countries lived in","chero.f2":"First job in Switzerland","chero.f3":"Languages","chero.bio":"Italian in Geneva · background in banking, data and AI · double degree between Italy and France",
     "chero.leap":"I made the move","chero.where":"Italian in Geneva · work and career in Switzerland","chero.gt":"Free guide","chero.gs":"16 pages · PDF (in Italian)",
@@ -257,14 +257,14 @@ const T = {
     "form.name":"Name","form.name.ph":"Your name",
     "form.email":"Email","form.email.ph":"your@email.com",
     "form.message":"Message","form.msg.ph":"What would you like to discuss?",
-    "form.privacy":"By sending this form you accept the <a href=\"/privacy\">privacy notice</a>: I use your name, email and message only to reply.","form.send":"Send Message →","form.sent":"✓ Message sent! I'll get back to you soon.","form.sending":"Sending…","form.error":"Something went wrong. Retry or email ciao@valerioswiss.com",
+    "form.privacy":"By sending this form you accept the <a href=\"/privacy\">privacy notice</a>: I use your name, email and message only to reply.","form.send":"Send Message →","form.sent":"✓ Message sent! I'll get back to you soon.","form.fail":"The form isn't responding right now, but your message isn't lost:","form.fail.link":"send it by email →","form.sending":"Sending…","form.error":"Something went wrong. Retry or email ciao@valerioswiss.com",
     "footer.copy":"© 2026 Valerio Santoni · Built with passion in Switzerland 🇨🇭",
     "footer.disclaimer":"The views expressed on this website are my own and do not represent those of my employer. Coaching services and content are provided in a personal capacity and are not affiliated with, sponsored or endorsed by any employer.",
     "floating.cta":"Free guide",
     "footer.cv":"CV →"
   },
   it: {
-    "legal.privacy":"Privacy","legal.terms":"Note legali e condizioni",
+    "legal.privacy":"Privacy","legal.terms":"Note legali e condizioni","legal.withdraw":"Recedi dal contratto",
     "a11y.skip":"Salta al contenuto",
     "chero.f1":"Paesi in cui ho vissuto","chero.f2":"Primo lavoro in Svizzera","chero.f3":"Lingue","chero.bio":"Italiano a Ginevra · esperienza in banca, dati e AI · doppia laurea tra Italia e Francia",
     "chero.leap":"Ho fatto il salto","chero.where":"Italiano a Ginevra · lavoro e carriera in Svizzera","chero.gt":"Guida gratuita","chero.gs":"16 pagine · PDF",
@@ -519,7 +519,7 @@ const T = {
     "form.name":"Nome","form.name.ph":"Il tuo nome",
     "form.email":"Email","form.email.ph":"tua@email.com",
     "form.message":"Messaggio","form.msg.ph":"Di cosa vorresti parlare?",
-    "form.privacy":"Usando il modulo accetti l'<a href=\"/privacy\">informativa privacy</a>: uso nome, email e messaggio solo per risponderti.","form.send":"Invia messaggio →","form.sent":"✓ Messaggio inviato! Ti rispondo presto.","form.sending":"Invio in corso…","form.error":"Qualcosa è andato storto. Riprova o scrivi a ciao@valerioswiss.com",
+    "form.privacy":"Usando il modulo accetti l'<a href=\"/privacy\">informativa privacy</a>: uso nome, email e messaggio solo per risponderti.","form.send":"Invia messaggio →","form.sent":"✓ Messaggio inviato! Ti rispondo presto.","form.fail":"Il modulo in questo momento non risponde, ma il messaggio non è perso:","form.fail.link":"mandalo via email →","form.sending":"Invio in corso…","form.error":"Qualcosa è andato storto. Riprova o scrivi a ciao@valerioswiss.com",
     "footer.copy":"© 2026 Valerio Santoni · Realizzato con passione in Svizzera 🇨🇭",
     "footer.disclaimer":"Le opinioni espresse in questo sito sono personali e non rappresentano quelle del mio datore di lavoro. Le attività di coaching e i contenuti sono svolti a titolo personale e non sono affiliati, sponsorizzati o approvati da alcun datore di lavoro.",
     "floating.cta":"Guida gratuita",
@@ -721,11 +721,12 @@ if (navLinks && !navLinks.querySelector('.menu-extra')) {
   navLinks.appendChild(li);
 }
 
-/* Privacy e note legali in fondo a ogni pagina (01/10/2026) */
+/* Privacy, note legali e recesso in fondo a ogni pagina (01/10/2026; recesso dal 3/11/2026,
+   funzione di recesso online chiesta dalla direttiva UE 2023/2673 dal 19/06/2026) */
 if (!document.querySelector('.legal-links')) {
   const ll = document.createElement('p');
   ll.className = 'legal-links';
-  ll.innerHTML = '<a href="/privacy" data-i18n="legal.privacy">Privacy</a> · <a href="/note-legali" data-i18n="legal.terms">Note legali e condizioni</a>';
+  ll.innerHTML = '<a href="/privacy" data-i18n="legal.privacy">Privacy</a> · <a href="/note-legali" data-i18n="legal.terms">Note legali e condizioni</a> · <a href="/negozio/recesso" data-i18n="legal.withdraw">Recedi dal contratto</a>';
   const footer = document.querySelector('.footer .footer-inner') || document.querySelector('footer');
   if (footer) footer.appendChild(ll);
   else (document.querySelector('main') || document.body).appendChild(ll);
@@ -912,25 +913,35 @@ document.querySelectorAll('.hl-grid .fade-in, .cert-grid .fade-in, .lang-grid .f
       _honey: ''
     };
 
-    var submittedNatively = false;
-    function nativeSubmitFallback() {
-      if (submittedNatively) return;
-      submittedNatively = true;
-      // Bypass the JS handler by removing it, then submit (HTML action/method take over)
-      form.removeAttribute('id');
-      form.submit();
+    // Se FormSubmit non risponde o non è attivo (3/11/2026: errore 522 e indirizzo ciao@ da attivare)
+    // il messaggio non si perde: la nota offre un'email già scritta, invece di mandare
+    // il visitatore su una pagina di errore.
+    function mailFallback() {
+      const body = payload.message + '\n\n— ' + payload.name + ' (' + payload.email + ')';
+      const href = 'mailto:ciao@valerioswiss.com?subject=' + encodeURIComponent('Messaggio dal sito') + '&body=' + encodeURIComponent(body);
+      note.textContent = (T[L]['form.fail'] || T.en['form.fail']) + ' ';
+      const a = document.createElement('a');
+      a.href = href;
+      a.textContent = T[L]['form.fail.link'] || T.en['form.fail.link'];
+      note.appendChild(a);
+      note.style.color = '';
+      if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
     }
 
+    // Se dopo 12 secondi non risponde si passa all'email (un 522 può durare mezzo minuto)
+    const timer = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+    if (timer) setTimeout(function() { timer.abort(); }, 12000);
     fetch('https://formsubmit.co/ajax/ciao@valerioswiss.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
+      signal: timer ? timer.signal : undefined
     })
     .then(function(r) { return r.json().catch(function() { return {}; }); })
     .then(function(data) {
       // Formsubmit returns {success:"true"} on success, or {success:"false", message:"..."} if not yet activated
-      if (data && data.success === 'false') {
-        nativeSubmitFallback();
+      if (!data || String(data.success) !== 'true') {
+        mailFallback();
         return;
       }
       note.textContent = T[L]['form.sent'] || T.en['form.sent'];
@@ -940,8 +951,7 @@ document.querySelectorAll('.hl-grid .fade-in, .cert-grid .fade-in, .lang-grid .f
       setTimeout(function() { note.textContent = ''; }, 7000);
     })
     .catch(function() {
-      // Network / CORS error → fallback to native form submit
-      nativeSubmitFallback();
+      mailFallback();
     });
   });
 })();
