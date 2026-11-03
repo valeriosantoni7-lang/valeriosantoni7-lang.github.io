@@ -134,11 +134,29 @@
   <!-- Calendario di Cal.com incorporato (25/10/2026): evento cal.com/valerioswiss/call, orari lun-ven 18:30-21:00 e sabato 11:00-15:00. -->
   <div class="pd-box pd-cal" id="cal-embed" style="padding:0;overflow:hidden;min-height:640px"></div>
   <p class="pd-small"><span class="l-it">Il calendario non si carica? Prenota da qui: </span><span class="l-en" lang="en">Calendar not loading? Book here: </span><a href="https://cal.com/valerioswiss/call" target="_blank" rel="noopener">cal.com/valerioswiss/call</a></p>
+  <!-- Dopo la prenotazione (3/11/2026): Cal.com gratuito non reindirizza alla pagina di ringraziamento,
+       quindi il form pre-call sta qui e si evidenzia quando l'embed segnala la prenotazione (nessun reindirizzamento,
+       per non interrompere il pagamento). -->
+  <div class="pd-box ty-help" id="dopo-prenotazione" style="margin-top:16px">
+    <p class="l-it"><b>Hai prenotato? Ultimo passo:</b> compila il <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs61Y6vh6fRuop4qturCGyRp7CubCWjvp9IHQr6HjjsiaqmA/viewform" target="_blank" rel="noopener">form pre-call</a> (5-7 minuti) almeno 24 ore prima della call, così arrivo preparato sul tuo caso. Se non hai messo il CV nella prenotazione, rispondi all'email di conferma con il PDF. <a href="/negozio/grazie-call">Tutti i passi →</a></p>
+    <p class="l-en" lang="en"><b>Booked? One last step:</b> fill in the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs61Y6vh6fRuop4qturCGyRp7CubCWjvp9IHQr6HjjsiaqmA/viewform" target="_blank" rel="noopener">pre-call form</a> (5-7 minutes, in Italian) at least 24 hours before the call, so I come prepared on your case. If you didn't add your CV when booking, reply to the confirmation email with the PDF. <a href="/negozio/grazie-call">All the steps →</a></p>
+  </div>
   <script>
   (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
   Cal("init", "call", { origin: "https://cal.com" });
   Cal.ns.call("inline", { elementOrSelector: "#cal-embed", calLink: "valerioswiss/call", config: { layout: "month_view", theme: "light" } });
   Cal.ns.call("ui", { hideEventTypeDetails: false, layout: "month_view", theme: "light", cssVarsPerTheme: { light: { "cal-brand": "#C81E28" } } });
+  // Prenotazione fatta: mette in evidenza il form pre-call qui sotto (niente reindirizzamento)
+  function dopoPrenotazione() {
+    var box = document.getElementById("dopo-prenotazione");
+    if (!box || box.dataset.done) return;
+    box.dataset.done = "1";
+    box.style.borderColor = "var(--red)";
+    box.style.boxShadow = "0 0 0 3px var(--red-soft)";
+    box.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  Cal.ns.call("on", { action: "bookingSuccessfulV2", callback: dopoPrenotazione });
+  Cal.ns.call("on", { action: "bookingSuccessful", callback: dopoPrenotazione });
   </script>
 </section>
 
