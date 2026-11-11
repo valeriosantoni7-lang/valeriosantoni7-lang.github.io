@@ -1342,3 +1342,67 @@ applyLang(currentLang);
   window.addEventListener('resize', update);
   update();
 })();
+
+/* Modulo della guida dentro articoli e strumenti (11/11/2026).
+   Nei riquadri .callout e .cta-box il link a /negozio/guida diventa il modulo email di MailerLite,
+   così chi arriva da Google si iscrive senza cambiare pagina. Senza JavaScript resta il link.
+   La pagina deve avere https://assets.mailerlite.com in connect-src della Content-Security-Policy:
+   se manca, il link resta com'è. Stesso modulo, stessi testi e stessa pagina di arrivo di /negozio/guida. */
+(function () {
+  var ML = 'https://assets.mailerlite.com/jsonp/2683285/forms/200487535580809020/subscribe';
+  var MAIL = '<a href="mailto:ciao@valerioswiss.com?subject=Guida%20gratuita">ciao@valerioswiss.com</a>';
+  var T = {
+    it: { name: 'Nome', namePh: 'Il tuo nome', email: 'Email', emailPh: 'nome@email.com', hp: 'Lascia vuoto', btn: 'Mandami la guida',
+          small: 'Ricevi la guida via email, nei giorni dopo qualche email con strumenti gratuiti e consigli pratici, poi al massimo una newsletter al mese. Puoi cancellarti con un clic da ogni email. Niente spam, e il tuo indirizzo non viene ceduto a nessuno. Iscrivendoti confermi di avere almeno 16 anni. <a href="/privacy">Informativa privacy</a>.',
+          err: 'Qualcosa non ha funzionato. Controlla l\'indirizzo email e riprova, oppure scrivimi a ' + MAIL + ' e te la mando io.' },
+    en: { name: 'First name', namePh: 'Your first name', email: 'Email', emailPh: 'name@email.com', hp: 'Leave empty', btn: 'Send me the guide',
+          small: 'You get the guide by email, a few emails with free tools and practical tips over the following days, then at most one newsletter a month. You can unsubscribe with one click from any email. No spam, and your address is never passed on. By signing up you confirm you are 16 or over. <a href="/privacy">Privacy notice</a>.',
+          err: 'Something went wrong. Check your email address and try again, or email me at ' + MAIL + ' and I will send it to you.' }
+  };
+  function build(link, i) {
+    var t = link.closest('.l-en, [lang="en"]') ? T.en : T.it;
+    var form = document.createElement('form');
+    form.className = 'gf';
+    form.noValidate = true;
+    form.innerHTML =
+      '<div class="gf-row">' +
+        '<label class="gf-lab" for="gf-n' + i + '">' + t.name + '</label>' +
+        '<input type="text" id="gf-n' + i + '" name="name" autocomplete="given-name" placeholder="' + t.namePh + '"/>' +
+        '<label class="gf-lab" for="gf-e' + i + '">' + t.email + '</label>' +
+        '<input type="email" id="gf-e' + i + '" name="email" autocomplete="email" required placeholder="' + t.emailPh + '"/>' +
+        '<div class="hp-field" aria-hidden="true"><label for="gf-w' + i + '">' + t.hp + '</label><input type="text" id="gf-w' + i + '" name="website" tabindex="-1" autocomplete="off"/></div>' +
+        '<button type="submit">' + t.btn + '</button>' +
+      '</div>' +
+      '<p class="gf-err" role="alert" hidden>' + t.err + '</p>' +
+      '<p class="gf-small">' + t.small + '</p>';
+    link.parentNode.insertBefore(form, link);
+    link.parentNode.removeChild(link);
+    var btn = form.querySelector('button');
+    var err = form.querySelector('.gf-err');
+    var email = form.querySelector('input[type=email]');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      err.hidden = true;
+      // Campo nascosto anti-spam: se è compilato è un bot, non si invia niente
+      if (form.querySelector('input[name=website]').value) { location.href = '/negozio/grazie-guida'; return; }
+      if (!email.value || !email.checkValidity()) { err.hidden = false; email.focus(); return; }
+      var data = new FormData();
+      data.append('fields[email]', email.value.trim());
+      data.append('fields[name]', form.querySelector('input[name=name]').value.trim());
+      data.append('ml-submit', '1');
+      data.append('anticsrf', 'true');
+      btn.disabled = true;
+      fetch(ML, { method: 'POST', body: data })
+        .then(function (r) { return r.json(); })
+        .then(function (j) { if (j && j.success) { location.href = '/negozio/grazie-guida'; } else { throw new Error('ml'); } })
+        .catch(function () { btn.disabled = false; err.hidden = false; });
+    });
+  }
+  function init() {
+    var csp = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
+    if (csp && csp.content.indexOf('assets.mailerlite.com') === -1) return;
+    var links = document.querySelectorAll('.callout a[href="/negozio/guida"], .cta-box a[href="/negozio/guida"]');
+    Array.prototype.forEach.call(links, build);
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
+})();

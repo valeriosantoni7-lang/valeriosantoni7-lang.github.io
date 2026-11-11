@@ -2260,3 +2260,25 @@ a.mp:hover .mp-t{color:var(--red-ink)}
 [data-theme="dark"] a[style*="color:var(--red)"]{color:var(--red-ink)!important}
 /* CV in tema scuro: etichette sotto i numeri della scheda leggibili (contrasto AA) */
 [data-theme="dark"] .pstat-l{color:rgba(255,255,255,.68)}
+
+/* Modulo della guida dentro articoli e strumenti (11/11/2026, script.js lo mette al posto del link) */
+html .gf{margin:4px 0 0;text-align:left}
+html .gf-row{display:grid;grid-template-columns:1fr 1.35fr auto;gap:10px}
+html .gf .gf-lab{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html .gf input[type=text],html .gf input[type=email]{min-width:0;font-family:inherit;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:13px 14px}
+html .gf input::placeholder{color:var(--text3);opacity:1}
+html .gf input:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+html .gf button{font-family:inherit;font-size:16px;font-weight:700;border:0;border-radius:999px;padding:13px 24px;cursor:pointer;background:var(--red);color:#fff;white-space:nowrap;transition:transform .15s ease}
+html .gf button:active{transform:scale(.97)}
+html .gf button[disabled]{opacity:.6;cursor:default}
+html .gf p.gf-small{font-size:12.5px;line-height:1.55;margin:12px 0 0;color:var(--text2)}
+html .gf p.gf-err{font-size:14px;line-height:1.5;margin:10px 0 0;font-weight:600;color:var(--text)}
+html .gf p.gf-small a,html .gf p.gf-err a{display:inline;background:none;color:inherit;padding:0;margin:0;border:0;border-radius:0;font-weight:inherit;text-decoration:underline;box-shadow:none}
+/* nel riquadro rosso degli articoli */
+html .callout .gf input[type=text],html .callout .gf input[type=email]{background:#fff;color:#121110;border-color:transparent}
+html .callout .gf input::placeholder{color:#6b6560}
+html .callout .gf input:focus-visible{outline-color:#fff}
+html .callout .gf button{background:#121110;color:#fff}
+html .callout .gf p.gf-small,html .callout .gf p.gf-err{color:rgba(255,255,255,.94)}
+@media (max-width:640px){html .gf-row{grid-template-columns:1fr}html .gf button{width:100%}}
+@media (prefers-reduced-motion:reduce){html .gf button{transition:none}}
