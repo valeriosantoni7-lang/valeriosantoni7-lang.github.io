@@ -2280,5 +2280,6 @@ html .callout .gf input::placeholder{color:#6b6560}
 html .callout .gf input:focus-visible{outline-color:#fff}
 html .callout .gf button{background:#121110;color:#fff}
 html .callout .gf p.gf-small,html .callout .gf p.gf-err{color:rgba(255,255,255,.94)}
+html .gf + a{margin-top:16px}
 @media (max-width:640px){html .gf-row{grid-template-columns:1fr}html .gf button{width:100%}}
 @media (prefers-reduced-motion:reduce){html .gf button{transition:none}}
