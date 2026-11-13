@@ -1394,7 +1394,14 @@ applyLang(currentLang);
       btn.disabled = true;
       fetch(ML, { method: 'POST', body: data })
         .then(function (r) { return r.json(); })
-        .then(function (j) { if (j && j.success) { location.href = '/negozio/grazie-guida'; } else { throw new Error('ml'); } })
+        .then(function (j) {
+          if (j && j.success) {
+            // Avviso a Valerio (13/11/2026): passano solo pagina e sito di provenienza, mai nome o email
+            var rif = '';
+            try { rif = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e2) {}
+            location.href = '/negozio/grazie-guida?da=' + encodeURIComponent(location.pathname) + (rif ? '&rif=' + encodeURIComponent(rif) : '');
+          } else { throw new Error('ml'); }
+        })
         .catch(function () { btn.disabled = false; err.hidden = false; });
     });
   }

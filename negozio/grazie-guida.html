@@ -2,7 +2,7 @@
 <html lang="it" data-default-lang="it" data-theme="light" data-title-en="Your guide is on its way: check your inbox | Valerio Santoni">
 <head>
   <meta charset="UTF-8"/>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.cal.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://assets.mailerlite.com https://app.cal.com https://cloudflareinsights.com; form-action 'self'; media-src 'self'; frame-src https://app.cal.com https://cal.com; object-src 'none'; base-uri 'self'"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://app.cal.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://assets.mailerlite.com https://app.cal.com https://cloudflareinsights.com https://formsubmit.co; form-action 'self'; media-src 'self'; frame-src https://app.cal.com https://cal.com; object-src 'none'; base-uri 'self'"/>
   <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
@@ -105,6 +105,40 @@
 
 <p class="pd-note" data-en="Content and services offered in a personal capacity: general information, not legal, tax or financial advice. Opinions are my own and do not represent those of my employer.">Contenuti e servizi offerti a titolo personale: informazioni generali, non consulenza legale, fiscale o finanziaria. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro.</p>
 
+<script>
+/* Avviso a ogni download della guida (13/11/2026). Chi si iscrive arriva qui con ?da=<pagina>&rif=<sito>:
+   il sito manda a ciao@ un'email con data, pagina e provenienza. Nessun nome, nessuna email di chi scarica.
+   I parametri vengono tolti dalla barra, così ricaricare la pagina non manda un secondo avviso. */
+(function () {
+  try {
+    var q = new URLSearchParams(location.search);
+    var da = q.get('da');
+    if (!da) return;
+    var rif = q.get('rif') || '';
+    history.replaceState(null, '', location.pathname);
+    // Solo percorsi del sito e nomi di dominio: niente testo libero dentro l'avviso
+    if (!/^\/[A-Za-z0-9\-_\/\.]{0,120}$/.test(da)) return;
+    if (!/^[A-Za-z0-9\-\.]{0,80}$/.test(rif)) rif = '';
+    var qui = location.hostname;
+    var provenienza = !rif ? 'diretto (nessun sito di provenienza)' : (rif === qui ? 'altra pagina del sito' : rif);
+    fetch('https://formsubmit.co/ajax/ciao@valerioswiss.com', {
+      method: 'POST',
+      keepalive: true,
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'Nuovo download della guida',
+        _template: 'table',
+        _captcha: 'false',
+        pagina: da,
+        provenienza: provenienza,
+        quando: new Date().toLocaleString('it-CH', { timeZone: 'Europe/Zurich' }),
+        lingua: document.documentElement.dataset.lang === 'en' ? 'inglese' : 'italiano',
+        nota: 'Avviso automatico del sito. Non contiene dati di chi ha scaricato: nome ed email sono solo in MailerLite.'
+      })
+    }).catch(function () {});
+  } catch (e) {}
+})();
+</script>
 <script src="../script.js?v=53"></script>
 <!-- Statistiche senza cookie (Cloudflare Web Analytics, dal 26/10/2026; vedi /privacy) -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "af2e90f55a5d426983c303538f4f463f"}'></script>

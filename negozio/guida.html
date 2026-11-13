@@ -184,7 +184,13 @@
     fetch(form.dataset.mlAction, { method: 'POST', body: data })
       .then(function (r) { return r.json(); })
       .then(function (j) {
-        if (j && j.success) { location.href = '/negozio/grazie-guida'; }
+        if (j && j.success) {
+          // Avviso a Valerio (13/11/2026): alla pagina di ringraziamento passano solo la pagina
+          // dell'iscrizione e il sito di provenienza, mai nome o email.
+          var rif = '';
+          try { rif = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e2) {}
+          location.href = '/negozio/grazie-guida?da=' + encodeURIComponent(location.pathname) + (rif ? '&rif=' + encodeURIComponent(rif) : '');
+        }
         else { throw new Error('ml'); }
       })
       .catch(function () { btn.disabled = false; err.classList.add('show'); });
