@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
   <title>Simulatore PAC gratis: quanto diventa il tuo piano di accumulo</title>
-  <meta name="description" content="Versamento mensile, anni, rendimento ipotetico e costi del fondo (TER): vedi quanto potrebbe valere il tuo PAC, quanto hai versato e quanto ti tolgono i costi. Gratis."/>
+  <meta name="description" content="Versamento mensile, anni, rendimento ipotetico, costi del fondo (TER) e tasse in Italia o in Svizzera: vedi quanto potrebbe valere il tuo PAC. Gratis, nel browser."/>
   <meta name="author" content="Valerio Santoni"/>
   <meta name="keywords" content="simulatore pac, piano di accumulo, calcolatore pac, pac etf, interesse composto, quanto rende un pac, costi fondo ter, pac 200 euro al mese"/>
 
@@ -46,7 +46,8 @@
         "mainEntity": [
           {"@type":"Question","name":"Cos'è un PAC?","acceptedAnswer":{"@type":"Answer","text":"Un piano di accumulo (PAC) è un modo di investire versando una cifra fissa a intervalli regolari, di solito ogni mese, in un fondo comune o in un ETF, invece di investire tutto in una volta. Il valore delle quote sale e scende con i mercati: i rendimenti non sono garantiti."}},
           {"@type":"Question","name":"Quanto diventa un PAC da 200 euro al mese per 30 anni?","acceptedAnswer":{"@type":"Answer","text":"Dipende dai rendimenti, che nessuno conosce in anticipo. Con un rendimento ipotetico costante del 5% all'anno e nessun costo, 200 euro al mese per 30 anni diventano circa 166.452 euro, di cui 72.000 versati. Con costi del fondo dello 0,2% all'anno il valore scende a circa 160.400 euro. È una simulazione, non una previsione."}},
-          {"@type":"Question","name":"Quanto pesano i costi di un fondo su un PAC?","acceptedAnswer":{"@type":"Answer","text":"Molto, perché si pagano ogni anno su tutto il capitale accumulato. Con 200 euro al mese per 30 anni e un rendimento ipotetico del 5%, costi annui dello 0,2% tolgono circa 6.000 euro rispetto a un fondo senza costi, costi dell'1,5% circa 39.400 euro. I costi correnti di un fondo si leggono nel KID, il documento contenente le informazioni chiave."}}
+          {"@type":"Question","name":"Quanto pesano i costi di un fondo su un PAC?","acceptedAnswer":{"@type":"Answer","text":"Molto, perché si pagano ogni anno su tutto il capitale accumulato. Con 200 euro al mese per 30 anni e un rendimento ipotetico del 5%, costi annui dello 0,2% tolgono circa 6.000 euro rispetto a un fondo senza costi, costi dell'1,5% circa 39.400 euro. I costi correnti di un fondo si leggono nel KID, il documento contenente le informazioni chiave."}},
+          {"@type":"Question","name":"Quante tasse si pagano su un PAC in Italia e in Svizzera?","acceptedAnswer":{"@type":"Answer","text":"Con la residenza fiscale in Italia, sui guadagni di fondi ed ETF si paga di regola il 26% quando si vende (12,5% per la parte in titoli di Stato) e ogni anno l'imposta di bollo dello 0,2% sul valore, o l'IVAFE della stessa misura se il conto è all'estero. Con 200 euro al mese per 30 anni, un rendimento ipotetico del 5% e costi dello 0,2%, le tasse valgono circa 26.900 euro. In Svizzera il guadagno di capitale sulla sostanza privata è esente, mentre dividendi e proventi dei fondi sono reddito imponibile e il patrimonio paga l'imposta cantonale sulla sostanza."}}
         ]
       }
     ]
@@ -97,7 +98,14 @@
     .result{background:linear-gradient(135deg,var(--red),var(--red-d));color:#fff;border-radius:var(--r-lg);padding:28px;margin-bottom:22px}
     .result .lead{font-size:15px;font-weight:700;color:#fff}
     .result .big{font-size:clamp(36px,6.5vw,56px);font-weight:800;line-height:1.05;margin:8px 0 18px;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em}
-    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+    .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:16px}
+    .kpi[hidden]{display:none!important}
+    .tax-note{font-size:13.5px;line-height:1.6;color:var(--text2);background:var(--bg2);border-radius:12px;padding:12px 14px;margin:4px 0 0}
+    .tax-note b{color:var(--text)}
+    .ch-netto{fill:none;stroke:var(--text2);stroke-width:2.2;stroke-dasharray:1 5;stroke-linecap:round}
+    .legend i.n{background:repeating-linear-gradient(90deg,var(--text2) 0 3px,transparent 3px 6px)}
+    table.cmp .col-n{display:none}
+    table.cmp.it .col-n{display:table-cell}
     .kpi{background:rgba(0,0,0,.16);border-radius:14px;padding:12px 14px}
     .kpi span{display:block;font-size:13px;color:#fff}
     .kpi b{display:block;font-size:20px;font-weight:800;margin-top:2px;font-variant-numeric:lining-nums tabular-nums}
@@ -115,7 +123,7 @@
     .ch-vers{fill:none;stroke:currentColor;stroke-width:2.4;stroke-opacity:.72;stroke-linejoin:round}
     .ch-dot{fill:var(--red);stroke:var(--card);stroke-width:2}
     .ch-dot.v{fill:var(--text2)}
-    .ch-end{font-size:13px;font-weight:800;fill:var(--red-ink);font-variant-numeric:tabular-nums}
+    .ch-end{font-size:13px;font-weight:800;fill:var(--red-ink);font-variant-numeric:tabular-nums;paint-order:stroke;stroke:var(--card);stroke-width:5px;stroke-linejoin:round}
     .ch-end.v{fill:var(--text2);font-weight:700}
     .ch-yr{font-size:12px;font-weight:700;fill:var(--red-ink)}
     #endL{transition:opacity .35s var(--ease-out)}
@@ -267,7 +275,7 @@
     </div>
     <div class="field" style="margin-bottom:0">
       <span class="lbl" id="valLbl" data-en="Currency">Valuta</span>
-      <div class="seg" role="group" aria-labelledby="valLbl">
+      <div class="seg" id="segCur" role="group" aria-labelledby="valLbl">
         <button type="button" data-cur="EUR" class="on" aria-pressed="true" data-en="Euro (€)">Euro (€)</button>
         <button type="button" data-cur="CHF" aria-pressed="false" data-en="Swiss francs (CHF)">Franchi (CHF)</button>
       </div>
@@ -307,6 +315,20 @@
     </div>
   </div>
 
+  <div class="card-box">
+    <h2 data-en="3 · Where you pay taxes">3 · Dove paghi le tasse</h2>
+    <p class="sub" data-en="Choose the country where you are tax resident: the result then includes its taxes on investments, in a simplified way.">Scegli il Paese in cui hai la residenza fiscale: il risultato tiene conto delle sue tasse sugli investimenti, in modo semplificato.</p>
+    <div class="field" style="margin-bottom:0">
+      <span class="lbl" id="paeseLbl" data-en="Tax residence">Residenza fiscale</span>
+      <div class="seg" id="segPaese" role="group" aria-labelledby="paeseLbl">
+        <button type="button" data-paese="no" class="on" aria-pressed="true" data-en="No taxes">Senza tasse</button>
+        <button type="button" data-paese="it" aria-pressed="false" data-en="Italy">Italia</button>
+        <button type="button" data-paese="ch" aria-pressed="false" data-en="Switzerland">Svizzera</button>
+      </div>
+      <p class="tax-note" id="paeseHint">—</p>
+    </div>
+  </div>
+
   <div class="result" id="res" aria-live="polite">
     <div class="lead" id="resLead">—</div>
     <div class="big" id="resBig">—</div>
@@ -314,9 +336,10 @@
       <div class="kpi"><span data-en="You paid in">Hai versato</span><b id="kVers">—</b></div>
       <div class="kpi"><span data-en="From returns, after costs">Dai rendimenti, al netto dei costi</span><b id="kRend">—</b></div>
       <div class="kpi"><span data-en="Lost to fund costs">Persi in costi del fondo</span><b id="kCost">—</b></div>
+      <div class="kpi" id="kTaxBox" hidden><span id="kTaxLbl">—</span><b id="kTax">—</b></div>
     </div>
     <div class="det" id="resDet"></div>
-    <div class="ipo" data-en="Same return every year, before taxes and inflation. A hypothesis, not a forecast.">Stesso rendimento ogni anno, prima di tasse e inflazione. Un'ipotesi, non una previsione.</div>
+    <div class="ipo" id="resIpo">—</div>
   </div>
 
   <div class="card-box">
@@ -330,12 +353,13 @@
       <span><i style="background:var(--red)"></i><span data-en="Value after costs">Valore al netto dei costi</span></span>
       <span id="legLordo"><i class="d"></i><span data-en="Value with no costs">Valore senza costi</span></span>
       <span><i style="background:var(--text2)"></i><span data-en="Paid in">Versato</span></span>
+      <span id="legNetto" style="display:none"><i class="n"></i><span data-en="Net after Italian taxes, if you sell that year">Netto dopo le tasse italiane, se vendi quell'anno</span></span>
     </div>
     <details class="more">
       <summary data-en="See the year-by-year table">Vedi la tabella anno per anno</summary>
       <div class="table-wrap" tabindex="0" role="region" aria-label="Tabella anno per anno" data-en-aria="Year-by-year table">
         <table class="cmp" id="tab">
-          <thead><tr><th scope="col" data-en="Year">Anno</th><th scope="col" data-en="Paid in">Versato</th><th scope="col" data-en="Value">Valore</th><th scope="col" data-en="Returns">Rendimenti</th></tr></thead>
+          <thead><tr><th scope="col" data-en="Year">Anno</th><th scope="col" data-en="Paid in">Versato</th><th scope="col" data-en="Value">Valore</th><th scope="col" data-en="Returns">Rendimenti</th><th scope="col" class="col-n" data-en="Net after taxes">Netto dopo le tasse</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
@@ -351,13 +375,15 @@
   <div class="l-it note-box">
     <b>Come funziona il conto.</b> Ogni fine mese il versamento si aggiunge al capitale, e il capitale cresce del rendimento annuo diviso per 12, meno i costi del fondo. È l'interesse composto: i rendimenti di un anno producono altri rendimenti negli anni dopo, per questo la curva si alza col tempo.<br/><br/>
     <b>Perché è solo un'ipotesi.</b> Qui il rendimento è lo stesso ogni anno. Nella realtà i mercati salgono e scendono, ci sono anni in perdita e un piano può chiudersi anche sotto quanto hai versato, soprattutto se dura poco.<br/><br/>
-    <b>Cosa non è incluso.</b> Le tasse sui guadagni, che cambiano da Paese a Paese (in Svizzera ne parlo in <a href="/blog/capital-gains-svizzera-2026">questo articolo</a>), l'inflazione, le commissioni di acquisto e il cambio di valuta. I valori sono nominali: tra trent'anni la stessa cifra comprerà meno di oggi.
+    <b>Le tasse, in modo semplificato.</b> Con l'Italia il conto aggiunge l'imposta di bollo dello 0,2% all'anno e il 26% sul guadagno se vendi tutto alla fine. Con la Svizzera il guadagno di capitale resta esente, ma le imposte sul reddito dei dividendi e sulla sostanza non sono calcolate (ne parlo in <a href="/blog/capital-gains-svizzera-2026">questo articolo</a>). Per il tuo caso conta la situazione personale: il calcolo non sostituisce un fiscalista.<br/><br/>
+    <b>Cosa non è incluso.</b> L'inflazione, le commissioni di acquisto e il cambio di valuta. I valori sono nominali: tra trent'anni la stessa cifra comprerà meno di oggi.
   </div>
 
   <div class="note-box l-en" lang="en">
     <b>How the maths works.</b> At the end of each month your contribution is added to the capital, and the capital grows by the annual return divided by 12, minus the fund's costs. This is compound interest: one year's returns earn further returns in the years after, which is why the curve rises over time.<br/><br/>
     <b>Why it is only an assumption.</b> Here the return is the same every year. In reality markets go up and down, some years are negative and a plan can even end below what you paid in, especially if it is short.<br/><br/>
-    <b>What is not included.</b> Taxes on gains, which differ from country to country (for Switzerland, see <a href="/blog/capital-gains-svizzera-2026">this article</a>), inflation, purchase fees and currency exchange. Values are nominal: in thirty years the same amount will buy less than today.
+    <b>Taxes, simplified.</b> With Italy the calculation adds stamp duty of 0.2% a year and 26% on the gain if you sell everything at the end. With Switzerland capital gains stay tax-free, but income tax on dividends and wealth tax are not calculated (more in <a href="/blog/capital-gains-svizzera-2026">this article</a>). Your personal situation matters: the calculation does not replace a tax adviser.<br/><br/>
+    <b>What is not included.</b> Inflation, purchase fees and currency exchange. Values are nominal: in thirty years the same amount will buy less than today.
   </div>
 
   <section class="l-it guide">
@@ -365,6 +391,8 @@
     <p>Un piano di accumulo, o PAC, è un modo di investire versando una cifra fissa a intervalli regolari, di solito ogni mese, in un fondo comune o in un ETF, invece di mettere tutto in una volta. Così compri quote sia quando i prezzi sono alti sia quando sono bassi, e il risparmio diventa un'abitudine. Il valore delle quote però sale e scende con i mercati: nessun rendimento è garantito.</p>
     <h2>Perché i costi contano così tanto</h2>
     <p>I costi correnti di un fondo si pagano ogni anno su tutto il capitale accumulato, non solo sui versamenti. Per questo una differenza che sembra piccola pesa molto sul lungo periodo: con 200 € al mese per 30 anni e un rendimento ipotetico del 5%, costi dello 0,2% all'anno tolgono circa 6.000 €, costi dell'1,5% circa 39.400 €. Puoi provarlo nel simulatore con i pulsanti sotto il TER.</p>
+    <h2>Le tasse su un PAC in Italia e in Svizzera</h2>
+    <p>Se hai la residenza fiscale in Italia, sui guadagni di fondi ed ETF paghi di regola il 26% quando vendi (12,5% per la parte in titoli di Stato) e ogni anno l'imposta di bollo dello 0,2% sul valore, o l'IVAFE della stessa misura se il conto è all'estero. Nell'esempio di 200 € al mese per 30 anni al 5% con costi dello 0,2%, le tasse valgono circa 26.900 €: il netto scende da 160.429 € a circa 133.600 €. Se vivi in Svizzera, il guadagno di capitale sulla sostanza privata è esente, mentre dividendi e proventi del fondo sono reddito imponibile e il patrimonio paga l'imposta cantonale sulla sostanza. Le tasse dipendono da dove hai la residenza fiscale, non dalla valuta in cui investi.</p>
     <h2>Quanto diventa un PAC da 200 € al mese</h2>
     <p>Dipende dai rendimenti, che nessuno conosce in anticipo. Con un rendimento ipotetico costante del 5% all'anno e nessun costo, 200 € al mese per 30 anni diventano circa 166.452 €, di cui 72.000 € versati: gli altri 94.452 € sono l'effetto dell'interesse composto. Con un rendimento del 3% o del 7% il risultato cambia di decine di migliaia di euro, ed è per questo che il simulatore mostra tre scenari.</p>
   </section>
@@ -374,6 +402,8 @@
     <p>A PAC (from the Italian <i>piano di accumulo</i>) is a monthly investment plan: you invest a fixed amount at regular intervals, usually every month, in a mutual fund or an ETF, instead of investing everything at once. You buy units both when prices are high and when they are low, and saving becomes a habit. The value of the units goes up and down with the markets, though: no return is guaranteed.</p>
     <h2>Why costs matter so much</h2>
     <p>A fund's ongoing costs are charged every year on all the capital you have built up, not just on your contributions. That is why a difference that looks small weighs heavily over the long run: with 200 a month for 30 years and a hypothetical 5% return, costs of 0.2% a year take away about 6,000, costs of 1.5% about 39,400. You can try it in the simulator with the buttons under the TER.</p>
+    <h2>Taxes on a monthly plan in Italy and Switzerland</h2>
+    <p>If you are tax resident in Italy, you usually pay 26% on gains from funds and ETFs when you sell (12.5% for the part in government bonds) and every year a stamp duty of 0.2% on the value, or IVAFE at the same rate if the account is abroad. In the example of €200 a month for 30 years at 5% with costs of 0.2%, taxes come to about €26,900: the net value drops from €160,429 to about €133,600. If you live in Switzerland, capital gains on private assets are tax-free, while dividends and fund income are taxable income and your assets pay the cantonal wealth tax. Taxes depend on where you are tax resident, not on the currency you invest in.</p>
     <h2>What 200 a month could become</h2>
     <p>It depends on returns, which no one knows in advance. With a constant hypothetical return of 5% a year and no costs, 200 a month for 30 years becomes about 166,452, of which 72,000 paid in: the other 94,452 is the effect of compound interest. With a 3% or 7% return the result changes by tens of thousands, which is why the simulator shows three scenarios.</p>
   </section>
@@ -392,14 +422,22 @@
     <a class="sec" href="calcolatore-stipendio-netto">Work out your net salary</a>
   </div>
 
-  <h2 style="font-size:18px;margin:36px 0 10px" data-en="To find out more">Per approfondire</h2>
+  <h2 style="font-size:18px;margin:36px 0 10px" data-en="Sources and further reading">Fonti e approfondimenti</h2>
   <p class="l-it fonti">
     <a href="https://economiapertutti.bancaditalia.it/aree-tematiche/risparmio-e-investimenti/i-fondi-comuni-di-investimento/index.html" target="_blank" rel="noopener">Banca d'Italia, L'economia per tutti: i fondi comuni di investimento, il KID e i costi</a> ·
-    <a href="https://economiapertutti.bancaditalia.it/notizie-e-rubriche/notizie/pic-e-pac-parliamo-di-investimenti/" target="_blank" rel="noopener">Banca d'Italia, L'economia per tutti: PIC e PAC</a>
+    <a href="https://economiapertutti.bancaditalia.it/notizie-e-rubriche/notizie/pic-e-pac-parliamo-di-investimenti/" target="_blank" rel="noopener">Banca d'Italia, L'economia per tutti: PIC e PAC</a> ·
+    <a href="https://www.agenziaentrate.gov.it/portale/documents/20143/314317/CS+27062014+rendite+finanziarie_88_+Com+st+Circolare+tassazione+redditi+finanziari+27+06+14.pdf/28537f70-6fd6-982b-d87d-52c950d3f0b4" target="_blank" rel="noopener">Agenzia delle Entrate, circolare 19/E del 2014: aliquota del 26% sui redditi finanziari (PDF)</a> ·
+    <a href="https://www.agenziaentrate.gov.it/portale/documents/20143/2707899/Risposta+n.+487_2020.pdf/1f07c23f-e916-65aa-3e3c-f6e16d1d6c3b" target="_blank" rel="noopener">Agenzia delle Entrate, risposta 487/2020: imposta di bollo del 2 per mille sui prodotti finanziari (PDF)</a> ·
+    <a href="https://www.agenziaentrate.gov.it/portale/schede/pagamenti/imposta-valore-att-estero-ivafe/base-imponibile-e-aliquote-scheda-ivafe" target="_blank" rel="noopener">Agenzia delle Entrate, IVAFE: base imponibile e aliquote</a> ·
+    <a href="https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/it" target="_blank" rel="noopener">Legge federale sull'imposta federale diretta (LIFD), art. 16 cpv. 3 e art. 20</a>
   </p>
   <p class="fonti l-en" lang="en">
     <a href="https://economiapertutti.bancaditalia.it/aree-tematiche/risparmio-e-investimenti/i-fondi-comuni-di-investimento/index.html" target="_blank" rel="noopener">Bank of Italy, L'economia per tutti: mutual funds, the KID and costs (in Italian)</a> ·
-    <a href="https://economiapertutti.bancaditalia.it/notizie-e-rubriche/notizie/pic-e-pac-parliamo-di-investimenti/" target="_blank" rel="noopener">Bank of Italy, L'economia per tutti: lump sums and monthly plans (in Italian)</a>
+    <a href="https://economiapertutti.bancaditalia.it/notizie-e-rubriche/notizie/pic-e-pac-parliamo-di-investimenti/" target="_blank" rel="noopener">Bank of Italy, L'economia per tutti: lump sums and monthly plans (in Italian)</a> ·
+    <a href="https://www.agenziaentrate.gov.it/portale/documents/20143/314317/CS+27062014+rendite+finanziarie_88_+Com+st+Circolare+tassazione+redditi+finanziari+27+06+14.pdf/28537f70-6fd6-982b-d87d-52c950d3f0b4" target="_blank" rel="noopener">Italian Revenue Agency, circular 19/E of 2014: 26% rate on financial income (PDF, in Italian)</a> ·
+    <a href="https://www.agenziaentrate.gov.it/portale/documents/20143/2707899/Risposta+n.+487_2020.pdf/1f07c23f-e916-65aa-3e3c-f6e16d1d6c3b" target="_blank" rel="noopener">Italian Revenue Agency, ruling 487/2020: 0.2% stamp duty on financial products (PDF, in Italian)</a> ·
+    <a href="https://www.agenziaentrate.gov.it/portale/schede/pagamenti/imposta-valore-att-estero-ivafe/base-imponibile-e-aliquote-scheda-ivafe" target="_blank" rel="noopener">Italian Revenue Agency, IVAFE: tax base and rates (in Italian)</a> ·
+    <a href="https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/en" target="_blank" rel="noopener">Federal Act on Direct Federal Taxation (DBG/LIFD), art. 16 para. 3 and art. 20</a>
   </p>
 
   <p class="l-it foot-note">Questo strumento fa una simulazione con le ipotesi che inserisci tu. I rendimenti non sono garantiti e quelli del passato non si ripetono per forza. Sono informazioni generali: non è consulenza finanziaria né una raccomandazione a comprare o vendere strumenti finanziari, e qui non trovi prodotti da comprare né link di affiliazione. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro.</p>
@@ -443,6 +481,21 @@
     return out;
   }
 
+  /* Tasse italiane, in modo semplificato, per chi ha la residenza fiscale in Italia:
+     imposta di bollo del 2 per mille all'anno sul valore di fine anno (IVAFE, stessa misura, se il conto è all'estero),
+     pagata ogni anno a parte, e 26% sul guadagno se vendi tutto in quell'anno.
+     Fonti: Agenzia delle Entrate, risposta 487/2020 (bollo 2 per mille dal 2014), scheda IVAFE, circolare 19/E del 2014 (26%). */
+  const BOLLO = 0.002, ALIQ_IT = 0.26;
+  function conTasse(arr){
+    let bollo = 0;
+    return arr.map(p => {
+      if (p.anno > 0) bollo += p.valore * BOLLO;
+      const imp = Math.max(0, p.valore - p.versato) * ALIQ_IT;
+      return Object.assign({}, p, {bollo, imp, netto: p.valore - imp - bollo});
+    });
+  }
+  let paese = 'no';
+
   function dati(){
     return {
       mensile: clamp(num('mensile'), 0, 1e6),
@@ -462,43 +515,75 @@
     $('anniLbl').textContent = anniTxt;
     $('anni').setAttribute('aria-valuetext', anniTxt);
     document.querySelectorAll('.cur').forEach(el => { el.textContent = cur === 'EUR' ? '€' : 'CHF'; });
+    const it = paese === 'it', ch = paese === 'ch';
+    $('paeseHint').innerHTML = it
+      ? L('<b>Residenza fiscale in Italia.</b> Imposta di bollo dello ' + pct(0.2) + ' all\'anno sul valore (se il conto è all\'estero c\'è l\'IVAFE, stessa misura) e 26% sul guadagno quando vendi. Il conto fa come se vendessi tutto alla fine. Per la parte in titoli di Stato l\'aliquota è del 12,5%: qui non è considerata.',
+          '<b>Tax resident in Italy.</b> Stamp duty of ' + pct(0.2) + ' a year on the value (IVAFE, at the same rate, if the account is abroad) and 26% on the gain when you sell. The calculation assumes you sell everything at the end. For the part invested in government bonds the rate is 12.5%: not considered here.')
+      : ch
+      ? L('<b>Residenza fiscale in Svizzera.</b> Per i privati il guadagno di capitale sulla sostanza privata è esente (art. 16 cpv. 3 LIFD). Dividendi e proventi del fondo sono reddito imponibile (art. 20 LIFD) e il patrimonio paga l\'imposta cantonale sulla sostanza: dipendono dal tuo reddito e dal Cantone, quindi qui non sono calcolati. Fa eccezione chi compra e vende titoli in modo professionale.',
+          '<b>Tax resident in Switzerland.</b> For private individuals, capital gains on private assets are tax-free (art. 16 para. 3 DBG/LIFD). Dividends and fund income are taxable income (art. 20 DBG/LIFD) and your assets pay the cantonal wealth tax: they depend on your income and canton, so they are not calculated here. People who trade securities professionally are an exception.')
+      : L('Valori prima di qualsiasi tassa. Scegli Italia o Svizzera per vedere come cambiano.', 'Values before any tax. Choose Italy or Switzerland to see how they change.');
+    $('resIpo').textContent = it
+      ? L('Stesso rendimento ogni anno, tasse italiane semplificate, prima dell\'inflazione. Un\'ipotesi, non una previsione.', 'Same return every year, simplified Italian taxes, before inflation. A hypothesis, not a forecast.')
+      : ch
+      ? L('Stesso rendimento ogni anno, senza le imposte svizzere sul reddito e sulla sostanza, prima dell\'inflazione. Un\'ipotesi, non una previsione.', 'Same return every year, without Swiss income and wealth taxes, before inflation. A hypothesis, not a forecast.')
+      : L('Stesso rendimento ogni anno, prima di tasse e inflazione. Un\'ipotesi, non una previsione.', 'Same return every year, before taxes and inflation. A hypothesis, not a forecast.');
 
     if (d.mensile <= 0 && d.iniziale <= 0){
       last = null;
       $('resLead').textContent = L('Manca il versamento', 'Contribution missing');
       $('resBig').textContent = '—';
-      ['kVers', 'kRend', 'kCost'].forEach(id => { $(id).textContent = '—'; });
+      ['kVers', 'kRend', 'kCost', 'kTax'].forEach(id => { $(id).textContent = '—'; });
       $('resDet').innerHTML = '<span class="err">' + L('Inserisci un versamento mensile o un capitale iniziale.', 'Enter a monthly contribution or a starting sum.') + '</span>';
       $('chart').innerHTML = ''; $('scens').innerHTML = ''; $('tab').querySelector('tbody').innerHTML = '';
       $('scenSub').textContent = '';
       return;
     }
 
-    const con = simula(d.mensile, d.iniziale, d.anni, d.r, d.ter);
+    const con0 = simula(d.mensile, d.iniziale, d.anni, d.r, d.ter);
+    const con = it ? conTasse(con0) : con0;
     const senza = simula(d.mensile, d.iniziale, d.anni, d.r, 0);
     const fin = con[d.anni], finS = senza[d.anni];
     const versato = fin.versato, rend = fin.valore - versato, costi = finS.valore - fin.valore;
 
-    $('resLead').textContent = L('Valore finale ipotetico dopo ', 'Hypothetical final value after ') + anniTxt;
-    $('resBig').textContent = money(fin.valore);
+    $('resLead').textContent = it
+      ? L('Netto ipotetico dopo ' + anniTxt + ', se vendi tutto e paghi le tasse italiane', 'Hypothetical net value after ' + anniTxt + ', if you sell everything and pay Italian taxes')
+      : L('Valore finale ipotetico dopo ', 'Hypothetical final value after ') + anniTxt;
+    $('resBig').textContent = money(it ? fin.netto : fin.valore);
     $('kVers').textContent = money(versato);
     $('kRend').textContent = signed(rend);
     $('kCost').textContent = costi >= 0.5 ? '−' + money(costi) : money(0);
+    $('kTaxBox').hidden = !(it || ch);
+    if (it){
+      $('kTaxLbl').textContent = L('Tasse italiane (26% e bollo)', 'Italian taxes (26% and stamp duty)');
+      $('kTax').textContent = '−' + money(fin.imp + fin.bollo);
+    } else if (ch){
+      $('kTaxLbl').textContent = L('Imposta sul guadagno di capitale', 'Capital gains tax');
+      $('kTax').textContent = money(0);
+    }
 
-    let det;
+    let det = '';
+    if (it){
+      det = L('Prima delle tasse il piano vale <b>' + money(fin.valore) + '</b>. Se vendi tutto alla fine paghi <b>' + money(fin.imp) + '</b> di imposta sul guadagno (26%), e negli anni circa <b>' + money(fin.bollo) + '</b> di imposta di bollo (' + pct(0.2) + ' all\'anno sul valore). ',
+              'Before taxes the plan is worth <b>' + money(fin.valore) + '</b>. If you sell everything at the end you pay <b>' + money(fin.imp) + '</b> of tax on the gain (26%), and over the years about <b>' + money(fin.bollo) + '</b> of stamp duty (' + pct(0.2) + ' a year on the value). ');
+    } else if (ch){
+      det = L('In Svizzera il guadagno di capitale sulla sostanza privata non è tassato; le imposte sul reddito dei dividendi e sulla sostanza non sono calcolate. ',
+              'In Switzerland capital gains on private assets are not taxed; income tax on dividends and wealth tax are not calculated. ');
+    }
     if (d.ter <= 0){
-      det = L('Con costi a zero il valore è quello lordo. Prova con 0,2% o 1% nei costi del fondo per vedere quanto pesano.',
+      det += L('Con costi a zero il valore è quello lordo. Prova con 0,2% o 1% nei costi del fondo per vedere quanto pesano.',
               'With zero costs this is the gross value. Try 0.2% or 1% in the fund costs to see how much they weigh.');
     } else {
-      det = L('Con un fondo senza costi arriveresti a <b>' + money(finS.valore) + '</b>: i costi del fondo (' + pct(d.ter) + ' all\'anno) ti tolgono <b>' + money(costi) + '</b>, cioè ' + ilPct(Math.round(costi / finS.valore * 1000) / 10) + ' del valore senza costi.',
+      det += L('Con un fondo senza costi arriveresti a <b>' + money(finS.valore) + '</b>: i costi del fondo (' + pct(d.ter) + ' all\'anno) ti tolgono <b>' + money(costi) + '</b>, cioè ' + ilPct(Math.round(costi / finS.valore * 1000) / 10) + ' del valore senza costi.',
               'With a fund with no costs you would reach <b>' + money(finS.valore) + '</b>: the fund\'s costs (' + pct(d.ter) + ' a year) take away <b>' + money(costi) + '</b>, or ' + pct(Math.round(costi / finS.valore * 1000) / 10) + ' of the value with no costs.');
     }
     if (rend < 0) det += L(' Al netto dei costi i rendimenti ipotetici sono negativi: finiresti sotto quanto hai versato.',
                            ' After costs the hypothetical returns are negative: you would end up below what you paid in.');
     $('resDet').innerHTML = det;
     $('legLordo').style.display = d.ter > 0 ? '' : 'none';
+    $('legNetto').style.display = it ? '' : 'none';
 
-    last = {d, con, senza};
+    last = {d, con, senza, it};
     chart(false);
     tabella();
     scenari(d);
@@ -520,7 +605,7 @@
     if (!last) return;
     cancelAnimationFrame(raf); animando = false;
     const nascosto = anima || attesa;
-    const {d, con, senza} = last, N = d.anni;
+    const {d, con, senza, it} = last, N = d.anni;
     const W = Math.max(300, Math.round($('chartWrap').clientWidth || 720));
     const small = W < 560;
     const H = small ? 250 : 330, mL = small ? 44 : 56, mR = small ? 10 : 16, mT = 26, mB = 30;
@@ -549,6 +634,7 @@
          '<path class="ch-area" d="' + linea(pv) + 'L' + x(N).toFixed(1) + ' ' + base + 'L' + x(0).toFixed(1) + ' ' + base + 'Z"/>' +
          (d.ter > 0 ? '<path class="ch-lordo" d="' + linea(pl) + '"/>' : '') +
          '<path class="ch-vers" d="' + linea(pc) + '"/>' +
+         (it ? '<path class="ch-netto" d="' + linea(con.map(p => ({anno: p.anno, v: p.netto}))) + '"/>' : '') +
          '<path class="ch-val" d="' + linea(pv) + '"/></g>';
     // etichette finali
     const yV = y(con[N].valore), yC = y(con[N].versato);
@@ -557,11 +643,15 @@
          '<circle class="ch-dot v" cx="' + x(N).toFixed(1) + '" cy="' + yC.toFixed(1) + '" r="4"/>' +
          '<text class="ch-end" x="' + (x(N) - 8).toFixed(1) + '" y="' + (yV - 12).toFixed(1) + '" text-anchor="end">' + money(con[N].valore) + '</text>' +
          (Math.abs(yC - yV) > 30 ? '<text class="ch-end v" x="' + (x(N) - 8).toFixed(1) + '" y="' + (yC - 10).toFixed(1) + '" text-anchor="end">' + money(con[N].versato) + '</text>' : '') +
+         (it ? '<circle class="ch-dot v" cx="' + x(N).toFixed(1) + '" cy="' + y(con[N].netto).toFixed(1) + '" r="3.5"/>' : '') +
          '</g>';
     // punto che corre durante il disegno, e guida per il passaggio col mouse
     g += '<g id="runner" style="display:none"><circle class="ch-dot" r="5"/><text class="ch-yr" text-anchor="middle"></text></g>';
     g += '<g id="hover" style="display:none"><line class="ch-guide" y1="' + mT + '" y2="' + (H - mB) + '"/>' +
-         '<circle class="ch-dot v" r="4"/>' + (d.ter > 0 ? '<circle class="ch-dot" r="3.5" style="opacity:.55"/>' : '') + '<circle class="ch-dot" r="5"/></g>';
+         '<circle id="hvV" class="ch-dot v" r="4"/>' +
+         (d.ter > 0 ? '<circle id="hvL" class="ch-dot" r="3.5" style="opacity:.55"/>' : '') +
+         (it ? '<circle id="hvN" class="ch-dot v" r="3.5"/>' : '') +
+         '<circle id="hvP" class="ch-dot" r="5"/></g>';
     svg.innerHTML = g;
     geo = {W, H, N, x, y, mL, mR, mT, mB};
     if (anima) disegna();
@@ -595,18 +685,18 @@
     const svg = $('chart'), r = svg.getBoundingClientRect();
     const px = (ev.clientX - r.left) * (geo.W / r.width);
     const a = clamp(Math.round((px - geo.mL) / (geo.W - geo.mL - geo.mR) * geo.N), 0, geo.N);
-    const {con, senza, d} = last, p = con[a], ps = senza[a];
+    const {con, senza, d, it} = last, p = con[a], ps = senza[a];
     const hv = $('hover'); hv.style.display = '';
-    const xx = geo.x(a).toFixed(1), c = hv.querySelectorAll('circle'), ln = hv.querySelector('line');
+    const xx = geo.x(a).toFixed(1), ln = hv.querySelector('line');
     ln.setAttribute('x1', xx); ln.setAttribute('x2', xx);
-    c[0].setAttribute('cx', xx); c[0].setAttribute('cy', geo.y(p.versato).toFixed(1));
-    let j = 1;
-    if (d.ter > 0){ c[1].setAttribute('cx', xx); c[1].setAttribute('cy', geo.y(ps.valore).toFixed(1)); j = 2; }
-    c[j].setAttribute('cx', xx); c[j].setAttribute('cy', geo.y(p.valore).toFixed(1));
+    const punto = (id, v) => { const c = $(id); if (c){ c.setAttribute('cx', xx); c.setAttribute('cy', geo.y(v).toFixed(1)); } };
+    punto('hvV', p.versato); punto('hvL', ps.valore); punto('hvP', p.valore);
+    if (it) punto('hvN', p.netto);
     const tip = $('tip');
     tip.innerHTML = '<b>' + L('Anno ', 'Year ') + a + '</b>' +
       '<span><i style="background:var(--red)"></i>' + L('Valore ', 'Value ') + money(p.valore) + '</span><br/>' +
       (d.ter > 0 ? '<span><i class="d" style="background:var(--red-ink);opacity:.55"></i>' + L('Senza costi ', 'No costs ') + money(ps.valore) + '</span><br/>' : '') +
+      (it ? '<span><i style="background:var(--text2);opacity:.6"></i>' + L('Netto dopo le tasse ', 'Net after taxes ') + money(p.netto) + '</span><br/>' : '') +
       '<span><i style="background:var(--text2)"></i>' + L('Versato ', 'Paid in ') + money(p.versato) + '</span>';
     tip.classList.add('on');
     // il riquadro sta in alto, dal lato libero della linea guida
@@ -618,27 +708,34 @@
 
   function tabella(){
     const tb = $('tab').querySelector('tbody');
+    $('tab').classList.toggle('it', !!last.it);
     tb.innerHTML = last.con.slice(1).map(p =>
-      '<tr><td>' + p.anno + '</td><td>' + money(p.versato) + '</td><td>' + money(p.valore) + '</td><td>' + signed(p.valore - p.versato) + '</td></tr>'
+      '<tr><td>' + p.anno + '</td><td>' + money(p.versato) + '</td><td>' + money(p.valore) + '</td><td>' + signed(p.valore - p.versato) + '</td>' +
+      '<td class="col-n">' + (last.it ? money(p.netto) : '') + '</td></tr>'
     ).join('');
   }
 
   function scenari(d){
     const rr = [Math.max(0, d.r - 2), d.r, d.r + 2];
     $('scenSub').textContent = L('Stessi versamenti e stessi costi (' + pct(d.ter) + ' all\'anno): cambia solo il rendimento ipotetico, 2 punti sotto e 2 sopra il tuo. Sono esempi per vedere la forbice, non previsioni.',
-                                 'Same contributions and same costs (' + pct(d.ter) + ' a year): only the hypothetical return changes, 2 points below and 2 above yours. They are examples to show the range, not forecasts.');
+                                 'Same contributions and same costs (' + pct(d.ter) + ' a year): only the hypothetical return changes, 2 points below and 2 above yours. They are examples to show the range, not forecasts.') +
+      (paese === 'it' ? L(' Valori al netto delle tasse italiane, se vendi tutto alla fine.', ' Values after Italian taxes, if you sell everything at the end.') : '');
+    const it = paese === 'it';
     const nomi = [L('Prudente', 'Cautious'), L('Medio', 'Middle'), L('Ottimista', 'Optimistic')];
-    const ris = rr.map(r => simula(d.mensile, d.iniziale, d.anni, r, d.ter)[d.anni]);
-    const maxV = Math.max(...ris.map(p => Math.max(p.valore, p.versato)));
+    const ris = rr.map(r => { const s = simula(d.mensile, d.iniziale, d.anni, r, d.ter); return (it ? conTasse(s) : s)[d.anni]; });
+    const mostrato = p => it ? p.netto : p.valore;
+    const maxV = Math.max(...ris.map(p => Math.max(mostrato(p), p.versato)));
     $('scens').innerHTML = ris.map((p, k) => {
-      const vi = Math.min(p.versato, p.valore) / maxV * 100, gi = Math.max(0, p.valore - p.versato) / maxV * 100;
+      const v = mostrato(p);
+      const vi = Math.min(p.versato, v) / maxV * 100, gi = Math.max(0, v - p.versato) / maxV * 100;
       return '<div class="scen' + (k === 1 ? ' me' : '') + '">' +
         (k === 1 ? '<span class="s-me">' + L('la tua ipotesi', 'your assumption') + '</span>' : '') +
         '<div class="s-name">' + nomi[k] + '</div>' +
-        '<div class="s-r">' + L('ipotesi ', 'assumes ') + pct(rr[k]) + L(' all\'anno', ' a year') + '</div>' +
-        '<div class="s-v">' + money(p.valore) + '</div>' +
+        '<div class="s-r">' + L('ipotesi ', 'assumes ') + pct(rr[k]) + L(' all\'anno', ' a year') + (it ? L(', netto', ', net') : '') + '</div>' +
+        '<div class="s-v">' + money(v) + '</div>' +
         '<div class="s-bar" aria-hidden="true"><i style="width:' + vi.toFixed(1) + '%"></i><b style="width:' + gi.toFixed(1) + '%"></b></div>' +
-        '<div class="s-d">' + L('versato ', 'paid in ') + money(p.versato) + '<br/>' + L('rendimenti ', 'returns ') + signed(p.valore - p.versato) + '</div>' +
+        '<div class="s-d">' + L('versato ', 'paid in ') + money(p.versato) + '<br/>' + L('rendimenti ', 'returns ') + signed(p.valore - p.versato) +
+        (it ? '<br/>' + L('tasse ', 'taxes ') + '−' + money(p.imp + p.bollo) : '') + '</div>' +
         '</div>';
     }).join('');
   }
@@ -649,9 +746,15 @@
     const b = e.target.closest('button'); if (!b) return;
     $(q.dataset.for).value = b.dataset.v; render();
   }));
-  document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => {
-    cur = b.dataset.cur;
-    document.querySelectorAll('.seg button').forEach(x => { const on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); });
+  const scegli = (sel, b) => document.querySelectorAll(sel + ' button').forEach(x => { const on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); });
+  document.querySelectorAll('#segCur button').forEach(b => b.addEventListener('click', () => {
+    cur = b.dataset.cur; scegli('#segCur', b); render();
+  }));
+  // Paese: cambia anche la valuta (Italia in euro, Svizzera in franchi); la valuta si può poi cambiare a mano
+  document.querySelectorAll('#segPaese button').forEach(b => b.addEventListener('click', () => {
+    paese = b.dataset.paese; scegli('#segPaese', b);
+    const v = paese === 'it' ? 'EUR' : paese === 'ch' ? 'CHF' : null;
+    if (v){ cur = v; scegli('#segCur', document.querySelector('#segCur button[data-cur="' + v + '"]')); }
     render();
   }));
   const svg = $('chart');
