@@ -1537,6 +1537,7 @@ body[data-phrases="cv"] section[id]{scroll-margin-top:calc(var(--nav-h) + 56px)}
 .tool.wide .tool-top{grid-column:1;grid-row:1}
 .tool.wide .viz{grid-column:2;grid-row:1 / span 2;align-self:center}
 .tool.wide .tool-go{grid-column:1;grid-row:2}
+.tool.full{grid-column:1 / -1}
 .tool:hover{transform:translateY(-4px);border-color:rgba(236,0,0,.3);box-shadow:0 14px 36px rgba(10,22,40,.09)}
 [data-theme="dark"] .tool{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.08)}
 [data-theme="dark"] .tool:hover{box-shadow:0 14px 36px rgba(0,0,0,.45)}
