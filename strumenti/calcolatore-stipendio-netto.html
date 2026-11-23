@@ -271,6 +271,9 @@
           <option value="0" data-en="None">Nessuno</option>
           <option value="1" data-en="1 child">1 figlio</option>
           <option value="2" data-en="2 children">2 figli</option>
+          <option value="3" data-en="3 children">3 figli</option>
+          <option value="4" data-en="4 children">4 figli</option>
+          <option value="5" data-en="5 children">5 figli</option>
         </select>
       </div>
     </div>
@@ -430,22 +433,32 @@
   var num = function(id, def){ var v = parseFloat(String($(id).value).replace(",", ".")); return isFinite(v) ? v : def; };
 
   // ---- tabelle dell'imposta alla fonte (una per Cantone, caricate quando servono)
-  var cache = {};
-  function carica(kt){
+  // Da 3 a 5 figli le tabelle stanno in un file a parte (<cantone>-figli.json), caricato solo quando serve.
+  var cache = {}, cacheFigli = {};
+  function prepara(t){
+    var f = [];
+    t.f.forEach(function(s){ for (var i = 0; i < s[2]; i++) f.push(Math.round((s[0] + s[1] * i) * 100) / 100); });
+    t.da = f;
+  }
+  function json(url){ return fetch(url).then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); }); }
+  function serveFigli(x){ return x.sit !== "A" && x.figli > 2; }
+  function carica(kt, figli){
+    var base = "/strumenti/dati/qst-2026/" + kt.toLowerCase();
     if (!cache[kt]){
-      cache[kt] = fetch("/strumenti/dati/qst-2026/" + kt.toLowerCase() + ".json")
-        .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(function(d){
-          Object.keys(d.t).forEach(function(c){
-            var t = d.t[c], f = [];
-            t.f.forEach(function(s){ for (var i = 0; i < s[2]; i++) f.push(Math.round((s[0] + s[1] * i) * 100) / 100); });
-            t.da = f;
-          });
-          return d;
-        })
+      cache[kt] = json(base + ".json")
+        .then(function(d){ Object.keys(d.t).forEach(function(c){ prepara(d.t[c]); }); return d; })
         .catch(function(e){ delete cache[kt]; throw e; });
     }
-    return cache[kt];
+    if (!figli) return cache[kt];
+    if (!cacheFigli[kt]){
+      cacheFigli[kt] = cache[kt].then(function(d){
+        return json(base + "-figli.json").then(function(e){
+          Object.keys(e.t).forEach(function(c){ prepara(e.t[c]); d.t[c] = e.t[c]; });
+          return d;
+        });
+      }).catch(function(e){ delete cacheFigli[kt]; throw e; });
+    }
+    return cacheFigli[kt];
   }
   function aliquota(t, reddito){
     var f = t.da, lo = 0, hi = f.length - 1, k = 0;
@@ -538,7 +551,7 @@
     if (confrontoFatto) confronta();
     var x = leggi(), mio = ++giro;
     if ($("resBig").textContent === "…") $("resDet").textContent = L("Carico le tabelle del Cantone…", "Loading the canton's tables…");
-    carica(x.kt).then(function(d){
+    carica(x.kt, serveFigli(x)).then(function(d){
       if (mio !== giro) return;
       notaChiesa(d);
       var r = calcola(d, x);
@@ -582,6 +595,8 @@
     det += ".";
     if (a.lordo >= 120000) det += "<br/>" + L("Da 120.000 CHF lordi l'anno la dichiarazione è obbligatoria: l'imposta finale può essere diversa.",
       "From CHF 120,000 gross a year a tax return is mandatory: the final tax may be different.");
+    if (x.lpp === null) det += "<br/>" + L("Il 2° pilastro è al minimo di legge: molte casse pensione trattengono di più. Se conosci la percentuale della tua busta paga, scrivila in «Personalizza le trattenute».",
+      "The 2nd pillar is at the legal minimum: many pension funds deduct more. If you know the percentage on your payslip, enter it under «Customise deductions».");
     $("resDet").innerHTML = det;
 
     $("bpSub").textContent = L("Stipendio lordo " + chf(a.lordo) + " l'anno" + (x.n === 13 ? " in 13 mensilità" : " in 12 mensilità") +
@@ -618,7 +633,7 @@
   function confronta(){
     var x = leggi(); var btn = $("cmpBtn");
     btn.disabled = true; btn.textContent = L("Carico le tabelle…", "Loading the tables…");
-    Promise.all(CANTONI.map(function(c){ return carica(c[0]).then(function(d){ return {kt: c[0], d: d}; }); })).then(function(tutti){
+    Promise.all(CANTONI.map(function(c){ return carica(c[0], serveFigli(x)).then(function(d){ return {kt: c[0], d: d}; }); })).then(function(tutti){
       var righe = tutti.map(function(o){ var r = calcola(o.d, x); return r ? {kt: o.kt, r: r} : null; }).filter(Boolean)
         .sort(function(p, q){ return q.r.anno.netto - p.r.anno.netto; });
       var mio = righe.filter(function(o){ return o.kt === x.kt; })[0];
