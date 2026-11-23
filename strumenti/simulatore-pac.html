@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="it" data-default-lang="it" data-theme="light" data-title-en="Monthly investment plan (PAC) simulator, free | Valerio Santoni">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://assets.mailerlite.com https://cloudflareinsights.com https://formsubmit.co; form-action 'self' https://formsubmit.co; media-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'"/>
+  <script>/* lingua prima del primo disegno: niente lampo di italiano per chi ha scelto EN */try{var l=localStorage.getItem("lang");document.documentElement.dataset.lang=l==="en"?"en":"it";if(l==="en")document.documentElement.lang="en"}catch(e){}</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+  <title>Simulatore PAC gratis: quanto diventa il tuo piano di accumulo</title>
+  <meta name="description" content="Versamento mensile, anni, rendimento ipotetico e costi del fondo (TER): vedi quanto potrebbe valere il tuo PAC, quanto hai versato e quanto ti tolgono i costi. Gratis."/>
+  <meta name="author" content="Valerio Santoni"/>
+  <meta name="keywords" content="simulatore pac, piano di accumulo, calcolatore pac, pac etf, interesse composto, quanto rende un pac, costi fondo ter, pac 200 euro al mese"/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://valerioswiss.com/strumenti/simulatore-pac"/>
+  <meta property="og:title" content="Simulatore PAC: quanto può diventare il tuo piano di accumulo"/>
+  <meta property="og:description" content="Versamenti, anni, rendimento ipotetico e costi del fondo: il valore anno per anno, tre scenari e quanto pesano i costi. Gratis, nel tuo browser."/>
+  <meta property="og:image" content="https://valerioswiss.com/assets/og-image.png?v=2"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:locale" content="it_IT"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://valerioswiss.com/assets/og-image.png?v=2"/>
+
+  <link rel="canonical" href="https://valerioswiss.com/strumenti/simulatore-pac"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Simulatore PAC (piano di accumulo)",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://valerioswiss.com/strumenti/simulatore-pac",
+        "description": "Simulatore gratuito di un piano di accumulo: versamento mensile, capitale iniziale, anni, rendimento annuo ipotetico e costi del fondo, con il valore anno per anno e tre scenari. Informazioni generali, non consulenza finanziaria.",
+        "inLanguage": "it",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+        "author": {"@type": "Person", "name": "Valerio Santoni", "url": "https://valerioswiss.com/"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"Cos'è un PAC?","acceptedAnswer":{"@type":"Answer","text":"Un piano di accumulo (PAC) è un modo di investire versando una cifra fissa a intervalli regolari, di solito ogni mese, in un fondo comune o in un ETF, invece di investire tutto in una volta. Il valore delle quote sale e scende con i mercati: i rendimenti non sono garantiti."}},
+          {"@type":"Question","name":"Quanto diventa un PAC da 200 euro al mese per 30 anni?","acceptedAnswer":{"@type":"Answer","text":"Dipende dai rendimenti, che nessuno conosce in anticipo. Con un rendimento ipotetico costante del 5% all'anno e nessun costo, 200 euro al mese per 30 anni diventano circa 166.452 euro, di cui 72.000 versati. Con costi del fondo dello 0,2% all'anno il valore scende a circa 160.400 euro. È una simulazione, non una previsione."}},
+          {"@type":"Question","name":"Quanto pesano i costi di un fondo su un PAC?","acceptedAnswer":{"@type":"Answer","text":"Molto, perché si pagano ogni anno su tutto il capitale accumulato. Con 200 euro al mese per 30 anni e un rendimento ipotetico del 5%, costi annui dello 0,2% tolgono circa 6.000 euro rispetto a un fondo senza costi, costi dell'1,5% circa 39.400 euro. I costi correnti di un fondo si leggono nel KID, il documento contenente le informazioni chiave."}}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
+  <link rel="stylesheet" href="../style.css?v=35"/>
+
+  <style>
+    .tool-hero{padding:calc(var(--nav-h) + 56px) 24px 34px;background:linear-gradient(180deg,var(--bg2),var(--bg));text-align:center}
+    .tool-hero .pill{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;
+      text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:18px}
+    .tool-hero h1{font-size:clamp(29px,5vw,48px);font-weight:800;line-height:1.08;letter-spacing:-.02em;max-width:820px;margin:0 auto 16px}
+    .tool-hero h1 em{color:var(--red);font-style:italic}
+    .tool-hero p{font-size:clamp(15px,2vw,18px);color:var(--text2);max-width:660px;margin:0 auto;line-height:1.55}
+    .privacy{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13px;color:var(--text3);
+      background:var(--surface);border:1px solid var(--border);padding:8px 14px;border-radius:999px}
+
+    .tool{max-width:900px;margin:0 auto;padding:10px 24px 70px}
+    .avviso{display:flex;gap:14px;align-items:flex-start;border:1.5px solid var(--red);background:var(--red-soft);border-radius:16px;
+      padding:16px 20px;margin:0 0 22px;font-size:15px;line-height:1.55;color:var(--text)}
+    .avviso svg{flex:none;width:22px;height:22px;margin-top:1px;color:var(--red-ink)}
+    .avviso b{font-weight:800}
+    .card-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:26px;margin-bottom:22px}
+    .card-box h2{font-size:18px;font-weight:700;margin:0 0 4px}
+    .card-box .sub{font-size:14px;color:var(--text3);margin-bottom:18px;line-height:1.5}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
+    .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+    .field label,.field .lbl{font-size:13px;font-weight:600;color:var(--text2)}
+    .field .hint{font-size:12.5px;color:var(--text3);line-height:1.45}
+    .inp{position:relative}
+    .inp .u{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:600;color:var(--text3);pointer-events:none}
+    input[type=number]{font-family:var(--font);font-size:16px;color:var(--text);background:var(--bg);
+      border:1px solid var(--border);border-radius:12px;padding:12px 56px 12px 14px;width:100%;font-variant-numeric:tabular-nums}
+    input[type=range]{width:100%;accent-color:var(--red);margin:4px 0 0}
+    input:focus{outline:none;border-color:var(--red)}
+    .anni-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+    .anni-val{font-size:26px;font-weight:800;color:var(--red-ink);line-height:1;font-variant-numeric:tabular-nums}
+    .seg{display:inline-flex;align-self:flex-start;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:var(--bg)}
+    .seg button{font-family:var(--font);font-size:14px;border:0;background:transparent;color:var(--text2);padding:10px 18px;cursor:pointer}
+    .seg button.on{background:var(--red);color:#fff;font-weight:600}
+    .quick{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+    .quick button{background:var(--surface-h);border:1px solid var(--border);color:var(--text2);font-family:var(--font);
+      font-size:13px;padding:7px 14px;border-radius:999px;cursor:pointer;font-variant-numeric:tabular-nums}
+    .quick button:hover{border-color:var(--red);color:var(--red-ink)}
+
+    .result{background:linear-gradient(135deg,var(--red),var(--red-d));color:#fff;border-radius:var(--r-lg);padding:28px;margin-bottom:22px}
+    .result .lead{font-size:15px;font-weight:700;color:#fff}
+    .result .big{font-size:clamp(36px,6.5vw,56px);font-weight:800;line-height:1.05;margin:8px 0 18px;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+    .kpi{background:rgba(0,0,0,.16);border-radius:14px;padding:12px 14px}
+    .kpi span{display:block;font-size:13px;color:#fff}
+    .kpi b{display:block;font-size:20px;font-weight:800;margin-top:2px;font-variant-numeric:lining-nums tabular-nums}
+    .result .det{font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.96)}
+    .result .det b{color:#fff}
+    .result .ipo{font-size:13px;margin-top:10px;color:#fff}
+
+    .chart-wrap{position:relative;margin-top:4px}
+    svg.chart{width:100%;height:auto;display:block;color:var(--text);touch-action:pan-y;overflow:visible}
+    .ch-grid{stroke:currentColor;stroke-opacity:.1}
+    .ch-txt{fill:var(--text3);font-size:12px;font-variant-numeric:tabular-nums}
+    .ch-area{fill:var(--red);fill-opacity:.09}
+    .ch-val{fill:none;stroke:var(--red);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+    .ch-lordo{fill:none;stroke:var(--red-ink);stroke-width:1.8;stroke-dasharray:5 5;stroke-opacity:.6}
+    .ch-vers{fill:none;stroke:currentColor;stroke-width:2.4;stroke-opacity:.72;stroke-linejoin:round}
+    .ch-dot{fill:var(--red);stroke:var(--card);stroke-width:2}
+    .ch-dot.v{fill:var(--text2)}
+    .ch-end{font-size:13px;font-weight:800;fill:var(--red-ink);font-variant-numeric:tabular-nums}
+    .ch-end.v{fill:var(--text2);font-weight:700}
+    .ch-yr{font-size:12px;font-weight:700;fill:var(--red-ink)}
+    #endL{transition:opacity .35s var(--ease-out)}
+    .ch-guide{stroke:currentColor;stroke-opacity:.35;stroke-dasharray:3 4}
+    .tip{position:absolute;top:0;left:0;pointer-events:none;background:var(--card);color:var(--text);box-shadow:var(--shadow-lg);
+      border:1px solid var(--border);border-radius:12px;padding:9px 12px;font-size:13px;line-height:1.5;white-space:nowrap;
+      opacity:0;transition:opacity .12s ease;font-variant-numeric:tabular-nums}
+    .tip.on{opacity:1}
+    .tip b{display:block;font-size:13px}
+    .tip i{display:inline-block;width:10px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+    .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--text2);margin-top:12px}
+    .legend i{display:inline-block;width:16px;height:3px;border-radius:2px;margin-right:7px;vertical-align:middle}
+    .legend i.d{background:repeating-linear-gradient(90deg,var(--red-ink) 0 4px,transparent 4px 7px);opacity:.75}
+
+    .more{margin-top:16px}
+    .more summary{cursor:pointer;font-size:14px;color:var(--red-ink);font-weight:600}
+    .more[open] summary{margin-bottom:10px}
+    table.cmp{width:100%;border-collapse:collapse;font-size:14.5px}
+    table.cmp th,table.cmp td{padding:9px 12px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+    table.cmp th:first-child,table.cmp td:first-child{text-align:left}
+    table.cmp th{font-size:12.5px;color:var(--text3);font-weight:600}
+    .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-height:420px;overflow-y:auto}
+    table.cmp thead th{position:sticky;top:0;background:var(--card)}
+
+    .scens{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .scen{position:relative;border:1px solid var(--border);border-radius:16px;padding:18px;background:var(--bg)}
+    .scen.me{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+    .scen .s-name{font-size:15px;font-weight:800}
+    .scen .s-r{font-size:13px;color:var(--text3);margin-top:2px}
+    .scen .s-v{font-family:var(--serif);font-size:27px;font-weight:700;margin:12px 0 10px;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.01em}
+    .scen .s-bar{display:flex;height:8px;border-radius:999px;overflow:hidden;background:var(--bg2);margin-bottom:12px}
+    .scen .s-bar i{display:block;height:100%;background:var(--text2);opacity:.75}
+    .scen .s-bar b{display:block;height:100%;background:var(--red)}
+    .scen .s-d{font-size:13.5px;color:var(--text2);line-height:1.6;font-variant-numeric:tabular-nums}
+    .scen .s-me{position:absolute;top:16px;right:16px;font-size:12px;font-weight:700;color:var(--red-ink);background:var(--red-soft);padding:3px 9px;border-radius:999px}
+
+    .note-box{background:var(--surface);border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15px;line-height:1.6;color:var(--text2)}
+    .note-box b{color:var(--text)}
+    .note-box a{color:var(--red-ink);text-decoration:underline;text-underline-offset:2px}
+    .guide h2{font-size:20px;margin:34px 0 8px}
+    .guide p{color:var(--text2);line-height:1.65;margin:0 0 12px}
+    .cta-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px;margin-top:26px}
+    .cta-box h3{font-size:20px;margin:0 0 10px}
+    .cta-box p{color:var(--text2);margin:0 0 16px;line-height:1.55}
+    .cta-box a{display:inline-block;background:var(--red);color:#fff;padding:11px 24px;border-radius:999px;font-weight:600;text-decoration:none;margin:0 10px 8px 0}
+    .cta-box a.sec{background:transparent;color:var(--red-ink);border:1px solid var(--red-ink)}
+    .fonti{font-size:13.5px;color:var(--text3);line-height:1.7}
+    .fonti a{color:var(--text2)}
+    .foot-note{font-size:13px;color:var(--text3);border-top:1px solid var(--border);padding-top:18px;margin-top:34px;line-height:1.6}
+    .err{font-weight:600}
+    @media(max-width:700px){
+      .grid2{grid-template-columns:1fr}
+      .tool{padding:10px 16px 60px}
+      .card-box{padding:18px}
+      .result{padding:22px 20px}
+      .kpis{grid-template-columns:1fr;gap:8px}
+      .kpi{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 14px}
+      .kpi b{margin:0;font-size:18px}
+      .scens{grid-template-columns:1fr;gap:10px}
+      .scen .s-v{font-size:25px;margin:8px 0}
+      .avviso{padding:14px 16px;font-size:14.5px}
+      table.cmp{font-size:13px}
+      table.cmp th,table.cmp td{padding:8px 6px}
+    }
+    @media (prefers-reduced-motion:reduce){#endL,.tip{transition:none}}
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar--solid" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">VS</a>
+    <button class="hamburger" id="hamburger" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/" class="nav-home" data-i18n="cnav.home">Home</a></li>
+      <li><a href="/#services" data-i18n="nav.services">Servizi</a></li>
+      <li><a href="/#chi-sono" data-i18n="cnav.about">Chi sono</a></li>
+      <li><a href="../blog/" data-i18n="nav.blog">Blog</a></li>
+      <li><a href="/#faq" data-i18n="cnav.faq">FAQ</a></li>
+      <li><a href="./" class="active" data-i18n="cnav.tools">Strumenti</a></li>
+      <li><a href="/cv" data-i18n="cnav.cv">CV</a></li>
+      <li><a href="/#contact" class="nav-cta" data-i18n="nav.contact">Contatti</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Social icons -->
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/valeriosantoni" target="_blank" rel="noopener" class="nav-icon" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/valerio.swiss/" target="_blank" rel="noopener" class="nav-icon" title="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@valerio.swiss" target="_blank" rel="noopener" class="nav-icon" title="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.84 4.84 0 01-1.01-.07z"/></svg>
+        </a>
+      </div>
+      <!-- Language toggle -->
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')" aria-label="Switch to English">EN</button>
+        <button class="lang-btn" id="btn-it" onclick="setLang('it')" aria-label="Passa all'italiano">IT</button>
+      </div>
+      <!-- Theme toggle -->
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="#F59E0B"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v1a1 1 0 01-2 0V3a1 1 0 011-1zm0 18a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zM5.64 5.64a1 1 0 011.41 0l.71.71a1 1 0 01-1.41 1.41l-.71-.71a1 1 0 010-1.41zm12.02 12.02a1 1 0 011.41 0l.71.71a1 1 0 01-1.41 1.41l-.71-.71a1 1 0 010-1.41zM2 12a1 1 0 011-1h1a1 1 0 010 2H3a1 1 0 01-1-1zm18 0a1 1 0 011-1h1a1 1 0 010 2h-1a1 1 0 01-1-1zM5.64 18.36a1 1 0 010-1.41l.71-.71a1 1 0 011.41 1.41l-.71.71a1 1 0 01-1.41 0zm12.02-12.02a1 1 0 010-1.41l.71-.71a1 1 0 011.41 1.41l-.71.71a1 1 0 01-1.41 0z"/></svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21.64 13a1 1 0 00-1.05-.14 8.05 8.05 0 01-3.37.73A8.15 8.15 0 019.08 5.49a8.59 8.59 0 01.25-2 1 1 0 00-1.28-1.18A10 10 0 1021.78 14.05a1 1 0 00-.14-1.05z"/></svg>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<header class="tool-hero">
+  <span class="pill" data-en="Free tool">Strumento gratuito</span>
+  <h1 data-en-html="What your monthly &lt;em&gt;investment plan&lt;/em&gt; could grow into">Quanto può diventare il tuo <em>PAC</em></h1>
+  <p data-en="Choose how much to invest each month, for how many years and with what hypothetical return. See how much you would pay in, how much compound interest would add and how much the fund's costs take away.">Scegli quanto versare ogni mese, per quanti anni e con quale rendimento ipotetico. Vedi quanto avresti versato, quanto aggiungerebbe l'interesse composto e quanto ti tolgono i costi del fondo.</p>
+  <div class="privacy" data-en="Everything stays in your browser: no data sent, no sign-up.">Tutto nel tuo browser: nessun dato inviato, nessuna registrazione.</div>
+</header>
+
+<main class="tool">
+
+  <div class="avviso" role="note">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v6"/><path d="M12 7.2v.1"/></svg>
+    <div class="l-it"><b>Simulazione ipotetica.</b> I rendimenti non sono garantiti e in alcuni anni possono essere negativi. Sono informazioni generali, non consulenza finanziaria: lo strumento non consiglia nessun prodotto.</div>
+    <div class="l-en" lang="en"><b>Hypothetical simulation.</b> Returns are not guaranteed and in some years they can be negative. This is general information, not financial advice: the tool does not recommend any product.</div>
+  </div>
+
+  <div class="card-box">
+    <h2 data-en="1 · How much you invest">1 · Quanto versi</h2>
+    <p class="sub" data-en="The amount you set aside every month and, if you have one, a starting sum.">La cifra che metti da parte ogni mese e, se ce l'hai, una somma di partenza.</p>
+    <div class="grid2">
+      <div class="field">
+        <label for="mensile" data-en="Monthly contribution">Versamento mensile</label>
+        <div class="inp"><input type="number" id="mensile" value="200" min="0" step="10" inputmode="decimal"/><span class="u cur" aria-hidden="true">€</span></div>
+        <div class="quick" data-for="mensile">
+          <button type="button" data-v="100">100</button>
+          <button type="button" data-v="200">200</button>
+          <button type="button" data-v="300">300</button>
+          <button type="button" data-v="500">500</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="iniziale" data-en="Starting sum (optional)">Capitale iniziale (facoltativo)</label>
+        <div class="inp"><input type="number" id="iniziale" value="0" min="0" step="100" inputmode="decimal"/><span class="u cur" aria-hidden="true">€</span></div>
+        <span class="hint" data-en="Leave it at 0 if you start from the first monthly payment.">Lascia 0 se parti dal primo versamento.</span>
+      </div>
+    </div>
+    <div class="field" style="margin-bottom:0">
+      <span class="lbl" id="valLbl" data-en="Currency">Valuta</span>
+      <div class="seg" role="group" aria-labelledby="valLbl">
+        <button type="button" data-cur="EUR" class="on" aria-pressed="true" data-en="Euro (€)">Euro (€)</button>
+        <button type="button" data-cur="CHF" aria-pressed="false" data-en="Swiss francs (CHF)">Franchi (CHF)</button>
+      </div>
+      <span class="hint" data-en="It only changes the symbol: the calculation is the same.">Cambia solo il simbolo: il calcolo è lo stesso.</span>
+    </div>
+  </div>
+
+  <div class="card-box">
+    <h2 data-en="2 · Time and assumptions">2 · Tempo e ipotesi</h2>
+    <p class="sub" data-en="No one knows future returns: try several and look at the range in the scenarios below.">I rendimenti futuri non li conosce nessuno: provane diversi e guarda la forbice negli scenari più sotto.</p>
+    <div class="field">
+      <div class="anni-row"><label for="anni" data-en="For how many years">Per quanti anni</label><span class="anni-val" id="anniLbl">30 anni</span></div>
+      <input type="range" id="anni" min="1" max="50" step="1" value="30"/>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label for="rend" data-en="Hypothetical annual return">Rendimento annuo ipotetico</label>
+        <div class="inp"><input type="number" id="rend" value="5" min="0" max="15" step="0.1" inputmode="decimal" aria-describedby="rendHint"/><span class="u" aria-hidden="true">%</span></div>
+        <span class="hint" id="rendHint" data-en="Before costs, the same every year. It is an assumption, not a forecast.">Prima dei costi, uguale ogni anno. È un'ipotesi, non una previsione.</span>
+        <div class="quick" data-for="rend">
+          <button type="button" data-v="3">3%</button>
+          <button type="button" data-v="5">5%</button>
+          <button type="button" data-v="7">7%</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="ter" data-en="Annual fund costs (TER)">Costi annui del fondo (TER)</label>
+        <div class="inp"><input type="number" id="ter" value="0.2" min="0" max="5" step="0.05" inputmode="decimal" aria-describedby="terHint"/><span class="u" aria-hidden="true">%</span></div>
+        <span class="hint" id="terHint" data-en="You find them in the fund's KID (key information document), under ongoing costs.">Li trovi nel KID del fondo, il documento con le informazioni chiave, alla voce costi correnti.</span>
+        <div class="quick" data-for="ter">
+          <button type="button" data-v="0">0%</button>
+          <button type="button" data-v="0.2" data-en="0.2%">0,2%</button>
+          <button type="button" data-v="1">1%</button>
+          <button type="button" data-v="2">2%</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="result" id="res" aria-live="polite">
+    <div class="lead" id="resLead">—</div>
+    <div class="big" id="resBig">—</div>
+    <div class="kpis" id="kpis">
+      <div class="kpi"><span data-en="You paid in">Hai versato</span><b id="kVers">—</b></div>
+      <div class="kpi"><span data-en="From returns, after costs">Dai rendimenti, al netto dei costi</span><b id="kRend">—</b></div>
+      <div class="kpi"><span data-en="Lost to fund costs">Persi in costi del fondo</span><b id="kCost">—</b></div>
+    </div>
+    <div class="det" id="resDet"></div>
+    <div class="ipo" data-en="Same return every year, before taxes and inflation. A hypothesis, not a forecast.">Stesso rendimento ogni anno, prima di tasse e inflazione. Un'ipotesi, non una previsione.</div>
+  </div>
+
+  <div class="card-box">
+    <h2 data-en="Year by year: paid in versus value">Anno per anno: versato contro valore</h2>
+    <p class="sub" data-en="The gap between the two lines is what compound interest adds, after the fund's costs. Move your finger or mouse over the chart to see each year.">La distanza tra le due linee è quello che aggiunge l'interesse composto, al netto dei costi. Passa col dito o col mouse sul grafico per vedere ogni anno.</p>
+    <div class="chart-wrap" id="chartWrap">
+      <svg class="chart" id="chart" viewBox="0 0 720 330" role="img" aria-label="Valore del piano e somma versata anno per anno" data-en-aria="Plan value and amount paid in, year by year"></svg>
+      <div class="tip" id="tip" aria-hidden="true"></div>
+    </div>
+    <div class="legend" id="legend">
+      <span><i style="background:var(--red)"></i><span data-en="Value after costs">Valore al netto dei costi</span></span>
+      <span id="legLordo"><i class="d"></i><span data-en="Value with no costs">Valore senza costi</span></span>
+      <span><i style="background:var(--text2)"></i><span data-en="Paid in">Versato</span></span>
+    </div>
+    <details class="more">
+      <summary data-en="See the year-by-year table">Vedi la tabella anno per anno</summary>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Tabella anno per anno" data-en-aria="Year-by-year table">
+        <table class="cmp" id="tab">
+          <thead><tr><th scope="col" data-en="Year">Anno</th><th scope="col" data-en="Paid in">Versato</th><th scope="col" data-en="Value">Valore</th><th scope="col" data-en="Returns">Rendimenti</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+
+  <div class="card-box">
+    <h2 data-en="Three scenarios side by side">Tre scenari a confronto</h2>
+    <p class="sub" id="scenSub">—</p>
+    <div class="scens" id="scens"></div>
+  </div>
+
+  <div class="l-it note-box">
+    <b>Come funziona il conto.</b> Ogni fine mese il versamento si aggiunge al capitale, e il capitale cresce del rendimento annuo diviso per 12, meno i costi del fondo. È l'interesse composto: i rendimenti di un anno producono altri rendimenti negli anni dopo, per questo la curva si alza col tempo.<br/><br/>
+    <b>Perché è solo un'ipotesi.</b> Qui il rendimento è lo stesso ogni anno. Nella realtà i mercati salgono e scendono, ci sono anni in perdita e un piano può chiudersi anche sotto quanto hai versato, soprattutto se dura poco.<br/><br/>
+    <b>Cosa non è incluso.</b> Le tasse sui guadagni, che cambiano da Paese a Paese (in Svizzera ne parlo in <a href="/blog/capital-gains-svizzera-2026">questo articolo</a>), l'inflazione, le commissioni di acquisto e il cambio di valuta. I valori sono nominali: tra trent'anni la stessa cifra comprerà meno di oggi.
+  </div>
+
+  <div class="note-box l-en" lang="en">
+    <b>How the maths works.</b> At the end of each month your contribution is added to the capital, and the capital grows by the annual return divided by 12, minus the fund's costs. This is compound interest: one year's returns earn further returns in the years after, which is why the curve rises over time.<br/><br/>
+    <b>Why it is only an assumption.</b> Here the return is the same every year. In reality markets go up and down, some years are negative and a plan can even end below what you paid in, especially if it is short.<br/><br/>
+    <b>What is not included.</b> Taxes on gains, which differ from country to country (for Switzerland, see <a href="/blog/capital-gains-svizzera-2026">this article</a>), inflation, purchase fees and currency exchange. Values are nominal: in thirty years the same amount will buy less than today.
+  </div>
+
+  <section class="l-it guide">
+    <h2>Cos'è un PAC</h2>
+    <p>Un piano di accumulo, o PAC, è un modo di investire versando una cifra fissa a intervalli regolari, di solito ogni mese, in un fondo comune o in un ETF, invece di mettere tutto in una volta. Così compri quote sia quando i prezzi sono alti sia quando sono bassi, e il risparmio diventa un'abitudine. Il valore delle quote però sale e scende con i mercati: nessun rendimento è garantito.</p>
+    <h2>Perché i costi contano così tanto</h2>
+    <p>I costi correnti di un fondo si pagano ogni anno su tutto il capitale accumulato, non solo sui versamenti. Per questo una differenza che sembra piccola pesa molto sul lungo periodo: con 200 € al mese per 30 anni e un rendimento ipotetico del 5%, costi dello 0,2% all'anno tolgono circa 6.000 €, costi dell'1,5% circa 39.400 €. Puoi provarlo nel simulatore con i pulsanti sotto il TER.</p>
+    <h2>Quanto diventa un PAC da 200 € al mese</h2>
+    <p>Dipende dai rendimenti, che nessuno conosce in anticipo. Con un rendimento ipotetico costante del 5% all'anno e nessun costo, 200 € al mese per 30 anni diventano circa 166.452 €, di cui 72.000 € versati: gli altri 94.452 € sono l'effetto dell'interesse composto. Con un rendimento del 3% o del 7% il risultato cambia di decine di migliaia di euro, ed è per questo che il simulatore mostra tre scenari.</p>
+  </section>
+
+  <section class="guide l-en" lang="en">
+    <h2>What a PAC is</h2>
+    <p>A PAC (from the Italian <i>piano di accumulo</i>) is a monthly investment plan: you invest a fixed amount at regular intervals, usually every month, in a mutual fund or an ETF, instead of investing everything at once. You buy units both when prices are high and when they are low, and saving becomes a habit. The value of the units goes up and down with the markets, though: no return is guaranteed.</p>
+    <h2>Why costs matter so much</h2>
+    <p>A fund's ongoing costs are charged every year on all the capital you have built up, not just on your contributions. That is why a difference that looks small weighs heavily over the long run: with 200 a month for 30 years and a hypothetical 5% return, costs of 0.2% a year take away about 6,000, costs of 1.5% about 39,400. You can try it in the simulator with the buttons under the TER.</p>
+    <h2>What 200 a month could become</h2>
+    <p>It depends on returns, which no one knows in advance. With a constant hypothetical return of 5% a year and no costs, 200 a month for 30 years becomes about 166,452, of which 72,000 paid in: the other 94,452 is the effect of compound interest. With a 3% or 7% return the result changes by tens of thousands, which is why the simulator shows three scenarios.</p>
+  </section>
+
+  <div class="l-it cta-box">
+    <h3>Lavori o vuoi lavorare in Svizzera?</h3>
+    <p>Prima di pensare a investire vengono i conti del primo mese: permesso, cassa malati, conto in banca e quanto ti resta davvero dello stipendio. Nella guida gratuita trovi la checklist, in sedici pagine senza giri di parole.</p>
+    <a href="/negozio/guida">Scarica la guida gratuita</a>
+    <a class="sec" href="calcolatore-stipendio-netto">Calcola il tuo stipendio netto</a>
+  </div>
+
+  <div class="cta-box l-en" lang="en">
+    <h3>Working, or planning to work, in Switzerland?</h3>
+    <p>Before thinking about investing come the first month's sums: your permit, health insurance, a bank account and how much of your salary you actually keep. The free guide (in Italian) has the checklist, sixteen pages straight to the point.</p>
+    <a href="/negozio/guida">Download the free guide</a>
+    <a class="sec" href="calcolatore-stipendio-netto">Work out your net salary</a>
+  </div>
+
+  <h2 style="font-size:18px;margin:36px 0 10px" data-en="To find out more">Per approfondire</h2>
+  <p class="l-it fonti">
+    <a href="https://economiapertutti.bancaditalia.it/aree-tematiche/risparmio-e-investimenti/i-fondi-comuni-di-investimento/index.html" target="_blank" rel="noopener">Banca d'Italia, L'economia per tutti: i fondi comuni di investimento, il KID e i costi</a> ·
+    <a href="https://economiapertutti.bancaditalia.it/notizie-e-rubriche/notizie/pic-e-pac-parliamo-di-investimenti/" target="_blank" rel="noopener">Banca d'Italia, L'economia per tutti: PIC e PAC</a>
+  </p>
+  <p class="fonti l-en" lang="en">
+    <a href="https://economiapertutti.bancaditalia.it/aree-tematiche/risparmio-e-investimenti/i-fondi-comuni-di-investimento/index.html" target="_blank" rel="noopener">Bank of Italy, L'economia per tutti: mutual funds, the KID and costs (in Italian)</a> ·
+    <a href="https://economiapertutti.bancaditalia.it/notizie-e-rubriche/notizie/pic-e-pac-parliamo-di-investimenti/" target="_blank" rel="noopener">Bank of Italy, L'economia per tutti: lump sums and monthly plans (in Italian)</a>
+  </p>
+
+  <p class="l-it foot-note">Questo strumento fa una simulazione con le ipotesi che inserisci tu. I rendimenti non sono garantiti e quelli del passato non si ripetono per forza. Sono informazioni generali: non è consulenza finanziaria né una raccomandazione a comprare o vendere strumenti finanziari, e qui non trovi prodotti da comprare né link di affiliazione. Le opinioni sono personali e non rappresentano quelle del mio datore di lavoro.</p>
+
+  <p class="foot-note l-en" lang="en">This tool runs a simulation with the assumptions you enter. Returns are not guaranteed and past returns do not necessarily repeat. This is general information: it is not financial advice or a recommendation to buy or sell financial instruments, and you will find no products to buy or affiliate links here. Opinions are my own and do not represent those of my employer.</p>
+</main>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  // Lingua scelta sul sito (html data-lang): testi e numeri all'italiana o all'inglese
+  const EN = () => document.documentElement.dataset.lang === 'en';
+  const L = (it, en) => EN() ? en : it;
+  const loc = () => EN() ? 'en-US' : 'it-IT';
+  const fmt = n => Math.round(Math.abs(n)).toLocaleString(loc(), {useGrouping: 'always'});
+  let cur = 'EUR';
+  const money = n => {
+    const s = fmt(n), neg = Math.round(n) < 0 ? '−' : '';
+    if (EN()) return neg + (cur === 'EUR' ? '€' : 'CHF ') + s;
+    return neg + s + (cur === 'EUR' ? ' €' : ' CHF');
+  };
+  const signed = n => (Math.round(n) > 0 ? '+' : '') + money(n);
+  const pct = n => n.toLocaleString(loc(), {maximumFractionDigits: 2}) + '%';
+  // "il 3,6%" ma "lo 0,9%", "l'1,2%", "l'8%", "l'11%" (zero, uno, otto, undici)
+  const ilPct = n => { const ip = String(Math.floor(n)); return (ip === '0' ? 'lo ' : ip === '1' || ip === '11' || ip[0] === '8' ? 'l\'' : 'il ') + pct(n); };
+  const num = id => { const v = parseFloat(String($(id).value).replace(',', '.')); return isFinite(v) ? v : 0; };
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Il conto (lo stesso dei video): rendimento annuo diviso per 12, capitalizzato ogni mese,
+     versamento a fine mese, costi del fondo tolti dal rendimento.
+     Controllo: 200 al mese, 30 anni, 5%, costi 0 → 166.452, di cui 72.000 versati. */
+  function simula(mensile, iniziale, anni, r, ter){
+    const i = (r - ter) / 100 / 12;
+    let v = iniziale;
+    const out = [{anno: 0, versato: iniziale, valore: iniziale}];
+    for (let a = 1; a <= anni; a++){
+      for (let m = 0; m < 12; m++) v = v * (1 + i) + mensile;
+      out.push({anno: a, versato: iniziale + mensile * 12 * a, valore: v});
+    }
+    return out;
+  }
+
+  function dati(){
+    return {
+      mensile: clamp(num('mensile'), 0, 1e6),
+      iniziale: clamp(num('iniziale'), 0, 1e9),
+      anni: clamp(Math.round(num('anni')), 1, 50),
+      r: clamp(num('rend'), 0, 15),
+      ter: clamp(num('ter'), 0, 5)
+    };
+  }
+
+  // attesa: il grafico aspetta di entrare nello schermo per disegnarsi (niente attesa con "riduci movimento")
+  let last = null, attesa = !reduce && 'IntersectionObserver' in window, animando = false, raf = 0, geo = null;
+
+  function render(){
+    const d = dati();
+    const anniTxt = d.anni + ' ' + L(d.anni === 1 ? 'anno' : 'anni', d.anni === 1 ? 'year' : 'years');
+    $('anniLbl').textContent = anniTxt;
+    $('anni').setAttribute('aria-valuetext', anniTxt);
+    document.querySelectorAll('.cur').forEach(el => { el.textContent = cur === 'EUR' ? '€' : 'CHF'; });
+
+    if (d.mensile <= 0 && d.iniziale <= 0){
+      last = null;
+      $('resLead').textContent = L('Manca il versamento', 'Contribution missing');
+      $('resBig').textContent = '—';
+      ['kVers', 'kRend', 'kCost'].forEach(id => { $(id).textContent = '—'; });
+      $('resDet').innerHTML = '<span class="err">' + L('Inserisci un versamento mensile o un capitale iniziale.', 'Enter a monthly contribution or a starting sum.') + '</span>';
+      $('chart').innerHTML = ''; $('scens').innerHTML = ''; $('tab').querySelector('tbody').innerHTML = '';
+      $('scenSub').textContent = '';
+      return;
+    }
+
+    const con = simula(d.mensile, d.iniziale, d.anni, d.r, d.ter);
+    const senza = simula(d.mensile, d.iniziale, d.anni, d.r, 0);
+    const fin = con[d.anni], finS = senza[d.anni];
+    const versato = fin.versato, rend = fin.valore - versato, costi = finS.valore - fin.valore;
+
+    $('resLead').textContent = L('Valore finale ipotetico dopo ', 'Hypothetical final value after ') + anniTxt;
+    $('resBig').textContent = money(fin.valore);
+    $('kVers').textContent = money(versato);
+    $('kRend').textContent = signed(rend);
+    $('kCost').textContent = costi >= 0.5 ? '−' + money(costi) : money(0);
+
+    let det;
+    if (d.ter <= 0){
+      det = L('Con costi a zero il valore è quello lordo. Prova con 0,2% o 1% nei costi del fondo per vedere quanto pesano.',
+              'With zero costs this is the gross value. Try 0.2% or 1% in the fund costs to see how much they weigh.');
+    } else {
+      det = L('Con un fondo senza costi arriveresti a <b>' + money(finS.valore) + '</b>: i costi del fondo (' + pct(d.ter) + ' all\'anno) ti tolgono <b>' + money(costi) + '</b>, cioè ' + ilPct(Math.round(costi / finS.valore * 1000) / 10) + ' del valore senza costi.',
+              'With a fund with no costs you would reach <b>' + money(finS.valore) + '</b>: the fund\'s costs (' + pct(d.ter) + ' a year) take away <b>' + money(costi) + '</b>, or ' + pct(Math.round(costi / finS.valore * 1000) / 10) + ' of the value with no costs.');
+    }
+    if (rend < 0) det += L(' Al netto dei costi i rendimenti ipotetici sono negativi: finiresti sotto quanto hai versato.',
+                           ' After costs the hypothetical returns are negative: you would end up below what you paid in.');
+    $('resDet').innerHTML = det;
+    $('legLordo').style.display = d.ter > 0 ? '' : 'none';
+
+    last = {d, con, senza};
+    chart(false);
+    tabella();
+    scenari(d);
+  }
+
+  /* Grafico: si disegna anno per anno la prima volta che entra nello schermo */
+  function niceStep(x){
+    const p = Math.pow(10, Math.floor(Math.log10(x))), f = x / p;
+    return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p;
+  }
+  function corto(n){
+    if (n >= 1e6) return (n / 1e6).toLocaleString(loc(), {maximumFractionDigits: 1}) + (EN() ? 'M' : ' mln');
+    if (n >= 1000) return (n / 1000).toLocaleString(loc(), {maximumFractionDigits: 1}) + 'k';
+    return String(Math.round(n));
+  }
+
+  function chart(anima){
+    const svg = $('chart');
+    if (!last) return;
+    cancelAnimationFrame(raf); animando = false;
+    const nascosto = anima || attesa;
+    const {d, con, senza} = last, N = d.anni;
+    const W = Math.max(300, Math.round($('chartWrap').clientWidth || 720));
+    const small = W < 560;
+    const H = small ? 250 : 330, mL = small ? 44 : 56, mR = small ? 10 : 16, mT = 26, mB = 30;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    const top = Math.max(senza[N].valore, con[N].valore, con[N].versato, 1);
+    const st = niceStep(top / 4), maxY = Math.ceil(top / st) * st;
+    const x = a => mL + (a / N) * (W - mL - mR);
+    const y = v => H - mB - (v / maxY) * (H - mT - mB);
+    let g = '<defs><clipPath id="clipPac"><rect id="clipRect" x="0" y="0" width="' + (nascosto ? mL : W) + '" height="' + H + '"/></clipPath></defs>';
+    for (let v = 0; v <= maxY + 1e-6; v += st){
+      const yy = y(v).toFixed(1);
+      g += '<line class="ch-grid" x1="' + mL + '" y1="' + yy + '" x2="' + (W - mR) + '" y2="' + yy + '"/>' +
+           '<text class="ch-txt" x="' + (mL - 8) + '" y="' + (+yy + 4) + '" text-anchor="end">' + corto(v) + '</text>';
+    }
+    const passo = N <= 10 ? (small ? 2 : 1) : N <= 20 ? (small ? 5 : 2) : N <= 40 ? 5 : 10;
+    for (let a = 0; a <= N; a += passo){
+      g += '<text class="ch-txt" x="' + x(a).toFixed(1) + '" y="' + (H - 9) + '" text-anchor="middle">' + a + '</text>';
+    }
+    g += '<text class="ch-txt" x="' + (mL - 8) + '" y="' + (H - 9) + '" text-anchor="end">' + L('anni', 'years') + '</text>';
+    const linea = arr => arr.map((p, k) => (k ? 'L' : 'M') + x(p.anno).toFixed(1) + ' ' + y(p.v).toFixed(1)).join('');
+    const pv = con.map(p => ({anno: p.anno, v: p.valore}));
+    const pl = senza.map(p => ({anno: p.anno, v: p.valore}));
+    const pc = con.map(p => ({anno: p.anno, v: p.versato}));
+    const base = y(0).toFixed(1);
+    g += '<g clip-path="url(#clipPac)">' +
+         '<path class="ch-area" d="' + linea(pv) + 'L' + x(N).toFixed(1) + ' ' + base + 'L' + x(0).toFixed(1) + ' ' + base + 'Z"/>' +
+         (d.ter > 0 ? '<path class="ch-lordo" d="' + linea(pl) + '"/>' : '') +
+         '<path class="ch-vers" d="' + linea(pc) + '"/>' +
+         '<path class="ch-val" d="' + linea(pv) + '"/></g>';
+    // etichette finali
+    const yV = y(con[N].valore), yC = y(con[N].versato);
+    g += '<g id="endL"' + (nascosto ? ' style="opacity:0"' : '') + '>' +
+         '<circle class="ch-dot" cx="' + x(N).toFixed(1) + '" cy="' + yV.toFixed(1) + '" r="5"/>' +
+         '<circle class="ch-dot v" cx="' + x(N).toFixed(1) + '" cy="' + yC.toFixed(1) + '" r="4"/>' +
+         '<text class="ch-end" x="' + (x(N) - 8).toFixed(1) + '" y="' + (yV - 12).toFixed(1) + '" text-anchor="end">' + money(con[N].valore) + '</text>' +
+         (Math.abs(yC - yV) > 30 ? '<text class="ch-end v" x="' + (x(N) - 8).toFixed(1) + '" y="' + (yC - 10).toFixed(1) + '" text-anchor="end">' + money(con[N].versato) + '</text>' : '') +
+         '</g>';
+    // punto che corre durante il disegno, e guida per il passaggio col mouse
+    g += '<g id="runner" style="display:none"><circle class="ch-dot" r="5"/><text class="ch-yr" text-anchor="middle"></text></g>';
+    g += '<g id="hover" style="display:none"><line class="ch-guide" y1="' + mT + '" y2="' + (H - mB) + '"/>' +
+         '<circle class="ch-dot v" r="4"/>' + (d.ter > 0 ? '<circle class="ch-dot" r="3.5" style="opacity:.55"/>' : '') + '<circle class="ch-dot" r="5"/></g>';
+    svg.innerHTML = g;
+    geo = {W, H, N, x, y, mL, mR, mT, mB};
+    if (anima) disegna();
+  }
+
+  function disegna(){
+    const {W, N, x, y} = geo, con = last.con;
+    const rect = $('clipRect'), run = $('runner'), dot = run.querySelector('circle'), yr = run.querySelector('text');
+    const D = Math.min(2000, 700 + N * 40), t0 = performance.now();
+    cancelAnimationFrame(raf);
+    animando = true; nascondi();
+    run.style.display = '';
+    const passo = now => {
+      const p = Math.min(1, (now - t0) / D);
+      const e = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+      const a = e * N, k = Math.min(N - 1, Math.floor(a)), f = a - k;
+      const v = con[k].valore + (con[k + 1] ? (con[k + 1].valore - con[k].valore) * f : 0);
+      rect.setAttribute('width', (x(a) + 2).toFixed(1));
+      dot.setAttribute('cx', x(a).toFixed(1)); dot.setAttribute('cy', y(v).toFixed(1));
+      yr.setAttribute('x', x(a).toFixed(1)); yr.setAttribute('y', (y(v) - 12).toFixed(1));
+      yr.textContent = L('anno ', 'year ') + Math.round(a);
+      if (p < 1) raf = requestAnimationFrame(passo);
+      else { animando = false; run.style.display = 'none'; rect.setAttribute('width', W); const e2 = $('endL'); if (e2) e2.style.opacity = 1; }
+    };
+    raf = requestAnimationFrame(passo);
+  }
+
+  // Passaggio col mouse o col dito: valori dell'anno più vicino
+  function mostra(ev){
+    if (!last || !geo || animando || attesa || !$('hover')) return;
+    const svg = $('chart'), r = svg.getBoundingClientRect();
+    const px = (ev.clientX - r.left) * (geo.W / r.width);
+    const a = clamp(Math.round((px - geo.mL) / (geo.W - geo.mL - geo.mR) * geo.N), 0, geo.N);
+    const {con, senza, d} = last, p = con[a], ps = senza[a];
+    const hv = $('hover'); hv.style.display = '';
+    const xx = geo.x(a).toFixed(1), c = hv.querySelectorAll('circle'), ln = hv.querySelector('line');
+    ln.setAttribute('x1', xx); ln.setAttribute('x2', xx);
+    c[0].setAttribute('cx', xx); c[0].setAttribute('cy', geo.y(p.versato).toFixed(1));
+    let j = 1;
+    if (d.ter > 0){ c[1].setAttribute('cx', xx); c[1].setAttribute('cy', geo.y(ps.valore).toFixed(1)); j = 2; }
+    c[j].setAttribute('cx', xx); c[j].setAttribute('cy', geo.y(p.valore).toFixed(1));
+    const tip = $('tip');
+    tip.innerHTML = '<b>' + L('Anno ', 'Year ') + a + '</b>' +
+      '<span><i style="background:var(--red)"></i>' + L('Valore ', 'Value ') + money(p.valore) + '</span><br/>' +
+      (d.ter > 0 ? '<span><i class="d" style="background:var(--red-ink);opacity:.55"></i>' + L('Senza costi ', 'No costs ') + money(ps.valore) + '</span><br/>' : '') +
+      '<span><i style="background:var(--text2)"></i>' + L('Versato ', 'Paid in ') + money(p.versato) + '</span>';
+    tip.classList.add('on');
+    // il riquadro sta in alto, dal lato libero della linea guida
+    const wrapW = $('chartWrap').clientWidth, tw = tip.offsetWidth, gx = geo.x(a) / geo.W * r.width;
+    const left = clamp(gx < wrapW / 2 ? gx + 14 : gx - tw - 14, 0, Math.max(0, wrapW - tw));
+    tip.style.transform = 'translate(' + left.toFixed(0) + 'px,2px)';
+  }
+  function nascondi(){ const hv = $('hover'); if (hv) hv.style.display = 'none'; $('tip').classList.remove('on'); }
+
+  function tabella(){
+    const tb = $('tab').querySelector('tbody');
+    tb.innerHTML = last.con.slice(1).map(p =>
+      '<tr><td>' + p.anno + '</td><td>' + money(p.versato) + '</td><td>' + money(p.valore) + '</td><td>' + signed(p.valore - p.versato) + '</td></tr>'
+    ).join('');
+  }
+
+  function scenari(d){
+    const rr = [Math.max(0, d.r - 2), d.r, d.r + 2];
+    $('scenSub').textContent = L('Stessi versamenti e stessi costi (' + pct(d.ter) + ' all\'anno): cambia solo il rendimento ipotetico, 2 punti sotto e 2 sopra il tuo. Sono esempi per vedere la forbice, non previsioni.',
+                                 'Same contributions and same costs (' + pct(d.ter) + ' a year): only the hypothetical return changes, 2 points below and 2 above yours. They are examples to show the range, not forecasts.');
+    const nomi = [L('Prudente', 'Cautious'), L('Medio', 'Middle'), L('Ottimista', 'Optimistic')];
+    const ris = rr.map(r => simula(d.mensile, d.iniziale, d.anni, r, d.ter)[d.anni]);
+    const maxV = Math.max(...ris.map(p => Math.max(p.valore, p.versato)));
+    $('scens').innerHTML = ris.map((p, k) => {
+      const vi = Math.min(p.versato, p.valore) / maxV * 100, gi = Math.max(0, p.valore - p.versato) / maxV * 100;
+      return '<div class="scen' + (k === 1 ? ' me' : '') + '">' +
+        (k === 1 ? '<span class="s-me">' + L('la tua ipotesi', 'your assumption') + '</span>' : '') +
+        '<div class="s-name">' + nomi[k] + '</div>' +
+        '<div class="s-r">' + L('ipotesi ', 'assumes ') + pct(rr[k]) + L(' all\'anno', ' a year') + '</div>' +
+        '<div class="s-v">' + money(p.valore) + '</div>' +
+        '<div class="s-bar" aria-hidden="true"><i style="width:' + vi.toFixed(1) + '%"></i><b style="width:' + gi.toFixed(1) + '%"></b></div>' +
+        '<div class="s-d">' + L('versato ', 'paid in ') + money(p.versato) + '<br/>' + L('rendimenti ', 'returns ') + signed(p.valore - p.versato) + '</div>' +
+        '</div>';
+    }).join('');
+  }
+
+  // Eventi
+  ['mensile', 'iniziale', 'anni', 'rend', 'ter'].forEach(id => $(id).addEventListener('input', render));
+  document.querySelectorAll('.quick').forEach(q => q.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    $(q.dataset.for).value = b.dataset.v; render();
+  }));
+  document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => {
+    cur = b.dataset.cur;
+    document.querySelectorAll('.seg button').forEach(x => { const on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); });
+    render();
+  }));
+  const svg = $('chart');
+  svg.addEventListener('pointermove', mostra);
+  svg.addEventListener('pointerdown', mostra);
+  svg.addEventListener('pointerleave', nascondi);
+  // Cambio di lingua: riscrive i testi generati qui
+  document.addEventListener('langchange', render);
+  let rw = 0, lw = 0;
+  window.addEventListener('resize', () => {
+    clearTimeout(rw);
+    rw = setTimeout(() => { const w = $('chartWrap').clientWidth; if (w !== lw && !animando){ lw = w; chart(false); } }, 120);
+  });
+
+  render();
+  lw = $('chartWrap').clientWidth;
+  // Prima apparizione del grafico: si disegna anno per anno
+  if (attesa){
+    const io = new IntersectionObserver(es => {
+      if (es.some(e => e.isIntersecting)){ io.disconnect(); attesa = false; chart(true); }
+    }, {threshold: .35});
+    io.observe($('chartWrap'));
+  }
+})();
+</script>
+<script src="../script.js?v=53"></script>
+<!-- Statistiche senza cookie (Cloudflare Web Analytics, dal 26/10/2026; vedi /privacy) -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "af2e90f55a5d426983c303538f4f463f"}'></script>
+</body>
+</html>
