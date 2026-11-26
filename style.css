@@ -1880,18 +1880,18 @@ html[data-lang="en"] .l-it{display:none !important}
 
 /* =============================================
    RIFINITURA DI DESIGN (08/10/2026, anteprima con le skill Impeccable, Emil Kowalski e Taste)
-   Stesso mondo dei caroselli: rosso svizzero #C81E28, carta #FAF8F5, inchiostro #141414, corsivo serif negli accenti.
+   Stesso mondo dei caroselli: rosso svizzero #C81E28, carta #F9F5EE con fasce #ECE3D3 più marcate (dal 26/11/2026; i caroselli restano #FAF8F5), inchiostro #141414, corsivo serif negli accenti.
    Un solo colore d'accento (via l'oro), niente testo sfumato, niente etichette sopra i titoli,
    schede bianche con un'ombra sola, movimenti brevi con curva ease-out decisa.
    ============================================= */
 :root{
-  --bg:#FAF8F5;--bg2:#F3EFE9;--bg3:#EAE4DA;--card:#FFFFFF;
+  --bg:#F9F5EE;--bg2:#ECE3D3;--bg3:#E2D7C4;--card:#FFFFFF;
   --surface:rgba(48,32,16,.035);--surface-h:rgba(48,32,16,.065);
   --border:rgba(48,32,16,.11);--border-h:rgba(48,32,16,.2);
-  --text:#141414;--text2:#3B3631;--text3:#685F57;--text4:#736A61;
-  --red:#C81E28;--red-d:#A3161F;--red-ink:#C81E28;--red-soft:rgba(200,30,40,.08);--red-glow:rgba(200,30,40,.2);
+  --text:#141414;--text2:#3B3631;--text3:#5F574F;--text4:#665D54;
+  --red:#C81E28;--red-d:#A3161F;--red-ink:#BA1B25;--red-soft:rgba(200,30,40,.08);--red-glow:rgba(200,30,40,.2);
   --gold:var(--red);--gold-d:var(--red);--gold-glow:var(--red-glow);
-  --nav-bg:rgba(250,248,245,.88);--nav-border:rgba(48,32,16,.09);
+  --nav-bg:rgba(249,245,238,.88);--nav-border:rgba(48,32,16,.09);
   --shadow:0 1px 2px rgba(48,32,16,.05),0 4px 14px rgba(48,32,16,.06);
   --shadow-lg:0 2px 4px rgba(48,32,16,.05),0 14px 36px rgba(48,32,16,.09);
   --shadow-xl:0 4px 10px rgba(48,32,16,.06),0 26px 64px rgba(48,32,16,.13);
@@ -2284,3 +2284,23 @@ html .callout .gf p.gf-small,html .callout .gf p.gf-err{color:rgba(255,255,255,.
 html .gf + a{margin-top:16px}
 @media (max-width:640px){html .gf-row{grid-template-columns:1fr}html .gf button{width:100%}}
 @media (prefers-reduced-motion:reduce){html .gf button{transition:none}}
+
+/* =============================================
+   CONTRASTI (26/11/2026, controllo axe su tutte le pagine della sitemap, chiaro e scuro)
+   Nella modalità scura il rosso pieno come testo su fondo scuro arrivava a 3,4-3,9:1: i testi rossi usano --red-ink;
+   i riquadri rossi con testo chiaro passano a un rosso più profondo, così il testo sopra resta leggibile.
+   ============================================= */
+html[data-theme="dark"] :is(.legal a,.legal .label,.hub-hero .label,.hub-hero h1 em,.tool-hero h1 em,.tool-card .tag,.tool-card .go,.item .d a,.chip.dl,.cta-box a.sec,.more summary,.neg,table.cmp td .d.neg,.spesa-val,.subnav a.active,.shop-hero .label,.shop-hero h1 em,.shop-card .tag,.shop-card .go,.pd-hero h1 em,.ty-hero h1 em,.pd-msg a,.pd-steps li a,.ty-help a,.pd-back:hover,.pd-faq summary:after){color:var(--red-ink)}
+html[data-theme="dark"] .cta-box a.sec{border-color:var(--red-ink)}
+html[data-theme="dark"] .chip.dl{background:rgba(255,122,127,.1)}
+html[data-theme="dark"] :is(.pos,table.cmp td .d.pos,table.cmp tr.tot td:first-child){color:#4ADE80}
+html[data-theme="dark"] :is(.callout,.tg-card,.cta-box.red){background:#B8262D}
+html[data-theme="dark"] .result{background:linear-gradient(135deg,#B8262D,#9E1F25)}
+/* nel riquadro rosso il grassetto resta chiaro come il testo */
+html .callout :is(strong,b){color:inherit}
+/* modulo della guida dentro il riquadro rosso degli strumenti, come negli articoli */
+html .cta-box.red .gf input[type=text],html .cta-box.red .gf input[type=email]{background:#fff;color:#121110;border-color:transparent}
+html .cta-box.red .gf input::placeholder{color:#6b6560}
+html .cta-box.red .gf input:focus-visible{outline-color:#fff}
+html .cta-box.red .gf button{background:#121110;color:#fff}
+html .cta-box.red .gf p.gf-small,html .cta-box.red .gf p.gf-err{color:rgba(255,255,255,.94)}
