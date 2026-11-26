@@ -2304,3 +2304,15 @@ html .cta-box.red .gf input::placeholder{color:#6b6560}
 html .cta-box.red .gf input:focus-visible{outline-color:#fff}
 html .cta-box.red .gf button{background:#121110;color:#fff}
 html .cta-box.red .gf p.gf-small,html .cta-box.red .gf p.gf-err{color:rgba(255,255,255,.94)}
+
+/* SFONDO CONTINUO (online dal 26/11/2026, sì di Valerio): una sola carta dappertutto,
+   una linea sottile tra una sezione e l'altra (larga quanto il contenuto), le schede bianche fanno da stacco;
+   restano colorate solo la fascia dei numeri sotto l'apertura e i Contatti. */
+html .section-alt,html .trust-strip,html[data-theme="dark"] .trust-strip{background:transparent}
+html .trust-strip{border-top:0;border-bottom:0}
+html :is(.section,.trust-strip){position:relative}
+html :is(.section,.trust-strip) + :is(.section,.trust-strip):not(#contact)::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:calc(min(1160px,100%) - 56px);height:1px;background:var(--border-h);pointer-events:none
+}
+html #contact.section-alt{background:var(--bg2);border-top:1px solid var(--border)}
