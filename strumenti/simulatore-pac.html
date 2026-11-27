@@ -112,6 +112,12 @@
     .result .det{font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.96)}
     .result .det b{color:#fff}
     .result .ipo{font-size:13px;margin-top:10px;color:#fff}
+    /* Svizzera: il risultato è uguale a "Senza tasse" e lo diciamo subito sotto il numero (27/11/2026) */
+    .result .res-note{font-size:14.5px;line-height:1.55;color:#fff;background:rgba(0,0,0,.2);border-radius:12px;padding:10px 14px;margin:-6px 0 16px}
+    .result .res-note b{color:#fff}
+    @keyframes resFlash{from{box-shadow:0 0 0 0 rgba(200,30,40,.55)}to{box-shadow:0 0 0 16px rgba(200,30,40,0)}}
+    .result.upd{animation:resFlash .7s cubic-bezier(.23,1,.32,1)}
+    @media (prefers-reduced-motion:reduce){.result.upd{animation:none}}
 
     .chart-wrap{position:relative;margin-top:4px}
     svg.chart{width:100%;height:auto;display:block;color:var(--text);touch-action:pan-y;overflow:visible}
@@ -332,6 +338,7 @@
   <div class="result" id="res" aria-live="polite">
     <div class="lead" id="resLead">—</div>
     <div class="big" id="resBig">—</div>
+    <p class="res-note" id="resNote" hidden></p>
     <div class="kpis" id="kpis">
       <div class="kpi"><span data-en="You paid in">Hai versato</span><b id="kVers">—</b></div>
       <div class="kpi"><span data-en="From returns, after costs">Dai rendimenti, al netto dei costi</span><b id="kRend">—</b></div>
@@ -554,6 +561,10 @@
     $('kRend').textContent = signed(rend);
     $('kCost').textContent = costi >= 0.5 ? '−' + money(costi) : money(0);
     $('kTaxBox').hidden = !(it || ch);
+    const nota = $('resNote');
+    nota.hidden = !ch;
+    if (ch) nota.innerHTML = L('<b>Uguale a «Senza tasse»:</b> in Svizzera il guadagno di capitale dei privati è esente. L\'imposta sulla sostanza e quella sui dividendi dipendono da Cantone e reddito, quindi qui non sono calcolate.',
+                               '<b>Same as “No taxes”:</b> in Switzerland capital gains of private individuals are tax-free. Wealth tax and tax on dividends depend on your canton and income, so they are not calculated here.');
     if (it){
       $('kTaxLbl').textContent = L('Tasse italiane (26% e bollo)', 'Italian taxes (26% and stamp duty)');
       $('kTax').textContent = '−' + money(fin.imp + fin.bollo);
@@ -566,10 +577,8 @@
     if (it){
       det = L('Prima delle tasse il piano vale <b>' + money(fin.valore) + '</b>. Se vendi tutto alla fine paghi <b>' + money(fin.imp) + '</b> di imposta sul guadagno (26%), e negli anni circa <b>' + money(fin.bollo) + '</b> di imposta di bollo (' + pct(0.2) + ' all\'anno sul valore). ',
               'Before taxes the plan is worth <b>' + money(fin.valore) + '</b>. If you sell everything at the end you pay <b>' + money(fin.imp) + '</b> of tax on the gain (26%), and over the years about <b>' + money(fin.bollo) + '</b> of stamp duty (' + pct(0.2) + ' a year on the value). ');
-    } else if (ch){
-      det = L('In Svizzera il guadagno di capitale sulla sostanza privata non è tassato; le imposte sul reddito dei dividendi e sulla sostanza non sono calcolate. ',
-              'In Switzerland capital gains on private assets are not taxed; income tax on dividends and wealth tax are not calculated. ');
     }
+    // Svizzera: la spiegazione sta nella nota subito sotto il numero (resNote), qui non si ripete
     if (d.ter <= 0){
       det += L('Con costi a zero il valore è quello lordo. Prova con 0,2% o 1% nei costi del fondo per vedere quanto pesano.',
               'With zero costs this is the gross value. Try 0.2% or 1% in the fund costs to see how much they weigh.');
@@ -756,6 +765,8 @@
     const v = paese === 'it' ? 'EUR' : paese === 'ch' ? 'CHF' : null;
     if (v){ cur = v; scegli('#segCur', document.querySelector('#segCur button[data-cur="' + v + '"]')); }
     render();
+    // un segnale breve sul risultato, così si vede che si è aggiornato anche quando il numero resta uguale
+    const res = $('res'); res.classList.remove('upd'); void res.offsetWidth; res.classList.add('upd');
   }));
   const svg = $('chart');
   svg.addEventListener('pointermove', mostra);
