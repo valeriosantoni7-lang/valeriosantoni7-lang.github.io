@@ -694,6 +694,8 @@ ul{list-style:none}
   width:8px;height:8px;border-radius:50%;
   background:var(--gold);box-shadow:0 0 6px var(--gold-glow);
 }
+/* Quattro gruppi (CV, dal 26/11/2026): due per riga sul computer; sotto i 1024 px uno per riga come prima */
+@media(min-width:1025px){.skills-grid.sg-4{grid-template-columns:repeat(2,1fr)}}
 
 /* =============================================
    LANGUAGES

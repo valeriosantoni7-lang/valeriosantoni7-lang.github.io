@@ -39,7 +39,7 @@
   <!-- Schema.org JSON-LD esteso: Person + Occupation + Education + Awards -->
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://valerioswiss.com/cv#person","name":"Valerio Santoni","givenName":"Valerio","familyName":"Santoni","jobTitle":"Digital Product Associate","description":"Italian professional in Switzerland. Specialized in Client Intelligence, data governance, Power BI dashboards, SQL data engineering. Double-degree graduate from Università di Pavia and Clermont School of Business with study exchanges in Würzburg (Germany) and Chengdu (China).","image":"https://valerioswiss.com/assets/images/profile.jpg","url":"https://valerioswiss.com/cv","email":"valeriosantoni7@gmail.com","nationality":{"@type":"Country","name":"Italy"},"birthPlace":{"@type":"Place","name":"Ancona, Italy"},"workLocation":{"@type":"Place","name":"Geneva, Switzerland","address":{"@type":"PostalAddress","addressLocality":"Geneva","addressCountry":"CH"}},"hasOccupation":{"@type":"Occupation","name":"Digital Product Associate","occupationalCategory":"15-2051","skills":["Power BI","SQL","Python","Azure Databricks","Data Governance","Client Intelligence","ETL","Data Modeling","Project Management"],"estimatedSalary":{"@type":"MonetaryAmountDistribution","name":"Digital Product Associate Switzerland","currency":"CHF","duration":"P1Y","percentile50":80000}},"knowsAbout":["Business Intelligence","Power BI","SQL","Python","Azure Databricks","Client Intelligence","Data Governance","Data Analytics","ETL","Project Management","Reporting","Marketing Analytics"],"knowsLanguage":[{"@type":"Language","name":"Italian","alternateName":"it"},{"@type":"Language","name":"English","alternateName":"en"},{"@type":"Language","name":"French","alternateName":"fr"},{"@type":"Language","name":"German","alternateName":"de"}],"sameAs":["https://www.linkedin.com/in/valeriosantoni","https://www.instagram.com/valerio.swiss/","https://www.tiktok.com/@valerio.swiss"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Università di Pavia","url":"https://www.unipv.it","sameAs":"https://en.wikipedia.org/wiki/University_of_Pavia"},{"@type":"CollegeOrUniversity","name":"Clermont School of Business","url":"https://www.esc-clermont.fr"},{"@type":"CollegeOrUniversity","name":"University of Würzburg","url":"https://www.uni-wuerzburg.de"},{"@type":"CollegeOrUniversity","name":"Southwestern University of Finance and Economics (Chengdu)","url":"https://en.swufe.edu.cn"}],"award":["Nova Talent Member","Master's Degree 108/110 with distinction"]},{"@type":"ProfilePage","@id":"https://valerioswiss.com/cv#profile","url":"https://valerioswiss.com/cv","name":"Valerio Santoni · CV","mainEntity":{"@id":"https://valerioswiss.com/cv#person"},"inLanguage":"en"}]}</script>
   <link rel="stylesheet" href="/assets/fonts/fonts.css"/>
-  <link rel="stylesheet" href="style.css?v=38"/>
+  <link rel="stylesheet" href="style.css?v=39"/>
 </head>
 <body data-phrases="cv">
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -648,34 +648,40 @@
       <div class="section-label" data-i18n="skills.label">Expertise</div>
       <h2 class="section-title" data-i18n="skills.title">Skills &amp; <em>Tools</em></h2>
     </div>
-    <div class="skills-grid">
+    <div class="skills-grid sg-4">
       <div class="skill-group fade-in">
-        <div class="sg-title" data-i18n="skills.cat1">Industry Knowledge</div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Business Intelligence</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Reporting &amp; Analysis</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Project Management</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Analytical Skills</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Data Governance</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
+        <div class="sg-title" data-i18n="skills.cat.ai">AI &amp; Automation</div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Claude Code</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name" data-i18n="skills.n.agentic">Agentic AI development</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" data-w="70"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Python</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" data-w="70"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name" data-i18n="skills.n.aitest">AI agent testing &amp; benchmarking</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" data-w="65"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">OpenAI Codex</span><span class="skill-pct">60%</span></div><div class="skill-track"><div class="skill-fill" data-w="60"></div></div></div>
       </div>
       <div class="skill-group fade-in">
-        <div class="sg-title" data-i18n="skills.cat2">Tools &amp; Technologies</div>
+        <div class="sg-title" data-i18n="skills.cat.data">Data &amp; Analytics</div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name" data-i18n="skills.n.bi">Business Intelligence &amp; Reporting</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
         <div class="skill-item"><div class="skill-row"><span class="skill-name">Microsoft Power BI</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
         <div class="skill-item"><div class="skill-row"><span class="skill-name">Microsoft Excel</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
         <div class="skill-item"><div class="skill-row"><span class="skill-name">ETL</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Azure Databricks</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">SQL</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Python</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" data-w="70"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">MicroStrategy</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" data-w="65"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">GitLab</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" data-w="65"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">ServiceNow</span><span class="skill-pct">60%</span></div><div class="skill-track"><div class="skill-fill" data-w="60"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name" data-i18n="skill.dg">Data Governance</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">SQL · Azure Databricks</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
       </div>
       <div class="skill-group fade-in">
-        <div class="sg-title" data-i18n="skills.cat3">Interpersonal</div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Problem Solving</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Teamwork</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Communication</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Organization Skills</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
-        <div class="skill-item"><div class="skill-row"><span class="skill-name">Brainstorm Facilitation</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
+        <div class="sg-title" data-i18n="skills.cat.product">Product &amp; Platforms</div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name" data-i18n="skill.pm">Project Management</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name" data-i18n="skill.po">Product Ownership</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" data-w="70"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Jira</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" data-w="65"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">GitLab · GitHub</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" data-w="65"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Salesforce</span><span class="skill-pct">60%</span></div><div class="skill-track"><div class="skill-fill" data-w="60"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Mixpanel</span><span class="skill-pct">60%</span></div><div class="skill-track"><div class="skill-fill" data-w="60"></div></div></div>
+      </div>
+      <div class="skill-group fade-in">
+        <div class="sg-title" data-i18n="skills.cat.soft">Interpersonal</div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name" data-i18n="skills.n.ps">Problem Solving</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name" data-i18n="skills.n.team">Teamwork</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name" data-i18n="skills.n.comm">Communication</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name" data-i18n="skills.n.org">Organization Skills</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name" data-i18n="skills.n.brain">Brainstorm Facilitation</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
       </div>
     </div>
   </div>
@@ -859,7 +865,7 @@
 
 <button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<script src="script.js?v=54"></script>
+<script src="script.js?v=56"></script>
 <!-- Statistiche senza cookie (Cloudflare Web Analytics, dal 26/10/2026; vedi /privacy) -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "af2e90f55a5d426983c303538f4f463f"}'></script>
 </body>
